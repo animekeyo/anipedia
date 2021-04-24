@@ -1,3 +1,276 @@
+non.ggk {
+    color: var(--c9);
+    background-color: var(--c14);
+    margin: 0vw 1vw;
+    border-radius: 1vw;
+    padding: 2vw;
+}
+
+bar.top-bar {
+    display: grid;
+    float: left;
+    grid-template-columns: 12vw 70vw 12vw;
+    margin: 3vw;
+    margin-bottom: 1vw;
+}
+
+.pfp {
+    width: -webkit-fill-available;
+    height: 10.3vw;
+    box-shadow: 0px 0px 0px 0vw var(--c12);
+    background-color: var(--c14)
+}
+
+nin,
+.search-input {
+    margin: 1vw;
+    border-radius: 1vw;
+    float: left;
+    background-color: var(--c19);
+    overflow: hidden;
+}
+
+.font {
+    text-transform: capitalize;
+    font-family: sans-serif;
+    color: var(--c9);
+    font-weight: 900;
+    letter-spacing: 0.1vw;
+}
+
+.search-input {
+    height: auto;
+    margin: 1vw 2vw;
+    font-size: 3.5vw;
+    border: unset;
+    color: var(--c11);
+    background-color: var(--c14)!important;
+}
+
+bar.top-bar non input {
+    height: auto;
+    width: 56vw;
+    font-size: 3.5vw;
+    float: right;
+    border: unset;
+    color: var(--c11);
+    font-family: C1;
+    padding: 3.5vw 0vw;
+    background-color: unset;
+}
+
+bar.top-bar non svg {
+    width: 5vw;
+    float: left;
+    margin: 2.5vw 3vw;
+    margin-right: 2vw;
+    fill: var(--c11);
+}
+
+bar.top-bar non input::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--c11);
+    opacity: 1;
+    /* Firefox */
+}
+
+bar.top-bar nin.pfp img {
+    float: left;
+    width: 9vw;
+    background-color: var(--c15);
+    margin: 0.52vw;
+    border-radius: 1vw;
+}
+
+non.main-ttx {
+    color: var(--c10);
+    display: grid;
+    float: left;
+    grid-template-columns: 90vw;
+    font-size: 5vw;
+    padding: 5vw;
+    overflow: hidden;
+}
+
+non.bt-gg {
+    color: var(--c9);
+    padding: 3vw;
+    margin-bottom: 1vw;
+}
+
+non.ddkoi {
+    font-size: 7vw;
+}
+
+non.ddkol {
+    font-size: 4vw;
+}
+
+non.mko-btn {
+    display: grid;
+    grid-template-columns: 15vw 69vw;
+    float: left;
+    overflow: hidden;
+    background-color: var(--c13);
+    border-radius: 2vw;
+}
+
+non.mko-btn img {
+    width: 10vw;
+    display: block;
+    margin-left: 5vw;
+}
+
+non.mko-btn.google img {
+    width: 7vw;
+    background-color: white;
+    padding: 0.5vw;
+    margin: 1vw;
+    margin-left: 6.5vw;
+    border-radius: 100vw;
+}
+
+non.mko-btn non {
+    margin: 2.5vw 5vw;
+    color: var(--c9);
+    width: fit-content;
+    height: fit-content;
+    text-align: center;
+    float: left;
+}
+
+non non.bt-gg.ddkol a {
+    color: var(--c19);
+}
+
+non.mko-btn {
+    margin-bottom: 2vw;
+}
+
+non.bt-moa {
+    /* margin: 10vw 20vw; */
+    margin-right: unset;
+    border-radius: 3vw;
+    background-color: var(--c15);
+}
+
+non non.bt-moa img {
+    width: -webkit-fill-available;
+    /* height: auto; */
+    float: left;
+    margin: 1.4vw 2vw 2vw 2vw;
+}
+
+non.banner-home non {
+    overflow: hidden;
+}
+
+non.banner-home {
+    background-image: url(https://cdn.dribbble.com/users/989466/screenshots/4423043/command-and-conquer1x.png);
+    background-size: cover;
+    background-position: center;
+    width: 60vw;
+    float: left;
+    padding: 15vw 20vw;
+    height: 20vw;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 20vw 40vw;
+}
+
+non.bt-mob {
+    width: auto;
+    margin-left: 2vw;
+    display: grid;
+    float: left;
+    height: auto;
+    grid-template-columns: 100vw;
+    border-radius: 3vw;
+    background-color: var(--c15);
+}
+
+non.bt-mob non {
+    float: left;
+    padding: 2vw;
+    margin: 1.5vw;
+    width: 31vw;
+    height: fit-content;
+    overflow: hidden;
+    font-size: 7vw;
+    color: var(--c9);
+}
+
+non.bt-mob non.mmo nonee {
+    font-size: 4vw;
+    float: left;
+}
+
+non.profile-user-main-gg {
+    background-color: var(--c15);
+    width: 100vw;
+    height: 85vw;
+    position: relative;
+    float: left;
+    overflow: hidden;
+}
+
+non.profile-user-main-gg non.profile-user-banner {
+    background-color: var(--c13);
+    width: 100vw;
+    height: 35vw;
+    float: left;
+}
+
+non.p-grid {
+    display: grid;
+    grid-template-columns: 20vw 70vw;
+    position: absolute;
+    top: 23vw;
+    overflow: hidden;
+    margin: 5vw;
+    left: 0vw;
+    width: -webkit-fill-available;
+    height: 20vw;
+}
+
+non.p-grid non.profile-pic {
+    float: left;
+    height: 18vw;
+    border-radius: 100vw;
+    margin: 1vw;
+    box-shadow: 0vw 0vw 0vw 1vw var(--c15);
+    width: -webkit-fill-available;
+}
+
+non.p-grid non.profile-status {
+    position: absolute;
+    float: left;
+    top: 15vw;
+    overflow: hidden;
+    border-radius: 100vw;
+    left: 15vw;
+    width: 4vw;
+    height: 4vw;
+    box-shadow: 0vw 0vw 0vw 1vw var(--c15);
+}
+
+non.p-grid non.profile-fbt {
+    color: var(--c9);
+    float: right;
+    padding: 2vw 5vw;
+    margin-top: 10vw;
+    border-radius: 1vw;
+    font-size: 4vw;
+    background-color: var(--c19);
+}
+
+non.p-grid non.profile-fbt.sbt {
+    background-color: var(--c14);
+    margin-right: 3vw;
+    color: var(--c19);
+    border-radius: 1vw;
+}
+
 non.profile-user-name {
     color: var(--c9);
     position: absolute;
@@ -8,4 +281,76 @@ non.profile-user-name {
     width: 90vw;
     height: 15vw;
     font-size: 5vw;
+}
+
+non.profile-user-name non.uido {
+    color: var(--c19);
+    margin: 1vw 0vw;
+    padding: 1vw 2vw;
+    border-radius: 1vw;
+    background-color: var(--c14);
+    float: left;
+    font-family: 'C1';
+    font-size: 4vw;
+}
+
+non.profile-user-dec-fov {
+    background: var(--c14);
+    height: 30vw;
+    float: left;
+    position: absolute;
+    width: -webkit-fill-available;
+    bottom: 0vw;
+    left: 0;
+}
+
+non.profile-user-dec-fov {
+    background: var(--c19);
+    height: 16.5vw;
+    float: left;
+    position: absolute;
+    width: -webkit-fill-available;
+    bottom: 0vw;
+    left: 0;
+}
+
+non.profile-user-fov {
+    width: -webkit-fill-available;
+    color: var(--c20);
+    height: fit-content;
+    /* padding: 1vw; */
+    grid-template-columns: 48vw 48vw;
+    display: grid;
+    margin: 2vw;
+    overflow: hidden;
+}
+
+non.fdsfsdf {
+    padding: 3vw 2vw;
+    background: var(--c14);
+    margin: 1vw;
+    float: left;
+    width: 42vw;
+    border-radius: 1vw;
+    text-align: center;
+    font-size: 4vw;
+}
+
+non.user-name-pp {
+    color: var(--c19);
+    padding: 1vw 2vw;
+    background: var(--c14);
+    font-size: 5vw;
+    float: left;
+}
+
+non.profile-user-dec {
+    float: left;
+    width: -webkit-fill-available;
+    height: fit-content;
+    background: var(--c15);
+    color: var(--c10);
+    text-align: center;
+    padding: 5vw;
+    font-size: 4vw;
 }
