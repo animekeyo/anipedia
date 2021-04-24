@@ -45,3 +45,27 @@ body {
     --s1: 2px 2px 0 var(--c8), -2px -2px 0 var(--c5), 0px 0px 10px black;
     --s2: 1px 2px 2px var(--c8), -1px -2px 2px var(--c5), 0px 0px 10px black;
 }
+
+.feedbt-main {
+    display: grid;
+    grid-template-columns: auto;
+    padding: unset;
+    margin: unset;
+    float: left;
+}
+
+feedbt {
+    height: fit-content;
+    font-family: sans-serif;
+    color: var(--c9);
+    font-weight: 900;
+    letter-spacing: 0.1vw;
+    display: grid;
+    border-radius: 1vw;
+    float: left;
+    grid-template-columns: 47vw 47vw;
+    text-align: center;
+    font-size: 4vw;
+    margin: 3vw;
+    margin-top: unset;
+}
