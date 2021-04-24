@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'C1';
+    src: url('/fonts/GothamBold.ttf');
+}
+
+body {
+    background-color: var(--c10);
+    font-family: C1;
+    margin: unset;
+    padding: unset;
+}
+
+ :root {
+    --f1: 'Fredoka One';
+    --f2: 'Nunito';
+    --f3: 'Josefin Sans';
+    --c1: #1e2124;
+    --c2: #282b30;
+    --c3: #36393e;
+    --c4: #424549;
+    --c5: #7289da;
+    --c6: white;
+    --c7: #43b581;
+    --cb7: #98CAB4;
+    --cd7: #00713D;
+    --c8: #db4444;
+    --cb8: #D98888;
+    --cd8: #700000;
+    --c0: #000000;
+    --cw1: #FFFFFF;
+    --c9: #dee3ea;
+    --c10: #b2bdcd;
+    --c11: #5d7290;
+    --c12: #323d4d;
+    --c13: #242c37;
+    --c14: #151a21;
+    --c15: #0b0e11;
+    --c16: #879eed;
+    --c17: #5575e7;
+    --c18: rgba(253, 77, 77, 0.3);
+    --c19: #fd4d4d;
+    --c20: #fd6868;
+    --c21: #f5bfbf;
+    --wt: -webkit-fill-available;
+    --s1: 2px 2px 0 var(--c8), -2px -2px 0 var(--c5), 0px 0px 10px black;
+    --s2: 1px 2px 2px var(--c8), -1px -2px 2px var(--c5), 0px 0px 10px black;
+}

@@ -1,0 +1,11 @@
+non.profile-user-name {
+    color: var(--c9);
+    position: absolute;
+    float: left;
+    top: 50vw;
+    overflow: hidden;
+    left: 5vw;
+    width: 90vw;
+    height: 15vw;
+    font-size: 5vw;
+}
