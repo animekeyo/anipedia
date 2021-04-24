@@ -375,3 +375,26 @@ non.tos-pp {
     margin: 1vw;
     border-radius: 1vw;
 }
+
+non.login-page {
+    margin: 0vw 35vw;
+    float: left;
+    width: -webkit-fill-available;
+    overflow: hidden;
+}
+
+@media (min-width:481px) {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+}
+
+@media (min-width:641px) {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+}
+
+@media (min-width:1025px) {
+    /* big landscape tablets, laptops, and desktops */
+}
+
+@media (min-width:1281px) {
+    /* hi-res laptops and desktops */
+}
