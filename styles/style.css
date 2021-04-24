@@ -354,3 +354,24 @@ non.profile-user-dec {
     padding: 5vw;
     font-size: 4vw;
 }
+
+non.footer {
+    color: var(--c19);
+    float: left;
+    display: grid;
+    margin: 5vw;
+    margin-top: 0vw;
+    grid-template-columns: 30vw 30vw 30vw;
+    width: 90vw;
+}
+
+non.tos-pp {
+    float: left;
+    font-size: 4vw;
+    text-align: center;
+    padding: 3vw 2vw;
+    background: var(--c14);
+    color: var(--c10);
+    margin: 1vw;
+    border-radius: 1vw;
+}
