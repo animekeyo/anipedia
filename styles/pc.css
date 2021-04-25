@@ -1,5 +1,4 @@
 @media (min-width:961px) {
-    /**/
     non.login-page {
         margin: 0vw 35vw;
         float: left;
@@ -15,10 +14,6 @@
     }
     non.bt-moa {
         border-radius: 1vw;
-        -webkit-border-radius: ;
-        -moz-border-radius: ;
-        -ms-border-radius: ;
-        -o-border-radius: ;
     }
     non non.bt-moa img {
         margin: 1vw 1vw 1vw;
