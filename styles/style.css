@@ -93,10 +93,6 @@ non.bt-gg {
     color: var(--c9);
 }
 
-non.ddkol {
-    font-size: 4vw;
-}
-
 non.mko-btn {
     display: grid;
     float: left;
@@ -110,7 +106,6 @@ non.mko-btn img {
 
 non.mko-btn.google img {
     background-color: white;
-    margin: 1vw;
 }
 
 non.mko-btn non {
