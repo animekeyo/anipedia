@@ -68,7 +68,7 @@ bar.top-bar non svg {
 }
 
 bar.top-bar non input::placeholder {
-    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    /* Chrome, Firefox, Opera, Saffari 10.1+ */
     color: var(--c11);
     opacity: 1;
     /* Firefox */
@@ -86,20 +86,11 @@ non.main-ttx {
     color: var(--c10);
     display: grid;
     float: left;
-    grid-template-columns: 90vw;
-    font-size: 5vw;
-    padding: 5vw;
     overflow: hidden;
 }
 
 non.bt-gg {
     color: var(--c9);
-    padding: 3vw;
-    margin-bottom: 1vw;
-}
-
-non.ddkoi {
-    font-size: 7vw;
 }
 
 non.ddkol {
@@ -108,30 +99,21 @@ non.ddkol {
 
 non.mko-btn {
     display: grid;
-    grid-template-columns: 15vw 69vw;
     float: left;
     overflow: hidden;
     background-color: var(--c13);
-    border-radius: 2vw;
 }
 
 non.mko-btn img {
-    width: 10vw;
     display: block;
-    margin-left: 5vw;
 }
 
 non.mko-btn.google img {
-    width: 7vw;
     background-color: white;
-    padding: 0.5vw;
     margin: 1vw;
-    margin-left: 6.5vw;
-    border-radius: 100vw;
 }
 
 non.mko-btn non {
-    margin: 2.5vw 5vw;
     color: var(--c9);
     width: fit-content;
     height: fit-content;
@@ -148,17 +130,13 @@ non.mko-btn {
 }
 
 non.bt-moa {
-    /* margin: 10vw 20vw; */
     margin-right: unset;
-    border-radius: 3vw;
     background-color: var(--c15);
 }
 
 non non.bt-moa img {
     width: -webkit-fill-available;
-    /* height: auto; */
     float: left;
-    margin: 1.4vw 2vw 2vw 2vw;
 }
 
 non.banner-home non {
@@ -169,39 +147,27 @@ non.banner-home {
     background-image: url(https://cdn.dribbble.com/users/989466/screenshots/4423043/command-and-conquer1x.png);
     background-size: cover;
     background-position: center;
-    width: 60vw;
     float: left;
-    padding: 15vw 20vw;
-    height: 20vw;
     overflow: hidden;
     display: grid;
-    grid-template-columns: 20vw 40vw;
 }
 
 non.bt-mob {
     width: auto;
-    margin-left: 2vw;
     display: grid;
     float: left;
     height: auto;
-    grid-template-columns: 100vw;
-    border-radius: 3vw;
     background-color: var(--c15);
 }
 
 non.bt-mob non {
     float: left;
-    padding: 2vw;
-    margin: 1.5vw;
-    width: 31vw;
     height: fit-content;
     overflow: hidden;
-    font-size: 7vw;
     color: var(--c9);
 }
 
 non.bt-mob non.mmo nonee {
-    font-size: 4vw;
     float: left;
 }
 
@@ -374,13 +340,6 @@ non.tos-pp {
     color: var(--c10);
     margin: 1vw;
     border-radius: 1vw;
-}
-
-non.login-page {
-    margin: 0vw 35vw;
-    float: left;
-    width: -webkit-fill-available;
-    overflow: hidden;
 }
 
 @media (min-width:481px) {
