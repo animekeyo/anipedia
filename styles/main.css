@@ -3,6 +3,9 @@
     src: url('/fonts/GothamBold.ttf');
 }
 
+@import url("/styles/mobile.css");
+@import url("/styles/pc.css");
+@import url("/styles/style.css");
 body {
     background-color: var(--c15);
     font-family: C1;
