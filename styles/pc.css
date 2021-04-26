@@ -1,12 +1,20 @@
 @media (min-width:550px) {
     non.login-page {
-        margin: 0vw 35vw;
+        margin: 6% 35%;
+        display: flex;
         float: left;
+        height: -webkit-fill-available;
         width: -webkit-fill-available;
         overflow: hidden;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
     }
     non.banner-home {
         width: 23vw;
+        border-radius: 1vw;
         float: left;
         padding: 2vw 3vw;
         height: 7vw;

@@ -120,10 +120,6 @@ non non.bt-gg.ddkol a {
     color: var(--c19);
 }
 
-non.mko-btn {
-    margin-bottom: 2vw;
-}
-
 non.bt-moa {
     margin-right: unset;
     background-color: var(--c15);
@@ -145,6 +141,39 @@ non.banner-home {
     float: left;
     overflow: hidden;
     display: grid;
+}
+
+loader.login-page {
+    float: left;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    background: var(--c15);
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+svg.loader-svg {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    animation: loading 0.5s linear infinite;
+}
+
+@keyframes loading {
+    to {
+        transform: rotate(359deg);
+    }
 }
 
 non.bt-mob {
