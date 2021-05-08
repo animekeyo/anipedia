@@ -848,7 +848,7 @@
             if (user) {
                 var user = firebase.auth().currentUser;
                 if (id == user.uid) {
-                    const data = '<non>Upload Cover</non><non id="upload_profile_pic_button">Upload Profile Picture</non>';
+                    const data = '<non id="upload_banner_button">Upload Cover</non><non id="upload_profile_pic_button">Upload Profile Picture</non>';
                     $(data).appendTo($("[id=upload_banner_picture]"));
                 } else {
                     const data = ' <non id="follow_button" class="rambo">Follow</non>';
@@ -859,7 +859,80 @@
                 $('[id=upload_profile_pic_button]').on('click', function() {
                     $('#uploadpfp').trigger('click');
                 });
+                $('[id=upload_banner_button]').on('click', function() {
+                    $('#uploadpfp').trigger('click');
+                });
+                /////////////////////////////////////////////
+                $("document").ready(function() {
 
+                    $('input[id=uploadpfp]').on("change", function() {
+
+                        var $files = $(this).get(0).files;
+
+                        if ($files.length) {
+
+                            // Reject big files
+                            if ($files[0].size > $(this).data("max-size") * 1024) {
+                                console.log("Please select a smaller file");
+                                return false;
+                            }
+
+                            // Replace ctrlq with your own API key
+                            var apiUrl = 'https://api.imgur.com/3/image';
+                            var apiKey = '4b208caca83b4c4';
+
+                            var formData = new FormData();
+                            formData.append("image", $files[0]);
+
+                            var settings = {
+                                "async": true,
+                                "crossDomain": true,
+                                "url": apiUrl,
+                                "method": "POST",
+                                "datatype": "json",
+                                "headers": {
+                                    "Authorization": "Client-ID " + apiKey
+                                },
+                                "processData": false,
+                                "contentType": false,
+                                "data": formData,
+                                beforeSend: function(xhr) {
+                                    swal({
+                                        text: "Uploading",
+                                        buttons: false,
+                                        closeOnClickOutside: false,
+                                    });
+                                },
+                                success: function(res) {
+                                    console.log(res.data.link);
+
+                                    var user = firebase.auth().currentUser;
+                                    var banner = res.data.link;
+                                    $("document").ready(function() {
+
+                                        firebase.database().ref('/data/users/' + user.uid).update({
+                                            banner: banner
+                                        });
+
+                                    });
+                                },
+                                error: function() {
+
+                                    swal("Failed | 上传失败");
+                                }
+                            }
+                            $.ajax(settings).done(function(response) {
+                                console.log("Done | 成功");
+                                swal({
+                                    title: "Done",
+                                    icon: "success",
+                                    timer: 1500,
+                                });
+                            });
+                        }
+                    });
+                });
+                //////////////////////////////////////////////
                 $("document").ready(function() {
 
                     $('input[id=uploadpfp]').on("change", function() {
