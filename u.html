@@ -719,6 +719,7 @@
             </post-profile-details>
         </post>
     </div>
+    <input style="display: none;" id="uploadbanner" type="file" class="imgur" accept="image/*" data-max-size="5000" />
     <input style="display: none;" id="uploadpfp" type="file" class="imgur" accept="image/*" data-max-size="5000" />
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js">
     </script>
@@ -860,12 +861,12 @@
                     $('#uploadpfp').trigger('click');
                 });
                 $('[id=upload_banner_button]').on('click', function() {
-                    $('#uploadpfp').trigger('click');
+                    $('#uploadbanner').trigger('click');
                 });
                 /////////////////////////////////////////////
                 $("document").ready(function() {
 
-                    $('input[id=uploadpfp]').on("change", function() {
+                    $('input[id=uploadbanner]').on("change", function() {
 
                         var $files = $(this).get(0).files;
 
