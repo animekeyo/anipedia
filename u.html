@@ -505,12 +505,12 @@
         }
         
         .swal-modal {
-            background-color: var(--c13)!important;
+            background-color: var(--c15)!important;
         }
         
         .swal-icon--success:after,
         .swal-icon--success:before {
-            background: var(--c13)!important;
+            background: var(--c15)!important;
         }
         
         .swal-title {
@@ -527,7 +527,7 @@
         }
         
         .swal-icon--success__hide-corners {
-            background-color: var(--c13)!important;
+            background-color: var(--c15)!important;
         }
         
         .swal-button:not([disabled]):hover {
@@ -851,6 +851,8 @@
                 if (id == user.uid) {
                     const data = '<non id="upload_banner_button">Upload Cover</non><non id="upload_profile_pic_button">Upload Profile Picture</non>';
                     $(data).appendTo($("[id=upload_banner_picture]"));
+                    const datas = ' <non id="edit_profile" class="rambo">Edit Profile</non>';
+                    $(datas).appendTo($("[id=if_follo_or_null]"));
                 } else {
                     const data = ' <non id="follow_button" class="rambo">Follow</non>';
                     $(data).appendTo($("[id=if_follo_or_null]"));
@@ -1019,7 +1021,7 @@
                 var create_link = aag + "" + aaf + "" + aae + "" + aah + "" + aahx
 
 
-                $("[id=user_dec]").click(function() {
+                $("[id=edit_profile]").click(function() {
                     var rxxf = firebase.database().ref('/data/users/');
                     rxxf.child(id).on('value', function(snapshot) {
                         var foll = snapshot.val();
@@ -1038,7 +1040,7 @@
                                 '<input id="swal-input2" value="' + foll.bio + '" class="swal2-input">',
                             focusConfirm: false,
                             confirmButtonText: "Save",
-                            closeOnClickOutside: false,
+                            allowOutsideClick: false,
                             preConfirm: () => {
                                 var user = firebase.auth().currentUser;
                                 var name = $('#swal-input1').val();
