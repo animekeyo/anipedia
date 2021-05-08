@@ -1,3 +1,36 @@
+notify {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+}
+
+g#original-icon {
+    fill: white;
+}
+
+box-notify {
+    width: fit-content;
+    height: fit-content;
+    background: var(--c13);
+    color: var(--c9);
+    float: left;
+    text-align: center;
+    float: right;
+    font-size: 15px;
+    margin: 11px;
+    transition: 0.5s;
+    border-radius: 4px;
+    padding: 13px 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
 non.ggk {
     color: var(--c9);
     background-color: var(--c14);
@@ -364,6 +397,741 @@ non.tos-pp {
     color: var(--c10);
     margin: 1vw;
     border-radius: 1vw;
+}
+
+.var-ca {
+    fill: var(--c9);
+    color: var(--c9);
+}
+
+contenter-box {
+    float: left;
+    display: grid;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    grid-template-columns: 20vw 58.5vw 20vw;
+}
+
+non.content-box {
+    display: grid;
+    grid-template-columns: 18.5vw 18.5vw 18.5vw;
+    float: left;
+    gap: 1vw;
+    margin: 1vw;
+    height: fit-content;
+    width: -webkit-fill-available;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+non.content-boxz {
+    width: 18.5vw;
+    cursor: pointer;
+    height: 20vw;
+    background: var(--c13);
+    overflow: auto;
+    float: left;
+    position: relative;
+    --cbg: var(--c14);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    border-radius: 10px;
+    transition: 0.3s;
+    box-shadow: 0vw 0vw 0vw 0vw var(--c14);
+    align-items: center;
+    overflow: hidden;
+}
+
+non.content-boxc {
+    position: absolute;
+    top: 0;
+    border-radius: var(--bgk);
+    left: 0;
+    grid-template-columns: 14.5vw 4vw;
+    display: grid;
+    background-color: var(--cbg);
+    width: -webkit-fill-available;
+    height: 3vw;
+    transition: 0.2s;
+    float: left;
+}
+
+hhtx {
+    display: grid;
+    grid-template-columns: 3vw 11.5vw;
+}
+
+profile-pic {
+    background: var(--c15);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    width: -webkit-fill-available;
+    justify-content: center;
+    align-items: center;
+    /* height: -webkit-fill-available; */
+    float: left;
+    border-radius: 100vw;
+    margin: 0.5vw;
+    border: 0.15vw solid var(--c19);
+}
+
+display-name {
+    color: var(--c9);
+    font-size: 0.8vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+post-time {
+    color: var(--c9);
+    font-size: 0.5vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+non.content-boxcz {
+    position: absolute;
+    bottom: 0;
+    border-radius: var(--bgk);
+    left: 0;
+    grid-template-columns: 14.5vw 4vw;
+    display: grid;
+    background-color: var(--cbg);
+    width: -webkit-fill-available;
+    height: 3vw;
+    transition: 0.2s;
+    float: left;
+}
+
+contener-for-icons {
+    display: grid;
+    grid-template-columns: 2.45vw 2.45vw 3vw 3vw 3.5vw;
+}
+
+like-button {
+    background: var(--c19);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    width: -webkit-fill-available;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    border-radius: 100vw;
+    margin: 0.5vw;
+    margin-right: unset;
+    height: 2vw;
+}
+
+share-button {
+    background: var(--c13);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    width: -webkit-fill-available;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    border-radius: 100vw;
+    margin: 0.5vw;
+    margin-right: unset;
+}
+
+likes-count {
+    color: var(--c9);
+    font-size: 0.5vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+post-dec {
+    float: left;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    margin: 2.6vw 0vw;
+}
+
+imageo {
+    float: left;
+    background: var(--c13);
+    display: flex;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+imageo img {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    height: -webkit-fill-available;
+}
+
+g.svg-rect-btns {
+    fill: var(--c9);
+    display: flex;
+    float: left;
+    overflow: hidden;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+svg.like-btn-svg {
+    /* margin: 0vw; */
+    float: left;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0vw;
+    width: 1.2vw;
+}
+
+bageo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-left: 0.3vw;
+}
+
+svg.verified-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1.1vw;
+    height: 1.1vw;
+    fill: var(--c17);
+}
+
+svg.verified-2 {
+    position: absolute;
+    position: relative;
+    top: 0;
+    fill: var(--c19);
+    left: 0;
+    width: 1.1vw;
+    height: 1.1vw;
+}
+
+intext {
+    float: left;
+    position: absolute;
+    width: -webkit-fill-available;
+    left: 0;
+    bottom: 3vw;
+    color: var(--c9);
+    font-size: 0.96666666666666666666666vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    margin: 0.5vw;
+    text-shadow: 0vw 0vw 0.5vw var(--c15);
+    padding: 0.5vw;
+    align-items: center;
+    background-color: #0000007a;
+}
+
+texto {
+    float: left;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+texto-og {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    background: var(--c17);
+    justify-content: center;
+    align-items: center;
+    height: -webkit-fill-available;
+}
+
+intext-og {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: 3vw;
+    font-size: 0.96666666666666666666666vw;
+    color: var(--c9);
+}
+
+header-xo {
+    float: left;
+    width: -webkit-fill-available;
+    height: 5vw;
+    display: grid;
+    background: var(--c14);
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    grid-template-columns: 10vw 20vw 20vw 5vw;
+}
+
+search-bar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+search-bar input {
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    background: var(--c13);
+    border: unset;
+    padding: 0vw 1vw;
+    margin: 1.5vw 0.5vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    color: var(--c9);
+    border-radius: 5px;
+    font-size: 1vw;
+}
+
+logo-x {
+    color: var(--c19);
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    font-size: 1.45vw;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+menu-btns {
+    display: flex;
+    color: var(--c9);
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9vw;
+    text-transform: uppercase;
+    gap: 0.6vw;
+}
+
+profile-options {
+    display: grid;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    grid-template-columns: 2vw 2vw;
+    gap: 0.5vw;
+}
+
+profile-imgo-menu {
+    display: flex;
+    background: var(--c15);
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100vw;
+    margin: 1.5vw 0vw;
+    border: 0.2vw solid var(--c19);
+    background-size: cover;
+    background-position: center;
+}
+
+notify-x {
+    display: flex;
+    background: var(--c15);
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100vw;
+    margin: 1.5vw 0vw;
+    border: 0.2vw solid var(--c17);
+    color: var(--c6);
+    font-size: 0.8vw;
+    text-align: center;
+    font-family: 'C1';
+}
+
+like-button svg {
+    width: 1.5vw;
+}
+
+listonline {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    color: var(--c9);
+    font-family: 'C1';
+}
+
+following-people-online {
+    float: left;
+    font-size: 1.2vw;
+    width: -webkit-fill-available;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+    height: 5vw;
+    margin-left: 2.3vw;
+}
+
+list-of-people {
+    width: -webkit-fill-available;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+}
+
+profile-xo-oo {
+    /* width: 2vw; */
+    /* height: 2vw; */
+    display: flex;
+    background: var(--c15);
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100vw;
+    margin: 0.4vw;
+    height: revert;
+    border: 0.2vw solid var(--c19);
+    width: -webkit-fill-available;
+}
+
+listo-xo {
+    display: grid;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    grid-template-columns: 3vw 9vw 4vw;
+    width: -webkit-fill-available;
+    height: 3vw;
+    overflow: hidden;
+    gap: 0.1vw;
+}
+
+usernamo-xox {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 1vw;
+}
+
+time-xo {
+    color: var(--c9);
+    font-size: 0.5vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+list-home-feed {
+    float: left;
+    overflow: hidden;
+    width: -webkit-fill-available;
+}
+
+profile-box-ox {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    float: left;
+    align-content: center;
+    position: absolute;
+    overflow: hidden;
+    align-items: center;
+    height: fit-content;
+    width: 20vw;
+}
+
+banner-xo {
+    width: -webkit-fill-available;
+    display: flex;
+    height: 10vw;
+    margin: 1vw;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    background: var(--c14);
+    border-radius: 10px;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+pfp-name-xo {
+    color: white;
+    display: grid;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    grid-template-columns: 4vw 11vw;
+    height: 4vw;
+    gap: 0.5vw;
+    font-size: 1vw;
+    position: absolute;
+    top: 5.5vw;
+}
+
+pfp-xo {
+    display: flex;
+    background: var(--c15);
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100vw;
+    border: 0.2vw solid var(--c19);
+    margin: 0.3vw;
+    height: auto;
+    width: -webkit-fill-available;
+}
+
+name-xo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+foll-xo {
+    display: grid;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    color: var(--c9);
+    gap: 0.4vw;
+    overflow: hidden;
+    font-size: 0.8vw;
+    grid-template-columns: 8.6vw 8.6vw;
+}
+
+foll-btns-xo {
+    padding: 0.8vw 1vw;
+    background: var(--c14);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+hash-tags-xo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.3vw;
+    margin: 1vw;
+}
+
+non-hash-xo {
+    color: var(--c19);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    /* margin: 1vw; */
+    padding: 0.2vw 0.3vw;
+    background: var(--c14);
+    align-items: center;
+    border-radius: 4px;
+}
+
+btns-x:hover {
+    background: var(--c19);
+    padding: 0.4vw 0.5vw;
+    border-radius: 4px;
+}
+
+btns-x {
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+text-treading-topics {
+    display: flex;
+    color: var(--c9);
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3vw;
+    width: -webkit-fill-available;
+    height: auto;
+    margin: 1vw;
+}
+
+box-context {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    float: left;
+}
+
+shots {
+    width: -webkit-fill-available;
+    height: 10vw;
+    background: var(--c14);
+    margin: 0.5vw;
+    margin-top: 1.5vw;
+    display: flex;
+    overflow: hidden;
+    float: left;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: flex-end;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+shots-box {
+    width: 6.5vw;
+    background: var(--c13);
+    height: -webkit-fill-available;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    float: left;
+    margin: 0.5vw;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    border-radius: 11px;
+    background-image: url(/images/b1.jpg);
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+shots-pfp {
+    background: var(--c15);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    width: 1.5vw;
+    justify-content: center;
+    align-items: center;
+    height: 1.5vw;
+    float: left;
+    border-radius: 100vw;
+    margin: 0.5vw;
+    border: 0.15vw solid var(--c19);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+shots-displayname {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: -webkit-fill-available;
+    color: var(--c9);
+    font-size: 0.7vw;
+    margin: 0.5vw;
+    font-family: 'C1';
 }
 
 @media (min-width:481px) {

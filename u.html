@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url("/styles/main.css");
+         :root {
+            --white: #f0f2f5;
+        }
+        
+        body,
+        div {
+            margin: unset;
+            padding: unset;
+        }
+        
+        .full-bg {
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .tiles {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+        }
+        
+        .center-flex {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        post {
+            overflow: hidden;
+            float: left;
+        }
+        
+        post-2nd {
+            box-shadow: inset 0 0 10px 10px black;
+            z-index: 0;
+            filter: blur(34px);
+        }
+        
+        .absolute {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .relative {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+        
+        post-bg {
+            z-index: 1;
+            width: -webkit-fill-available;
+            height: -webkit-fill-available;
+        }
+        
+        post-profile-details {
+            display: grid!important;
+            align-items: unset!important;
+            align-content: unset!important;
+        }
+        
+        post-profile-details {
+            width: -webkit-fill-available;
+            z-index: 1;
+        }
+        
+        post-profile-details non svg {
+            width: -webkit-fill-available;
+            height: -webkit-fill-available;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            fill: white!important;
+        }
+        
+        non-main-pfp-data {
+            display: grid;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            height: auto;
+            width: auto;
+        }
+        
+        profile-name-time {
+            font-weight: 500;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: center;
+            color: var(--white);
+            align-items: flex-start;
+            font-family: Roboto, Arial, Helvetica, sans-serif;
+        }
+        
+        profile-name-time name {
+            font-weight: 700;
+            text-transform: capitalize;
+        }
+        
+        profile-pic {
+            background: var(--white);
+            display: flex;
+            border-radius: 104px;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        name.center-flex {
+            flex-direction: row;
+        }
+        
+        post-profile-details.bottom {
+            top: unset;
+            bottom: 0;
+        }
+        
+        non-main-pfp-data profile-input input {
+            width: -webkit-fill-available;
+            height: -webkit-fill-available;
+            margin: 0.2rem;
+            border-radius: 100rem;
+            border: unset;
+        }
+        
+        post-profile-details non text {
+            display: flex;
+            flex-direction: row!important;
+            flex-wrap: nowrap!important;
+            align-content: center!important;
+            justify-content: center!important;
+            align-items: center!important;
+            color: var(--c9);
+        }
+        
+        post-profile-details non text::before {
+            content: "Likes";
+        }
+        
+        profile-pic svg {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        dec-post.bottom {
+            top: unset;
+            width: -webkit-fill-available;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        dec-post text {
+            FONT-WEIGHT: 800;
+            color: var(--c9);
+            font-family: Roboto, Arial, Helvetica, sans-serif;
+            text-transform: capitalize;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        
+        profile-pic heart svg {
+            fill: var(--c9)!important;
+        }
+        
+        .full-wh {
+            width: -webkit-fill-available;
+            height: -webkit-fill-available;
+        }
+        
+        .rambo {
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(-20%, #f037a5), color-stop(130%, #4001f5));
+            background: linear-gradient(#f037a5 -20%, #4001f5 130%);
+        }
+        
+        profile-info banner non-b {
+            width: 60rem!important;
+            position: unset!important;
+        }
+        
+        profile-info banner {
+            height: 20rem;
+            width: -webkit-fill-available;
+            /* border-radius: 1rem; */
+            overflow: hidden;
+            /* margin: 1rem; */
+        }
+        
+        profile-info banner non-a.second {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: linear-gradient(rgba(255, 255, 255, 0.1), var(--c15) 80%, var(--c15) 100%);
+        }
+        
+        profile-info banner non-ag {
+            position: absolute!important;
+            top: -25px!important;
+            right: -25px!important;
+            bottom: -25px!important;
+            left: -25px!important;
+            filter: blur(20px)!important;
+            width: calc(100% + 50px)!important;
+            height: calc(100% + 50px)!important;
+        }
+        
+        profile-info banner non-b {
+            z-index: 2;
+            overflow: hidden;
+        }
+        
+        upload-cover.center-flex {
+            width: -webkit-fill-available;
+            display: flex;
+            flex-direction: column;
+            margin: 0.5vw;
+            gap: 0.5vw;
+            flex-wrap: wrap;
+            align-content: flex-end;
+            justify-content: flex-end;
+            height: -webkit-fill-available;
+            align-items: flex-end;
+        }
+        
+        @media (max-width:550px) {
+            /*for mobile users*/
+            dec-post text {
+                font-size: 5vw;
+                width: 85vw;
+            }
+            profile-pic heart svg {
+                width: 7vw;
+                height: 7vw;
+            }
+            dec-post.bottom {
+                top: 14vw;
+                margin: 2vw;
+                padding: 2.5vw 4vw;
+                border-radius: 1002px;
+                background: #0b0e1194;
+            }
+            profile-pic svg {
+                width: 7vw;
+                height: 7vw;
+            }
+            post-profile-details {
+                grid-template-columns: 82vw 10vw;
+                margin: 2vw;
+            }
+            post-profile-details {
+                height: 11vw;
+            }
+            non-main-pfp-data {
+                grid-template-columns: 11vw 69vw;
+                gap: 2vw;
+            }
+            profile-name-time {
+                font-size: 4vw;
+            }
+            profile-name-time name {
+                font-size: 4.5vw;
+                letter-spacing: 0.1vw;
+            }
+            profile-name-time time {
+                font-size: 3.5vw;
+            }
+            profile-name-time name badge svg {
+                width: 5vw;
+                height: 5vw;
+            }
+            name.center-flex {
+                gap: 1vw;
+            }
+            post-profile-details.bottom.second {
+                bottom: 14vw;
+                grid-template-columns: 70vw 22vw;
+            }
+            post-2nd,
+            post {
+                width: -webkit-fill-available;
+                height: 156vw;
+            }
+            post-bg {
+                margin: 30vw 0vw;
+            }
+            .tiles {
+                margin: 2vw;
+                gap: 2vw;
+            }
+            post-profile-details non text {
+                gap: 1vw;
+                font-size: 4vw;
+            }
+            non-main-pfp-data.react {
+                grid-template-columns: 11vw 11vw 11vw 11vw 11vw;
+            }
+        }
+        
+        @media (min-width:550px) {
+            /*for pc users*/
+            dec-post.bottom {
+                top: 2.4rem;
+                margin: 0.3rem;
+                padding: 0.5rem 0.6rem;
+                border-radius: 1002px;
+                background: #0b0e1194;
+            }
+            dec-post text {
+                font-size: 0.8rem;
+                width: 214px;
+            }
+            post-profile-details.second {
+                bottom: 2.5rem;
+                grid-template-columns: 11rem 3.5rem;
+            }
+            non-main-pfp-data.react {
+                grid-template-columns: 2rem 2rem 2rem 2rem;
+            }
+            profile-pic svg {
+                width: 1rem;
+                height: 1rem;
+            }
+            post-profile-details non text {
+                gap: 0.2rem;
+                font-size: 0.7rem;
+            }
+            post-profile-details non svg {
+                margin: 0.4rem;
+            }
+            profile-pic {
+                margin: 0.1rem;
+            }
+            post-profile-details {
+                grid-template-columns: 12.5rem 2rem;
+                margin: 0.25rem;
+                height: 2rem;
+            }
+            non-main-pfp-data {
+                grid-template-columns: 2rem 10.3rem;
+                gap: 0.2rem;
+            }
+            profile-name-time {
+                font-size: 2rem;
+            }
+            name.center-flex {
+                gap: 0.1rem;
+            }
+            profile-name-time name {
+                font-size: 0.8rem;
+                /* letter-spacing: 0.1vw; */
+            }
+            profile-name-time name badge svg {
+                width: 0.8rem;
+                height: 0.8rem;
+            }
+            profile-name-time time {
+                font-size: 0.5rem;
+            }
+            post-bg {
+                margin: 5rem 0rem;
+            }
+            post-2nd,
+            post {
+                width: 15rem;
+                height: 25rem;
+            }
+            .tiles {
+                gap: 1rem;
+                margin: 1rem;
+            }
+        }
+        
+        profile-info {
+            display: flex;
+            flex-direction: column!important;
+            flex-wrap: wrap!important;
+            align-content: center!important;
+            justify-content: flex-start!important;
+            align-items: center!important;
+            height: 35rem;
+        }
+        
+        profile-index.absolute.center-flex.full-wh {
+            top: 8rem;
+            display: flex;
+            gap: 1rem;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        
+        profile-info profile-index profile-pic {
+            width: 13rem;
+            height: 13rem;
+            z-index: 2;
+            background: var(--c14);
+            box-shadow: 0rem 0rem 0rem 0.4rem var( --c15);
+        }
+        
+        profile-info profile-index user-name {
+            font-weight: 900;
+            font-size: 2rem;
+            display: flex;
+            flex-direction: row;
+            gap: 0.2rem;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: center;
+            color: var(--white);
+            align-items: center;
+            font-family: Roboto, Arial, Helvetica, sans-serif;
+        }
+        
+        profile-info profile-index user-name badge svg {
+            width: 2rem;
+            height: 2rem;
+        }
+        
+        profile-info profile-index dex-c {
+            font-size: 1.2rem;
+            color: var(--c10);
+            width: 60rem;
+            text-align: center;
+        }
+        
+        profile-info profile-index buttons non {
+            padding: 0.5rem 1rem;
+            background: var(--c14);
+            border-radius: 5px;
+        }
+        
+        profile-info profile-index buttons {
+            font-weight: 900;
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: space-between;
+            width: 60rem;
+            color: var(--white);
+            align-items: center;
+            font-family: Roboto, Arial, Helvetica, sans-serif;
+        }
+        
+        non.following::before {
+            content: "Following";
+            color: var(--c10);
+            margin-right: 0.4rem;
+        }
+        
+        non.followers::before {
+            content: "Follower's";
+            color: var(--c10);
+            margin-right: 0.4rem;
+        }
+        
+        buttons-x {
+            gap: 0.5rem;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        profile-info profile-index buttons non:hover {
+            background: var(--c13);
+        }
+        
+        .swal-modal {
+            background-color: var(--c13)!important;
+        }
+        
+        .swal-icon--success:after,
+        .swal-icon--success:before {
+            background: var(--c13)!important;
+        }
+        
+        .swal-title {
+            color: var(--c9)!important;
+        }
+        
+        .swal-text {
+            color: var(--c9)!important;
+        }
+        
+        .swal-button {
+            background-color: var(--c19)!important;
+            color: var(--c9)!important;
+        }
+        
+        .swal-icon--success__hide-corners {
+            background-color: var(--c13)!important;
+        }
+        
+        .swal-button:not([disabled]):hover {
+            background-color: var(--c18)!important;
+        }
+        
+        .swal-button:focus {
+            outline: none;
+            box-shadow: 0 0 0 1px #fff, 0 0 0 3px var(--c18)!important;
+        }
+        
+        .swal-button:active {
+            background-color: var(--c19)!important;
+        }
+        
+        upload-cover non {
+            color: var(--c9);
+            padding: 0.6rem 0.8rem;
+            background: var(--c15);
+            border-radius: 5px;
+            font-family: Roboto, Arial, Helvetica, sans-serif;
+            font-size: 1rem;
+            FONT-WEIGHT: 900;
+        }
+    </style>
+</head>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase.js" integrity="sha512-6lfGMSk88X4s7EbxhApgmff4eU3uY3p+TN+zalPqeYZNErnUS5+Oxt98CEwEa8tQrUWUFCtEjmgHvO6tbTcurQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-analytics.min.js" integrity="sha512-tYYnZwf/eJg09q3LmQudGkU7otjD4bMYE6zIhQ0VTCnS5Ok3veLs47qbMVOC0flizr1ggOO3YlAe/NIOyXHYOA==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-app.min.js" integrity="sha512-oI4k2PDOH6DrfL+QEOI93tNmCioPOR8iUvqJGSOU/+oqo6Y3ME2+SZEeZfrHciNiXjaGB+G4a8o76ftbHE78VQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-auth.min.js" integrity="sha512-l0i+O3AfLS/mtNotaGw8tg4qg5bVCZDEwUDiDjAicmBrR0G+lqMlmSozvfPcX1TwliG4tbuFgo2l/xAlFc0NkQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-database.min.js" integrity="sha512-gMSOOzrtVreCU7tq0PaPX+YfFhT0f5VXVucwDOWscAs6j8tz5OcBa9R66Pb88O6F2OJMCHy+/TY7vhM15Z/joQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase.min.js" integrity="sha512-8Lwt4up5Cw4G+UtP/kxD9Q3uCEF3QEtYDfWsw3UreavHaTWJiEbYGU8BCvI3N9thGHr0g7O1oyjEfMld9iyXdg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+<script src="/scripts/firebase.js"></script>
+
+<body>
+    <profile-info class="center-flex relative">
+        <banner class="center-flex relative">
+            <non-ag class="full-wh full-bg center-flex absolute" id="user_banner">
+
+            </non-ag>
+            <non-a class="second full-wh full-bg center-flex absolute ">
+
+            </non-a>
+            <non-b class="full-wh full-bg center-flex absolute" id="user_banner">
+                <upload-cover id="upload_banner_picture" class="center-flex">
+                </upload-cover>
+            </non-b>
+        </banner>
+
+        <profile-index class="absolute center-flex full-wh">
+            <profile-pic id="user_profile_pic" class="full-bg center-flex">
+
+            </profile-pic>
+            <user-name>
+                <non id="user_name">Syera Chan </non>
+                <badge class="center-flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 171 171" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,171.99654v-171.99654h171.99654v171.99654z" fill="none"></path><g><path d="M105.52125,10.6875l12.23006,18.90975l22.49363,1.12575l1.13644,22.49006l18.92044,12.21938l-10.26356,20.04975l10.27425,20.03906l-18.90975,12.23006l-1.12575,22.49363l-22.49006,1.13644l-12.21938,18.92044l-20.04975,-10.26356l-20.03906,10.27425l-12.23006,-18.90975l-22.49362,-1.12575l-1.13644,-22.49006l-18.92044,-12.21938l10.26356,-20.04975l-10.27425,-20.03906l18.90975,-12.23006l1.12575,-22.49362l22.49006,-1.13644l12.21938,-18.92044l20.04975,10.26356z" fill="#42a5f5"></path><path d="M76.22325,111.34594l-23.14556,-23.13844l7.55963,-7.55606l15.69994,15.69994l34.086,-33.03863l7.4385,7.67363z" fill="#ffffff"></path></g></g></svg>
+                </badge>
+            </user-name>
+            <dex-c id="user_dec">
+                Bio
+            </dex-c>
+            <buttons>
+                <buttons-x>
+                    <non id="user_status">
+                        Status
+                    </non>
+                    <non id="following_button" class="following">
+                        0
+                    </non>
+                    <non id="followers_button" class="followers">
+                        0
+                    </non>
+                </buttons-x>
+
+                <buttons-x>
+                    <non id="follow_button" class="rambo">
+                        Follow
+                    </non>
+                </buttons-x>
+            </buttons>
+        </profile-index>
+    </profile-info>
+    <div class="tiles">
+        <post class="full-bg relative">
+            <post-profile-details class="full-bg center-flex absolute">
+                <non-main-pfp-data>
+                    <profile-pic>
+
+                    </profile-pic>
+                    <profile-name-time>
+                        <name class="center-flex">
+                            <namo>
+                                Syera Chan
+
+                            </namo>
+                            <badge class="center-flex">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 171 171" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,171.99654v-171.99654h171.99654v171.99654z" fill="none"></path><g><path d="M105.52125,10.6875l12.23006,18.90975l22.49363,1.12575l1.13644,22.49006l18.92044,12.21938l-10.26356,20.04975l10.27425,20.03906l-18.90975,12.23006l-1.12575,22.49363l-22.49006,1.13644l-12.21938,18.92044l-20.04975,-10.26356l-20.03906,10.27425l-12.23006,-18.90975l-22.49362,-1.12575l-1.13644,-22.49006l-18.92044,-12.21938l10.26356,-20.04975l-10.27425,-20.03906l18.90975,-12.23006l1.12575,-22.49362l22.49006,-1.13644l12.21938,-18.92044l20.04975,10.26356z" fill="#42a5f5"></path><path d="M76.22325,111.34594l-23.14556,-23.13844l7.55963,-7.55606l15.69994,15.69994l34.086,-33.03863l7.4385,7.67363z" fill="#ffffff"></path></g></g></svg>
+                            </badge>
+                        </name>
+                        <time>
+                            1 day ago
+                        </time>
+                    </profile-name-time>
+                </non-main-pfp-data>
+                <non id="more" class="center-flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="96" height="96" viewBox="0 0 24 24" style=" fill:#000000;">    <path d="M 6 10 A 2 2 0 0 0 4 12 A 2 2 0 0 0 6 14 A 2 2 0 0 0 8 12 A 2 2 0 0 0 6 10 z M 12 10 A 2 2 0 0 0 10 12 A 2 2 0 0 0 12 14 A 2 2 0 0 0 14 12 A 2 2 0 0 0 12 10 z M 18 10 A 2 2 0 0 0 16 12 A 2 2 0 0 0 18 14 A 2 2 0 0 0 20 12 A 2 2 0 0 0 18 10 z"></path></svg>
+                </non>
+
+            </post-profile-details>
+            <post-2nd class="full-bg center-flex absolute" style="background-image: url(/images/1.jpg);">
+            </post-2nd>
+            <post-bg class="full-bg center-flex absolute" style="background-image: url(/images/1.jpg);">
+
+            </post-bg>
+            <!--DEC-->
+            <dec-post class="bottom full-bg center-flex absolute">
+                <text>
+    hell my name is syera and i am post this for dex options
+</text>
+            </dec-post>
+            <!--REACT-->
+            <post-profile-details class="second bottom full-bg center-flex absolute">
+                <non-main-pfp-data class="react">
+                    <profile-pic class="heart rambo">
+                        <heart>
+                            <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-hidden="true" focusable="false">
+              
+                                <path d="M32.17,0A32,32,0,1,0,64,32.17,32,32,0,0,0,32.17,0Zm8.33,32.88L34,40.46a2.63,2.63,0,0,1-4,0l-6.5-7.69A6,6,0,0,1,31.58,24a.78.78,0,0,0,.45.17.82.82,0,0,0,.46-.16,6,6,0,0,1,8,8.86Z" ></path>
+                              </svg></heart>
+                    </profile-pic>
+
+
+                </non-main-pfp-data>
+                <non id="more" class="center-flex">
+                    <text class="center-flex likes">
+                    10
+                </text>
+                </non>
+
+            </post-profile-details>
+            <!---->
+            <post-profile-details class="bottom full-bg center-flex absolute">
+                <non-main-pfp-data>
+                    <profile-pic>
+
+                    </profile-pic>
+                    <profile-input class="center-flex">
+                        <input class="center-flex" type="text">
+                    </profile-input>
+                </non-main-pfp-data>
+                <non id="more" class="center-flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="96" height="96" viewBox="0 0 24 24" style=" fill:#000000;">    <path d="M 6 10 A 2 2 0 0 0 4 12 A 2 2 0 0 0 6 14 A 2 2 0 0 0 8 12 A 2 2 0 0 0 6 10 z M 12 10 A 2 2 0 0 0 10 12 A 2 2 0 0 0 12 14 A 2 2 0 0 0 14 12 A 2 2 0 0 0 12 10 z M 18 10 A 2 2 0 0 0 16 12 A 2 2 0 0 0 18 14 A 2 2 0 0 0 20 12 A 2 2 0 0 0 18 10 z"></path></svg>
+                </non>
+
+            </post-profile-details>
+        </post>
+    </div>
+    <input style="display: none;" id="uploadpfp" type="file" class="imgur" accept="image/*" data-max-size="5000" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js">
+    </script>
+    <script data-cfasync="false" type="text/javascript">
+        function timeDifference(current, previous) {
+
+            var sPerMinute = 60;
+            var sPerHour = sPerMinute * 60;
+            var sPerDay = sPerHour * 24;
+            var sPerMonth = sPerDay * 30;
+            var sPerYear = sPerDay * 365;
+
+            var elapsed = current - previous;
+            if (elapsed < sPerMinute) {
+                var output = Math.round(elapsed);
+                if (output == 1) {
+                    return Math.round(elapsed) + ' sec ago';
+                } else {
+                    return Math.round(elapsed) + ' secs ago';
+                }
+            } else if (elapsed < sPerHour) {
+                var output = Math.round(elapsed / sPerMinute);
+                if (output == 1) {
+                    return Math.round(elapsed / sPerMinute) + ' min ago';
+                } else {
+                    return Math.round(elapsed / sPerMinute) + ' mins ago';
+                }
+            } else if (elapsed < sPerDay) {
+                var output = Math.round(elapsed / sPerHour);
+                if (output == 1) {
+                    return Math.round(elapsed / sPerHour) + ' hr ago';
+                } else {
+                    return Math.round(elapsed / sPerHour) + ' hrs ago';
+                }
+            } else if (elapsed < sPerMonth) {
+                var output = Math.round(elapsed / sPerDay);
+                if (output == 1) {
+                    return Math.round(elapsed / sPerDay) + ' day ago';
+                } else {
+                    return Math.round(elapsed / sPerDay) + ' days ago';
+                }
+            } else if (elapsed < sPerYear) {
+                var output = Math.round(elapsed / sPerMonth);
+                if (output == 1) {
+                    return Math.round(elapsed / sPerMonth) + ' month ago';
+                } else {
+                    return Math.round(elapsed / sPerMonth) + ' months ago';
+                }
+            } else {
+                var output = Math.round(elapsed / sPerYear);
+                if (output == 1) {
+                    return Math.round(elapsed / sPerYear) + ' year ago';
+                } else {
+                    return Math.round(elapsed / sPerYear) + ' years ago';
+
+                }
+            }
+        }
+    </script>
+    <script>
+        //////////////////////////////////////// TIME JS PLUGIN ////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        var url = window.location.href;
+        var id = url.substring(url.lastIndexOf('?id=') + 4);
+
+        function bbedit() {
+            var x = document.getElementById("followerlist");
+            x.style.display = "block";
+            var x = document.getElementById("datafoll");
+            x.style.display = "none";
+            var x = document.getElementById("datafolling");
+            x.style.display = "none";
+            var x = document.getElementById("dataedit");
+            x.style.display = "block";
+        };
+
+        function following_button() {
+            var x = document.getElementById("followerlist");
+            x.style.display = "block";
+            var x = document.getElementById("datafoll");
+            x.style.display = "none";
+            var x = document.getElementById("dataedit");
+            x.style.display = "none";
+            var x = document.getElementById("datafolling");
+            x.style.display = "block";
+        };
+
+        function followers_button() {
+            var x = document.getElementById("followerlist");
+            x.style.display = "block";
+            var x = document.getElementById("datafoll");
+            x.style.display = "block";
+            var x = document.getElementById("datafolling");
+            x.style.display = "none";
+            var x = document.getElementById("dataedit");
+            x.style.display = "none";
+        };
+
+        function closex() {
+            var x = document.getElementById("followerlist");
+            x.style.display = "none";
+        };
+
+
+        firebase.database().ref('/data/users/').once('value', function(snapshot) {
+            snapshot.forEach((user) => {
+                var username = (user.val() && user.val().username);
+                var userid = (user.val() && user.val().userid);
+                var profile_picture = (user.val() && user.val().profile_picture);
+                var onlineState = (user.val() && user.val().onlineState);
+
+                $('[id=dname-' + userid + ']').text(username);
+                $('[id=pfp-' + userid + ']').css('background-image', 'url(' + profile_picture + '),url(https://animekeyo.com/anipedia/icons/icon.png)');
+
+                if (onlineState == true) {
+                    $('[id=statuso-' + userid + ']').css('background-color', 'var(--c19)');
+                    $('[id=statuosx-' + userid + ']').text('Online');
+                } else {
+                    $('[id=statuso-' + userid + ']').css('background-color', 'var(--c11)');
+                    $('[id=statuosx-' + userid + ']').text('Offline');
+                };
+
+            })
+        });
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                var user = firebase.auth().currentUser;
+                if (id == user.uid) {
+                    const data = '<non>Upload Cover</non><non id="upload_profile_pic_button">Upload Profile Picture</non>';
+                    $(data).appendTo($("[id=upload_banner_picture]"));
+                }
+                console.log(user.uid);
+                /////////////////////UPLOAD SYSTEM //////////////////////////////////
+                $('[id=upload_profile_pic_button]').on('click', function() {
+                    $('#uploadpfp').trigger('click');
+                });
+
+                $("document").ready(function() {
+
+                    $('input[id=uploadpfp]').on("change", function() {
+
+                        var $files = $(this).get(0).files;
+
+                        if ($files.length) {
+
+                            // Reject big files
+                            if ($files[0].size > $(this).data("max-size") * 1024) {
+                                console.log("Please select a smaller file");
+                                return false;
+                            }
+
+                            // Replace ctrlq with your own API key
+                            var apiUrl = 'https://api.imgur.com/3/image';
+                            var apiKey = '4b208caca83b4c4';
+
+                            var formData = new FormData();
+                            formData.append("image", $files[0]);
+
+                            var settings = {
+                                "async": true,
+                                "crossDomain": true,
+                                "url": apiUrl,
+                                "method": "POST",
+                                "datatype": "json",
+                                "headers": {
+                                    "Authorization": "Client-ID " + apiKey
+                                },
+                                "processData": false,
+                                "contentType": false,
+                                "data": formData,
+                                beforeSend: function(xhr) {
+                                    swal({
+                                        text: "Uploading",
+                                        buttons: false,
+                                        closeOnClickOutside: false,
+                                    });
+                                },
+                                success: function(res) {
+                                    console.log(res.data.link);
+
+                                    var user = firebase.auth().currentUser;
+                                    var pfp = res.data.link;
+                                    $("document").ready(function() {
+
+                                        firebase.database().ref('/data/users/' + user.uid).update({
+                                            profile_picture: pfp
+                                        });
+                                        user.updateProfile({
+                                            photoURL: pfp
+                                        });
+
+                                    });
+                                },
+                                error: function() {
+
+                                    swal("Failed | 上传失败");
+                                }
+                            }
+                            $.ajax(settings).done(function(response) {
+                                console.log("Done | 成功");
+                                swal({
+                                    title: "Done",
+                                    icon: "success",
+                                    timer: 1500,
+                                });
+                            });
+                        }
+                    });
+                });
+
+
+                //////////////////////////////////////////////////////////////////////
+                var user = firebase.auth().currentUser;
+                var d = new Date();
+                var aag = d.getTime();
+                var aaf = d.getFullYear();
+                var aae = d.getMonth();
+                var aah = d.getMilliseconds();
+                var aahx = d.getDay();
+                var create_link = aag + "" + aaf + "" + aae + "" + aah + "" + aahx
+
+
+                $("[id=in-save]").click(function() {
+                    var user = firebase.auth().currentUser;
+                    var banner = $('#in-banner').val();
+                    var name = $('#in-name').val();
+                    var photoURL = $('#in-pfp').val();
+                    var bio = $('#in-bio').val();
+
+                    firebase.database().ref('/data/users/' + user.uid).update({
+                        banner: banner,
+                        username: name,
+                        bio: bio,
+                    });
+                    user.updateProfile({
+                        photoURL: photoURL,
+                        displayName: name,
+                    }).then(function() {
+                        // Update successful.
+                        swal(name, "User Profile Updated Successfully ", "success", {
+                            className: "black",
+                            closeOnClickOutside: false
+                        });
+
+                    }).catch(function(error) {
+                        alert('ERROR'); // An error happened.
+                    });
+                });
+
+                var rxxf = firebase.database().ref('/data/users/');
+                rxxf.child(id).on('value', function(snapshot) {
+                    var foll = snapshot.val();
+                    $('#in-banner').val(foll.banner);
+                    $('#in-name').val(foll.username);
+                    $('#in-pfp').val(foll.profile_picture);
+                    $('#in-bio').val(foll.bio);
+                    var cos = foll.bio;
+                    $('#text-bio').text(cos);
+
+                });
+
+                var user = firebase.auth().currentUser;
+                var ref = firebase.database().ref('/data/users/' + user.uid);
+
+                ref.update({
+                    onlineState: true,
+                    status: "online"
+                });
+                ref.onDisconnect().update({
+                    onlineState: false,
+                    status: "offline"
+                });
+
+                if (id == user.uid) {
+
+                    var rxxf = firebase.database().ref('/data/users/');
+                    rxxf.child(user.uid + '/followers/').on('value', function(snapshot) {
+                        var foll = snapshot.numChildren();
+                        $("[id=followers_button]").text(foll);
+                    });
+
+                    rxxf.child(user.uid + '/followers/').once('value', function(snapshot) {
+                        snapshot.forEach((user) => {
+                            var users = user.val().id;
+                            var page = "";
+                            var cx = '<userhash class="" id=""><statusdot class="follolist" id="statuso-' + users + '"></statusdot><pfp class="" id="pfp-' + users + '"></pfp><dname class="" id="dname-' + users + '">SyeraChan</dname><no class="followx" ><a href="/user?id=' + users + '">Open</a></no></userhash>';
+                            $(cx).appendTo($("[id=datafoll]"));
+                        });
+                    });
+
+                    rxxf.child(user.uid + '/following/').on('value', function(snapshot) {
+                        var foll = snapshot.numChildren();
+                        $("[id=following_button]").text(foll);
+                    });
+
+                    rxxf.child(user.uid + '/following/').once('value', function(snapshot) {
+                        snapshot.forEach((user) => {
+                            var users = user.val().id;
+                            var cx = '<userhash class="" id=""><statusdot class="follolist" id="statuso-' + users + '"></statusdot><pfp class="" id="pfp-' + users + '"></pfp><dname class="" id="dname-' + users + '">SyeraChan</dname><no class="followx" ><a href="/user?id=' + users + '">Open</a></no></userhash>';
+                            $(cx).appendTo($("[id=datafolling]"));
+                        });
+                    });
+
+
+                    $("[id=options]").html('<no class="ss" onclick="bbedit()" id="bbedit">Edit Profile</no><no onclick="following_button()" class="ss" id="following_button">0</no><no class="ss" onclick="followers_button()" id="followers_button">0</no>');
+
+                } else {
+                    $("[id=options]").html('<no class="ss" id="follow_button">Weemo</no><no onclick="following_button()" class="ss" id="following_button">0</no><no class="ss" onclick="followers_button()" id="followers_button">0</no>');
+
+
+                    var rxxf = firebase.database().ref('/data/users/');
+                    rxxf.child(id + '/followers/').on('value', function(snapshot) {
+                        var foll = snapshot.numChildren();
+                        $("[id=followers_button]").text(foll);
+                    });
+
+                    rxxf.child(id + '/followers/').once('value', function(snapshot) {
+                        snapshot.forEach((user) => {
+                            var users = user.val().id;
+                            var page = "";
+                            var cx = '<userhash class="" id=""><statusdot class="follolist" id="statuso-' + users + '"></statusdot><pfp class="" id="pfp-' + users + '"></pfp><dname class="" id="dname-' + users + '">SyeraChan</dname><no class="followx" ><a href="/user?id=' + users + '">Open</a></no></userhash>';
+                            $(cx).appendTo($("[id=datafoll]"));
+                        });
+                    });
+
+                    rxxf.child(id + '/following/').on('value', function(snapshot) {
+                        var foll = snapshot.numChildren();
+                        $("[id=following_button]").text(foll);
+                    });
+
+                    rxxf.child(id + '/following/').once('value', function(snapshot) {
+                        snapshot.forEach((user) => {
+                            var users = user.val().id;
+                            var cx = '<userhash class="" id=""><statusdot class="follolist" id="statuso-' + users + '"></statusdot><pfp class="" id="pfp-' + users + '"></pfp><dname class="" id="dname-' + users + '">SyeraChan</dname><no class="followx" ><a href="/user?id=' + users + '">Open</a></no></userhash>';
+                            $(cx).appendTo($("[id=datafolling]"));
+                        });
+                    });
+
+                }
+            };
+
+
+            var ruf = firebase.database().ref('/data/users/' + user.uid + '/following/' + id);
+            var rxf = firebase.database().ref('/data/users/' + id + '/followers/' + user.uid);
+
+
+            ruf.on('value', function(snapshot) {
+                var follow = (snapshot.val() && snapshot.val().follow);
+
+                if (follow == true) {
+                    $("[id=follow_button]").text("Unfollow");
+                } else {
+                    $("[id=follow_button]").text("Follow");
+                };
+
+            });
+
+            $("[id=follow_button]").click(function() {
+                ruf.once('value', function(snapshot) {
+                    var follow = (snapshot.val() && snapshot.val().follow);
+                    if (follow == true) {
+                        ruf.remove();
+                    } else {
+                        ruf.update({
+                            follow: true,
+                            id: id,
+                        });
+                    };
+                });
+                rxf.once('value', function(snapshot) {
+                    var follow = (snapshot.val() && snapshot.val().follow);
+                    if (follow == true) {
+                        rxf.remove();
+                    } else {
+                        rxf.update({
+                            follow: true,
+                            id: user.uid,
+                        });
+                    };
+                });
+
+            });
+
+        });
+        var db_ref = firebase.database().ref('/data/users/' + id);
+        db_ref.on('value', function(snapshot) {
+            var username = (snapshot.val() && snapshot.val().username);
+            var profile_picture = (snapshot.val() && snapshot.val().profile_picture);
+            var banner = (snapshot.val() && snapshot.val().banner);
+            var bio = (snapshot.val() && snapshot.val().bio);
+            var onlineState = (snapshot.val() && snapshot.val().onlineState);
+            if (onlineState == true) {
+                $('[id=user_status]').addClass("rambo");
+                $('[id=user_status]').text('Online');
+            } else {
+                $('[id=user_status]').css('background-color', 'var(--c11)');
+                $('[id=user_status]').text('Offline');
+            };
+            $("[id=user_name]").text(username);
+            $("[id=user_dec]").text(bio);
+            $('[id=user_banner]').css('background-image', 'url(' + banner + '),url(https://animekeyo.com/images/716375.png)');
+            $('[id=user_profile_pic]').css('background-image', 'url(' + profile_picture + '),url(https://animekeyo.com/anipedia/icons/icon.png)');
+            // ...
+
+            /////////////////////////HEAD////////////////////
+            var ghk = "'s";
+            var llk = '<title>' + username + '' + ghk + ' Profile - on AnimeKeyo</title><link rel="shortcut icon" href="' + profile_picture + '"><meta name="description" content="' + bio + '"><meta name="author" content="' + username + '">';
+
+            $("[id=thehead]").prepend(llk);
+
+
+            ////////////////////////////////////////////////
+        });
+    </script>
+</body>
+</body>
+
+</html>

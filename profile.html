@@ -1,60 +1,25 @@
+<!DOCTYPE html>
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <style>
-        @import url("/styles/main.css");
-        @import url("/styles/mobile.css");
-        @import url("/styles/pc.css");
-        @import url("/styles/style.css");
-    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
-    <non class="profile-user-main-gg" id="">
-        <non class="profile-user-banner" id="">
-        </non>
 
-        <non class="p-grid" id="">
-            <non class="profile-user-pic" id="">
-                <non style="background-color:pink" class="profile-pic" id="">
-                </non>
-                <non style="background-color:red" class="profile-status" id="">
-                </non>
-            </non>
-            <non class="profile-user-bt" id="">
-                <non class="profile-fbt" id="">
-                    Follow
-                </non>
-                <non class="profile-fbt sbt" id="">
-                    Online
-                </non>
-            </non>
-        </non>
-        <non class="profile-user-name" id="">
-            <non class="" id="">
-                <non class="user-name-pp" id="">
-                    SyeraChan
-                </non>
-                <br>
-                <non class="uido" id="">
-                    UID:: FJFTHCSJVXJYXKUCJUXHI
-                </non>
-            </non>
-        </non>
-        <non class="profile-user-dec-fov" id="">
-            <non class="profile-user-fov" id="">
-                <non class="profile-user-you-fov fdsfsdf" id="">
-                    0 Following
-                </non>
-                <non class="profile-user-they-fov fdsfsdf" id="">
-                    0 Follower's
-                </non>
-            </non>
-        </non>
-    </non>
-    <non class="profile-user-dec">
-        hello this is syera hello this is syera hello this is syera hello this is syera hello this is syera hello this is syera hello this is syera hello this is syera
-    </non>
+    <button>Change content of all p elements</button>
+
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+
 </body>
-<html>
+
+<script>
+    $('body').keyup(function(e) {
+        if (!e.keyCode == 16)
+            console.log('key code ' + e.keyCode + ' shiftKey' + e.shiftKey);
+    });
+</script>
+
+</html>

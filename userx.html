@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url("/styles/main.css");
+        @import url("/styles/style.css");
+        name-pfp {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            gap: 1vw;
+            font-size: 1.3vw;
+        }
+        
+        body {
+            background-image: url(/images/b1.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+        
+        btns-foll-xe {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            gap: 1vw;
+            font-size: 1vw;
+        }
+        
+        profile-image-main-xo {
+            background: var(--c15);
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-content: center;
+            width: -webkit-fill-available;
+            justify-content: flex-end;
+            align-items: center;
+            /* height: -webkit-fill-available; */
+            float: left;
+            border-radius: 100vw;
+            margin: 0.5vw;
+            width: 5vw;
+            border: 0.15vw solid var(--c19);
+            height: 5vw;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        btns-profile-xe {
+            float: left;
+            width: auto;
+            height: auto;
+            background: var(--c15);
+            padding: 1vw 1.2vw;
+            margin: 0vw;
+            font-size: 0.8vw;
+            text-transform: uppercase;
+            border-radius: 5px;
+            box-shadow: 0vw 0vw 0vw 0.1vw var(--c11);
+        }
+        
+        upload-cover-btn {
+            float: left;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: auto;
+            height: auto;
+            background: #0b0e1180;
+            padding: 1vw 1.2vw;
+            margin: 1vw;
+            font-size: 0.7vw;
+            text-transform: uppercase;
+            border-radius: 5px;
+            box-shadow: 0vw 0vw 0vw 0.1vw #5d72905e;
+        }
+        
+        profile-main-xe {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            color: var(--c9);
+            width: -webkit-fill-available;
+            min-height: 25vw;
+            height: auto;
+            position: relative;
+            overflow: hidden;
+            float: left;
+            margin: 0.5vw;
+            top: 0vw;
+            transition: 0.5s;
+            --csxo: 0vw 0vw 0vw 0vw var(--c14);
+            --coox: 0vw;
+        }
+        
+        profile-banner-xe {
+            width: -webkit-fill-available;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            float: left;
+            height: 20vw;
+            background: var(--c14);
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            background-image: url(/images/b1.jpg);
+            margin: var(--coox);
+            box-shadow: var(--csxo);
+            transition: 0.3s;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        profile-cot {
+            width: 49vw;
+            height: fit-content;
+            position: absolute;
+            top: 14.5vw;
+            /* left: 0; */
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: space-between;
+            gap: 18vw;
+            padding: 1vw 2vw;
+            font-size: 1vw;
+            align-items: center;
+            background: var(--c15);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        boi-extra-xooo {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            background: var(--c14);
+            color: var(--c9);
+            padding: 2vw;
+            gap: 1vw;
+            border-radius: 10px;
+        }
+        
+        btns-etra-bio-andsome {
+            width: -webkit-fill-available;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: center;
+            align-items: flex-start;
+            height: auto;
+            float: left;
+        }
+        
+        btns-foll-xe {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            gap: 1vw;
+            font-size: 1vw;
+        }
+        
+        btns-etra-bio-andsome btns-profile-xe {
+            box-shadow: unset;
+        }
+        
+        bio-some-etra {
+            padding: 1vw;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            font-size: 1vw;
+            background: var(--c15);
+            border-radius: 7px;
+        }
+        
+        .pfpbgk {
+            background-size: cover;
+            background-position: center;
+        }
+        
+        profile-image-main-xo.pfpbgk {
+            background-image: url(/images/pfp.jpg);
+        }
+        
+        upload-pfp-xooox svg {
+            width: 1vw;
+            height: 1vw;
+            padding: 0.2vw;
+        }
+        
+        upload-pfp-xooox {
+            width: -webkit-fill-available;
+            display: flex;
+            background: #0b0e115e;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        namo-xe-main-profile {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        nameo-xe {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase.js" integrity="sha512-6lfGMSk88X4s7EbxhApgmff4eU3uY3p+TN+zalPqeYZNErnUS5+Oxt98CEwEa8tQrUWUFCtEjmgHvO6tbTcurQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-analytics.min.js" integrity="sha512-tYYnZwf/eJg09q3LmQudGkU7otjD4bMYE6zIhQ0VTCnS5Ok3veLs47qbMVOC0flizr1ggOO3YlAe/NIOyXHYOA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-app.min.js" integrity="sha512-oI4k2PDOH6DrfL+QEOI93tNmCioPOR8iUvqJGSOU/+oqo6Y3ME2+SZEeZfrHciNiXjaGB+G4a8o76ftbHE78VQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-auth.min.js" integrity="sha512-l0i+O3AfLS/mtNotaGw8tg4qg5bVCZDEwUDiDjAicmBrR0G+lqMlmSozvfPcX1TwliG4tbuFgo2l/xAlFc0NkQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-database.min.js" integrity="sha512-gMSOOzrtVreCU7tq0PaPX+YfFhT0f5VXVucwDOWscAs6j8tz5OcBa9R66Pb88O6F2OJMCHy+/TY7vhM15Z/joQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase.min.js" integrity="sha512-8Lwt4up5Cw4G+UtP/kxD9Q3uCEF3QEtYDfWsw3UreavHaTWJiEbYGU8BCvI3N9thGHr0g7O1oyjEfMld9iyXdg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="/scripts/firebase.js"></script>
+
+</head>
+
+<body>
+    <load-header id="load-header">
+
+    </load-header>
+    <contenter-box>
+        <listonline>
+
+        </listonline>
+        <box-context>
+            <profile-main-xe>
+                <profile-banner-xe>
+                    <upload-cover-btn>
+                        Upload Cover
+                    </upload-cover-btn>
+                </profile-banner-xe>
+                <profile-cot>
+                    <name-pfp>
+                        <profile-image-main-xo class="pfpbgk">
+                            <upload-pfp-xooox>
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="currentColor"><path d="M0 0h24v24H0V0z" fill="none"></path><circle cx="12" cy="12" r="3"></circle><path d="M20 4h-3.17l-1.24-1.35c-.37-.41-.91-.65-1.47-.65H9.88c-.56 0-1.1.24-1.48.65L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-8 13c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"></path></svg>
+                            </upload-pfp-xooox>
+                        </profile-image-main-xo>
+                        <namo-xe-main-profile>
+                            <nameo-xe>
+
+                                <namoxe>
+                                    SyeraChan
+                                </namoxe>
+                                <bageo>
+                                    <svg aria-label="Verified" class="verified-1" aria-hidden="false" width="16" height="16" viewBox="0 0 16 15.2"><path fill="" fill-rule="evenodd" d="m16 7.6c0 .79-1.28 1.38-1.52 2.09s.44 2 0 2.59-1.84.35-2.46.8-.79 1.84-1.54 2.09-1.67-.8-2.47-.8-1.75 1-2.47.8-.92-1.64-1.54-2.09-2-.18-2.46-.8.23-1.84 0-2.59-1.54-1.3-1.54-2.09 1.28-1.38 1.52-2.09-.44-2 0-2.59 1.85-.35 2.48-.8.78-1.84 1.53-2.12 1.67.83 2.47.83 1.75-1 2.47-.8.91 1.64 1.53 2.09 2 .18 2.46.8-.23 1.84 0 2.59 1.54 1.3 1.54 2.09z"></path></svg>
+                                    <svg class="verified-2" aria-hidden="false" width="16" height="16" viewBox="0 0 16 15.2">
+<path d="M7.4,11.17,4,8.62,5,7.26l2,1.53L10.64,4l1.36,1Z" fill="currentColor"></path>
+</svg>
+                                </bageo>
+                            </nameo-xe>
+                            <badge-xe-profile>
+
+                            </badge-xe-profile>
+                        </namo-xe-main-profile>
+                    </name-pfp>
+                    <btns-foll-xe>
+                        <btns-profile-xe>
+                            Follow
+                        </btns-profile-xe>
+                    </btns-foll-xe>
+                </profile-cot>
+            </profile-main-xe>
+            <boi-extra-xooo>
+                <bio-some-etra>
+                    its all about something extra its all about something extra its all about something extra its all about something extra its all about something extra its all about something extra its all about something extra its all about something extra its all about
+                    something extra its all about something extra its all about something extra its all about something extra
+                </bio-some-etra>
+                <btns-etra-bio-andsome>
+                    <btns-foll-xe>
+                        <btns-profile-xe>
+                            Timeline
+                        </btns-profile-xe>
+                        <btns-profile-xe>
+                            Following
+                        </btns-profile-xe>
+                        <btns-profile-xe>
+                            Follower's
+                        </btns-profile-xe>
+                    </btns-foll-xe>
+                </btns-etra-bio-andsome>
+
+            </boi-extra-xooo>
+            <non class="content-box">
+                <non class="content-boxz">
+                    <non class="content-boxc">
+                        <hhtx>
+                            <profile-pic>
+
+                            </profile-pic>
+                            <display-name>
+                                <namo>
+                                    SyeraChan
+                                </namo>
+                                <bageo>
+                                    <svg aria-label="Verified" class="verified-1" aria-hidden="false" width="16" height="16" viewBox="0 0 16 15.2"><path fill="" fill-rule="evenodd" d="m16 7.6c0 .79-1.28 1.38-1.52 2.09s.44 2 0 2.59-1.84.35-2.46.8-.79 1.84-1.54 2.09-1.67-.8-2.47-.8-1.75 1-2.47.8-.92-1.64-1.54-2.09-2-.18-2.46-.8.23-1.84 0-2.59-1.54-1.3-1.54-2.09 1.28-1.38 1.52-2.09-.44-2 0-2.59 1.85-.35 2.48-.8.78-1.84 1.53-2.12 1.67.83 2.47.83 1.75-1 2.47-.8.91 1.64 1.53 2.09 2 .18 2.46.8-.23 1.84 0 2.59 1.54 1.3 1.54 2.09z"></path></svg>
+                                    <svg class="verified-2" aria-hidden="false" width="16" height="16" viewBox="0 0 16 15.2">
+    <path d="M7.4,11.17,4,8.62,5,7.26l2,1.53L10.64,4l1.36,1Z" fill="currentColor"></path>
+    </svg>
+                                </bageo>
+                            </display-name>
+                        </hhtx>
+                        <post-time>
+                            1 day ago
+                        </post-time>
+                    </non>
+                    <post-dec>
+                        <imageo>
+                            <img src="/images/b1.jpg">
+                        </imageo>
+                        <texto>
+                            <intext>
+                                Its all about things Its all about things Its all about things Its all about things Its all about things Its all about things Its all about things Its all about things Its all about things Its all about things Its all about things
+                            </intext>
+                        </texto>
+                    </post-dec>
+                    <non class="content-boxcz">
+                        <contener-for-icons>
+                            <like-button>
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 171 171"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,171.99654v-171.99654h171.99654v171.99654z" fill="none"></path><g class="svg-rect-btns like-button"><path d="M115.824,21.41063c-19.52962,0.798 -30.324,14.85563 -30.324,14.85563c0,0 -10.79438,-14.05762 -30.324,-14.85562c-13.09575,-0.53437 -25.10137,5.985 -33.01012,16.43738c-27.51675,36.366 24.58125,78.90938 36.83625,90.33075c7.33163,6.83288 16.38038,14.94825 21.78113,19.75762c2.70037,2.40825 6.726,2.40825 9.42638,0c5.40075,-4.80937 14.4495,-12.92475 21.78112,-19.75762c12.255,-11.42138 64.36013,-53.96475 36.83625,-90.33075c-7.90162,-10.45238 -19.90725,-16.97175 -33.003,-16.43738z"></path></g></g></svg>
+                            </like-button>
+                            <share-button>
+                                <svg class="like-btn-svg" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="26" height="26" viewBox="0 0 171 171"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,171.99654v-171.99654h171.99654v171.99654z" fill="none"></path><g class="svg-rect-btns share-button"><path d="M129.07212,1.02764c-10.71319,0.51382 -21.01532,5.18961 -28.97957,13.15385l-31.24038,31.24038c4.907,-4.93269 23.122,-1.54147 27.54087,2.8774l18.90865,-18.90865c4.18765,-4.18765 9.42864,-6.75676 14.79808,-6.98798c3.64814,-0.17984 8.81205,0.5909 13.35938,5.13822c4.23903,4.23903 5.13822,9.17172 5.13822,12.53726c0,5.62635 -2.56911,11.22701 -6.98798,15.62019l-32.88462,33.09014c-8.27253,8.27254 -20.86118,8.9405 -28.15745,1.64423c-4.16196,-4.16196 -11.02148,-4.18765 -15.20913,0c-4.18765,4.18765 -4.18765,11.02148 0,15.20913c7.5018,7.5018 17.36719,11.30409 27.54087,11.30409c10.99579,0 22.2228,-4.49595 30.82933,-13.15385l33.09014,-32.88462c8.40099,-8.3753 13.15385,-19.57662 13.15385,-30.82933c0,-10.45628 -3.95643,-20.39873 -11.30409,-27.74639c-7.86148,-7.86148 -18.42052,-11.81791 -29.59615,-11.30409zM78.10096,54.05409c-10.99579,0 -22.40264,4.52163 -31.03486,13.15385l-32.88462,32.88462c-8.40099,8.3753 -13.15385,19.57663 -13.15385,30.82933c0,10.45628 3.95643,20.39874 11.30409,27.74639c7.86148,7.86148 18.42052,11.81791 29.59615,11.30409c10.71319,-0.51382 21.01533,-5.1896 28.97957,-13.15385l31.24038,-31.24038c-4.93269,4.93269 -23.122,1.54147 -27.54087,-2.8774l-18.90865,18.90865c-4.18765,4.18765 -9.42864,6.73107 -14.79808,6.98798c-3.64813,0.17984 -8.81205,-0.5909 -13.35937,-5.13822c-4.23903,-4.23903 -5.13822,-9.19741 -5.13822,-12.53726c0,-5.62635 2.56911,-11.22701 6.98798,-15.62019l32.88462,-33.09014c8.27254,-8.27253 20.86118,-8.91482 28.15745,-1.64423c4.18765,4.18765 11.04718,4.18765 15.20913,0c4.18765,-4.18765 4.18765,-11.02148 0,-15.20913c-7.5018,-7.5018 -17.39288,-11.30409 -27.54087,-11.30409z"></path></g></g></svg>
+                            </share-button>
+                        </contener-for-icons>
+                        <likes-count>
+                            10 Likes
+                        </likes-count>
+                    </non>
+                </non>
+                <non class="content-boxz">
+                    <non class="content-boxc">
+                        <hhtx>
+                            <profile-pic>
+
+                            </profile-pic>
+                            <display-name>
+                                SyeraChan
+                            </display-name>
+                        </hhtx>
+                        <post-time>
+                            1 day ago
+                        </post-time>
+                    </non>
+                    <post-dec>
+                        <imageo>
+                            <img src="/images/b1.jpg">
+                        </imageo>
+                    </post-dec>
+                    <non class="content-boxcz">
+                        <contener-for-icons>
+                            <like-button>
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 171 171"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,171.99654v-171.99654h171.99654v171.99654z" fill="none"></path><g class="svg-rect-btns like-button"><path d="M115.824,21.41063c-19.52962,0.798 -30.324,14.85563 -30.324,14.85563c0,0 -10.79438,-14.05762 -30.324,-14.85562c-13.09575,-0.53437 -25.10137,5.985 -33.01012,16.43738c-27.51675,36.366 24.58125,78.90938 36.83625,90.33075c7.33163,6.83288 16.38038,14.94825 21.78113,19.75762c2.70037,2.40825 6.726,2.40825 9.42638,0c5.40075,-4.80937 14.4495,-12.92475 21.78112,-19.75762c12.255,-11.42138 64.36013,-53.96475 36.83625,-90.33075c-7.90162,-10.45238 -19.90725,-16.97175 -33.003,-16.43738z"></path></g></g></svg>
+                            </like-button>
+                            <share-button>
+                                <svg class="like-btn-svg" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="26" height="26" viewBox="0 0 171 171"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,171.99654v-171.99654h171.99654v171.99654z" fill="none"></path><g class="svg-rect-btns share-button"><path d="M129.07212,1.02764c-10.71319,0.51382 -21.01532,5.18961 -28.97957,13.15385l-31.24038,31.24038c4.907,-4.93269 23.122,-1.54147 27.54087,2.8774l18.90865,-18.90865c4.18765,-4.18765 9.42864,-6.75676 14.79808,-6.98798c3.64814,-0.17984 8.81205,0.5909 13.35938,5.13822c4.23903,4.23903 5.13822,9.17172 5.13822,12.53726c0,5.62635 -2.56911,11.22701 -6.98798,15.62019l-32.88462,33.09014c-8.27253,8.27254 -20.86118,8.9405 -28.15745,1.64423c-4.16196,-4.16196 -11.02148,-4.18765 -15.20913,0c-4.18765,4.18765 -4.18765,11.02148 0,15.20913c7.5018,7.5018 17.36719,11.30409 27.54087,11.30409c10.99579,0 22.2228,-4.49595 30.82933,-13.15385l33.09014,-32.88462c8.40099,-8.3753 13.15385,-19.57662 13.15385,-30.82933c0,-10.45628 -3.95643,-20.39873 -11.30409,-27.74639c-7.86148,-7.86148 -18.42052,-11.81791 -29.59615,-11.30409zM78.10096,54.05409c-10.99579,0 -22.40264,4.52163 -31.03486,13.15385l-32.88462,32.88462c-8.40099,8.3753 -13.15385,19.57663 -13.15385,30.82933c0,10.45628 3.95643,20.39874 11.30409,27.74639c7.86148,7.86148 18.42052,11.81791 29.59615,11.30409c10.71319,-0.51382 21.01533,-5.1896 28.97957,-13.15385l31.24038,-31.24038c-4.93269,4.93269 -23.122,1.54147 -27.54087,-2.8774l-18.90865,18.90865c-4.18765,4.18765 -9.42864,6.73107 -14.79808,6.98798c-3.64813,0.17984 -8.81205,-0.5909 -13.35937,-5.13822c-4.23903,-4.23903 -5.13822,-9.19741 -5.13822,-12.53726c0,-5.62635 2.56911,-11.22701 6.98798,-15.62019l32.88462,-33.09014c8.27254,-8.27253 20.86118,-8.91482 28.15745,-1.64423c4.18765,4.18765 11.04718,4.18765 15.20913,0c4.18765,-4.18765 4.18765,-11.02148 0,-15.20913c-7.5018,-7.5018 -17.39288,-11.30409 -27.54087,-11.30409z"></path></g></g></svg>
+                            </share-button>
+                        </contener-for-icons>
+                        <likes-count>
+                            10 Likes
+                        </likes-count>
+                    </non>
+                </non>
+                <non class="content-boxz">
+                    <non class="content-boxc">
+                        <hhtx>
+                            <profile-pic>
+
+                            </profile-pic>
+                            <display-name>
+                                <namo>
+                                    SyeraChan
+                                </namo>
+                                <bageo>
+                                    <svg aria-label="Verified" class="verified-1" aria-hidden="false" width="16" height="16" viewBox="0 0 16 15.2"><path fill="" fill-rule="evenodd" d="m16 7.6c0 .79-1.28 1.38-1.52 2.09s.44 2 0 2.59-1.84.35-2.46.8-.79 1.84-1.54 2.09-1.67-.8-2.47-.8-1.75 1-2.47.8-.92-1.64-1.54-2.09-2-.18-2.46-.8.23-1.84 0-2.59-1.54-1.3-1.54-2.09 1.28-1.38 1.52-2.09-.44-2 0-2.59 1.85-.35 2.48-.8.78-1.84 1.53-2.12 1.67.83 2.47.83 1.75-1 2.47-.8.91 1.64 1.53 2.09 2 .18 2.46.8-.23 1.84 0 2.59 1.54 1.3 1.54 2.09z"></path></svg>
+                                    <svg class="verified-2" aria-hidden="false" width="16" height="16" viewBox="0 0 16 15.2">
+    <path d="M7.4,11.17,4,8.62,5,7.26l2,1.53L10.64,4l1.36,1Z" fill="currentColor"></path>
+    </svg>
+                                </bageo>
+                            </display-name>
+                        </hhtx>
+                        <post-time>
+                            1 day ago
+                        </post-time>
+                    </non>
+                    <post-dec>
+                        <texto-og>
+                            <intext-og>
+                                Its all about things Its all about things Its all about things Its all about things Its all about things Its all about things Its all about things Its all about things Its all about things Its all about things Its all about things
+                            </intext-og>
+                        </texto-og>
+                    </post-dec>
+                    <non class="content-boxcz">
+                        <contener-for-icons>
+                            <like-button>
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 171 171"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,171.99654v-171.99654h171.99654v171.99654z" fill="none"></path><g class="svg-rect-btns like-button"><path d="M115.824,21.41063c-19.52962,0.798 -30.324,14.85563 -30.324,14.85563c0,0 -10.79438,-14.05762 -30.324,-14.85562c-13.09575,-0.53437 -25.10137,5.985 -33.01012,16.43738c-27.51675,36.366 24.58125,78.90938 36.83625,90.33075c7.33163,6.83288 16.38038,14.94825 21.78113,19.75762c2.70037,2.40825 6.726,2.40825 9.42638,0c5.40075,-4.80937 14.4495,-12.92475 21.78112,-19.75762c12.255,-11.42138 64.36013,-53.96475 36.83625,-90.33075c-7.90162,-10.45238 -19.90725,-16.97175 -33.003,-16.43738z"></path></g></g></svg>
+                            </like-button>
+                            <share-button>
+                                <svg class="like-btn-svg" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="26" height="26" viewBox="0 0 171 171"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,171.99654v-171.99654h171.99654v171.99654z" fill="none"></path><g class="svg-rect-btns share-button"><path d="M129.07212,1.02764c-10.71319,0.51382 -21.01532,5.18961 -28.97957,13.15385l-31.24038,31.24038c4.907,-4.93269 23.122,-1.54147 27.54087,2.8774l18.90865,-18.90865c4.18765,-4.18765 9.42864,-6.75676 14.79808,-6.98798c3.64814,-0.17984 8.81205,0.5909 13.35938,5.13822c4.23903,4.23903 5.13822,9.17172 5.13822,12.53726c0,5.62635 -2.56911,11.22701 -6.98798,15.62019l-32.88462,33.09014c-8.27253,8.27254 -20.86118,8.9405 -28.15745,1.64423c-4.16196,-4.16196 -11.02148,-4.18765 -15.20913,0c-4.18765,4.18765 -4.18765,11.02148 0,15.20913c7.5018,7.5018 17.36719,11.30409 27.54087,11.30409c10.99579,0 22.2228,-4.49595 30.82933,-13.15385l33.09014,-32.88462c8.40099,-8.3753 13.15385,-19.57662 13.15385,-30.82933c0,-10.45628 -3.95643,-20.39873 -11.30409,-27.74639c-7.86148,-7.86148 -18.42052,-11.81791 -29.59615,-11.30409zM78.10096,54.05409c-10.99579,0 -22.40264,4.52163 -31.03486,13.15385l-32.88462,32.88462c-8.40099,8.3753 -13.15385,19.57663 -13.15385,30.82933c0,10.45628 3.95643,20.39874 11.30409,27.74639c7.86148,7.86148 18.42052,11.81791 29.59615,11.30409c10.71319,-0.51382 21.01533,-5.1896 28.97957,-13.15385l31.24038,-31.24038c-4.93269,4.93269 -23.122,1.54147 -27.54087,-2.8774l-18.90865,18.90865c-4.18765,4.18765 -9.42864,6.73107 -14.79808,6.98798c-3.64813,0.17984 -8.81205,-0.5909 -13.35937,-5.13822c-4.23903,-4.23903 -5.13822,-9.19741 -5.13822,-12.53726c0,-5.62635 2.56911,-11.22701 6.98798,-15.62019l32.88462,-33.09014c8.27254,-8.27253 20.86118,-8.91482 28.15745,-1.64423c4.18765,4.18765 11.04718,4.18765 15.20913,0c4.18765,-4.18765 4.18765,-11.02148 0,-15.20913c-7.5018,-7.5018 -17.39288,-11.30409 -27.54087,-11.30409z"></path></g></g></svg>
+                            </share-button>
+                        </contener-for-icons>
+                        <likes-count>
+                            10 Likes
+                        </likes-count>
+                    </non>
+                </non>
+                <non class="content-boxz">
+                    <non class="content-boxc">
+
+                    </non>
+                </non>
+                <non class="content-boxz">
+                    <non class="content-boxc">
+
+                    </non>
+                </non>
+                <non class="content-boxz">
+                    <non class="content-boxc">
+
+                    </non>
+                </non>
+                <non class="content-boxz">
+                    <non class="content-boxc">
+
+                    </non>
+                </non>
+                <non class="content-boxz">
+                    <non class="content-boxc">
+
+                    </non>
+                </non>
+                <non class="content-boxz">
+                    <non class="content-boxc">
+
+                    </non>
+                </non>
+                <non class="content-boxz">
+                    <non class="content-boxc">
+
+                    </non>
+                </non>
+                <non class="content-boxz">
+                    <non class="content-boxc">
+
+                    </non>
+                </non>
+                <non class="content-boxz">
+                    <non class="content-boxc">
+
+                    </non>
+                </non>
+                <non class="content-boxz">
+                    <non class="content-boxc">
+
+                    </non>
+                </non>
+                <non class="content-boxz">
+                    <non class="content-boxc">
+
+                    </non>
+                </non>
+                <non class="content-boxz">
+                    <non class="content-boxc">
+
+                    </non>
+                </non>
+            </non>
+        </box-context>
+        <list-home-feed>
+
+        </list-home-feed>
+    </contenter-box>
+    <script defer src="/scripts/main.js"></script>
+</body>
+
+</html>

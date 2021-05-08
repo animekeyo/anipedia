@@ -2,51 +2,30 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
     <style>
         @import url("/styles/main.css");
         @import url("/styles/mobile.css");
         @import url("/styles/pc.css");
         @import url("/styles/style.css");
-        notify {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: -webkit-fill-available;
-            height: -webkit-fill-available;
-        }
-        
-        box-notify {
-            width: fit-content;
-            height: fit-content;
-            background: var(--c13);
-            color: var(--c9);
-            float: left;
-            text-align: center;
-            float: right;
-            font-size: 15px;
-            margin: 11px;
-            transition: 0.5s;
-            border-radius: 4px;
-            padding: 13px 20px;
-            display: flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
-            align-content: center;
-            justify-content: center;
-            align-items: center;
-        }
     </style>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase.js" integrity="sha512-6lfGMSk88X4s7EbxhApgmff4eU3uY3p+TN+zalPqeYZNErnUS5+Oxt98CEwEa8tQrUWUFCtEjmgHvO6tbTcurQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-analytics.min.js" integrity="sha512-tYYnZwf/eJg09q3LmQudGkU7otjD4bMYE6zIhQ0VTCnS5Ok3veLs47qbMVOC0flizr1ggOO3YlAe/NIOyXHYOA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-app.min.js" integrity="sha512-oI4k2PDOH6DrfL+QEOI93tNmCioPOR8iUvqJGSOU/+oqo6Y3ME2+SZEeZfrHciNiXjaGB+G4a8o76ftbHE78VQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-auth.min.js" integrity="sha512-l0i+O3AfLS/mtNotaGw8tg4qg5bVCZDEwUDiDjAicmBrR0G+lqMlmSozvfPcX1TwliG4tbuFgo2l/xAlFc0NkQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-database.min.js" integrity="sha512-gMSOOzrtVreCU7tq0PaPX+YfFhT0f5VXVucwDOWscAs6j8tz5OcBa9R66Pb88O6F2OJMCHy+/TY7vhM15Z/joQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase.min.js" integrity="sha512-8Lwt4up5Cw4G+UtP/kxD9Q3uCEF3QEtYDfWsw3UreavHaTWJiEbYGU8BCvI3N9thGHr0g7O1oyjEfMld9iyXdg==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="/scripts/firebase.js"></script>
 </head>
 
 <body>
-    <notify>
-        <box-notify>
-            Your Login
-        </box-notify>
-    </notify>
+    <noti id="notify">
+
+    </noti>
     <loader class="login-page" id="login-page-loader">
-        <svg class="loader-svg" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="96" height="96" viewBox="0 0 172 172"><g style="fill: var(--c9);" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g id="original-icon" fill=""><path d="M86,7.16667c-43.5375,0 -78.83333,35.29583 -78.83333,78.83333c0,43.5375 35.29583,78.83333 78.83333,78.83333c43.5375,0 78.83333,-35.29583 78.83333,-78.83333c0,-43.5375 -35.29583,-78.83333 -78.83333,-78.83333zM87.419,149.10967c-20.56833,0 -39.89683,-10.06917 -51.7075,-26.94667c-2.26467,-3.23933 -1.4835,-7.70417 1.763,-9.98317c3.26083,-2.26467 7.7185,-1.47633 9.98317,1.763c9.13033,13.03617 24.07283,20.82633 39.9685,20.82633c26.875,0 48.74767,-21.8655 48.74767,-48.74767c0,-25.2625 -19.70117,-46.612 -44.85617,-48.59717c-3.94883,-0.31533 -6.89433,-3.7625 -6.579,-7.71133c0.31533,-3.94167 3.741,-6.8585 7.71133,-6.579c32.54383,2.58 58.05,30.20033 58.05,62.89467c0,34.77983 -28.294,63.081 -63.081,63.081z"></path></g></g></svg>
+        <svg class="loader-svg" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="96" height="96" viewBox="0 0 172 172"><g style="fill: var(--c9);" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z"  ></path><g id="original-icon" fill=""><path d="M86,7.16667c-43.5375,0 -78.83333,35.29583 -78.83333,78.83333c0,43.5375 35.29583,78.83333 78.83333,78.83333c43.5375,0 78.83333,-35.29583 78.83333,-78.83333c0,-43.5375 -35.29583,-78.83333 -78.83333,-78.83333zM87.419,149.10967c-20.56833,0 -39.89683,-10.06917 -51.7075,-26.94667c-2.26467,-3.23933 -1.4835,-7.70417 1.763,-9.98317c3.26083,-2.26467 7.7185,-1.47633 9.98317,1.763c9.13033,13.03617 24.07283,20.82633 39.9685,20.82633c26.875,0 48.74767,-21.8655 48.74767,-48.74767c0,-25.2625 -19.70117,-46.612 -44.85617,-48.59717c-3.94883,-0.31533 -6.89433,-3.7625 -6.579,-7.71133c0.31533,-3.94167 3.741,-6.8585 7.71133,-6.579c32.54383,2.58 58.05,30.20033 58.05,62.89467c0,34.77983 -28.294,63.081 -63.081,63.081z"></path></g></g></svg>
     </loader>
     <non class="login-page">
         <non class="banner-home" id="">
@@ -76,7 +55,8 @@
                         Login with Facebook
                     </non>
                 </non>
-                <non class="bt-gg mko-btn google" id="">
+
+                <non class="bt-gg mko-btn google" onclick="GoogleAuth()" id="GoogleAuth">
                     <img src="https://cdn.discordapp.com/attachments/429536288274776064/833855878846873650/icons8-google.svg">
                     <non class="" id="">
                         Login with Google
@@ -86,10 +66,35 @@
             </non>
         </blur>
     </non>
+    <script src="/scripts/script.js">
+    </script>
     <script>
-        setTimeout(function() {
-            $("#login-page-loader").hide();
-        }, 4000);
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+                // User is signed in, see docs for a list of available properties
+                // https://firebase.google.com/docs/reference/js/firebase.User
+                var uid = user.uid;
+                var name = user.displayName;
+                console.log(name);
+                $("#notify").html('<notify><box-notify id="box-notify">Your Loged in ' + name + '</box-notify></notify>');
+                setTimeout(function() {
+                    $("[id=box-notify]").remove();
+                    setTimeout(function() {
+                        $("#login-page-loader").show();
+                        setTimeout(function() {
+                            window.location.href = "/app";
+                        }, 1000);
+                    }, 1000);
+                }, 1000);
+                // ...
+            } else {
+                $("#login-page-loader").hide();
+            }
+        });
+
+        function DiscordAuth() {
+            window.location.href = 'https://discord.com/oauth2/authorize?response_type=code&client_id=632856373675294724&scope=guilds%20identify%20guilds.join&redirect_uri=https%3A%2F%2Fdiscord-auth.animekeyo.com%2Fapi%2Fdiscord%2Fcallback&prompt=consent';
+        }
     </script>
 </body>
 <html>
