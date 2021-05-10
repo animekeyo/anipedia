@@ -1,1 +1,11 @@
-<input id="txt" type="text" onkeypress="this.style.width = ((this.value.length + 1) * 8) + 'px';">
+<style>
+    small_loader svg {
+        animation: loading 0.5s linear infinite;
+    }
+    
+    @keyframes loading {
+        to {
+            transform: rotate(359deg);
+        }
+    }
+</style>

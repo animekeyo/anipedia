@@ -887,6 +887,30 @@
             letter-spacing: 0.1rem;
             margin: 1rem;
         }
+        
+        loading.center-flex {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            gap: 0.3rem;
+            /* text-transform: uppercase; */
+        }
+        
+        loading.center-flex small_loader,
+        loading.center-flex small_loader svg {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            fill: var(--c9);
+            width: 1.3rem;
+            height: 1.3rem;
+        }
     </style>
 </head>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.7/dist/sweetalert2.all.min.js"></script>
@@ -928,24 +952,32 @@
 
             </profile-pic>
             <user-name>
-                <non id="user_name">Syera Chan </non>
+                <non id="user_name">
+                    <loadin import_small_loader>
+
+                    </loadin>
+                </non>
                 <badge class="center-flex" id="user_badges">
 
                 </badge>
             </user-name>
             <dex-c id="user_dec">
-                Bio
+                <loadin import_small_loader>
+
+                </loadin>
             </dex-c>
             <buttons>
                 <buttons-x>
                     <non id="user_status">
-                        Status
+                        <loadin import_small_loader>
+
+                        </loadin>
                     </non>
                     <non id="following_button" class="following">
-                        0
+
                     </non>
                     <non id="followers_button" class="followers">
-                        0
+
                     </non>
                 </buttons-x>
 

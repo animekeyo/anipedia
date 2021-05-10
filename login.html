@@ -2,10 +2,14 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-
+    <title name></title>
     <style>
         @import url("/styles/main.css");
     </style>
+    <script>
+        var meta = document.getElementsByName("description")[0]; //this assumes there is only one description
+        meta.setAttribute("content", "new description"); // set description
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.7/dist/sweetalert2.all.min.js"></script>
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -191,7 +195,7 @@
                 // https://firebase.google.com/docs/reference/js/firebase.User
                 var uid = user.uid;
                 var name = user.displayName;
-
+                $('[name]').text(name);
 
                 setTimeout(
                     function() {
