@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <style>
         @import url("/styles/main.css");
          :root {
@@ -202,16 +201,12 @@
         }
         
         profile-info banner non-b {
-            width: 60rem!important;
             position: unset!important;
         }
         
         profile-info banner {
-            height: 20rem;
             width: -webkit-fill-available;
-            /* border-radius: 1rem; */
             overflow: hidden;
-            /* margin: 1rem; */
         }
         
         profile-info banner non-a.second {
@@ -220,8 +215,6 @@
             right: 0;
             bottom: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
             z-index: 1;
             background: linear-gradient(rgba(255, 255, 255, 0.1), var(--c15) 80%, var(--c15) 100%);
         }
@@ -246,161 +239,11 @@
             width: -webkit-fill-available;
             display: flex;
             flex-direction: column;
-            margin: 0.5vw;
-            gap: 0.5vw;
             flex-wrap: wrap;
             align-content: flex-end;
             justify-content: flex-end;
             height: -webkit-fill-available;
             align-items: flex-end;
-        }
-        
-        @media (max-width:550px) {
-            /*for mobile users*/
-            dec-post text {
-                font-size: 5vw;
-                width: 85vw;
-            }
-            profile-pic heart svg {
-                width: 7vw;
-                height: 7vw;
-            }
-            dec-post.bottom {
-                top: 14vw;
-                margin: 2vw;
-                padding: 2.5vw 4vw;
-                border-radius: 1002px;
-                background: #0b0e1194;
-            }
-            profile-pic svg {
-                width: 7vw;
-                height: 7vw;
-            }
-            post-profile-details {
-                grid-template-columns: 82vw 10vw;
-                margin: 2vw;
-            }
-            post-profile-details {
-                height: 11vw;
-            }
-            non-main-pfp-data {
-                grid-template-columns: 11vw 69vw;
-                gap: 2vw;
-            }
-            profile-name-time {
-                font-size: 4vw;
-            }
-            profile-name-time name {
-                font-size: 4.5vw;
-                letter-spacing: 0.1vw;
-            }
-            profile-name-time time {
-                font-size: 3.5vw;
-            }
-            profile-name-time name badge svg {
-                width: 5vw;
-                height: 5vw;
-            }
-            name.center-flex {
-                gap: 1vw;
-            }
-            post-profile-details.bottom.second {
-                bottom: 14vw;
-                grid-template-columns: 70vw 22vw;
-            }
-            post-2nd,
-            post {
-                width: -webkit-fill-available;
-                height: 156vw;
-            }
-            post-bg {
-                margin: 30vw 0vw;
-            }
-            .tiles {
-                margin: 2vw;
-                gap: 2vw;
-            }
-            post-profile-details non text {
-                gap: 1vw;
-                font-size: 4vw;
-            }
-            non-main-pfp-data.react {
-                grid-template-columns: 11vw 11vw 11vw 11vw 11vw;
-            }
-        }
-        
-        @media (min-width:550px) {
-            /*for pc users*/
-            dec-post.bottom {
-                top: 2.4rem;
-                margin: 0.3rem;
-                padding: 0.5rem 0.6rem;
-                border-radius: 1002px;
-                background: #0b0e1194;
-            }
-            dec-post text {
-                font-size: 0.8rem;
-                width: 214px;
-            }
-            post-profile-details.second {
-                bottom: 2.5rem;
-                grid-template-columns: 11rem 3.5rem;
-            }
-            non-main-pfp-data.react {
-                grid-template-columns: 2rem 2rem 2rem 2rem;
-            }
-            profile-pic svg {
-                width: 1rem;
-                height: 1rem;
-            }
-            post-profile-details non text {
-                gap: 0.2rem;
-                font-size: 0.7rem;
-            }
-            post-profile-details non svg {
-                margin: 0.4rem;
-            }
-            profile-pic {
-                margin: 0.1rem;
-            }
-            post-profile-details {
-                grid-template-columns: 12.5rem 2rem;
-                margin: 0.25rem;
-                height: 2rem;
-            }
-            non-main-pfp-data {
-                grid-template-columns: 2rem 10.3rem;
-                gap: 0.2rem;
-            }
-            profile-name-time {
-                font-size: 2rem;
-            }
-            name.center-flex {
-                gap: 0.1rem;
-            }
-            profile-name-time name {
-                font-size: 0.8rem;
-                /* letter-spacing: 0.1vw; */
-            }
-            profile-name-time name badge svg {
-                width: 0.8rem;
-                height: 0.8rem;
-            }
-            profile-name-time time {
-                font-size: 0.5rem;
-            }
-            post-bg {
-                margin: 5rem 0rem;
-            }
-            post-2nd,
-            post {
-                width: 15rem;
-                height: 25rem;
-            }
-            .tiles {
-                gap: 1rem;
-                margin: 1rem;
-            }
         }
         
         profile-info {
@@ -410,13 +253,10 @@
             align-content: center!important;
             justify-content: flex-start!important;
             align-items: center!important;
-            height: 35rem;
         }
         
         profile-index.absolute.center-flex.full-wh {
-            top: 8rem;
             display: flex;
-            gap: 1rem;
             flex-direction: column;
             flex-wrap: nowrap;
             align-content: center;
@@ -425,19 +265,13 @@
         }
         
         profile-info profile-index profile-pic {
-            width: 13rem;
-            height: 13rem;
             z-index: 2;
             background: var(--c14);
-            box-shadow: 0rem 0rem 0rem 0.4rem var( --c15);
         }
         
         profile-info profile-index user-name {
-            font-weight: 900;
-            font-size: 2rem;
             display: flex;
             flex-direction: row;
-            gap: 0.2rem;
             flex-wrap: nowrap;
             align-content: center;
             justify-content: center;
@@ -446,33 +280,21 @@
             font-family: Roboto, Arial, Helvetica, sans-serif;
         }
         
-        profile-info profile-index user-name badge svg {
-            width: 2rem;
-            height: 2rem;
-        }
-        
         profile-info profile-index dex-c {
-            font-size: 1.2rem;
             color: var(--c10);
-            width: 60rem;
             text-align: center;
         }
         
         profile-info profile-index buttons non {
-            padding: 0.5rem 1rem;
             background: var(--c14);
-            border-radius: 5px;
         }
         
         profile-info profile-index buttons {
-            font-weight: 900;
             display: flex;
             flex-direction: row;
-            gap: 0.5rem;
             flex-wrap: nowrap;
             align-content: center;
             justify-content: space-between;
-            width: 60rem;
             color: var(--white);
             align-items: center;
             font-family: Roboto, Arial, Helvetica, sans-serif;
@@ -481,17 +303,14 @@
         non.following::before {
             content: "Following";
             color: var(--c10);
-            margin-right: 0.4rem;
         }
         
         non.followers::before {
             content: "Follower's";
             color: var(--c10);
-            margin-right: 0.4rem;
         }
         
         buttons-x {
-            gap: 0.5rem;
             display: flex;
             flex-direction: row;
             flex-wrap: nowrap;
@@ -576,12 +395,497 @@
         
         upload-cover non {
             color: var(--c9);
-            padding: 0.6rem 0.8rem;
             background: var(--c15);
             border-radius: 5px;
             font-family: Roboto, Arial, Helvetica, sans-serif;
-            font-size: 1rem;
             FONT-WEIGHT: 900;
+        }
+        
+        profile-info profile-index user-name badge {
+            flex-direction: row!important;
+        }
+        
+        header {
+            height: 3rem!important;
+            background: var(--c15);
+        }
+        /*maincss*/
+        
+        @media (max-width:980px) {
+            /*mobcss*/
+            profile-info banner non-b {
+                width: 100vw!important;
+                border-radius: 0vw 0vw 5vw 5vw!important;
+                height: 80vw!important;
+                position: absolute!important;
+            }
+            profile-info banner {
+                height: 200vw;
+            }
+            profile-info banner non-a.second {
+                width: 100%;
+                height: 100%;
+            }
+            upload-cover.center-flex {
+                margin: 3.5vw;
+                gap: 1.5vw;
+                display: flex;
+                justify-content: flex-start;
+            }
+            profile-info {
+                height: 130vw;
+            }
+            profile-index.absolute.center-flex.full-wh {
+                top: 50vw;
+                gap: 3vw;
+                z-index: 2;
+                height: 81vw;
+                overflow: hidden;
+            }
+            profile-info profile-index profile-pic {
+                width: 40vw;
+                height: 40vw;
+                margin-top: 1vw;
+                box-shadow: 0vw 0vw 0vw 1vw var( --c15);
+            }
+            profile-info profile-index user-name {
+                font-weight: 900;
+                font-size: 7vw;
+                gap: 1vw;
+            }
+            profile-info profile-index user-name badge svg {
+                width: 7vw;
+                height: 7vw;
+            }
+            profile-info profile-index dex-c {
+                font-size: 4vw;
+                width: -webkit-fill-available;
+                margin: 0vw 5vw;
+            }
+            profile-info profile-index buttons non {
+                padding: 2vw;
+                border-radius: 2px;
+                font-size: 3.7vw;
+            }
+            profile-info profile-index buttons {
+                font-weight: 900;
+                gap: 2vw;
+                margin: 2vw;
+                width: 97vw;
+            }
+            non.following::before {
+                margin-right: 0.4rem;
+            }
+            non.followers::before {
+                margin-right: 0.4rem;
+            }
+            buttons-x {
+                gap: 2vw;
+            }
+            upload-cover non {
+                padding: 2.6vw 3vw;
+                font-size: 2.5vw;
+                background: #00000066;
+                border-radius: 1000vw;
+                box-shadow: 0vw 0vw 0vw 0.2vw var(--c9);
+            }
+            dec-post text {
+                font-size: 5vw;
+                width: 85vw;
+            }
+            profile-pic heart svg {
+                width: 7vw;
+                height: 7vw;
+            }
+            dec-post.bottom {
+                top: 14vw;
+                margin: 2vw;
+                padding: 2.5vw 4vw;
+                border-radius: 1002px;
+                background: #0b0e1194;
+            }
+            profile-pic svg {
+                width: 7vw;
+                height: 7vw;
+            }
+            post-profile-details {
+                grid-template-columns: 82vw 10vw;
+                margin: 2vw;
+            }
+            post-profile-details {
+                height: 11vw;
+            }
+            non-main-pfp-data {
+                grid-template-columns: 11vw 69vw;
+                gap: 2vw;
+            }
+            profile-name-time {
+                font-size: 4vw;
+            }
+            profile-name-time name {
+                font-size: 4.5vw;
+                letter-spacing: 0.1vw;
+            }
+            profile-name-time time {
+                font-size: 3.5vw;
+            }
+            profile-name-time name badge svg {
+                width: 5vw;
+                height: 5vw;
+            }
+            name.center-flex {
+                gap: 1vw;
+            }
+            post-profile-details.bottom.second {
+                bottom: 14vw;
+                grid-template-columns: 70vw 22vw;
+            }
+            post-2nd,
+            post {
+                width: -webkit-fill-available;
+                height: 156vw;
+            }
+            post-bg {
+                margin: 30vw 0vw;
+            }
+            .tiles {
+                margin: 2vw;
+                gap: 2vw;
+            }
+            post-profile-details non text {
+                gap: 1vw;
+                font-size: 4vw;
+            }
+            non-main-pfp-data.react {
+                grid-template-columns: 11vw 11vw 11vw 11vw 11vw;
+            }
+        }
+        
+        @media (min-width:980px) {
+            /*pccss*/
+            menuo.center-flex.absolute {
+                width: 6rem;
+                gap: 1rem;
+                padding: 0rem;
+                height: 0rem;
+                right: 0;
+                background: var(--c14);
+                z-index: 100;
+                left: unset;
+                border-radius: 0rem 0rem 1rem 1rem;
+                top: 4rem;
+                margin: 0rem;
+                justify-content: flex-start;
+                overflow: hidden;
+                transition: 0.2s;
+            }
+            menuo non.center-flex {
+                display: flex;
+                gap: 0.5rem;
+                flex-direction: row;
+                width: -webkit-fill-available;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+            }
+            menuo non.center-flex non-a.center-flex svg {
+                fill: var(--c9);
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                align-content: center;
+                justify-content: center;
+                align-items: center;
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+            header non.main search:hover {
+                background: var(--c13);
+                transition: 0.2s;
+            }
+            header non.main search non svg {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                align-content: center;
+                justify-content: center;
+                align-items: center;
+                height: 1rem;
+                fill: var(--c9);
+                height: 1.2rem;
+                width: 1.2rem;
+                padding: 0rem 0.2rem 0rem 0.5rem;
+            }
+            header non.main input:focus {
+                outline: 2px solid transparent;
+                outline-offset: 2px;
+            }
+            header non.main search input {
+                border: unset;
+                width: -webkit-fill-available;
+                height: -webkit-fill-available;
+                background: transparent;
+                border-radius: 0.5rem;
+                font-size: 0.9rem;
+                transition: 0.2s;
+                color: var(--c9);
+                flex-direction: row!important;
+                font-family: 'Roboto';
+                font-weight: 900;
+            }
+            header non.main search {
+                border: unset;
+                width: 25rem;
+                height: 2rem;
+                background: var(--c14);
+                border-radius: 0.3rem;
+                transition: 0.2s;
+                flex-direction: row!important;
+            }
+            header non.main {
+                /* background: var(--c4); */
+                width: 60rem;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-content: center;
+                align-items: center;
+            }
+            header {
+                height: 4rem!important;
+                top: 0;
+                position: fixed;
+                color: var(--c9);
+                z-index: 100;
+            }
+            header non.main logo {
+                font-size: 1.3rem;
+                font-family: 'Roboto';
+                font-weight: 900;
+                letter-spacing: 0.02rem;
+            }
+            header non.main profile-pic {
+                height: 2rem;
+                width: 2rem;
+            }
+            profile-info profile-index user-name badge {
+                gap: 0.2rem;
+                margin: 0.2rem;
+            }
+            profile-info banner non-b {
+                width: 60rem!important;
+                border-radius: 0rem 0rem 1rem 1rem;
+            }
+            profile-info banner {
+                height: 20rem;
+            }
+            profile-info banner non-a.second {
+                width: 100%;
+                height: 100%;
+            }
+            upload-cover.center-flex {
+                margin: 0.5vw;
+                gap: 0.5vw;
+            }
+            profile-info {
+                height: 35rem;
+                margin-top: 4rem!important;
+            }
+            profile-index.absolute.center-flex.full-wh {
+                top: 8rem;
+                gap: 1rem;
+            }
+            profile-info profile-index profile-pic {
+                width: 13rem;
+                height: 13rem;
+                box-shadow: 0rem 0rem 0rem 0.4rem var( --c15);
+            }
+            profile-info profile-index user-name {
+                font-weight: 900;
+                font-size: 2rem;
+                gap: 0.2rem;
+            }
+            profile-info profile-index user-name badge svg {
+                width: 2rem;
+                height: 2rem;
+            }
+            profile-info profile-index dex-c {
+                font-size: 1.2rem;
+                width: 60rem;
+            }
+            profile-info profile-index buttons non {
+                padding: 0.5rem 1rem;
+                border-radius: 5px;
+            }
+            profile-info profile-index buttons {
+                font-weight: 900;
+                gap: 0.5rem;
+                width: 60rem;
+            }
+            non.following::before {
+                margin-right: 0.4rem;
+            }
+            non.followers::before {
+                margin-right: 0.4rem;
+            }
+            buttons-x {
+                gap: 0.5rem;
+            }
+            upload-cover non {
+                padding: 0.6rem 0.8rem;
+                font-size: 1rem;
+            }
+            dec-post.bottom {
+                top: 2.4rem;
+                margin: 0.3rem;
+                padding: 0.5rem 0.6rem;
+                border-radius: 1002px;
+                background: #0b0e1194;
+            }
+            dec-post text {
+                font-size: 0.8rem;
+                width: 214px;
+            }
+            post-profile-details.second {
+                bottom: 2.5rem;
+                grid-template-columns: 11rem 3.5rem;
+            }
+            non-main-pfp-data.react {
+                grid-template-columns: 2rem 2rem 2rem 2rem;
+            }
+            profile-pic svg {
+                width: 1rem;
+                height: 1rem;
+            }
+            post-profile-details non text {
+                gap: 0.2rem;
+                font-size: 0.7rem;
+            }
+            post-profile-details non svg {
+                margin: 0.4rem;
+            }
+            profile-pic {
+                margin: 0.1rem;
+            }
+            post-profile-details {
+                grid-template-columns: 12.5rem 2rem;
+                margin: 0.25rem;
+                height: 2rem;
+            }
+            non-main-pfp-data {
+                grid-template-columns: 2rem 10.3rem;
+                gap: 0.2rem;
+            }
+            profile-name-time {
+                font-size: 2rem;
+            }
+            name.center-flex {
+                gap: 0.1rem;
+            }
+            profile-name-time name {
+                font-size: 0.8rem;
+                /* letter-spacing: 0.1vw; */
+            }
+            profile-name-time name badge svg {
+                width: 0.8rem;
+                height: 0.8rem;
+            }
+            profile-name-time time {
+                font-size: 0.5rem;
+            }
+            post-bg {
+                margin: 5rem 0rem;
+            }
+            post-2nd,
+            post {
+                width: 15rem;
+                height: 25rem;
+            }
+            .tiles {
+                gap: 1rem;
+                margin: 1rem;
+            }
+        }
+        
+        menuo non.center-flex:hover {
+            color: var(--c10);
+            cursor: pointer;
+        }
+        
+        user-search.center-flex.absolute {
+            top: 4rem;
+            height: fit-content;
+            left: 19.5rem;
+            width: 23.5rem;
+            padding: 1rem;
+            gap: 1rem;
+            display: flex;
+            color: var(--c9)!important;
+            background: var( --c15);
+            align-items: flex-start;
+            border-radius: 0rem 0rem 1rem 1rem;
+            padding-bottom: 1.5rem;
+        }
+        
+        user-search a {
+            color: var(--c9);
+            cursor: pointer;
+            text-decoration: unset;
+            font-size: 1rem;
+            width: fit-content;
+            background: var(--c13);
+            border-radius: 0.2rem;
+            padding: 0.1rem 0.4rem;
+        }
+        
+        user-search.center-flex.absolute non-ffg a {
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            /* gap: 1rem; */
+            align-content: center;
+        }
+        
+        user-search.center-flex.absolute non-ffg a nox {
+            color: var(--c19);
+            padding: 0.2rem 0.4rem;
+            background: var(--c15);
+            font-size: 0.9rem;
+            border-radius: 0.2rem;
+            text-transform: uppercase;
+        }
+        
+        non-ffg {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            gap: 0.3rem;
+            align-content: center;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        
+        non-ffg {
+            overflow: hidden;
+        }
+        
+        add_verified.center-flex {
+            width: 60rem;
+            display: flex;
+            align-items: flex-end;
+        }
+        
+        add_verified.center-flex nonv {
+            color: var(--c19);
+            background: var(--c15);
+            padding: 1rem;
+            font-family: 'Roboto';
+            FONT-WEIGHT: 800;
+            letter-spacing: 0.1rem;
+            margin: 1rem;
         }
     </style>
 </head>
@@ -598,6 +902,10 @@
 <script src="/scripts/firebase.js"></script>
 
 <body>
+
+    <header class="full-wh center-flex" header>
+
+    </header>
     <profile-info class="center-flex relative">
         <banner class="center-flex relative">
             <non-ag class="full-wh full-bg center-flex absolute" id="user_banner">
@@ -607,6 +915,9 @@
 
             </non-a>
             <non-b class="full-wh full-bg center-flex absolute" id="user_banner">
+                <add_verified class=" center-flex">
+                    <nonv add_verified style="display: none;"></nonv>
+                </add_verified>
                 <upload-cover id="upload_banner_picture" class="center-flex">
                 </upload-cover>
             </non-b>
@@ -618,8 +929,8 @@
             </profile-pic>
             <user-name>
                 <non id="user_name">Syera Chan </non>
-                <badge class="center-flex">
-                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 171 171" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,171.99654v-171.99654h171.99654v171.99654z" fill="none"></path><g><path d="M105.52125,10.6875l12.23006,18.90975l22.49363,1.12575l1.13644,22.49006l18.92044,12.21938l-10.26356,20.04975l10.27425,20.03906l-18.90975,12.23006l-1.12575,22.49363l-22.49006,1.13644l-12.21938,18.92044l-20.04975,-10.26356l-20.03906,10.27425l-12.23006,-18.90975l-22.49362,-1.12575l-1.13644,-22.49006l-18.92044,-12.21938l10.26356,-20.04975l-10.27425,-20.03906l18.90975,-12.23006l1.12575,-22.49362l22.49006,-1.13644l12.21938,-18.92044l20.04975,10.26356z" fill="#42a5f5"></path><path d="M76.22325,111.34594l-23.14556,-23.13844l7.55963,-7.55606l15.69994,15.69994l34.086,-33.03863l7.4385,7.67363z" fill="#ffffff"></path></g></g></svg>
+                <badge class="center-flex" id="user_badges">
+
                 </badge>
             </user-name>
             <dex-c id="user_dec">
@@ -719,11 +1030,40 @@
             </post-profile-details>
         </post>
     </div>
+
+    <script src="/scripts/com.js">
+    </script>
     <input style="display: none;" id="uploadbanner" type="file" class="imgur" accept="image/*" data-max-size="5000" />
     <input style="display: none;" id="uploadpfp" type="file" class="imgur" accept="image/*" data-max-size="5000" />
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js">
     </script>
     <script data-cfasync="false" type="text/javascript">
+        time = Date.now();
+        time = time.toString();
+        time = time.slice(0, -3);
+        time = parseInt(time);
+
+        var timeNow = time;
+
+        function menuo() {
+            var x = document.getElementById("menuo");
+            x.style.height = "6.5rem";
+            x.style.padding = "1rem";
+        };
+
+        function search_bar_close() {
+            var x = document.getElementById("fsdfsdf");
+            x.style.padding = "0rem";
+        };
+
+        function menuo_close() {
+            var x = document.getElementById("menuo");
+            x.style.height = "0rem";
+            x.style.padding = "0rem";
+        };
+        $('[header]').html(header);
+
+
         function timeDifference(current, previous) {
 
             var sPerMinute = 60;
@@ -825,6 +1165,7 @@
         };
 
 
+
         firebase.database().ref('/data/users/').once('value', function(snapshot) {
             snapshot.forEach((user) => {
                 var username = (user.val() && user.val().username);
@@ -833,7 +1174,7 @@
                 var onlineState = (user.val() && user.val().onlineState);
 
                 $('[id=dname-' + userid + ']').text(username);
-                $('[id=pfp-' + userid + ']').css('background-image', 'url(' + profile_picture + '),url(https://animekeyo.com/anipedia/icons/icon.png)');
+                $('[id=pfp-' + userid + ']').css('background-image', 'url(' + profile_picture + '),url(/icons/icon.png)');
 
                 if (onlineState == true) {
                     $('[id=statuso-' + userid + ']').css('background-color', 'var(--c19)');
@@ -845,8 +1186,70 @@
 
             })
         });
+        $('body').on('click', function() {
+            $('user-search').css("height", "0rem");
+            $('user-search').css("padding", "0rem");
+            $('non-ffg').css("height", "0rem");
+        });
+        $('[search_bar_close]').on('click', function() {
+            $('user-search').css("height", "0rem");
+            $('user-search').css("padding", "0rem");
+            $('non-ffg').css("height", "0rem");
+        });
+
+
+        $('[search_users]').on("change", function() {
+            var search_val = $('[search_users]').val();
+            $('user-search').css("height", "auto");
+            $('user-search').css("padding", "1rem");
+            $('non-ffg').css("height", "auto");
+
+            if (search_val == 0) {
+
+                $('[import_search_data]').html("");
+                setTimeout(
+                    function() {
+                        $('[import_search_data]').prepend('<nen>Not Found</nen>');
+                    }, 0050);
+            } else {
+                firebase.database().ref('/data').child('users').orderByChild('username').startAt(search_val).on("value", function(snapshot) {
+                    console.log(snapshot.val());
+                    snapshot.forEach(function(data) {
+                        console.log(data.val().username);
+                        $('[import_search_data]').html("");
+                        setTimeout(
+                            function() {
+                                $('[import_search_data]').prepend('<a href="/u?id=' + data.key + '">' + data.val().username + ' <nox class=" center-flex">' + data.val().status + '</nox></a>');
+                            }, 0050);
+
+                    });
+                });
+            }
+        })
+
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
+                ////////////////////////////////////////
+
+                if (user.uid == 'YH2r7xe271Xv5yVbnBOHRMJVVmf2') {
+                    $('[add_verified]').show();
+                    $('[add_verified]').on('click', function() {
+                        var db_ref = firebase.database().ref('/data/users/' + id).child('badges');
+                        db_ref.once('value', function(snapshot) {
+                            var verified = (snapshot.val() && snapshot.val().verified);
+                            if (verified == true) {
+                                db_ref.remove();
+                            } else {
+                                db_ref.update({
+                                    verified: true,
+                                });
+                            };
+                        });
+                    });
+                }
+
+
+                /////////////////////////////////////////
                 var user = firebase.auth().currentUser;
                 if (id == user.uid) {
                     const data = '<non id="upload_banner_button">Upload Cover</non><non id="upload_profile_pic_button">Upload Profile Picture</non>';
@@ -1023,11 +1426,10 @@
 
                 $("[id=edit_profile]").click(function() {
                     var rxxf = firebase.database().ref('/data/users/');
+
                     rxxf.child(id).on('value', function(snapshot) {
                         var foll = snapshot.val();
-                        $('#in-banner').val(foll.banner);
                         $('#in-name').val(foll.username);
-                        $('#in-pfp').val(foll.profile_picture);
                         $('#in-bio').val(foll.bio);
                         var cos = foll.bio;
                         $('#text-bio').text(cos);
@@ -1036,7 +1438,7 @@
                             value: formValues
                         } = Swal.fire({
                             title: 'Update Profile',
-                            html: '<input id="swal-input1" placeholder="Display Name" value="' + foll.username + '" class="swal2-input">' +
+                            html: '<input id="swal-input1" placeholder="Name || Only 20 Letters " value="' + foll.username + '" class="swal2-input">' +
                                 '<input id="swal-input2" value="' + foll.bio + '" class="swal2-input">',
                             focusConfirm: false,
                             confirmButtonText: "Save",
@@ -1045,14 +1447,26 @@
                                 var user = firebase.auth().currentUser;
                                 var name = $('#swal-input1').val();
                                 var bio = $('#swal-input2').val();
-                                firebase.database().ref('/data/users/' + user.uid).update({
-                                    username: name,
+                                var refo = firebase.database().ref('/data/users/' + user.uid);
+                                refo.update({
                                     bio: bio,
+                                }).catch(function(error) {
+                                    swal("WEEBOO!!?", "Only 80 Letter's are allowed || For Bio", "error", {
+                                        className: "black",
+                                        closeOnClickOutside: false
+                                    });
+                                });
+                                refo.update({
+                                    username: name,
+                                }).catch(function(error) {
+                                    swal("WEEBOO!!?", "Only 20 Letter's are allowed || For Name", "error", {
+                                        className: "black",
+                                        closeOnClickOutside: false
+                                    });
                                 });
                                 user.updateProfile({
                                     displayName: name,
                                 })
-
                             }
                         }).then(function() {
                             // Update successful.
@@ -1072,19 +1486,19 @@
                 var rxxf = firebase.database().ref('/data/users/');
                 rxxf.child(id).on('value', function(snapshot) {
                     var foll = snapshot.val();
-                    $('#in-banner').val(foll.banner);
+
                     $('#in-name').val(foll.username);
-                    $('#in-pfp').val(foll.profile_picture);
+
                     $('#in-bio').val(foll.bio);
                     var cos = foll.bio;
+                    var cosx = foll.username;
                     $('#text-bio').text(cos);
-                    if (cos == 0) {
+                    if (cosx == 0) {
                         const {
                             value: formValues
                         } = Swal.fire({
-                            title: 'Update Profile',
-                            html: '<input id="swal-input1" placeholder="Display Name" value="' + foll.username + '" class="swal2-input">' +
-                                '<input id="swal-input2" value="' + foll.bio + '" class="swal2-input">',
+                            title: 'Blank Name is Not allowed',
+                            html: '<input id="swal-input1" placeholder="Display Name" value="' + foll.username + '" class="swal2-input">',
                             focusConfirm: false,
 
                             preConfirm: () => {
@@ -1093,7 +1507,6 @@
                                 var bio = $('#swal-input2').val();
                                 firebase.database().ref('/data/users/' + user.uid).update({
                                     username: name,
-                                    bio: bio,
                                 });
                                 user.updateProfile({
                                     displayName: name,
@@ -1118,11 +1531,14 @@
 
                 ref.update({
                     onlineState: true,
-                    status: "online"
+                    status: "Online",
+                    StateTime: timeNow
+
                 });
                 ref.onDisconnect().update({
                     onlineState: false,
-                    status: "offline"
+                    status: "Offline",
+                    StateTime: timeNow
                 });
 
                 if (id == user.uid) {
@@ -1234,13 +1650,27 @@
             });
 
         });
+
         var db_ref = firebase.database().ref('/data/users/' + id);
+        db_ref.child('badges').on('value', function(snapshot) {
+            console.log('working badges');
+            var verified = (snapshot.val() && snapshot.val().verified);
+            if (verified == true) {
+                $('[id=user_badges]').html(icon_verified);
+                $('[add_verified]').text("Remove Verification Mark");
+            } else {
+                $('[id=user_badges]').html("");
+                $('[add_verified]').text("Add Verification Mark");
+            }
+        });
+
         db_ref.on('value', function(snapshot) {
             var username = (snapshot.val() && snapshot.val().username);
             var profile_picture = (snapshot.val() && snapshot.val().profile_picture);
             var banner = (snapshot.val() && snapshot.val().banner);
             var bio = (snapshot.val() && snapshot.val().bio);
             var onlineState = (snapshot.val() && snapshot.val().onlineState);
+
             if (onlineState == true) {
                 $('[id=user_status]').addClass("rambo");
                 $('[id=user_status]').text('Online');
@@ -1250,8 +1680,8 @@
             };
             $("[id=user_name]").text(username);
             $("[id=user_dec]").text(bio);
-            $('[id=user_banner]').css('background-image', 'url(' + banner + '),url(https://animekeyo.com/images/716375.png)');
-            $('[id=user_profile_pic]').css('background-image', 'url(' + profile_picture + '),url(https://animekeyo.com/anipedia/icons/icon.png)');
+            $('[id=user_banner]').css('background-image', 'url(' + banner + '),url(/images/banner.png)');
+            $('[id=user_profile_pic]').css('background-image', 'url(' + profile_picture + '),url(/images/icon.png)');
             // ...
 
             /////////////////////////HEAD////////////////////
