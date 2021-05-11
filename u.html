@@ -63,6 +63,30 @@
             left: 0;
         }
         
+        .fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        
+        .bg-w {
+            background-color: var(--c9);
+        }
+        
+        .bg-b {
+            background-color: var(--c15);
+        }
+        
+        .c-b {
+            color: var(--c15);
+            fill: var(--c15);
+        }
+        
+        .c-w {
+            color: var(--c9);
+            fill: var(--c9);
+        }
+        
         post-bg {
             z-index: 1;
             width: -webkit-fill-available;
@@ -413,6 +437,57 @@
         
         @media (max-width:980px) {
             /*mobcss*/
+            body {
+                padding-bottom: 4rem;
+            }
+            header {
+                display: none!important;
+            }
+            mobile-header top-bar non-b.center-flex profile-pic {
+                width: 2rem;
+                height: 2rem;
+            }
+            mobile-header top-bar non-b.center-flex {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-content: center;
+                padding: 0rem 1rem;
+                justify-content: space-between;
+            }
+            mobile-header top-bar non-a.center-flex,
+            mobile-header top-bar non-b.center-flex {
+                height: 3.80rem;
+                width: -webkit-fill-available;
+                z-index: 102;
+                background: var(--c15);
+                color: var(--c9);
+                font-size: 1rem;
+                border-bottom: 0.15rem solid var(--c13);
+            }
+            bottom-bar.fixed.center-flex non svg {
+                fill: var(--c9);
+                width: 1.7rem;
+                padding: 0.5rem;
+                margin: 0.5rem;
+                height: 1.7rem;
+                /* background: var(--c15); */
+            }
+            bottom-bar.fixed.center-flex {
+                top: unset;
+                bottom: 0;
+                width: -webkit-fill-available;
+                display: flex;
+                flex-direction: row;
+                z-index: 102;
+                height: fit-content;
+                flex-wrap: nowrap;
+                background: var(--c15);
+                border-top: 0.15rem solid var(--c13);
+                align-content: center;
+                justify-content: space-around;
+                align-items: center;
+            }
             profile-info banner non-b {
                 width: 100vw!important;
                 border-radius: 0vw 0vw 5vw 5vw!important;
@@ -563,6 +638,9 @@
         
         @media (min-width:980px) {
             /*pccss*/
+            mobile-header {
+                display: none;
+            }
             menuo.center-flex.absolute {
                 width: 6rem;
                 gap: 1rem;
@@ -926,7 +1004,30 @@
 <script src="/scripts/firebase.js"></script>
 
 <body>
+    <mobile-header>
+        <top-bar class="center-flex">
+            <non-a class="center-flex"></non-a>
+            <non-b class="fixed center-flex">
+                <logo class="center-flex">
+                    animekeyo.
+                </logo>
+                <profile-pic id="user_profile_pic" class="full-bg center-flex">
 
+                </profile-pic>
+            </non-b>
+        </top-bar>
+        <bottom-bar class="fixed center-flex">
+            <non class=" center-flex" icon_home>
+
+            </non>
+            <non class=" center-flex" icon_search>
+
+            </non>
+            <non class=" center-flex" icon_explore>
+
+            </non>
+        </bottom-bar>
+    </mobile-header>
     <header class="full-wh center-flex" header>
 
     </header>

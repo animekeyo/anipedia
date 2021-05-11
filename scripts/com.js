@@ -43,7 +43,11 @@ icon_account_circle = '<svg xmlns="http://www.w3.org/2000/svg" height="24" viewB
 header = '<non class="full-wh main center-flex relative"><logo>animekeyo.</logo>    <user-search class=" center-flex absolute" style="height: 0rem;padding: 0rem;overflow: hidden;"><non-ffg import_search_data></non-ffg><a search_bar_close>Close</a></user-search><search class="center-flex"><non class="center-flex">' + icon_search + '</non><input placeholder="Search for rooms, users or categories" class="center-flex" type="search" search_users></search><profile-pic main_name_alt onclick="menuo()" class="full-bg center-flex" main_profile_picture></profile-pic><menuo id="menuo" class="center-flex absolute" ><non class=" center-flex" main_profile_link><non-a class="center-flex">' + icon_account_circle + '</non-a><non-b class="second">Profile</non-b></non><non class=" center-flex" logout_user><non-a class="center-flex" >' + icon_logout + '</non-a><non-b class="second center-flex">Logout</non-b></non><non onclick="menuo_close()" class=" center-flex"><non-a class="center-flex">' + icon_close + '</non-a><non-b class="second center-flex">Cancel</non-b></non></menuo></non>';
 icon_auto_awesome = '<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><rect fill="none" height="24" width="24" x="0"/></g><g><g><polygon points="19,9 20.25,6.25 23,5 20.25,3.75 19,1 17.75,3.75 15,5 17.75,6.25"/><polygon points="19,15 17.75,17.75 15,19 17.75,20.25 19,23 20.25,20.25 23,19 20.25,17.75"/><path d="M11.5,9.5L9,4L6.5,9.5L1,12l5.5,2.5L9,20l2.5-5.5L17,12L11.5,9.5z M9.99,12.99L9,15.17l-0.99-2.18L5.83,12l2.18-0.99 L9,8.83l0.99,2.18L12.17,12L9.99,12.99z"/></g></g></svg>';
 loader = '<style>loader.center-flex.full-wh.fixed.bg-b svg {fill: var(--c9);width: 1.5rem;height: 1.5rem;animation: loading 0.5s linear infinite;}@keyframes loading {to {transform: rotate(359deg);}}</style><loader class=" center-flex full-wh fixed bg-b">' + icon_loader + '</loader>';
+
 $('[icon_google]').html(icon_google);
 $('[import_loader]').html(loader);
 $('[import_small_loader]').html(small_loader);
 $('[icon_facebook]').html(icon_facebook);
+$('[icon_search]').html(icon_search);
+$('[icon_home]').html(icon_home);
+$('[icon_explore]').html(icon_explore);
