@@ -1,5 +1,8 @@
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
+        $("[main_profile_uid_val]").val(user.uid);
+        $("[main_profile_email_val]").val(user.email);
+
         const data = firebase.database().ref('/data/users/' + user.uid);
         data.on('value', function(snapshot) {
             const username = (snapshot.val() && snapshot.val().username);
@@ -8,8 +11,12 @@ firebase.auth().onAuthStateChanged(function(user) {
             const bio = (snapshot.val() && snapshot.val().bio);
             const onlineState = (snapshot.val() && snapshot.val().onlineState);
             $("[main_name]").text(username);
+            $("[main_name_val]").val(username);
+            $("[main_bio]").text(bio);
+            $("[main_bio_val]").val(bio);
             $('head').prepend('<title>' + username + ' on AnimeKeyo.com</title>');
             $("[main_name_alt]").attr('title', username);
+            $("[main_profile_banner]").css('background-image', 'url(' + banner + '),url(/images/b1.png)', 'background-position', 'center');
             $("[main_profile_picture]").css('background-image', 'url(' + profile_picture + '),url(/images/icon.png)');
             $('[main_profile_link]').on('click', function() {
                 window.location.href = "/u?id=" + user.uid;
@@ -26,6 +33,9 @@ firebase.auth().onAuthStateChanged(function(user) {
         }
     }
 });
+icon_dnd = '<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M3.51309 1.80701C3.51309 1.16583 3.64231 0.556342 3.87635 0.000488281C1.65294 0.539276 0.00244141 2.54084 0.00244141 4.92759C0.00244141 7.72636 2.27461 9.99854 5.07338 9.99854C7.46014 9.99854 9.4617 8.34804 10.0005 6.12463C9.44463 6.35867 8.83271 6.48788 8.19396 6.48788C5.60973 6.48788 3.51309 4.39124 3.51309 1.80701Z" fill="#FFA928"/></svg>';
+icon_setting = '<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><rect fill="none" height="24" width="24"/><path d="M19.5,12c0-0.23-0.01-0.45-0.03-0.68l1.86-1.41c0.4-0.3,0.51-0.86,0.26-1.3l-1.87-3.23c-0.25-0.44-0.79-0.62-1.25-0.42 l-2.15,0.91c-0.37-0.26-0.76-0.49-1.17-0.68l-0.29-2.31C14.8,2.38,14.37,2,13.87,2h-3.73C9.63,2,9.2,2.38,9.14,2.88L8.85,5.19 c-0.41,0.19-0.8,0.42-1.17,0.68L5.53,4.96c-0.46-0.2-1-0.02-1.25,0.42L2.41,8.62c-0.25,0.44-0.14,0.99,0.26,1.3l1.86,1.41 C4.51,11.55,4.5,11.77,4.5,12s0.01,0.45,0.03,0.68l-1.86,1.41c-0.4,0.3-0.51,0.86-0.26,1.3l1.87,3.23c0.25,0.44,0.79,0.62,1.25,0.42 l2.15-0.91c0.37,0.26,0.76,0.49,1.17,0.68l0.29,2.31C9.2,21.62,9.63,22,10.13,22h3.73c0.5,0,0.93-0.38,0.99-0.88l0.29-2.31 c0.41-0.19,0.8-0.42,1.17-0.68l2.15,0.91c0.46,0.2,1,0.02,1.25-0.42l1.87-3.23c0.25-0.44,0.14-0.99-0.26-1.3l-1.86-1.41 C19.49,12.45,19.5,12.23,19.5,12z M12.04,15.5c-1.93,0-3.5-1.57-3.5-3.5s1.57-3.5,3.5-3.5s3.5,1.57,3.5,3.5S13.97,15.5,12.04,15.5z"/></svg>';
+icon_upload = '<svg class="center-flex" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><rect fill="none" height="24" width="24"/></g><g><path d="M7.4,10h1.59v5c0,0.55,0.45,1,1,1h4c0.55,0,1-0.45,1-1v-5h1.59c0.89,0,1.34-1.08,0.71-1.71L12.7,3.7 c-0.39-0.39-1.02-0.39-1.41,0L6.7,8.29C6.07,8.92,6.51,10,7.4,10z M5,19c0,0.55,0.45,1,1,1h12c0.55,0,1-0.45,1-1s-0.45-1-1-1H6 C5.45,18,5,18.45,5,19z"/></g></svg>';
 icon_loader = '<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><rect fill="none" height="24" width="24"/><path d="M4,9L4,9c0.26,0.26,0.34,0.63,0.25,0.98c-0.35,1.36-0.36,2.87,0.1,4.38c0.88,2.91,3.44,5.1,6.44,5.55 c5.52,0.81,10.19-4.06,9.03-9.62c-0.65-3.13-3.23-5.61-6.37-6.16c-1.21-0.21-2.38-0.15-3.46,0.13C9.64,4.35,9.26,4.26,9.01,4.01l0,0 C8.45,3.45,8.73,2.52,9.48,2.32c1.47-0.38,3.06-0.44,4.7-0.09c3.98,0.86,7.09,4.18,7.7,8.2c1.04,6.81-4.82,12.58-11.64,11.42 C6.23,21.16,2.98,17.99,2.2,14c-0.31-1.59-0.24-3.12,0.12-4.53C2.52,8.72,3.45,8.45,4,9z M6,12c0-3.31,2.69-6,6-6s6,2.69,6,6 s-2.69,6-6,6S6,15.31,6,12z M7,5.5C7,6.33,6.33,7,5.5,7S4,6.33,4,5.5S4.67,4,5.5,4S7,4.67,7,5.5z"/></svg>';
 icon_verified = '<svg  xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><g><rect fill="none" height="24" width="24"/><rect fill="none" height="24" width="24"/></g><g><path d="M23,12l-2.44-2.79l0.34-3.69l-3.61-0.82L15.4,1.5L12,2.96L8.6,1.5L6.71,4.69L3.1,5.5L3.44,9.2L1,12l2.44,2.79l-0.34,3.7 l3.61,0.82L8.6,22.5l3.4-1.47l3.4,1.46l1.89-3.19l3.61-0.82l-0.34-3.69L23,12z M9.38,16.01L7,13.61c-0.39-0.39-0.39-1.02,0-1.41 l0.07-0.07c0.39-0.39,1.03-0.39,1.42,0l1.61,1.62l5.15-5.16c0.39-0.39,1.03-0.39,1.42,0l0.07,0.07c0.39,0.39,0.39,1.02,0,1.41 l-5.92,5.94C10.41,16.4,9.78,16.4,9.38,16.01z"/></g></svg>';
 icon_close = '<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M18.3 5.71c-.39-.39-1.02-.39-1.41 0L12 10.59 7.11 5.7c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L10.59 12 5.7 16.89c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0L12 13.41l4.89 4.89c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4z"/></svg>';
@@ -46,10 +56,13 @@ icon_auto_awesome = '<svg xmlns="http://www.w3.org/2000/svg" enable-background="
 loader = '<style>loader.center-flex.full-wh.fixed.bg-b svg {fill: var(--c9);width: 1.5rem;height: 1.5rem;animation: loading 0.5s linear infinite;}@keyframes loading {to {transform: rotate(359deg);}}</style><loader class=" center-flex full-wh fixed bg-b">' + icon_loader + '</loader>';
 
 $('[icon_google]').html(icon_google);
+$('[icon_upload]').html(icon_upload);
 $('[import_loader]').html(loader);
 $('mobile-header').html(mobile_header);
+$('[header]').html(header);
 $('[import_small_loader]').html(small_loader);
 $('[icon_facebook]').html(icon_facebook);
 $('[icon_search]').html(icon_search);
 $('[icon_home]').html(icon_home);
+$('[icon_close]').html(icon_close);
 $('[icon_explore]').html(icon_explore);
