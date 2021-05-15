@@ -335,13 +335,18 @@
                     const dec = $('[dec_input]').val();
                     const link = create_link;
                     const img = $('[postimgdata]').attr('src');
-                    db.doc(user.uid + '/posts/' + create_link).set({
-                        userid: user.uid,
-                        link: link,
-                        img: img,
-                        dec: dec,
-                        time: date,
-                    });
+
+                    if (typeof img == "undefined" || dec == "0") {
+                        alert('NOS');
+                    } else {
+                        db.doc(user.uid + '/posts/' + create_link).set({
+                            userid: user.uid,
+                            link: link,
+                            img: img,
+                            dec: dec,
+                            time: date,
+                        });
+                    };
 
                 });
             } else {
