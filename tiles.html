@@ -337,7 +337,12 @@
                     const img = $('[postimgdata]').attr('src');
 
                     if (typeof img == "undefined" || dec == "0") {
-                        alert('NOS');
+                        swal({
+                            text: "You have to select an image first",
+                            buttons: false,
+                            closeOnClickOutside: false,
+                            timer: 1500,
+                        });
                     } else {
                         db.doc(user.uid + '/posts/' + create_link).set({
                             userid: user.uid,
