@@ -1,75 +1,354 @@
-<div class="tiles">
-    <post class="full-bg relative">
-        <post-profile-details class="full-bg center-flex absolute">
-            <non-main-pfp-data>
-                <profile-pic>
+<!DOCTYPE html>
+<html lang="en">
 
-                </profile-pic>
-                <profile-name-time>
-                    <name class="center-flex">
-                        <namo>
-                            Syera Chan
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url("/styles/main.css");
+        .theme-45FFDWEQArR3 {
+            width: 527px;
+            height: fit-content;
+            background: #151A21;
+            border-radius: 8px;
+            color: white;
+        }
+        
+        .theme-45FFDtEQAKR3 {
+            margin: 2.5rem;
+            display: flex;
+            margin-bottom: 3.5rem;
+            justify-content: flex-start;
+        }
+        
+        .theme-45FFDWpQAKR3,
+        .theme-45FFDtEQAKR3 {
+            gap: 1rem;
+        }
+        
+        .theme-4yFFDWEQAKR3 {
+            gap: .5rem;
+        }
+        
+        .theme-45sFDWEQAKR3 {
+            font-family: 'C1';
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 22px;
+            text-align: center;
+            text-decoration-line: underline;
+            color: #DEE3EA;
+        }
+        
+        .theme-4yFFDWEQAKR3,
+        .theme-45FFDtEQAKR3,
+        .theme-45FFDWpQAKR3,
+        .theme-45FFDWoQAKR3 {
+            align-items: flex-start;
+        }
+        
+        .theme-45FFDWoQAKR3 {
+            font-family: 'C1';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 22px;
+            color: #5D7290;
+            background: #242C37;
+            border: 1px solid #242C37;
+            box-sizing: border-box;
+            border-radius: 8px;
+            /* width: fit-content; */
+            padding: 19px;
+            height: 40px;
+        }
+        
+        .theme-45uFDWEQAKR3 {
+            font-family: 'C1';
+            font-style: normal;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 32px;
+            color: #DEE3EA;
+        }
+        
+        .theme-45iFDWEQAKR3 {
+            font-family: 'C1';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 22px;
+            color: #5D7290;
+        }
+        
+        .theme-45FGDWoQAKR3 {
+            width: 447px;
+            height: 100px;
+            /* left: 40px; */
+            /* top: 194px; */
+            background: #242C37;
+            border-radius: 8px;
+            border: unset;
+            display: block;
+            color: white;
+        }
+        
+        .theme-45FFDWpQAKR3 {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        
+        .theme-45aFDWEQAKR3 {
+            width: 176px;
+            height: 38px;
+            background: #FD4D4D;
+            border-radius: 8px;
+            font-family: 'C1';
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 22px;
+            text-align: center;
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.7/dist/sweetalert2.all.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-firestore.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-analytics.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-app.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-auth.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-database.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="/scripts/purl.js"></script>
+<script src="/scripts/firebase.js"></script>
 
-                        </namo>
-                        <badge class="center-flex">
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 171 171" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,171.99654v-171.99654h171.99654v171.99654z" fill="none"></path><g><path d="M105.52125,10.6875l12.23006,18.90975l22.49363,1.12575l1.13644,22.49006l18.92044,12.21938l-10.26356,20.04975l10.27425,20.03906l-18.90975,12.23006l-1.12575,22.49363l-22.49006,1.13644l-12.21938,18.92044l-20.04975,-10.26356l-20.03906,10.27425l-12.23006,-18.90975l-22.49362,-1.12575l-1.13644,-22.49006l-18.92044,-12.21938l10.26356,-20.04975l-10.27425,-20.03906l18.90975,-12.23006l1.12575,-22.49362l22.49006,-1.13644l12.21938,-18.92044l20.04975,10.26356z" fill="#42a5f5"></path><path d="M76.22325,111.34594l-23.14556,-23.13844l7.55963,-7.55606l15.69994,15.69994l34.086,-33.03863l7.4385,7.67363z" fill="#ffffff"></path></g></g></svg>
-                        </badge>
-                    </name>
-                    <time>
-                        1 day ago
-                    </time>
-                </profile-name-time>
-            </non-main-pfp-data>
-            <non id="more" class="center-flex">
-                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="96" height="96" viewBox="0 0 24 24" style=" fill:#000000;">    <path d="M 6 10 A 2 2 0 0 0 4 12 A 2 2 0 0 0 6 14 A 2 2 0 0 0 8 12 A 2 2 0 0 0 6 10 z M 12 10 A 2 2 0 0 0 10 12 A 2 2 0 0 0 12 14 A 2 2 0 0 0 14 12 A 2 2 0 0 0 12 10 z M 18 10 A 2 2 0 0 0 16 12 A 2 2 0 0 0 18 14 A 2 2 0 0 0 20 12 A 2 2 0 0 0 18 10 z"></path></svg>
-            </non>
+</head>
 
-        </post-profile-details>
-        <post-2nd class="full-bg center-flex absolute" style="background-image: url(/images/1.jpg);">
-        </post-2nd>
-        <post-bg class="full-bg center-flex absolute" style="background-image: url(/images/1.jpg);">
+<body>
+    <div class="center-flex theme-45FFDWEQArR3">
+        <div class="full-wh center-flex theme-45FFDtEQAKR3">
+            <div class="center-flex theme-4yFFDWEQAKR3">
+                <div class="center-flex theme-45uFDWEQAKR3">
+                    Create a post
+                </div>
+                <div class="center-flex theme-45iFDWEQAKR3">
+                    Fill the following fields to create a new post
+                </div>
+            </div>
+            <div class="center-flex theme-45FFDWoQAKR3" click_upload_image>
+                Upload Image
+            </div>
+            <input class="theme-45FGDWoQAKR3" type="text" dec_input>
+            <div class="center-flex theme-45FFDWpQAKR3">
+                <div go class="center-flex theme-45aFDWEQAKR3">
+                    Create post
+                </div>
+                <div class="center-flex theme-45sFDWEQAKR3">
+                    Cancel
+                </div>
+            </div>
+        </div>
+    </div>
+    <input style="display: none;" upload_image type="file" class="imgur" accept="image/*" data-max-size="5000" />
+    <hidden hidden></hidden>
+    <script data-cfasync="false" type="text/javascript">
+        function timeDifference(current, previous) {
 
-        </post-bg>
-        <!--DEC-->
-        <dec-post class="bottom full-bg center-flex absolute">
-            <text>
-hell my name is syera and i am post this for dex options
-</text>
-        </dec-post>
-        <!--REACT-->
-        <post-profile-details class="second bottom full-bg center-flex absolute">
-            <non-main-pfp-data class="react">
-                <profile-pic class="heart rambo">
-                    <heart>
-                        <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-hidden="true" focusable="false">
-          
-                            <path d="M32.17,0A32,32,0,1,0,64,32.17,32,32,0,0,0,32.17,0Zm8.33,32.88L34,40.46a2.63,2.63,0,0,1-4,0l-6.5-7.69A6,6,0,0,1,31.58,24a.78.78,0,0,0,.45.17.82.82,0,0,0,.46-.16,6,6,0,0,1,8,8.86Z" ></path>
-                          </svg></heart>
-                </profile-pic>
+            var sPerMinute = 60;
+            var sPerHour = sPerMinute * 60;
+            var sPerDay = sPerHour * 24;
+            var sPerMonth = sPerDay * 30;
+            var sPerYear = sPerDay * 365;
 
+            var elapsed = current - previous;
+            if (elapsed < sPerMinute) {
+                var output = Math.round(elapsed);
+                if (output == 1) {
+                    return Math.round(elapsed) + ' sec ago';
+                } else {
+                    return Math.round(elapsed) + ' secs ago';
+                }
+            } else if (elapsed < sPerHour) {
+                var output = Math.round(elapsed / sPerMinute);
+                if (output == 1) {
+                    return Math.round(elapsed / sPerMinute) + ' min ago';
+                } else {
+                    return Math.round(elapsed / sPerMinute) + ' mins ago';
+                }
+            } else if (elapsed < sPerDay) {
+                var output = Math.round(elapsed / sPerHour);
+                if (output == 1) {
+                    return Math.round(elapsed / sPerHour) + ' hr ago';
+                } else {
+                    return Math.round(elapsed / sPerHour) + ' hrs ago';
+                }
+            } else if (elapsed < sPerMonth) {
+                var output = Math.round(elapsed / sPerDay);
+                if (output == 1) {
+                    return Math.round(elapsed / sPerDay) + ' day ago';
+                } else {
+                    return Math.round(elapsed / sPerDay) + ' days ago';
+                }
+            } else if (elapsed < sPerYear) {
+                var output = Math.round(elapsed / sPerMonth);
+                if (output == 1) {
+                    return Math.round(elapsed / sPerMonth) + ' month ago';
+                } else {
+                    return Math.round(elapsed / sPerMonth) + ' months ago';
+                }
+            } else {
+                var output = Math.round(elapsed / sPerYear);
+                if (output == 1) {
+                    return Math.round(elapsed / sPerYear) + ' year ago';
+                } else {
+                    return Math.round(elapsed / sPerYear) + ' years ago';
 
-            </non-main-pfp-data>
-            <non id="more" class="center-flex">
-                <text class="center-flex likes">
-                10
-            </text>
-            </non>
+                }
+            }
+        }
+    </script>
+    <script>
+        $('[click_upload_image]').click(function() {
+            $('[upload_image]').trigger('click');
+        });
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
 
-        </post-profile-details>
-        <!---->
-        <post-profile-details class="bottom full-bg center-flex absolute">
-            <non-main-pfp-data>
-                <profile-pic>
+                var ddb = firebase.firestore();
+                ddb.collection("users").doc(user.uid).collection("posts").get()
+                    .then(querySnapshot => {
+                        querySnapshot.forEach(doc => {
+                            //////////////////////////////////////////////////////////
+                            var current = Math.round((new Date()).getTime() / 1000);
+                            setTimeout(
+                                function() {
+                                    var elements = document.getElementsByClassName("timeS");
+                                    for (var i = 0; i < elements.length; i++) {
+                                        var previous = elements[i].getAttribute("time");
+                                        elements[i].innerHTML = timeDifference(current, previous);
 
-                </profile-pic>
-                <profile-input class="center-flex">
-                    <input class="center-flex" type="text">
-                </profile-input>
-            </non-main-pfp-data>
-            <non id="more" class="center-flex">
-                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="96" height="96" viewBox="0 0 24 24" style=" fill:#000000;">    <path d="M 6 10 A 2 2 0 0 0 4 12 A 2 2 0 0 0 6 14 A 2 2 0 0 0 8 12 A 2 2 0 0 0 6 10 z M 12 10 A 2 2 0 0 0 10 12 A 2 2 0 0 0 12 14 A 2 2 0 0 0 14 12 A 2 2 0 0 0 12 10 z M 18 10 A 2 2 0 0 0 16 12 A 2 2 0 0 0 18 14 A 2 2 0 0 0 20 12 A 2 2 0 0 0 18 10 z"></path></svg>
-            </non>
+                                        if ((current - previous) < 86400) {
+                                            elements[i].parentNode.parentNode.classList.add("red-background");
+                                        }
+                                    }
+                                }, 0100);
+                            ///////////////////////////////////////////////////////////
+                            console.log(doc.id);
+                            const dec = doc.data().dec;
+                            const time = doc.data().time;
+                            console.log(dec);
+                            const cx = '<time class="timeS" time="' + time + '"></time><div>' + dec + '</div>';
+                            $("[postlist]").prepend(cx);
+                        });
+                    });
 
-        </post-profile-details>
-    </post>
-</div>
+                //////////////////////////////////////
+                let db = firebase.firestore().collection("users");
+                db.doc(user.uid).set({
+                    id: user.uid,
+                    name: user.displayName,
+                });
+                $("document").ready(function() {
+
+                    $('[upload_image]').on("change", function() {
+
+                        var $files = $(this).get(0).files;
+
+                        if ($files.length) {
+
+                            // Reject big files
+                            if ($files[0].size > $(this).data("max-size") * 1024) {
+                                console.log("Please select a smaller file");
+                                return false;
+                            }
+
+                            // Replace ctrlq with your own API key
+                            var apiUrl = 'https://api.imgur.com/3/image';
+                            var apiKey = '4b208caca83b4c4';
+
+                            var formData = new FormData();
+                            formData.append("image", $files[0]);
+
+                            var settings = {
+                                "async": true,
+                                "crossDomain": true,
+                                "url": apiUrl,
+                                "method": "POST",
+                                "datatype": "json",
+                                "headers": {
+                                    "Authorization": "Client-ID " + apiKey
+                                },
+                                "processData": false,
+                                "contentType": false,
+                                "data": formData,
+                                beforeSend: function(xhr) {
+                                    swal({
+                                        text: "Uploading",
+                                        buttons: false,
+                                        closeOnClickOutside: false,
+                                    });
+                                },
+                                success: function(res) {
+                                    console.log(res.data.link);
+                                    $('[hidden]').html('<img postimgdata src="' + res.data.link + '">');
+
+                                },
+                                error: function() {
+
+                                    swal("Failed | 上传失败");
+                                }
+                            }
+                            $.ajax(settings).done(function(response) {
+                                console.log("Done | 成功");
+                                swal({
+                                    title: "Done",
+                                    icon: "success",
+                                    timer: 1500,
+                                });
+                            });
+                        }
+                    });
+                });
+
+                $('[go]').on('click', function() {
+                    var d = new Date();
+                    var aag = d.getTime();
+                    var aaf = d.getFullYear();
+                    var aae = d.getMonth();
+                    var aah = d.getMilliseconds();
+                    var aahx = d.getDay();
+
+                    str = Date.now();
+                    str = str.toString();
+                    str = str.slice(0, -3);
+                    str = parseInt(str);
+                    var create_link = aag + "" + aaf + "" + aae + "" + aah + "" + aahx;
+                    var date = str;
+
+                    const dec = $('[dec_input]').val();
+                    const link = create_link;
+                    const img = $('[postimgdata]').attr('src');
+                    db.doc(user.uid + '/posts/' + create_link).set({
+                        userid: user.uid,
+                        link: link,
+                        img: img,
+                        dec: dec,
+                        time: date,
+                    });
+
+                });
+            } else {
+
+            }
+        });
+    </script>
+</body>
+
+</html>
