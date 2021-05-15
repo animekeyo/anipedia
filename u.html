@@ -12,12 +12,14 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.7/dist/sweetalert2.all.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-firestore.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-analytics.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-app.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-auth.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-database.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="/scripts/purl.js"></script>
 <script src="/scripts/firebase.js"></script>
 
 <body>
@@ -40,8 +42,6 @@
                 <add_verified class=" center-flex">
                     <nonv add_verified style="display: none;"></nonv>
                 </add_verified>
-                <upload-cover id="upload_banner_picture" class="center-flex">
-                </upload-cover>
             </non-b>
         </banner>
 
@@ -85,67 +85,247 @@
             </buttons>
         </profile-index>
     </profile-info>
-    <grid-post class=" full-wh center-flex">
-        <postx class=" center-flex">
-            <postne style="background-image: url(/images/1.jpg);" class=" full-bg center-flex">
+    <style>
+        body,
+        div {
+            margin: unset;
+            padding: unset;
+        }
+        
+        .theme-22gk3D8EKJ {
+            width: 30rem;
+            overflow: hidden;
+            border-radius: 10px;
+            margin: 1rem 0rem;
+            height: fit-content;
+            background: var(--c14);
+            justify-content: flex-start;
+            color: var(--c9);
+        }
+        
+        .theme-22gk3D8ER {
+            width: -webkit-fill-available;
+            height: 49px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        
+        .theme-26gk3D8ER {
+            width: 30px;
+            height: 30px;
+            margin: 9px;
+            border-radius: 100%;
+        }
+        
+        .theme-33gk3D8ER {
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .theme-22gk7D8ER {
+            font-family: 'C1';
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 22px;
+        }
+        
+        .theme-11gk448EDD {
+            /* display: flex; */
+            align-content: flex-start;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        
+        .center-flex.theme-27gk448EDD {
+            font-family: 'C1';
+            font-style: normal;
+            font-weight: bold;
+            font-size: 13px;
+            line-height: 22px;
+        }
+        
+        .theme-41gk448EDD svg {
+            width: 25px;
+        }
+        
+        .theme-27gk448EDD,
+        .theme-41gk448EDD svg,
+        .theme-41gk448EDD svg path {
+            margin: 14.5px;
+            fill: var(--c6)!important;
+            stroke: var(--c6)!important;
+        }
+        
+        .theme-11gk448EDD {
+            /* display: flex; */
+            align-content: flex-start;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        
+        .theme-26gk3D8ER.code-GFK34DF87 {
+            font-family: 'C1';
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 22px;
+            width: 100px;
+            float: right;
+            align-items: flex-end;
+        }
+        
+        .theme-FD54DFRKKI {
+            display: flex;
+            flex-direction: row;
+            align-content: flex-start;
+            flex-wrap: nowrap;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+        
+        .theme-43GGD76HGHJ {
+            width: 29rem;
+            margin: 1rem 0rem;
+            background: var(--c14);
+            height: 10rem;
+            float: left;
+            display: flex;
+            position: sticky;
+            top: 80px;
+            border-radius: 10px;
+        }
+    </style>
+    <div class=" center-flex full-bg theme-FD54DFRKKI">
+        <div class=" center-flex full-bg theme-FD54DGGHKKI">
+            <div class="center-flex theme-22gk3D8EKJ">
+                <div class="center-flex theme-22gk3D8ER">
+                    <div class="center-flex theme-33gk3D8ER">
+                        <div class="full-bg center-flex theme-26gk3D8ER" style="background-image: url(/images/p1.jpg);">
 
-            </postne>
-            <postne style="background-image: url(/images/2.jpg);" class=" full-bg center-flex">
+                        </div>
+                        <div class="center-flex theme-22gk7D8ER">
+                            Ruffles
+                        </div>
+                    </div>
+                    <div class="full-bg center-flex theme-26gk3D8ER code-GFK34DF87">
+                        1 day ago
+                    </div>
+                </div>
+                <img class="theme-52gk668ER full-wh center-flex" src="/images/p1.jpg">
+                <div class="center-flex full-wh theme-11gk448EDD">
+                    <div class="center-flex theme-21gk448EDD">
+                        <div class="center-flex theme-41gk448EDD" icon_like>
 
-            </postne>
-            <postne style="background-image: url(/images/3.jpg);" class=" full-bg center-flex">
+                        </div>
+                        <div class="center-flex theme-26gk448EDD">
 
-            </postne>
-            <postne style="background-image: url(/images/4.jpg);" class=" full-bg center-flex">
+                        </div>
+                    </div>
+                    <div class="center-flex theme-27gk448EDD">
+                        100 Likes
+                    </div>
+                </div>
+            </div>
+            <div class="center-flex theme-22gk3D8EKJ">
+                <div class="center-flex theme-22gk3D8ER">
+                    <div class="center-flex theme-33gk3D8ER">
+                        <div class="full-bg center-flex theme-26gk3D8ER" style="background-image: url(/images/p1.jpg);">
 
-            </postne>
-            <postne style="background-image: url(/images/1.jpg);" class=" full-bg center-flex">
+                        </div>
+                        <div class="center-flex theme-22gk7D8ER">
+                            Ruffles
+                        </div>
+                    </div>
+                    <div class="full-bg center-flex theme-26gk3D8ER" style="background-image: url(/images/p1.jpg);">
 
-            </postne>
-            <postne style="background-image: url(/images/2.jpg);" class=" full-bg center-flex">
+                    </div>
+                </div>
+                <img class="theme-52gk668ER full-wh center-flex" src="/images/p1.jpg">
+                <div class="center-flex full-wh theme-11gk448EDD">
+                    <div class="center-flex theme-21gk448EDD">
+                        <div class="center-flex theme-41gk448EDD" icon_like>
 
-            </postne>
-            <postne style="background-image: url(/images/3.jpg);" class=" full-bg center-flex">
+                        </div>
+                        <div class="center-flex theme-26gk448EDD">
 
-            </postne>
-            <postne style="background-image: url(/images/4.jpg);" class=" full-bg center-flex">
+                        </div>
+                    </div>
+                    <div class="center-flex theme-27gk448EDD">
+                        100 Likes
+                    </div>
+                </div>
+            </div>
+            <div class="center-flex theme-22gk3D8EKJ">
+                <div class="center-flex theme-22gk3D8ER">
+                    <div class="center-flex theme-33gk3D8ER">
+                        <div class="full-bg center-flex theme-26gk3D8ER" style="background-image: url(/images/p1.jpg);">
 
-            </postne>
-        </postx>
-    </grid-post>
+                        </div>
+                        <div class="center-flex theme-22gk7D8ER">
+                            Ruffles
+                        </div>
+                    </div>
+                    <div class="full-bg center-flex theme-26gk3D8ER" style="background-image: url(/images/p1.jpg);">
+
+                    </div>
+                </div>
+                <img class="theme-52gk668ER full-wh center-flex" src="/images/p1.jpg">
+                <div class="center-flex full-wh theme-11gk448EDD">
+                    <div class="center-flex theme-21gk448EDD">
+                        <div class="center-flex theme-41gk448EDD" icon_like>
+
+                        </div>
+                        <div class="center-flex theme-26gk448EDD">
+
+                        </div>
+                    </div>
+                    <div class="center-flex theme-27gk448EDD">
+                        100 Likes
+                    </div>
+                </div>
+            </div>
+            <div class="center-flex theme-22gk3D8EKJ">
+                <div class="center-flex theme-22gk3D8ER">
+                    <div class="center-flex theme-33gk3D8ER">
+                        <div class="full-bg center-flex theme-26gk3D8ER" style="background-image: url(/images/p1.jpg);">
+
+                        </div>
+                        <div class="center-flex theme-22gk7D8ER">
+                            Ruffles
+                        </div>
+                    </div>
+                    <div class="full-bg center-flex theme-26gk3D8ER" style="background-image: url(/images/p1.jpg);">
+
+                    </div>
+                </div>
+                <img class="theme-52gk668ER full-wh center-flex" src="/images/p1.jpg">
+                <div class="center-flex full-wh theme-11gk448EDD">
+                    <div class="center-flex theme-21gk448EDD">
+                        <div class="center-flex theme-41gk448EDD" icon_like>
+
+                        </div>
+                        <div class="center-flex theme-26gk448EDD">
+
+                        </div>
+                    </div>
+                    <div class="center-flex theme-27gk448EDD">
+                        100 Likes
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="theme-43GGD76HGHJ center-flex">
+
+        </div>
+    </div>
 
     <script src="/scripts/com.js">
     </script>
-    <input style="display: none;" id="uploadbanner" type="file" class="imgur" accept="image/*" data-max-size="5000" />
-    <input style="display: none;" id="uploadpfp" type="file" class="imgur" accept="image/*" data-max-size="5000" />
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js">
     </script>
     <script data-cfasync="false" type="text/javascript">
-        time = Date.now();
-        time = time.toString();
-        time = time.slice(0, -3);
-        time = parseInt(time);
-
-        var timeNow = time;
-
-        function menuo() {
-            var x = document.getElementById("menuo");
-            x.style.height = "6.5rem";
-            x.style.padding = "1rem";
-        };
-
-        function search_bar_close() {
-            var x = document.getElementById("fsdfsdf");
-            x.style.padding = "0rem";
-        };
-
-        function menuo_close() {
-            var x = document.getElementById("menuo");
-            x.style.height = "0rem";
-            x.style.padding = "0rem";
-        };
-
-
         function timeDifference(current, previous) {
 
             var sPerMinute = 60;
@@ -208,6 +388,7 @@
         var url = window.location.href;
         var id = url.substring(url.lastIndexOf('?id=') + 4);
 
+
         function bbedit() {
             var x = document.getElementById("followerlist");
             x.style.display = "block";
@@ -268,51 +449,66 @@
 
             })
         });
-        $('body').on('click', function() {
-            $('user-search').css("height", "0rem");
-            $('user-search').css("padding", "0rem");
-            $('non-ffg').css("height", "0rem");
-        });
-        $('[search_bar_close]').on('click', function() {
-            $('user-search').css("height", "0rem");
-            $('user-search').css("padding", "0rem");
-            $('non-ffg').css("height", "0rem");
-        });
 
-
-        $('[search_users]').on("change", function() {
-            var search_val = $('[search_users]').val();
-            $('user-search').css("height", "auto");
-            $('user-search').css("padding", "1rem");
-            $('non-ffg').css("height", "auto");
-
-            if (search_val == 0) {
-
-                $('[import_search_data]').html("");
-                setTimeout(
-                    function() {
-                        $('[import_search_data]').prepend('<nen>Not Found</nen>');
-                    }, 0050);
-            } else {
-                firebase.database().ref('/data').child('users').orderByChild('username').startAt(search_val).on("value", function(snapshot) {
-                    console.log(snapshot.val());
-                    snapshot.forEach(function(data) {
-                        console.log(data.val().username);
-                        $('[import_search_data]').html("");
-                        setTimeout(
-                            function() {
-                                $('[import_search_data]').prepend('<a href="/u?id=' + data.key + '">' + data.val().username + ' <nox class=" center-flex">' + data.val().status + '</nox></a>');
-                            }, 0050);
-
-                    });
-                });
-            }
-        })
 
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
                 ////////////////////////////////////////
+                if (id == 0) {
+                    swal({
+                        text: "User Dont Exists",
+                        buttons: false,
+                        closeOnClickOutside: false,
+                    });
+                    setTimeout(
+                        function() {
+                            setTimeout(
+                                function() {
+                                    window.location.href = "/u?id=" + user.uid;
+                                }, 1000);
+                            swal({
+                                text: "Redirecting to you're profile",
+                                buttons: false,
+                                closeOnClickOutside: false,
+                            });
+                        }, 1000);
+                }
+                checkIfUserExists(id)
 
+                function userExistsCallback(id, exists) {
+                    if (exists) {
+
+                    } else {
+                        swal({
+                            text: "User Dont Exists",
+                            buttons: false,
+                            closeOnClickOutside: false,
+                        });
+                        setTimeout(
+                            function() {
+                                setTimeout(
+                                    function() {
+                                        window.location.href = "/u?id=" + user.uid;
+                                    }, 1000);
+                                swal({
+                                    text: "Redirecting to you're profile",
+                                    buttons: false,
+                                    closeOnClickOutside: false,
+                                });
+                            }, 1000);
+
+                    }
+                }
+
+                // Tests to see if /users/<userId> has any data. 
+                function checkIfUserExists(id) {
+                    var usersRef = firebase.database().ref('/data/users')
+                    usersRef.child(id).once('value', function(snapshot) {
+                        var exists = (snapshot.val() !== null);
+                        userExistsCallback(id, exists);
+                    });
+                }
+                //////////////////////////
                 if (user.uid == 'YH2r7xe271Xv5yVbnBOHRMJVVmf2') {
                     $('[add_verified]').show();
                     $('[add_verified]').on('click', function() {
@@ -334,166 +530,13 @@
                 /////////////////////////////////////////
                 var user = firebase.auth().currentUser;
                 if (id == user.uid) {
-                    const data = '<non id="upload_banner_button">Upload Cover</non><non id="upload_profile_pic_button">Upload Profile Picture</non>';
-                    $(data).appendTo($("[id=upload_banner_picture]"));
-                    const datas = ' <non id="edit_profile" class="rambo">Edit Profile</non>';
+                    const datas = ' <non open_setting class="rambo">Setting</non>';
                     $(datas).appendTo($("[id=if_follo_or_null]"));
                 } else {
                     const data = ' <non id="follow_button" class="rambo">Follow</non>';
                     $(data).appendTo($("[id=if_follo_or_null]"));
                 }
                 console.log(user.uid);
-                /////////////////////UPLOAD SYSTEM //////////////////////////////////
-                $('[id=upload_profile_pic_button]').on('click', function() {
-                    $('#uploadpfp').trigger('click');
-                });
-                $('[id=upload_banner_button]').on('click', function() {
-                    $('#uploadbanner').trigger('click');
-                });
-                /////////////////////////////////////////////
-                $("document").ready(function() {
-
-                    $('input[id=uploadbanner]').on("change", function() {
-
-                        var $files = $(this).get(0).files;
-
-                        if ($files.length) {
-
-                            // Reject big files
-                            if ($files[0].size > $(this).data("max-size") * 1024) {
-                                console.log("Please select a smaller file");
-                                return false;
-                            }
-
-                            // Replace ctrlq with your own API key
-                            var apiUrl = 'https://api.imgur.com/3/image';
-                            var apiKey = '4b208caca83b4c4';
-
-                            var formData = new FormData();
-                            formData.append("image", $files[0]);
-
-                            var settings = {
-                                "async": true,
-                                "crossDomain": true,
-                                "url": apiUrl,
-                                "method": "POST",
-                                "datatype": "json",
-                                "headers": {
-                                    "Authorization": "Client-ID " + apiKey
-                                },
-                                "processData": false,
-                                "contentType": false,
-                                "data": formData,
-                                beforeSend: function(xhr) {
-                                    swal({
-                                        text: "Uploading",
-                                        buttons: false,
-                                        closeOnClickOutside: false,
-                                    });
-                                },
-                                success: function(res) {
-                                    console.log(res.data.link);
-
-                                    var user = firebase.auth().currentUser;
-                                    var banner = res.data.link;
-                                    $("document").ready(function() {
-
-                                        firebase.database().ref('/data/users/' + user.uid).update({
-                                            banner: banner
-                                        });
-
-                                    });
-                                },
-                                error: function() {
-
-                                    swal("Failed | 上传失败");
-                                }
-                            }
-                            $.ajax(settings).done(function(response) {
-                                console.log("Done | 成功");
-                                swal({
-                                    title: "Done",
-                                    icon: "success",
-                                    timer: 1500,
-                                });
-                            });
-                        }
-                    });
-                });
-                //////////////////////////////////////////////
-                $("document").ready(function() {
-
-                    $('input[id=uploadpfp]').on("change", function() {
-
-                        var $files = $(this).get(0).files;
-
-                        if ($files.length) {
-
-                            // Reject big files
-                            if ($files[0].size > $(this).data("max-size") * 1024) {
-                                console.log("Please select a smaller file");
-                                return false;
-                            }
-
-                            // Replace ctrlq with your own API key
-                            var apiUrl = 'https://api.imgur.com/3/image';
-                            var apiKey = '4b208caca83b4c4';
-
-                            var formData = new FormData();
-                            formData.append("image", $files[0]);
-
-                            var settings = {
-                                "async": true,
-                                "crossDomain": true,
-                                "url": apiUrl,
-                                "method": "POST",
-                                "datatype": "json",
-                                "headers": {
-                                    "Authorization": "Client-ID " + apiKey
-                                },
-                                "processData": false,
-                                "contentType": false,
-                                "data": formData,
-                                beforeSend: function(xhr) {
-                                    swal({
-                                        text: "Uploading",
-                                        buttons: false,
-                                        closeOnClickOutside: false,
-                                    });
-                                },
-                                success: function(res) {
-                                    console.log(res.data.link);
-
-                                    var user = firebase.auth().currentUser;
-                                    var pfp = res.data.link;
-                                    $("document").ready(function() {
-
-                                        firebase.database().ref('/data/users/' + user.uid).update({
-                                            profile_picture: pfp
-                                        });
-                                        user.updateProfile({
-                                            photoURL: pfp
-                                        });
-
-                                    });
-                                },
-                                error: function() {
-
-                                    swal("Failed | 上传失败");
-                                }
-                            }
-                            $.ajax(settings).done(function(response) {
-                                console.log("Done | 成功");
-                                swal({
-                                    title: "Done",
-                                    icon: "success",
-                                    timer: 1500,
-                                });
-                            });
-                        }
-                    });
-                });
-
 
                 //////////////////////////////////////////////////////////////////////
                 var user = firebase.auth().currentUser;

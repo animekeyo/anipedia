@@ -1233,32 +1233,6 @@ loading.center-flex small_loader svg {
     height: 1.3rem;
 }
 
-grid-post.full-wh.center-flex postx.center-flex {
-    width: 60rem;
-    grid-template-columns: 19rem 19rem 19rem;
-    height: fit-content;
-    background-size: cover;
-    gap: 1.3rem;
-    display: grid;
-    overflow: hidden;
-    background-position: center;
-}
-
-grid-post.full-wh.center-flex postx.center-flex postne.full-bg.center-flex {
-    background: var(--c13);
-    height: 20rem;
-    margin: 0rem;
-    border-radius: 1rem;
-    overflow: hidden;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-}
-
-grid-post.full-wh.center-flex postx.center-flex postne.full-bg.center-flex img.full-wh.center-flex {
-    height: auto;
-}
-
 .top-flex {
     justify-content: flex-start;
 }
@@ -1273,7 +1247,7 @@ setting.center-flex.full-bg.full-wh.fixed.bg-b {
 }
 
 setting.center-flex.full-bg.full-wh.fixed.bg-b non.center-flex.top-flex {
-    width: 61rem;
+    width: 61.5rem;
     height: -webkit-fill-available;
     display: flex;
     flex-direction: row;
@@ -1379,4 +1353,23 @@ setting non.a.center-flex::-webkit-scrollbar-thumb {
 
 setting non.a.center-flex::-webkit-scrollbar-track {
     background: var(--c14);
+}
+
+.theme-fdfsd556ds {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.theme-fdfsdg56ds.center-flex svg {
+    fill: var(--c15);
+    width: 22px;
+    height: 22px;
+    background: var(--c9);
+    padding: 5px;
+    border-radius: 100%;
 }
