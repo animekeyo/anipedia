@@ -120,7 +120,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                         function() {
                             $('[hidden]').html('');
                         }, 0100);
-                } else if (trim(dec) == '') {
+                } else if (!dec.replace(/\s/g, '').length) {
                     db.doc(user.uid + '/posts/' + create_link).set({
                         userid: user.uid,
                         link: parseFloat(link),
