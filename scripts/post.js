@@ -129,7 +129,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                     setTimeout(
                         function() {
                             $('[hidden]').html('');
-                            $('[dec_input]').val(' ');
+                            $('[dec_input]').val();
                         }, 0100);
                 } else {
                     db.doc(user.uid + '/posts/' + create_link).set({
@@ -142,7 +142,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                     setTimeout(
                         function() {
                             $('[hidden]').html('');
-                            $('[dec_input]').val(' ');
+                            $('[dec_input]').val();
                         }, 0100);
                 };
 
