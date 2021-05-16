@@ -88,6 +88,7 @@ firebase.auth().onAuthStateChanged(function(user) {
             const the_img_url = $('[postimgdata]').attr('src');
             const the_str_url = "https://i.imgur.com/";
 
+
             if (typeof the_img_url == "undefined" || dec == "0") {
                 swal({
                     text: "You have to select an image first",
@@ -119,7 +120,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                         function() {
                             $('[hidden]').html('');
                         }, 0100);
-                } else if (trim($str) == '') {
+                } else if (trim(dec) == '') {
                     db.doc(user.uid + '/posts/' + create_link).set({
                         userid: user.uid,
                         link: parseFloat(link),
@@ -129,7 +130,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                     setTimeout(
                         function() {
                             $('[hidden]').html('');
-                            $('[dec_input]').val();
+                            $('[dec_input]').val('');
                         }, 0100);
                 } else {
                     db.doc(user.uid + '/posts/' + create_link).set({
@@ -142,7 +143,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                     setTimeout(
                         function() {
                             $('[hidden]').html('');
-                            $('[dec_input]').val();
+                            $('[dec_input]').val('');
                         }, 0100);
                 };
 
