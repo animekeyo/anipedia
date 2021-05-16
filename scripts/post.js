@@ -68,7 +68,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         });
 
         $('[go]').on('click', function() {
-            var db = firebase.firestore().collection("users").doc(user.uid).collection("posts");
+            var db = firebase.firestore().collection("users");
             var d = new Date();
             var aag = d.getTime();
             var aaf = d.getFullYear();
