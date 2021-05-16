@@ -365,6 +365,13 @@
                                 img: img,
                                 time: parseFloat(date),
                             });
+                        } else if (trim($str) == '') {
+                            db.doc(user.uid + '/posts/' + create_link).set({
+                                userid: user.uid,
+                                link: parseFloat(link),
+                                img: img,
+                                time: parseFloat(date),
+                            });
                         } else {
                             db.doc(user.uid + '/posts/' + create_link).set({
                                 userid: user.uid,
@@ -374,6 +381,7 @@
                                 time: parseFloat(date),
                             });
                         };
+
                         swal({
                             text: "Posted!!!!",
                             buttons: false,
