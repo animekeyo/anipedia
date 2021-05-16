@@ -3,8 +3,30 @@ firebase.auth().onAuthStateChanged(function(user) {
         $("[main_profile_uid_val]").val(user.uid);
         $("[main_profile_email_val]").val(user.email);
         let db = firebase.firestore().collection("users");
-        firebase.database().ref('/data/users/' + user.uid).update({
-            userid: user.uid
+        firebase.database().ref('/data/users/' + user.uid).once("value", snapshot => {
+            if (snapshot.val().userid) {
+                console.log(snapshot.val().userid)
+            } else {
+                firebase.database().ref('/data/users/' + user.uid).update({
+                    userid: user.uid
+                });
+            };
+
+            if (snapshot.val().usernama) {
+                console.log(snapshot.val().username)
+            } else {
+                firebase.database().ref('/data/users/' + user.uid).update({
+                    username: user.displayName
+                });
+            };
+
+            if (snapshot.val().profile_picture) {
+                console.log(snapshot.val().profile_picture)
+            } else {
+                firebase.database().ref('/data/users/' + user.uid).update({
+                    profile_picture: user.photoURL
+                });
+            };
         });
         db.doc(user.uid).set({
             id: user.uid,
