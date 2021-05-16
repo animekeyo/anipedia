@@ -330,13 +330,14 @@
                     str = str.slice(0, -3);
                     str = parseInt(str);
                     var create_link = aag + "" + aaf + "" + aae + "" + aah + "" + aahx;
-                    var date = str;
+                    var dateo = str;
 
                     const dec = $('[dec_input]').val();
-                    const link = create_link;
-                    const img = $('[postimgdata]').attr('src');
+                    const linko = create_link;
+                    const the_img_url = $('[postimgdata]').attr('src');
+                    const the_str_url = "https://i.imgur.com/";
 
-                    if (typeof img == "undefined" || dec == "0") {
+                    if (typeof the_img_url == "undefined" || dec == "0") {
                         swal({
                             text: "You have to select an image first",
                             buttons: false,
@@ -344,12 +345,24 @@
                             timer: 1500,
                         });
                     } else {
+                        if (the_img_url.indexOf(the_str_url) == 0) {
+                            console.log("YES");
+                            var img = the_img_url;
+                        } else {
+                            var img = "/fk.jpg";
+                        };
+                        if (isNaN(linko) == 0) {
+                            var link = linko;
+                        };
+                        if (isNaN(dateo) == 0) {
+                            var date = dateo;
+                        };
                         db.doc(user.uid + '/posts/' + create_link).set({
                             userid: user.uid,
-                            link: link,
+                            link: parseFloat(link),
                             img: img,
                             dec: dec,
-                            time: date,
+                            time: parseFloat(date),
                         });
                         swal({
                             text: "Posted!!!!",
