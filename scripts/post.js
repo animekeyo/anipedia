@@ -116,10 +116,6 @@ firebase.auth().onAuthStateChanged(function(user) {
                         img: img,
                         time: parseFloat(date),
                     });
-                    setTimeout(
-                        function() {
-                            $('[hidden]').html('');
-                        }, 0100);
                 } else if (!dec.replace(/\s/g, '').length) {
                     db.doc(user.uid + '/posts/' + create_link).set({
                         userid: user.uid,
@@ -127,11 +123,6 @@ firebase.auth().onAuthStateChanged(function(user) {
                         img: img,
                         time: parseFloat(date),
                     });
-                    setTimeout(
-                        function() {
-                            $('[hidden]').html('');
-                            $('[dec_input]').val('');
-                        }, 0100);
                 } else {
                     db.doc(user.uid + '/posts/' + create_link).set({
                         userid: user.uid,
@@ -140,11 +131,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                         dec: dec,
                         time: parseFloat(date),
                     });
-                    setTimeout(
-                        function() {
-                            $('[hidden]').html('');
-                            $('[dec_input]').val('');
-                        }, 0100);
+
                 };
 
                 swal({
@@ -153,6 +140,8 @@ firebase.auth().onAuthStateChanged(function(user) {
                     closeOnClickOutside: false,
                     timer: 1000,
                 });
+                $('[hidden]').html('');
+                $('[dec_input]').val('');
             };
 
         });
