@@ -3,6 +3,9 @@ firebase.auth().onAuthStateChanged(function(user) {
         $("[main_profile_uid_val]").val(user.uid);
         $("[main_profile_email_val]").val(user.email);
         let db = firebase.firestore().collection("users");
+        firebase.database().ref('/data/users/' + user.uid).update({
+            userid: user.uid
+        });
         db.doc(user.uid).set({
             id: user.uid,
             name: user.displayName,
