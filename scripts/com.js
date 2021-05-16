@@ -12,7 +12,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                 });
             };
 
-            if (snapshot.val().usernama) {
+            if (snapshot.val().username) {
                 console.log(snapshot.val().username)
             } else {
                 firebase.database().ref('/data/users/' + user.uid).update({
