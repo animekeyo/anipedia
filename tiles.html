@@ -218,6 +218,7 @@
         $('[click_upload_image]').click(function() {
             $('[upload_image]').trigger('click');
         });
+        /////////////////
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
 
