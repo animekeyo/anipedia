@@ -167,7 +167,6 @@
                 var userid = (user.val() && user.val().userid);
                 var profile_picture = (user.val() && user.val().profile_picture);
                 var onlineState = (user.val() && user.val().onlineState);
-                console.log(userid)
                 $('[id=dname-' + userid + ']').text(username);
                 $('[id=pfp-' + userid + ']').css('background-image', 'url(' + profile_picture + '),url(https://animekeyo.com/anipedia/icons/icon.png)');
 
@@ -203,10 +202,9 @@
                     const px = '<div class="center-flex theme-22gk3D8EKJ">' +
                         '    <div class="center-flex theme-22gk3D8ER">' +
                         '        <div class="center-flex theme-33gk3D8ER">' +
-                        '            <div id="pfp-' + userid + '" class="full-bg center-flex theme-26gk3D8ER" style="background-image: url(/images/p1.jpg);">' +
+                        '            <div id="pfp-' + userid + '" class="full-bg center-flex theme-26gk3D8ER"' +
                         '           </div>' +
                         '            <div id="dname-' + userid + '" class="center-flex theme-22gk7D8ER">' +
-                        '                Ruffles' +
                         '            </div>' +
                         '        </div>' +
                         '        <div class="full-bg center-flex theme-26gk3D8ER code-GFK34DF87">' +
