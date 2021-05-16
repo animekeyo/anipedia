@@ -2,7 +2,11 @@ firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         $("[main_profile_uid_val]").val(user.uid);
         $("[main_profile_email_val]").val(user.email);
-
+        let db = firebase.firestore().collection("users");
+        db.doc(user.uid).set({
+            id: user.uid,
+            name: user.displayName,
+        });
         const data = firebase.database().ref('/data/users/' + user.uid);
         data.on('value', function(snapshot) {
             const username = (snapshot.val() && snapshot.val().username);
@@ -54,6 +58,7 @@ icon_google = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w
 icon_facebook = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 171 171"><defs><linearGradient x1="35.60006" y1="35.60006" x2="144.69094" y2="144.69094" gradientUnits="userSpaceOnUse" id="color-1"><stop offset="0" stop-color="#2aa4f4"></stop><stop offset="1" stop-color="#007ad9"></stop></linearGradient></defs><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,171.99654v-171.99654h171.99654v171.99654z" fill="none"></path><g><path d="M85.5,14.25c-39.35137,0 -71.25,31.89863 -71.25,71.25c0,39.35138 31.89863,71.25 71.25,71.25c39.35138,0 71.25,-31.89862 71.25,-71.25c0,-39.35137 -31.89862,-71.25 -71.25,-71.25z" fill="url(#color-1)"></path><path d="M95.14369,104.38481h18.4395l2.89631,-18.73162h-21.33581v-10.23862c0,-7.7805 2.54362,-14.68106 9.82181,-14.68106h11.69569v-16.34475c-2.05556,-0.27787 -6.40181,-0.8835 -14.61338,-0.8835c-17.14987,0 -27.20325,9.05588 -27.20325,29.68988v12.46162h-17.63081v18.73162h17.62725v51.48525c3.49125,0.52012 7.02881,0.87637 10.659,0.87637c3.28106,0 6.48375,-0.29925 9.64369,-0.72675z" fill="#ffffff"></path></g></g></svg>';
 small_loader = '<style>small_loader svg { animation: loading 0.5s linear infinite } @keyframes loading { to { transform: rotate(359deg) } }</style><loading class=" center-flex">Loading <small_loader>' + icon_loader + '</small_loader></loading>';
 icon_account_circle = '<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>';
+post = '<script src="/scripts/post.js"></script><div class="center-flex theme-45FFDWEQArR3"><div class="full-wh center-flex theme-45FFDtEQAKR3"><div class="center-flex theme-4yFFDWEQAKR3"><div class="center-flex theme-45uFDWEQAKR3">Create a post</div><div class="center-flex theme-45iFDWEQAKR3">Fill the following fields to create a new post</div></div><div class="center-flex theme-45FFDWoQAKR3" click_upload_image>Upload Image</div><input class="theme-45FGDWoQAKR3" type="text" dec_input><div class="center-flex theme-45FFDWpQAKR3"><div go class="center-flex theme-45aFDWEQAKR3">Create post</div><div class="center-flex theme-45sFDWEQAKR3">Cancel</div></div></div></div><input style="display: none;" upload_image type="file" class="imgur" accept="image/*" data-max-size="5000" /><hidden hidden></hidden>';
 header = '<script src="/scripts/search_user.js"></script><non class="full-wh main center-flex relative"><logo>animekeyo.</logo>    <user-search class=" center-flex absolute" style="height: 0rem;padding: 0rem;overflow: hidden;"><non-ffg import_search_data></non-ffg><a search_bar_close>Close</a></user-search><search class="center-flex"><non class="center-flex">' + icon_search + '</non><input placeholder="Search for rooms, users or categories" class="center-flex" type="search" search_users></search><div class="theme-fdfsd556ds"><profile-pic main_name_alt class="full-bg center-flex" main_profile_picture main_profile_link></profile-pic><div open_setting class="theme-fdfsdg56ds  center-flex">' + icon_setting + '</div><div logout_user class="theme-fdfsdg56ds  center-flex">' + icon_logout + '</div></div></non>';
 mobile_header = '<top-bar class="center-flex"><non-a class="center-flex"></non-a><non-b class="fixed center-flex"><logo class="center-flex">animekeyo.</logo><profile-pic main_profile_picture class="full-bg center-flex"></profile-pic></non-b></top-bar><bottom-bar class="fixed center-flex"><non class=" center-flex" icon_home></non><non class=" center-flex" icon_search></non><non class=" center-flex" icon_explore></non></bottom-bar>';
 icon_auto_awesome = '<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><rect fill="none" height="24" width="24" x="0"/></g><g><g><polygon points="19,9 20.25,6.25 23,5 20.25,3.75 19,1 17.75,3.75 15,5 17.75,6.25"/><polygon points="19,15 17.75,17.75 15,19 17.75,20.25 19,23 20.25,20.25 23,19 20.25,17.75"/><path d="M11.5,9.5L9,4L6.5,9.5L1,12l5.5,2.5L9,20l2.5-5.5L17,12L11.5,9.5z M9.99,12.99L9,15.17l-0.99-2.18L5.83,12l2.18-0.99 L9,8.83l0.99,2.18L12.17,12L9.99,12.99z"/></g></g></svg>';
@@ -67,6 +72,7 @@ $('[icon_upload]').html(icon_upload);
 $('[import_loader]').html(loader);
 $('mobile-header').html(mobile_header);
 $('[header]').html(header);
+$('[import_postjs]').html(post);
 $('[import_small_loader]').html(small_loader);
 $('[icon_facebook]').html(icon_facebook);
 $('[icon_search]').html(icon_search);
