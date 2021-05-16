@@ -138,6 +138,8 @@ firebase.auth().onAuthStateChanged(function(user) {
                     closeOnClickOutside: false,
                     timer: 1000,
                 });
+                $('[hidden]').html('');
+                $('[dec_input]').val('');
             };
 
         });
