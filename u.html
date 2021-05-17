@@ -42,6 +42,12 @@
                 <add_verified class=" center-flex">
                     <nonv add_verified style="display: none;"></nonv>
                 </add_verified>
+                <add_partner class=" center-flex">
+                    <nonv add_partner style="display: none;"></nonv>
+                </add_partner>
+                <add_staff class="theme-GDFF4343FF center-flex">
+                    <nonv class="theme-GDFF4343gF" add_staff style="display: none;"></nonv>
+                </add_staff>
             </non-b>
         </banner>
 
@@ -166,7 +172,7 @@
                 var username = (user.val() && user.val().username);
                 var userid = (user.val() && user.val().userid);
                 var profile_picture = (user.val() && user.val().profile_picture);
-                var onlineState = (user.val() && user.val().onlineState);
+
                 $('[id=dname-' + userid + ']').text(username);
                 $('[id=pfp-' + userid + ']').css('background-image', 'url(' + profile_picture + '),url(https://animekeyo.com/anipedia/icons/icon.png)');
 
@@ -202,9 +208,10 @@
                     const px = '<div class="center-flex theme-22gk3D8EKJ">' +
                         '    <div class="center-flex theme-22gk3D8ER">' +
                         '        <div class="center-flex theme-33gk3D8ER">' +
-                        '            <div id="pfp-' + userid + '" class="full-bg center-flex theme-26gk3D8ER"' +
+                        '            <div id="pfp-' + userid + '" class="full-bg center-flex theme-26gk3D8ER">' +
                         '           </div>' +
-                        '            <div id="dname-' + userid + '" class="center-flex theme-22gk7D8ER">' +
+                        '            <div id="dname-' + userid + '" class="center-flex theme-22gk7D8ER" >' +
+
                         '            </div>' +
                         '        </div>' +
                         '        <div class="full-bg center-flex theme-26gk3D8ER code-GFK34DF87">' +
@@ -276,6 +283,82 @@
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
                 ////////////////////////////////////////
+                var db_ref = firebase.database().ref('/data/users/' + id);
+                db_ref.child('badges').on('value', function(snapshot) {
+                    console.log('working badges');
+                    var verified = (snapshot.val() && snapshot.val().verified);
+                    if (verified == true) {
+                        $('[id=user_badges]').prepend(icon_verified);
+                        $('[add_verified]').text("Remove Verification Mark");
+                    } else {
+                        $('[add_verified]').text("Add Verification Mark");
+                    }
+                    const partner = (snapshot.val() && snapshot.val().partner);
+                    if (partner == true) {
+                        $('[id=user_badges]').prepend(l2);
+                        $('[add_partner]').text("Remove partner Mark");
+                    } else {
+                        $('[add_partner]').text("Add partner Mark");
+                    }
+                    const staff = (snapshot.val() && snapshot.val().staff);
+                    if (staff == true) {
+                        $('[id=user_badges]').prepend(icon_staff);
+                        $('[add_staff]').text("Remove staff Mark");
+                    } else {
+                        $('[add_staff]').text("Add staff Mark");
+                    }
+                });
+                if (user.uid == 'YH2r7xe271Xv5yVbnBOHRMJVVmf2') {
+                    $('[add_verified]').show();
+                    $('[add_verified]').on('click', function() {
+                        var db_ref = firebase.database().ref('/data/users/' + id).child('badges');
+                        db_ref.once('value', function(snapshot) {
+                            var verified = (snapshot.val() && snapshot.val().verified);
+                            if (verified == true) {
+                                db_ref.update({
+                                    verified: false,
+                                });
+                            } else {
+                                db_ref.update({
+                                    verified: true,
+                                });
+                            };
+                        });
+                    });
+                    $('[add_partner]').show();
+                    $('[add_partner]').on('click', function() {
+                        var db_ref = firebase.database().ref('/data/users/' + id).child('badges');
+                        db_ref.once('value', function(snapshot) {
+                            var partner = (snapshot.val() && snapshot.val().partner);
+                            if (partner == true) {
+                                db_ref.update({
+                                    partner: false,
+                                });
+                            } else {
+                                db_ref.update({
+                                    partner: true,
+                                });
+                            };
+                        });
+                    });
+                    $('[add_staff]').show();
+                    $('[add_staff]').on('click', function() {
+                        var db_ref = firebase.database().ref('/data/users/' + id).child('badges');
+                        db_ref.once('value', function(snapshot) {
+                            var staff = (snapshot.val() && snapshot.val().staff);
+                            if (staff == true) {
+                                db_ref.update({
+                                    staff: false,
+                                });
+                            } else {
+                                db_ref.update({
+                                    staff: true,
+                                });
+                            };
+                        });
+                    });
+                }
+                //////////////////////////////////////
                 if (id == 0) {
                     swal({
                         text: "User Dont Exists",
@@ -331,22 +414,7 @@
                     });
                 }
                 //////////////////////////
-                if (user.uid == 'YH2r7xe271Xv5yVbnBOHRMJVVmf2') {
-                    $('[add_verified]').show();
-                    $('[add_verified]').on('click', function() {
-                        var db_ref = firebase.database().ref('/data/users/' + id).child('badges');
-                        db_ref.once('value', function(snapshot) {
-                            var verified = (snapshot.val() && snapshot.val().verified);
-                            if (verified == true) {
-                                db_ref.remove();
-                            } else {
-                                db_ref.update({
-                                    verified: true,
-                                });
-                            };
-                        });
-                    });
-                }
+
 
 
                 /////////////////////////////////////////
@@ -596,19 +664,8 @@
 
         });
 
-        var db_ref = firebase.database().ref('/data/users/' + id);
-        db_ref.child('badges').on('value', function(snapshot) {
-            console.log('working badges');
-            var verified = (snapshot.val() && snapshot.val().verified);
-            if (verified == true) {
-                $('[id=user_badges]').html(icon_verified);
-                $('[add_verified]').text("Remove Verification Mark");
-            } else {
-                $('[id=user_badges]').html("");
-                $('[add_verified]').text("Add Verification Mark");
-            }
-        });
 
+        var db_ref = firebase.database().ref('/data/users/' + id);
         db_ref.on('value', function(snapshot) {
             var username = (snapshot.val() && snapshot.val().username);
             var profile_picture = (snapshot.val() && snapshot.val().profile_picture);

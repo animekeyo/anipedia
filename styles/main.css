@@ -1193,13 +1193,17 @@ non-ffg {
     overflow: hidden;
 }
 
-add_verified.center-flex {
+add_partner.center-flex,
+add_verified.center-flex,
+.theme-GDFF4343FF {
     width: 60rem;
     display: flex;
     align-items: flex-end;
 }
 
-add_verified.center-flex nonv {
+add_partner.center-flex nonv,
+add_verified.center-flex nonv,
+.theme-GDFF4343gF {
     color: var(--c19);
     background: var(--c15);
     padding: 1rem;
@@ -1591,4 +1595,43 @@ div {
     position: sticky;
     top: 80px;
     border-radius: 10px;
+}
+
+.tooltip {
+    position: relative;
+    display: flex;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 70px;
+    z-index: 1000!important;
+    background-color: var(--c14);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    position: absolute;
+    bottom: 130%;
+    left: 110%;
+    font-size: 1rem;
+    margin-left: -60px;
+    outline: unset;
+    padding: 6px 6px;
+    FONT-WEIGHT: 100;
+    font-family: monospace;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--c14) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }
