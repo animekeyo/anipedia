@@ -32,64 +32,98 @@
     </header>
     <profile-info class="center-flex relative">
         <banner class="center-flex relative">
-            <non-ag class="full-wh full-bg center-flex absolute" id="user_banner">
+            <non-ag class="full-wh full-bg center-flex absolute" id="user_banner" style="background-image: url(&quot;https://i.imgur.com/5QjkdVH.jpg&quot;), url(&quot;/images/banner.png&quot;);">
 
             </non-ag>
             <non-a class="second full-wh full-bg center-flex absolute ">
 
             </non-a>
-            <non-b class="full-wh full-bg center-flex absolute" id="user_banner">
-                <add_verified class=" center-flex">
-                    <nonv add_verified style="display: none;"></nonv>
-                </add_verified>
-                <add_partner class=" center-flex">
-                    <nonv add_partner style="display: none;"></nonv>
-                </add_partner>
-                <add_staff class="theme-GDFF4343FF center-flex">
-                    <nonv class="theme-GDFF4343gF" add_staff style="display: none;"></nonv>
-                </add_staff>
+            <non-b class="theme-FSDDF553sdfs full-wh full-bg center-flex absolute" id="user_banner" style="background-image: url(&quot;https://i.imgur.com/5QjkdVH.jpg&quot;), url(&quot;/images/banner.png&quot;);">
+                <div class="center-flex theme-fsdfDSDF1233D">
+                    <div btx="add_verified" class="theme-GDFLds34FSfDAA center-flex">
+                        <div add_verified class="theme-GDFLds34FSDAA center-flex">
+                            Verification
+                            <div add_verified_icon> </div>
+                        </div>
+                    </div>
+                    <div btx="add_staff" class="theme-GDFLds34FSfDAA center-flex">
+                        <div add_staff class="theme-GDFLds34FSDAA center-flex">
+                            Staff
+                            <div add_staff_icon> </div>
+                        </div>
+                    </div>
+                    <div btx="add_partner" class="theme-GDFLds34FSfDAA center-flex">
+                        <div add_partner class="theme-GDFLds34FSDAA center-flex">
+                            Partner
+                            <div add_partner_icon> </div>
+                        </div>
+                    </div>
+                </div>
             </non-b>
+            <div class="center-flex theme-FDS45GFFFS">
+                <div class="center-flex theme-FDS4SD5GfFFFS full-wh">
+
+                    <div class="center-flex theme-FDFFS45GFFFS">
+                        <div id="user_profile_pic" user-status class="center-flex full-bg theme-GGFFDSf5GFFFS" style="background-image: url('/images/icon.png')">
+                            <!--Profile Pic-->
+                        </div>
+                        <div class="center-flex theme-FDSHG45GFFFS">
+                            <div class="center-flex code-dfjs34jFDS334 theme-FDFDS45GFFFS">
+                                <!--Display Name-->
+
+                                <div id="user_name" class="center-flex theme-FDFDS4GGGF3FFS">
+                                    <!--Name-->
+                                    <div import_small_loader></div>
+                                </div>
+                                <div class="center-flex theme-FDFDS4GGGFFdFS">
+                                    <!--Username-->
+                                    @SyeraChan
+                                </div>
+                            </div>
+                            <!--Badges-->
+                            <badge class="center-flex theme-FDSHGF45GFFFS" id="user_badges">
+
+                            </badge>
+
+                        </div>
+                    </div>
+
+                    <div class="center-flex theme-FDS45GFFFGHFS" follow_and_setting>
+                        <!--Follow/Unfollow & Setting Button-->
+                        <div class="center-flex theme-FDS45fggfGFFFDFGS">
+                            <div import_small_loader></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="center-flex theme-FFGEKO233DF">
+                    <div class="center-flex theme-FFGEKgO233DF">
+                        Custom Bio
+                    </div>
+                    <div id="user_dec" class="center-flex theme-FFGEKO2h33DF">
+                        love with senpai
+                    </div>
+                </div>
+                <div class="full-wh center-flex theme-FDS45fgGFFFDFGS">
+                    <!--Online/Following/Follower's Buttons-->
+                    <div class="center-flex theme-FDS45fgfGFFFDFGS">
+                        <!--BTN-->
+                        Followers
+                        <span id="followers_button" class="theme-span-FSDF342D">
+                            <div import_small_loader></div>
+                        </span>
+                    </div>
+                    <div class="center-flex theme-FDS45fgfGFFFDFGS">
+                        <!--BTN-->
+                        Following
+                        <span id="following_button" class="theme-span-FSDF342D">
+                            <div import_small_loader></div>
+                        </span>
+                    </div>
+                </div>
+            </div>
         </banner>
 
-        <profile-index class="absolute center-flex full-wh">
-            <profile-pic id="user_profile_pic" class="full-bg center-flex">
 
-            </profile-pic>
-            <user-name>
-                <non id="user_name">
-                    <loadin import_small_loader>
-
-                    </loadin>
-                </non>
-                <badge class="center-flex" id="user_badges">
-
-                </badge>
-            </user-name>
-            <dex-c id="user_dec">
-                <loadin import_small_loader>
-
-                </loadin>
-            </dex-c>
-            <buttons>
-                <buttons-x>
-                    <non id="user_status">
-                        <loadin import_small_loader>
-
-                        </loadin>
-                    </non>
-                    <non id="following_button" class="following">
-
-                    </non>
-                    <non id="followers_button" class="followers">
-
-                    </non>
-                </buttons-x>
-
-                <buttons-x id="if_follo_or_null">
-
-                </buttons-x>
-            </buttons>
-        </profile-index>
     </profile-info>
 
     <div class=" center-flex full-bg theme-FD54DFRKKI">
@@ -289,23 +323,23 @@
                     var verified = (snapshot.val() && snapshot.val().verified);
                     if (verified == true) {
                         $('[id=user_badges]').prepend(icon_verified);
-                        $('[add_verified]').text("Remove Verification Mark");
+                        $('[add_verified_icon]').html(icon_close);
                     } else {
-                        $('[add_verified]').text("Add Verification Mark");
+                        $('[add_verified_icon]').html(icon_checkmark);
                     }
                     const partner = (snapshot.val() && snapshot.val().partner);
                     if (partner == true) {
-                        $('[id=user_badges]').prepend(l2);
-                        $('[add_partner]').text("Remove partner Mark");
+                        $('[id=user_badges]').prepend(icon_turbo_1);
+                        $('[add_partner_icon]').html(icon_close);
                     } else {
-                        $('[add_partner]').text("Add partner Mark");
+                        $('[add_partner_icon]').html(icon_checkmark);
                     }
                     const staff = (snapshot.val() && snapshot.val().staff);
                     if (staff == true) {
                         $('[id=user_badges]').prepend(icon_staff);
-                        $('[add_staff]').text("Remove staff Mark");
+                        $('[add_staff_icon]').html(icon_close);
                     } else {
-                        $('[add_staff]').text("Add staff Mark");
+                        $('[add_staff_icon]').html(icon_checkmark);
                     }
                 });
                 if (user.uid == 'YH2r7xe271Xv5yVbnBOHRMJVVmf2') {
@@ -420,11 +454,11 @@
                 /////////////////////////////////////////
                 var user = firebase.auth().currentUser;
                 if (id == user.uid) {
-                    const datas = ' <non open_setting class="rambo">Setting</non>';
-                    $(datas).appendTo($("[id=if_follo_or_null]"));
+                    const datas = '<div class="center-flex theme-FDS45fggfGFFFDFGS" open_setting><!--BTN-->Setting</div>';
+                    $("[follow_and_setting]").html(datas);
                 } else {
-                    const data = ' <non id="follow_button" class="rambo">Follow</non>';
-                    $(data).appendTo($("[id=if_follo_or_null]"));
+                    const data = '<div class="center-flex theme-FDS45fggfGFFFDFGS" id="follow_button"><!--BTN-->Follow</div>';
+                    $("[follow_and_setting]").html(data);
                 }
                 console.log(user.uid);
 
@@ -674,11 +708,9 @@
             var onlineState = (snapshot.val() && snapshot.val().onlineState);
 
             if (onlineState == true) {
-                $('[id=user_status]').addClass("rambo");
-                $('[id=user_status]').text('Online');
+                $('[user-status]').addClass('online');
             } else {
-                $('[id=user_status]').css('background-color', 'var(--c11)');
-                $('[id=user_status]').text('Offline');
+                $('[user-status]').addClass('offline');
             };
             $("[id=user_name]").text(username);
             $("[id=user_dec]").text(bio);
