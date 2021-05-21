@@ -76,7 +76,7 @@
                                     <div import_small_loader></div>
                                 </div>
                                 <div class="center-flex theme-FDFDS4GGGFFdFS">
-                                    <!--Username-->
+                                    <!--displayName-->
                                     @SyeraChan
                                 </div>
                             </div>
@@ -100,7 +100,7 @@
                         Custom Bio
                     </div>
                     <div id="user_dec" class="center-flex theme-FFGEKO2h33DF">
-                        love with senpai
+                        <div import_small_loader></div>
                     </div>
                 </div>
                 <div class="full-wh center-flex theme-FDS45fgGFFFDFGS">
@@ -203,11 +203,11 @@
         var id = url.substring(url.lastIndexOf('?id=') + 4);
         firebase.database().ref('/data/users/').on('value', function(snapshot) {
             snapshot.forEach((user) => {
-                var username = (user.val() && user.val().username);
+                var displayName = (user.val() && user.val().displayName);
                 var userid = (user.val() && user.val().userid);
                 var profile_picture = (user.val() && user.val().profile_picture);
 
-                $('[id=dname-' + userid + ']').text(username);
+                $('[id=dname-' + userid + ']').text(displayName);
                 $('[id=pfp-' + userid + ']').css('background-image', 'url(' + profile_picture + '),url(https://animekeyo.com/anipedia/icons/icon.png)');
 
             })
@@ -478,7 +478,7 @@
 
                     rxxf.child(id).on('value', function(snapshot) {
                         var foll = snapshot.val();
-                        $('#in-name').val(foll.username);
+                        $('#in-name').val(foll.displayName);
                         $('#in-bio').val(foll.bio);
                         var cos = foll.bio;
                         $('#text-bio').text(cos);
@@ -487,7 +487,7 @@
                             value: formValues
                         } = Swal.fire({
                             title: 'Update Profile',
-                            html: '<input id="swal-input1" placeholder="Name || Only 20 Letters " value="' + foll.username + '" class="swal2-input">' +
+                            html: '<input id="swal-input1" placeholder="Name || Only 20 Letters " value="' + foll.displayName + '" class="swal2-input">' +
                                 '<input id="swal-input2" value="' + foll.bio + '" class="swal2-input">',
                             focusConfirm: false,
                             confirmButtonText: "Save",
@@ -506,7 +506,7 @@
                                     });
                                 });
                                 refo.update({
-                                    username: name,
+                                    displayName: name,
                                 }).catch(function(error) {
                                     swal("WEEBOO!!?", "Only 20 Letter's are allowed || For Name", "error", {
                                         className: "black",
@@ -536,18 +536,18 @@
                 rxxf.child(id).on('value', function(snapshot) {
                     var foll = snapshot.val();
 
-                    $('#in-name').val(foll.username);
+                    $('#in-name').val(foll.displayName);
 
                     $('#in-bio').val(foll.bio);
                     var cos = foll.bio;
-                    var cosx = foll.username;
+                    var cosx = foll.displayName;
                     $('#text-bio').text(cos);
                     if (cosx == 0) {
                         const {
                             value: formValues
                         } = Swal.fire({
                             title: 'Blank Name is Not allowed',
-                            html: '<input id="swal-input1" placeholder="Display Name" value="' + foll.username + '" class="swal2-input">',
+                            html: '<input id="swal-input1" placeholder="Display Name" value="' + foll.displayName + '" class="swal2-input">',
                             focusConfirm: false,
 
                             preConfirm: () => {
@@ -555,7 +555,7 @@
                                 var name = $('#swal-input1').val();
                                 var bio = $('#swal-input2').val();
                                 firebase.database().ref('/data/users/' + user.uid).update({
-                                    username: name,
+                                    displayName: name,
                                 });
                                 user.updateProfile({
                                     displayName: name,
@@ -701,26 +701,36 @@
 
         var db_ref = firebase.database().ref('/data/users/' + id);
         db_ref.on('value', function(snapshot) {
-            var username = (snapshot.val() && snapshot.val().username);
+            var displayName = (snapshot.val() && snapshot.val().displayName);
             var profile_picture = (snapshot.val() && snapshot.val().profile_picture);
             var banner = (snapshot.val() && snapshot.val().banner);
             var bio = (snapshot.val() && snapshot.val().bio);
+            var userid = firebase.auth().currentUser.uid;
             var onlineState = (snapshot.val() && snapshot.val().onlineState);
-
+            console.log(userid);
             if (onlineState == true) {
                 $('[user-status]').addClass('online');
             } else {
                 $('[user-status]').addClass('offline');
             };
-            $("[id=user_name]").text(username);
+            $("[id=user_name]").text(displayName);
             $("[id=user_dec]").text(bio);
+            if (bio == 0) {
+                if (id == userid) {
+                    $("[id=user_dec]").html('<div click_bio_add class="theme-FFGEKOGGF33DF" open_setting>Empty Bio!!! Click <span style="color:var(--c19)">Here</span> to add bio. </div>');
+                } else {
+                    $("[id=user_dec]").text('Looks like ' + displayName + ' didnt add bio!');
+                }
+            } else {
+
+            }
             $('[id=user_banner]').css('background-image', 'url(' + banner + '),url(/images/banner.png)');
             $('[id=user_profile_pic]').css('background-image', 'url(' + profile_picture + '),url(/images/icon.png)');
             // ...
 
             /////////////////////////HEAD////////////////////
             var ghk = "'s";
-            var llk = '<title>' + username + '' + ghk + ' Profile - on AnimeKeyo</title><link rel="shortcut icon" href="' + profile_picture + '"><meta name="description" content="' + bio + '"><meta name="author" content="' + username + '">';
+            var llk = '<title>' + displayName + '' + ghk + ' Profile - on AnimeKeyo</title><link rel="shortcut icon" href="' + profile_picture + '"><meta name="description" content="' + bio + '"><meta name="author" content="' + displayName + '">';
 
             $("[id=thehead]").prepend(llk);
 

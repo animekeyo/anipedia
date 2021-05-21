@@ -607,7 +607,7 @@
             <div class="main-post-status" id="statuso">
             </div>
             <div class="main-post-user-profile-gg name-bb" id="">
-                <no class="name-bb" id="usernameval">
+                <no class="name-bb" id="displayNameval">
                 </no>
 
             </div>
@@ -776,12 +776,12 @@
 
         firebase.database().ref('/data/users/').once('value', function(snapshot) {
             snapshot.forEach((user) => {
-                var username = (user.val() && user.val().username);
+                var displayName = (user.val() && user.val().displayName);
                 var userid = (user.val() && user.val().userid);
                 var profile_picture = (user.val() && user.val().profile_picture);
                 var onlineState = (user.val() && user.val().onlineState);
 
-                $('[id=dname-' + userid + ']').text(username);
+                $('[id=dname-' + userid + ']').text(displayName);
                 $('[id=pfp-' + userid + ']').css('background-image', 'url(' + profile_picture + '),url(https://animekeyo.com/anipedia/icons/icon.png)');
 
                 if (onlineState == true) {
@@ -1113,7 +1113,7 @@
 
                     firebase.database().ref('/data/users/' + user.uid).update({
                         banner: banner,
-                        username: name,
+                        displayName: name,
                         bio: bio,
                     });
                     user.updateProfile({
@@ -1135,7 +1135,7 @@
                 rxxf.child(id).on('value', function(snapshot) {
                     var foll = snapshot.val();
                     $('#in-banner').val(foll.banner);
-                    $('#in-name').val(foll.username);
+                    $('#in-name').val(foll.displayName);
                     $('#in-pfp').val(foll.profile_picture);
                     $('#in-bio').val(foll.bio);
                     var cos = foll.bio;
@@ -1268,7 +1268,7 @@
         });
         var db_ref = firebase.database().ref('/data/users/' + id);
         db_ref.on('value', function(snapshot) {
-            var username = (snapshot.val() && snapshot.val().username);
+            var displayName = (snapshot.val() && snapshot.val().displayName);
             var profile_picture = (snapshot.val() && snapshot.val().profile_picture);
             var banner = (snapshot.val() && snapshot.val().banner);
             var bio = (snapshot.val() && snapshot.val().bio);
@@ -1280,14 +1280,14 @@
                 $('[id=statuso]').css('background-color', 'var(--c11)');
                 $('[id=statuosx]').text('Offline');
             };
-            $("[id=usernameval]").text(username);
+            $("[id=displayNameval]").text(displayName);
             $('[id=userprofilebannerid]').css('background-image', 'url(' + banner + '),url(https://animekeyo.com/images/716375.png)');
             $('[id=userprofilepicid]').css('background-image', 'url(' + profile_picture + '),url(https://animekeyo.com/anipedia/icons/icon.png)');
             // ...
 
             /////////////////////////HEAD////////////////////
             var ghk = "'s";
-            var llk = '<title>' + username + '' + ghk + ' Profile - on AnimeKeyo</title><link rel="shortcut icon" href="' + profile_picture + '"><meta name="description" content="' + bio + '"><meta name="author" content="' + username + '">';
+            var llk = '<title>' + displayName + '' + ghk + ' Profile - on AnimeKeyo</title><link rel="shortcut icon" href="' + profile_picture + '"><meta name="description" content="' + bio + '"><meta name="author" content="' + displayName + '">';
 
             $("[id=thehead]").prepend(llk);
 

@@ -1027,7 +1027,7 @@
                     const data = firebase.database().ref('/data/users/' + user.uid);
                     data.update({
                         bio: bio,
-                        username: name,
+                        displayName: name,
                     }).then(function() {
                         // Update successful.
                         swal(name, "User Profile Updated Successfully ", "success", {

@@ -12,11 +12,11 @@ firebase.auth().onAuthStateChanged(function(user) {
                 });
             };
 
-            if (snapshot.val().username) {
-                console.log(snapshot.val().username)
+            if (snapshot.val().displayName) {
+                console.log(snapshot.val().displayName)
             } else {
                 firebase.database().ref('/data/users/' + user.uid).update({
-                    username: user.displayName
+                    displayName: user.displayName
                 });
             };
 
@@ -34,17 +34,17 @@ firebase.auth().onAuthStateChanged(function(user) {
         });
         const data = firebase.database().ref('/data/users/' + user.uid);
         data.on('value', function(snapshot) {
-            const username = (snapshot.val() && snapshot.val().username);
+            const displayName = (snapshot.val() && snapshot.val().displayName);
             const profile_picture = (snapshot.val() && snapshot.val().profile_picture);
             const banner = (snapshot.val() && snapshot.val().banner);
             const bio = (snapshot.val() && snapshot.val().bio);
             const onlineState = (snapshot.val() && snapshot.val().onlineState);
-            $("[main_name]").text(username);
-            $("[main_name_val]").val(username);
+            $("[main_name]").text(displayName);
+            $("[main_name_val]").val(displayName);
             $("[main_bio]").text(bio);
             $("[main_bio_val]").val(bio);
-            $('head').prepend('<title>' + username + ' on AnimeKeyo.com</title>');
-            $("[main_name_alt]").attr('title', username);
+            $('head').prepend('<title>' + displayName + ' on AnimeKeyo.com</title>');
+            $("[main_name_alt]").attr('title', displayName);
             $("[main_profile_banner]").css('background-image', 'url(' + banner + '),url(/images/b1.png)', 'background-position', 'center');
             $("[main_profile_picture]").css('background-image', 'url(' + profile_picture + '),url(/images/icon.png)');
             $('[main_profile_link]').on('click', function() {
