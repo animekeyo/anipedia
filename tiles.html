@@ -18,260 +18,548 @@
     <script src="/scripts/firebase.js"></script>
     <style>
         @import url("/styles/main.css");
-        profile-info banner {
-            height: 40rem;
-        }
-        
-        profile-info {
-            height: 40rem;
-            margin-top: 4rem!important;
-        }
-        
-        profile-info banner non-b {
-            width: 60rem!important;
-            height: 35rem!important;
-            border-radius: 0rem;
-        }
-        
-        .theme-FDS45GFFFS {
-            background: var(--c15);
+        .center-flex.theme-XC12sDDSaEE {
+            width: fit-content;
+            max-width: 51.8rem;
+            height: fit-content;
+            max-height: 28rem;
+            background: var(--c14);
+            padding: 1rem;
+            font-size: 0.8rem;
             color: var(--c9);
-            border-radius: 0px 0px 10px 10px;
-            height: inherit;
-            width: 60rem;
-            z-index: 1;
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            font-family: 'C1';
-            font-size: 1rem;
-            overflow: hidden;
-        }
-        
-        .theme-FDS45fgGFFFDFGS {
-            display: flex;
+            margin: 1rem;
+            gap: 0.6694rem;
+            align-items: center;
             flex-direction: row;
+            flex-wrap: wrap;
             justify-content: flex-start;
-            padding: 1rem 2.5rem;
-            gap: 2rem;
-            height: 2rem;
-            color: var(--c9);
-            background: var( --c14);
+            overflow: hidden;
+            overflow-y: scroll;
+            align-content: flex-start;
         }
         
-        .center-flex.theme-GGFFDSf5GFFFS {
-            width: 6.6rem;
-            height: 6.6rem;
-            box-shadow: 0px 0px 0px 0.2rem var(--c7);
-            border: 0.2rem solid #0b0e11;
+        .center-flex.theme-XCb12sDDSaEE {
+            width: 3rem;
+            height: 3rem;
+            background: var(--c14);
             border-radius: 100%;
-            background-color: var( --c15);
-            margin: 0.2rem;
+            /* margin: 0.35rem; */
+            border: 0.2rem var(--c7) solid;
+            /* box-shadow: 0px 0px 0px 0.2rem var(--c7); */
         }
         
-        .theme-FDSHGF45GFFFS div svg {
-            width: 25px;
-            height: 25px;
-        }
-        
-        .theme-FDFFS45GFFFS,
-        .theme-FDSHGF45GFFFS,
-        .theme-FDS4SD5GfFFFS {
+        .center-flex.theme-XC12sDDSmaEE {
+            background: var(--c14);
+            padding: 0.5rem 1rem;
+            color: var(--c20);
+            display: flex;
             flex-direction: row;
-        }
-        
-        .theme-FDS4SD5GfFFFS {
             justify-content: space-between;
-            margin: 2.5rem;
-            height: 7.5rem;
         }
         
-        .theme-FDFFS45GFFFS {
+        .center-flex.theme-XC12svDDSaEE {
             gap: 1rem;
         }
         
-        .theme-FDSHG45GFFFS,
-        .theme-FDSHGF45GFFFS {
-            gap: 0.5rem;
+        .center-flex.theme-XC12sDDSmaEE,
+        .center-flex.theme-XC12sDDSaEE,
+        .center-flex.theme-XC12sDDSfaEE {
+            border-radius: 0.5rem;
+            z-index: 103;
         }
         
-        .theme-FDSHG45GFFFS {
-            align-items: flex-start;
-            font-size: 1.5rem;
+        .center-flex.theme-XC12sDDSmaEE:hover {
+            background: var(--c13);
         }
         
-        .theme-FDS45fggfGFFFDFGS {
-            padding: 0.8rem 1.8rem;
+        .theme-XC12sDDSaEE::-webkit-scrollbar {
+            width: 5px;
+            border-radius: 100rem;
+            transition: 0.5s;
+        }
+        
+        .theme-XC12sDDSaEE::-webkit-scrollbar-thumb {
+            background-color: var(--c12);
+            outline: unset;
+            border-radius: 100rem;
+            transition: 0.5s;
+            width: 0rem;
+        }
+        
+        .theme-XC12sDDSaEE::-webkit-scrollbar-track {
             background: var(--c14);
-            border-radius: 10px;
         }
         
-        .theme-GDFLds34FSDAA.center-flex {
-            display: flex;
-            color: var(--c9);
-            flex-direction: row;
-            gap: 0.5rem;
-            padding: 0.5rem 0.8rem;
-            background: var(--c15);
-            border-radius: 5px;
+        .pointer {
+            cursor: pointer;
         }
         
-        .theme-GDFLds34FSDAA svg {
-            width: 1.3rem;
-            height: 1.3rem;
+        .small-badges.theme-SDFsdf2334DSF svg {
+            width: 15px;
+            height: 15px;
         }
         
-        .theme-FSDDF553sdfs {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-end;
-        }
-        
-        .theme-fsdfDSDF1233D {
-            margin: 0.5rem;
-            gap: 0.5rem;
-            display: flex;
-            flex-direction: row;
-        }
-        
-        .theme-FDS45fgfGFFFDFGS {
-            display: flex;
-            flex-direction: row;
-            gap: 0.5rem;
-        }
-        
-        span.theme-span-FSDF342D {
-            padding: 0.3rem 0.4rem;
-            background: var(--c15);
-            border-radius: 5px;
-        }
-        
-        .center-flex.theme-FFGEKgO233DF {
+        .small-badges.theme-SDFsdf2334DSF .tooltip .tooltiptext {
+            width: 48px;
+            bottom: 159%;
+            left: 225%;
+            font-size: 10px;
+            font-family: 'C1';
+            padding: 0.5rem 0.6rem;
+            background-color: var(--c13);
             text-transform: uppercase;
-            color: var(--c11);
-            font-size: 1.2rem;
         }
         
-        .center-flex.theme-FFGEKO233DF {
+        .center-flex.theme-XC12sDDSfaEE {
+            background: var(--c15);
+            padding: 1.621rem;
+            gap: 1.2rem;
+            /* width: 6rem; */
+            height: 10rem;
             display: flex;
-            align-items: flex-start;
-            margin: 1rem 2.5rem;
-            width: -webkit-fill-available;
-            justify-content: flex-start;
-            height: -webkit-fill-available;
+            justify-content: space-between;
+        }
+        
+        .center-flex.theme-XC1n2sDDSaEE {
             gap: 0.5rem;
         }
         
-        .code-dfjs34jFDS334.theme-FDFDS45GFFFS {
-            display: flex;
-            gap: 0.5rem;
-            flex-direction: row;
+        .center-flex.theme-XC12sDDSmaEE:active {
+            margin-bottom: 0.3rem;
         }
         
-        .center-flex.theme-FDFDS4GGGFFdFS {
-            font-size: 1rem;
-            color: var(--c11);
-            padding: 0.35rem 0.4rem;
-            background: var(--c14);
-            border-radius: 5px;
+        .noselect {
+            -webkit-touch-callout: none;
+            /* iOS Safari */
+            -webkit-user-select: none;
+            /* Safari */
+            -khtml-user-select: none;
+            /* Konqueror HTML */
+            -moz-user-select: none;
+            /* Old versions of Firefox */
+            -ms-user-select: none;
+            /* Internet Explorer/Edge */
+            user-select: none;
+            /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+        }
+        
+        .center-flex.green.noselect.pointer.theme-XC12sDDSmaEE,
+        .green {
+            color: var(--c7);
+        }
+        
+        .center-flex.absolute.theme-XC12sDDSmaEffDF {
+            left: unset;
+            right: 0;
+            width: 2.5rem;
+            height: 2.5rem;
+            background: var(--c13);
+            margin: 1rem;
+            border-radius: 100%;
+        }
+        
+        @media (max-width:980px) {
+            .center-flex.theme-XC12sDDSmaEE,
+            .center-flex.theme-XC12sDDSaEE,
+            .center-flex.theme-XC12sDDSfaEE {
+                border-radius: 2vw;
+                z-index: 103;
+            }
+            .center-flex.theme-XC12sDDSaEE {
+                /* padding-bottom: 1vw; */
+                width: -webkit-fill-available;
+                height: -webkit-fill-available;
+                padding: unset;
+                max-height: unset;
+                max-width: unset;
+                border-radius: unset;
+                font-size: 4vw;
+                gap: unset;
+                overflow: auto;
+                margin: unset;
+                box-shadow: unset;
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-content: flex-start;
+                align-items: center;
+                padding-bottom: 5.21vw;
+                background: var(--c15);
+            }
+            .center-flex.theme-XC12sDDSfaEE {
+                padding: 5.21vw;
+                gap: 10vw;
+                height: fit-content;
+                display: flex;
+                width: -webkit-fill-available;
+                flex-direction: row;
+                padding-bottom: unset;
+            }
+            .center-flex.theme-XC1n2sDDSaEE {
+                gap: 2vw;
+            }
+            .center-flex.theme-XC12svDDSaEE {
+                gap: 3.3vw;
+                display: flex;
+                flex-direction: row;
+            }
+            .center-flex.theme-XCb12sDDSaEE {
+                width: 13vw;
+                height: 13vw;
+                border: 0.6vw var(--c7) solid;
+            }
+            .theme-XC12sDDSaEE::-webkit-scrollbar {
+                width: 2vw;
+            }
+            .theme-XC12sDDSaEE::-webkit-scrollbar-thumb {
+                background-color: var(--c12);
+                width: 0vw;
+            }
+            .theme-XC12sDDSaEE::-webkit-scrollbar-track {
+                background: var(--c15);
+            }
+            .center-flex.theme-XC12sDDSmaEE {
+                padding: 2vw 4vw;
+            }
+            .small-badges.theme-SDFsdf2334DSF svg {
+                width: 5vw;
+                height: 5vw;
+            }
+            .theme-FDSHG45GFFFS,
+            .theme-FDSHGF45GFFFS {
+                gap: 2vw;
+            }
+            .center-flex.absolute.theme-XC12sDDSmaEffDF {
+                left: 0;
+                right: unset;
+                width: 10vw;
+                height: 10vw;
+                box-shadow: 0px 0px 1px 1px var(--c10);
+                margin: 5vw;
+                z-index: 104;
+            }
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.7/dist/sweetalert2.all.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-firestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-analytics.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-app.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-auth.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-database.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/scripts/purl.js"></script>
+    <script src="/scripts/firebase.js"></script>
+    <script defer src="/scripts/com.js"></script>
 </head>
 
 <body>
-    <profile-info class="center-flex relative">
-        <banner class="center-flex relative">
-            <non-ag class="full-wh full-bg center-flex absolute" id="user_banner" style="background-image: url(&quot;https://i.imgur.com/5QjkdVH.jpg&quot;), url(&quot;/images/banner.png&quot;);">
+    <div class="full-wh fixed center-flex theme-XC12sDDSmaEffd">
+        <div class="center-flex absolute theme-XC12sDDSmaEffDF pointer noselect" icon_close>
 
-            </non-ag>
-            <non-a class="second full-wh full-bg center-flex absolute ">
+        </div>
+        <div class="center-flex full-wh absolute theme-XC12sDDSaEECV">
 
-            </non-a>
-            <non-b class="theme-FSDDF553sdfs full-wh full-bg center-flex absolute" id="user_banner" style="background-image: url(&quot;https://i.imgur.com/5QjkdVH.jpg&quot;), url(&quot;/images/banner.png&quot;);">
-                <div class="center-flex theme-fsdfDSDF1233D">
-                    <div btx="add_verified" class="theme-GDFLds34FSfDAA center-flex">
-                        <div add_verified class="theme-GDFLds34FSDAA center-flex">
-                            Verification <svg xmlns="http://www.w3.org/2000/svg" height="24" fill="var(--c9)" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M18 7l-1.41-1.41-6.34 6.34 1.41 1.41L18 7zm4.24-1.41L11.66 16.17 7.48 12l-1.41 1.41L11.66 19l12-12-1.42-1.41zM.41 13.41L6 19l1.41-1.41L1.83 12 .41 13.41z"/></svg>
-                        </div>
+        </div>
+        <div class="center-flex theme-XC12sDDSaEE">
+            <div class="center-flex theme-XC12sDDSfaEE">
+                <div class="center-flex theme-XC12svDDSaEE">
+                    <div class="center-flex theme-XCb12sDDSaEE">
+
                     </div>
-                    <div btx="add_verified" class="theme-GDFLds34FSfDAA center-flex">
-                        <div add_verified class="theme-GDFLds34FSDAA center-flex">
-                            Staff <svg xmlns="http://www.w3.org/2000/svg" height="24" fill="var(--c9)" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M18 7l-1.41-1.41-6.34 6.34 1.41 1.41L18 7zm4.24-1.41L11.66 16.17 7.48 12l-1.41 1.41L11.66 19l12-12-1.42-1.41zM.41 13.41L6 19l1.41-1.41L1.83 12 .41 13.41z"/></svg>
-                        </div>
-                    </div>
-                    <div btx="add_verified" class="theme-GDFLds34FSfDAA center-flex">
-                        <div add_verified class="theme-GDFLds34FSDAA center-flex">
-                            Partner <svg xmlns="http://www.w3.org/2000/svg" height="24" fill="var(--c9)" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M18 7l-1.41-1.41-6.34 6.34 1.41 1.41L18 7zm4.24-1.41L11.66 16.17 7.48 12l-1.41 1.41L11.66 19l12-12-1.42-1.41zM.41 13.41L6 19l1.41-1.41L1.83 12 .41 13.41z"/></svg>
-                        </div>
-                    </div>
-                </div>
-            </non-b>
-            <div class="center-flex theme-FDS45GFFFS">
-                <div class="center-flex theme-FDS4SD5GfFFFS full-wh">
+                    <div class="center-flex theme-XC1n2sDDSaEE">
 
-                    <div class="center-flex theme-FDFFS45GFFFS">
-                        <div class="center-flex full-bg theme-GGFFDSf5GFFFS" style="background-image: url('https://i.imgur.com/WntP0vl.jpg'), url('/images/icon.png')">
-                            <!--Profile Pic-->
+                        <div class="theme-FSD234FDS32">
+                            SyeraChan
                         </div>
-                        <div class="center-flex theme-FDSHG45GFFFS">
-                            <div class="center-flex code-dfjs34jFDS334 theme-FDFDS45GFFFS">
-                                <!--Display Name-->
-
-                                <div class="center-flex theme-FDFDS4GGGF3FFS">
-                                    <!--Name-->
-                                    Syera Chan
-                                </div>
-                                <div class="center-flex theme-FDFDS4GGGFFdFS">
-                                    <!--displayName-->
-                                    @SyeraChan
-                                </div>
-                            </div>
-                            <!--Badges-->
+                        <div class="small-badges theme-SDFsdf2334DSF">
                             <badge class="center-flex theme-FDSHGF45GFFFS" id="user_badges">
                                 <div class="tooltip"> <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><g id="StaffBadge_svg__KMcxqn_tif_1_"><linearGradient id="StaffBadge_svg__SVGID_1_" gradientUnits="userSpaceOnUse" x1="1.523" y1="8" x2="14.477" y2="8"><stop offset="0" stop-color="#fd4d4d"></stop><stop offset="1" stop-color="#f26767"></stop></linearGradient><path d="M1.5 2.3c.6-.1 1.1-.2 1.6-.3 1.3-.3 2.6-.8 3.8-1.4l.9-.6c.2 0 .3 0 .4.1.7.4 1.4.8 2.1 1.1 1.1.5 2.2.8 3.4 1 .2 0 .5.1.7.1v7.1c0 .5-.1.9-.3 1.4-.4.9-1 1.7-1.8 2.4-.9.8-1.8 1.5-2.9 2.1-.4.2-.8.4-1.3.7h-.2c-1.2-.6-2.3-1.2-3.3-2-.8-.6-1.6-1.3-2.1-2.1-.4-.6-.8-1.3-.9-2v-.4-5.3c-.1-.7-.1-1.3-.1-1.9zm11.7 4.1V3.3c0-.1 0-.1-.1-.1-1-.2-2.1-.5-3-.9-.7-.3-1.4-.7-2-1h-.2c-.3.2-.5.3-.8.5-1.4.6-2.8 1.1-4.2 1.4-.1 0-.1.1-.1.2V9.7c.1.5.3.9.5 1.3.5.8 1.1 1.4 1.9 2 .9.7 1.8 1.3 2.8 1.8h.1c.1-.1.2-.1.4-.2.9-.5 1.8-1 2.5-1.7.7-.6 1.4-1.3 1.9-2.1.3-.5.5-1 .4-1.6-.1-.9-.1-1.8-.1-2.8z" fill="url(#StaffBadge_svg__SVGID_1_)"></path></g><linearGradient id="StaffBadge_svg__SVGID_2_" gradientUnits="userSpaceOnUse" x1="4.592" y1="8" x2="11.408" y2="8"><stop offset="0" stop-color="#fd4d4d"></stop><stop offset="1" stop-color="#f26767"></stop></linearGradient><path d="M11.4 7.9V5v-.1c-.1 0-.3 0-.4-.1-.6-.1-1.2-.3-1.8-.5-.4-.1-.7-.3-1.1-.5h-.2c-.1.1-.3.2-.5.3-.6.3-1.3.6-2 .8-.2 0-.5 0-.8.1v3.9c.1.5.3.8.5 1.1.3.4.7.8 1.1 1.1.5.4 1.1.7 1.7 1H8c.2-.1.5-.2.7-.4.6-.3 1.1-.7 1.5-1.1.4-.4.7-.8.9-1.2.1-.2.2-.5.2-.7.1-.2.1-.5.1-.8z" fill="url(#StaffBadge_svg__SVGID_2_)"></path><path fill="none" d="M0 0h16v16H0z"></path></svg>                                    <span class="tooltiptext">Staff</span> </div>
-                                <div class="tooltip"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" contributions="12"><path d="M8 0L0 8l8 8 8-8-8-8zm-.8 5.1L4.3 8l2.9 2.9v2.6L1.7 8l5.5-5.5v2.6zm1.6 5.8L11.7 8 8.8 5.1V2.5L14.3 8l-5.5 5.5v-2.6z" fill="#5df4df"></path></svg>                                    <span class="tooltiptext">Verified</span> </div>
-                                <div class="tooltip"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" contributions="1628"><path fill="#5df4df" d="M11.098 15.716l4.596-4.596.495.495-4.596 4.596zM-.005 4.624L4.59.028l.495.495L.49 5.12zM8.1.1l-8 8 8 8 8-8-8-8zm-.8 13.5L1.8 8.1l5.5-5.5v2.6L4.4 8.1 7.3 11v2.6zM7 9.5l.2-1.2-.8-.9 1.2-.2.5-1.1.5 1.1 1.2.2-.8.9.2 1.2-1.1-.6-1.1.6zM9 11l2.9-2.9L9 5.2V2.6l5.5 5.5L9 13.6V11zM11.092.518l.495-.495 4.597 4.596-.495.495zM0 11.62l.496-.494 4.596 4.596-.495.495z"></path><path fill="#5df4df" d="M11.098 15.716l4.596-4.596.495.495-4.596 4.596zM-.005 4.624L4.59.028l.495.495L.49 5.12zM8.1.1l-8 8 8 8 8-8-8-8zm-.8 13.5L1.8 8.1l5.5-5.5v2.6L4.4 8.1 7.3 11v2.6zM7 9.5l.2-1.2-.8-.9 1.2-.2.5-1.1.5 1.1 1.2.2-.8.9.2 1.2-1.1-.6-1.1.6zM9 11l2.9-2.9L9 5.2V2.6l5.5 5.5L9 13.6V11zM11.092.518l.495-.495 4.597 4.596-.495.495zM0 11.62l.496-.494 4.596 4.596-.495.495z"></path></svg>                                    <span class="tooltiptext">Partner</span> </div>
+                                <div class="tooltip"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" contributions="12"><path d="M8 0L0 8l8 8 8-8-8-8zm-.8 5.1L4.3 8l2.9 2.9v2.6L1.7 8l5.5-5.5v2.6zm1.6 5.8L11.7 8 8.8 5.1V2.5L14.3 8l-5.5 5.5v-2.6z" fill="#5df4df"></path></svg>                                    <span class="tooltiptext">Turbo lvl. 1</span> </div>
                                 <div class="tooltip"> <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><g><rect fill="none" height="24" width="24"></rect><rect fill="none" height="24" width="24"></rect></g><g><path d="M23,12l-2.44-2.79l0.34-3.69l-3.61-0.82L15.4,1.5L12,2.96L8.6,1.5L6.71,4.69L3.1,5.5L3.44,9.2L1,12l2.44,2.79l-0.34,3.7 l3.61,0.82L8.6,22.5l3.4-1.47l3.4,1.46l1.89-3.19l3.61-0.82l-0.34-3.69L23,12z M9.38,16.01L7,13.61c-0.39-0.39-0.39-1.02,0-1.41 l0.07-0.07c0.39-0.39,1.03-0.39,1.42,0l1.61,1.62l5.15-5.16c0.39-0.39,1.03-0.39,1.42,0l0.07,0.07c0.39,0.39,0.39,1.02,0,1.41 l-5.92,5.94C10.41,16.4,9.78,16.4,9.38,16.01z"></path></g></svg>                                    <span class="tooltiptext">Verified</span> </div>
-                            </badge>
 
+                            </badge>
                         </div>
                     </div>
 
-                    <div class="center-flex theme-FDS45GFFFGHFS">
-                        <!--Follow/Unfollow & Setting Button-->
-                        <div class="center-flex theme-FDS45fggfGFFFDFGS">
-                            <!--BTN-->Follow</div>
-                    </div>
                 </div>
-                <div class="center-flex theme-FFGEKO233DF">
-                    <div class="center-flex theme-FFGEKgO233DF">
-                        Custom Bio
-                    </div>
-                    <div class="center-flex theme-FFGEKO2h33DF">
-                        love with senpai
-                    </div>
-                </div>
-                <div class="full-wh center-flex theme-FDS45fgGFFFDFGS">
-                    <!--Online/Following/Follower's Buttons-->
-                    <div class="center-flex theme-FDS45fgfGFFFDFGS">
-                        <!--BTN-->
-                        Followers
-                        <span class="theme-span-FSDF342D">
-                        88
-                        </span>
-                    </div>
-                    <div class="center-flex theme-FDS45fgfGFFFDFGS">
-                        <!--BTN-->
-                        Following
-                        <span class="theme-span-FSDF342D">
-                            66
-                        </span>
-                    </div>
+                <div class="center-flex noselect pointer theme-XC12sDDSmaEE">
+                    Follow
                 </div>
             </div>
-        </banner>
-    </profile-info>
+            <div class="center-flex theme-XC12sDDSfaEE">
+                <div class="center-flex theme-XC12svDDSaEE">
+                    <div class="center-flex theme-XCb12sDDSaEE">
+
+                    </div>
+                    <div class="center-flex theme-XC1n2sDDSaEE">
+
+                        <div class="theme-FSD234FDS32">
+                            SyeraChan
+                        </div>
+                        <div class="small-badges theme-SDFsdf2334DSF">
+                            <badge class="center-flex theme-FDSHGF45GFFFS" id="user_badges">
+                                <div class="tooltip"> <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><g id="StaffBadge_svg__KMcxqn_tif_1_"><linearGradient id="StaffBadge_svg__SVGID_1_" gradientUnits="userSpaceOnUse" x1="1.523" y1="8" x2="14.477" y2="8"><stop offset="0" stop-color="#fd4d4d"></stop><stop offset="1" stop-color="#f26767"></stop></linearGradient><path d="M1.5 2.3c.6-.1 1.1-.2 1.6-.3 1.3-.3 2.6-.8 3.8-1.4l.9-.6c.2 0 .3 0 .4.1.7.4 1.4.8 2.1 1.1 1.1.5 2.2.8 3.4 1 .2 0 .5.1.7.1v7.1c0 .5-.1.9-.3 1.4-.4.9-1 1.7-1.8 2.4-.9.8-1.8 1.5-2.9 2.1-.4.2-.8.4-1.3.7h-.2c-1.2-.6-2.3-1.2-3.3-2-.8-.6-1.6-1.3-2.1-2.1-.4-.6-.8-1.3-.9-2v-.4-5.3c-.1-.7-.1-1.3-.1-1.9zm11.7 4.1V3.3c0-.1 0-.1-.1-.1-1-.2-2.1-.5-3-.9-.7-.3-1.4-.7-2-1h-.2c-.3.2-.5.3-.8.5-1.4.6-2.8 1.1-4.2 1.4-.1 0-.1.1-.1.2V9.7c.1.5.3.9.5 1.3.5.8 1.1 1.4 1.9 2 .9.7 1.8 1.3 2.8 1.8h.1c.1-.1.2-.1.4-.2.9-.5 1.8-1 2.5-1.7.7-.6 1.4-1.3 1.9-2.1.3-.5.5-1 .4-1.6-.1-.9-.1-1.8-.1-2.8z" fill="url(#StaffBadge_svg__SVGID_1_)"></path></g><linearGradient id="StaffBadge_svg__SVGID_2_" gradientUnits="userSpaceOnUse" x1="4.592" y1="8" x2="11.408" y2="8"><stop offset="0" stop-color="#fd4d4d"></stop><stop offset="1" stop-color="#f26767"></stop></linearGradient><path d="M11.4 7.9V5v-.1c-.1 0-.3 0-.4-.1-.6-.1-1.2-.3-1.8-.5-.4-.1-.7-.3-1.1-.5h-.2c-.1.1-.3.2-.5.3-.6.3-1.3.6-2 .8-.2 0-.5 0-.8.1v3.9c.1.5.3.8.5 1.1.3.4.7.8 1.1 1.1.5.4 1.1.7 1.7 1H8c.2-.1.5-.2.7-.4.6-.3 1.1-.7 1.5-1.1.4-.4.7-.8.9-1.2.1-.2.2-.5.2-.7.1-.2.1-.5.1-.8z" fill="url(#StaffBadge_svg__SVGID_2_)"></path><path fill="none" d="M0 0h16v16H0z"></path></svg>                                    <span class="tooltiptext">Staff</span> </div>
+                                <div class="tooltip"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" contributions="12"><path d="M8 0L0 8l8 8 8-8-8-8zm-.8 5.1L4.3 8l2.9 2.9v2.6L1.7 8l5.5-5.5v2.6zm1.6 5.8L11.7 8 8.8 5.1V2.5L14.3 8l-5.5 5.5v-2.6z" fill="#5df4df"></path></svg>                                    <span class="tooltiptext">Turbo lvl. 1</span> </div>
+                                <div class="tooltip"> <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><g><rect fill="none" height="24" width="24"></rect><rect fill="none" height="24" width="24"></rect></g><g><path d="M23,12l-2.44-2.79l0.34-3.69l-3.61-0.82L15.4,1.5L12,2.96L8.6,1.5L6.71,4.69L3.1,5.5L3.44,9.2L1,12l2.44,2.79l-0.34,3.7 l3.61,0.82L8.6,22.5l3.4-1.47l3.4,1.46l1.89-3.19l3.61-0.82l-0.34-3.69L23,12z M9.38,16.01L7,13.61c-0.39-0.39-0.39-1.02,0-1.41 l0.07-0.07c0.39-0.39,1.03-0.39,1.42,0l1.61,1.62l5.15-5.16c0.39-0.39,1.03-0.39,1.42,0l0.07,0.07c0.39,0.39,0.39,1.02,0,1.41 l-5.92,5.94C10.41,16.4,9.78,16.4,9.38,16.01z"></path></g></svg>                                    <span class="tooltiptext">Verified</span> </div>
+
+                            </badge>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="center-flex green noselect pointer theme-XC12sDDSmaEE">
+
+                    Follow
+
+                </div>
+            </div>
+            <div class="center-flex theme-XC12sDDSfaEE">
+                <div class="center-flex theme-XC12svDDSaEE">
+                    <div class="center-flex theme-XCb12sDDSaEE">
+
+                    </div>
+                    <div class="center-flex theme-XC1n2sDDSaEE">
+
+                        <div class="theme-FSD234FDS32">
+                            SyeraChan
+                        </div>
+                        <div class="small-badges theme-SDFsdf2334DSF">
+                            <badge class="center-flex theme-FDSHGF45GFFFS" id="user_badges">
+                                <div class="tooltip"> <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><g id="StaffBadge_svg__KMcxqn_tif_1_"><linearGradient id="StaffBadge_svg__SVGID_1_" gradientUnits="userSpaceOnUse" x1="1.523" y1="8" x2="14.477" y2="8"><stop offset="0" stop-color="#fd4d4d"></stop><stop offset="1" stop-color="#f26767"></stop></linearGradient><path d="M1.5 2.3c.6-.1 1.1-.2 1.6-.3 1.3-.3 2.6-.8 3.8-1.4l.9-.6c.2 0 .3 0 .4.1.7.4 1.4.8 2.1 1.1 1.1.5 2.2.8 3.4 1 .2 0 .5.1.7.1v7.1c0 .5-.1.9-.3 1.4-.4.9-1 1.7-1.8 2.4-.9.8-1.8 1.5-2.9 2.1-.4.2-.8.4-1.3.7h-.2c-1.2-.6-2.3-1.2-3.3-2-.8-.6-1.6-1.3-2.1-2.1-.4-.6-.8-1.3-.9-2v-.4-5.3c-.1-.7-.1-1.3-.1-1.9zm11.7 4.1V3.3c0-.1 0-.1-.1-.1-1-.2-2.1-.5-3-.9-.7-.3-1.4-.7-2-1h-.2c-.3.2-.5.3-.8.5-1.4.6-2.8 1.1-4.2 1.4-.1 0-.1.1-.1.2V9.7c.1.5.3.9.5 1.3.5.8 1.1 1.4 1.9 2 .9.7 1.8 1.3 2.8 1.8h.1c.1-.1.2-.1.4-.2.9-.5 1.8-1 2.5-1.7.7-.6 1.4-1.3 1.9-2.1.3-.5.5-1 .4-1.6-.1-.9-.1-1.8-.1-2.8z" fill="url(#StaffBadge_svg__SVGID_1_)"></path></g><linearGradient id="StaffBadge_svg__SVGID_2_" gradientUnits="userSpaceOnUse" x1="4.592" y1="8" x2="11.408" y2="8"><stop offset="0" stop-color="#fd4d4d"></stop><stop offset="1" stop-color="#f26767"></stop></linearGradient><path d="M11.4 7.9V5v-.1c-.1 0-.3 0-.4-.1-.6-.1-1.2-.3-1.8-.5-.4-.1-.7-.3-1.1-.5h-.2c-.1.1-.3.2-.5.3-.6.3-1.3.6-2 .8-.2 0-.5 0-.8.1v3.9c.1.5.3.8.5 1.1.3.4.7.8 1.1 1.1.5.4 1.1.7 1.7 1H8c.2-.1.5-.2.7-.4.6-.3 1.1-.7 1.5-1.1.4-.4.7-.8.9-1.2.1-.2.2-.5.2-.7.1-.2.1-.5.1-.8z" fill="url(#StaffBadge_svg__SVGID_2_)"></path><path fill="none" d="M0 0h16v16H0z"></path></svg>                                    <span class="tooltiptext">Staff</span> </div>
+                                <div class="tooltip"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" contributions="12"><path d="M8 0L0 8l8 8 8-8-8-8zm-.8 5.1L4.3 8l2.9 2.9v2.6L1.7 8l5.5-5.5v2.6zm1.6 5.8L11.7 8 8.8 5.1V2.5L14.3 8l-5.5 5.5v-2.6z" fill="#5df4df"></path></svg>                                    <span class="tooltiptext">Turbo lvl. 1</span> </div>
+                                <div class="tooltip"> <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><g><rect fill="none" height="24" width="24"></rect><rect fill="none" height="24" width="24"></rect></g><g><path d="M23,12l-2.44-2.79l0.34-3.69l-3.61-0.82L15.4,1.5L12,2.96L8.6,1.5L6.71,4.69L3.1,5.5L3.44,9.2L1,12l2.44,2.79l-0.34,3.7 l3.61,0.82L8.6,22.5l3.4-1.47l3.4,1.46l1.89-3.19l3.61-0.82l-0.34-3.69L23,12z M9.38,16.01L7,13.61c-0.39-0.39-0.39-1.02,0-1.41 l0.07-0.07c0.39-0.39,1.03-0.39,1.42,0l1.61,1.62l5.15-5.16c0.39-0.39,1.03-0.39,1.42,0l0.07,0.07c0.39,0.39,0.39,1.02,0,1.41 l-5.92,5.94C10.41,16.4,9.78,16.4,9.38,16.01z"></path></g></svg>                                    <span class="tooltiptext">Verified</span> </div>
+
+                            </badge>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="center-flex green noselect pointer theme-XC12sDDSmaEE">
+
+                    Follow
+
+                </div>
+            </div>
+            <div class="center-flex theme-XC12sDDSfaEE">
+                <div class="center-flex theme-XC12svDDSaEE">
+                    <div class="center-flex theme-XCb12sDDSaEE">
+
+                    </div>
+                    <div class="center-flex theme-XC1n2sDDSaEE">
+
+                        <div class="theme-FSD234FDS32">
+                            SyeraChan
+                        </div>
+                        <div class="small-badges theme-SDFsdf2334DSF">
+                            <badge class="center-flex theme-FDSHGF45GFFFS" id="user_badges">
+                                <div class="tooltip"> <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><g id="StaffBadge_svg__KMcxqn_tif_1_"><linearGradient id="StaffBadge_svg__SVGID_1_" gradientUnits="userSpaceOnUse" x1="1.523" y1="8" x2="14.477" y2="8"><stop offset="0" stop-color="#fd4d4d"></stop><stop offset="1" stop-color="#f26767"></stop></linearGradient><path d="M1.5 2.3c.6-.1 1.1-.2 1.6-.3 1.3-.3 2.6-.8 3.8-1.4l.9-.6c.2 0 .3 0 .4.1.7.4 1.4.8 2.1 1.1 1.1.5 2.2.8 3.4 1 .2 0 .5.1.7.1v7.1c0 .5-.1.9-.3 1.4-.4.9-1 1.7-1.8 2.4-.9.8-1.8 1.5-2.9 2.1-.4.2-.8.4-1.3.7h-.2c-1.2-.6-2.3-1.2-3.3-2-.8-.6-1.6-1.3-2.1-2.1-.4-.6-.8-1.3-.9-2v-.4-5.3c-.1-.7-.1-1.3-.1-1.9zm11.7 4.1V3.3c0-.1 0-.1-.1-.1-1-.2-2.1-.5-3-.9-.7-.3-1.4-.7-2-1h-.2c-.3.2-.5.3-.8.5-1.4.6-2.8 1.1-4.2 1.4-.1 0-.1.1-.1.2V9.7c.1.5.3.9.5 1.3.5.8 1.1 1.4 1.9 2 .9.7 1.8 1.3 2.8 1.8h.1c.1-.1.2-.1.4-.2.9-.5 1.8-1 2.5-1.7.7-.6 1.4-1.3 1.9-2.1.3-.5.5-1 .4-1.6-.1-.9-.1-1.8-.1-2.8z" fill="url(#StaffBadge_svg__SVGID_1_)"></path></g><linearGradient id="StaffBadge_svg__SVGID_2_" gradientUnits="userSpaceOnUse" x1="4.592" y1="8" x2="11.408" y2="8"><stop offset="0" stop-color="#fd4d4d"></stop><stop offset="1" stop-color="#f26767"></stop></linearGradient><path d="M11.4 7.9V5v-.1c-.1 0-.3 0-.4-.1-.6-.1-1.2-.3-1.8-.5-.4-.1-.7-.3-1.1-.5h-.2c-.1.1-.3.2-.5.3-.6.3-1.3.6-2 .8-.2 0-.5 0-.8.1v3.9c.1.5.3.8.5 1.1.3.4.7.8 1.1 1.1.5.4 1.1.7 1.7 1H8c.2-.1.5-.2.7-.4.6-.3 1.1-.7 1.5-1.1.4-.4.7-.8.9-1.2.1-.2.2-.5.2-.7.1-.2.1-.5.1-.8z" fill="url(#StaffBadge_svg__SVGID_2_)"></path><path fill="none" d="M0 0h16v16H0z"></path></svg>                                    <span class="tooltiptext">Staff</span> </div>
+                                <div class="tooltip"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" contributions="12"><path d="M8 0L0 8l8 8 8-8-8-8zm-.8 5.1L4.3 8l2.9 2.9v2.6L1.7 8l5.5-5.5v2.6zm1.6 5.8L11.7 8 8.8 5.1V2.5L14.3 8l-5.5 5.5v-2.6z" fill="#5df4df"></path></svg>                                    <span class="tooltiptext">Turbo lvl. 1</span> </div>
+                                <div class="tooltip"> <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><g><rect fill="none" height="24" width="24"></rect><rect fill="none" height="24" width="24"></rect></g><g><path d="M23,12l-2.44-2.79l0.34-3.69l-3.61-0.82L15.4,1.5L12,2.96L8.6,1.5L6.71,4.69L3.1,5.5L3.44,9.2L1,12l2.44,2.79l-0.34,3.7 l3.61,0.82L8.6,22.5l3.4-1.47l3.4,1.46l1.89-3.19l3.61-0.82l-0.34-3.69L23,12z M9.38,16.01L7,13.61c-0.39-0.39-0.39-1.02,0-1.41 l0.07-0.07c0.39-0.39,1.03-0.39,1.42,0l1.61,1.62l5.15-5.16c0.39-0.39,1.03-0.39,1.42,0l0.07,0.07c0.39,0.39,0.39,1.02,0,1.41 l-5.92,5.94C10.41,16.4,9.78,16.4,9.38,16.01z"></path></g></svg>                                    <span class="tooltiptext">Verified</span> </div>
+
+                            </badge>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="center-flex green noselect pointer theme-XC12sDDSmaEE">
+
+                    Follow
+
+                </div>
+            </div>
+            <div class="center-flex theme-XC12sDDSfaEE">
+                <div class="center-flex theme-XC12svDDSaEE">
+                    <div class="center-flex theme-XCb12sDDSaEE">
+
+                    </div>
+                    <div class="center-flex theme-XC1n2sDDSaEE">
+
+                        <div class="theme-FSD234FDS32">
+                            SyeraChan
+                        </div>
+                        <div class="small-badges theme-SDFsdf2334DSF">
+                            <badge class="center-flex theme-FDSHGF45GFFFS" id="user_badges">
+                                <div class="tooltip"> <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><g id="StaffBadge_svg__KMcxqn_tif_1_"><linearGradient id="StaffBadge_svg__SVGID_1_" gradientUnits="userSpaceOnUse" x1="1.523" y1="8" x2="14.477" y2="8"><stop offset="0" stop-color="#fd4d4d"></stop><stop offset="1" stop-color="#f26767"></stop></linearGradient><path d="M1.5 2.3c.6-.1 1.1-.2 1.6-.3 1.3-.3 2.6-.8 3.8-1.4l.9-.6c.2 0 .3 0 .4.1.7.4 1.4.8 2.1 1.1 1.1.5 2.2.8 3.4 1 .2 0 .5.1.7.1v7.1c0 .5-.1.9-.3 1.4-.4.9-1 1.7-1.8 2.4-.9.8-1.8 1.5-2.9 2.1-.4.2-.8.4-1.3.7h-.2c-1.2-.6-2.3-1.2-3.3-2-.8-.6-1.6-1.3-2.1-2.1-.4-.6-.8-1.3-.9-2v-.4-5.3c-.1-.7-.1-1.3-.1-1.9zm11.7 4.1V3.3c0-.1 0-.1-.1-.1-1-.2-2.1-.5-3-.9-.7-.3-1.4-.7-2-1h-.2c-.3.2-.5.3-.8.5-1.4.6-2.8 1.1-4.2 1.4-.1 0-.1.1-.1.2V9.7c.1.5.3.9.5 1.3.5.8 1.1 1.4 1.9 2 .9.7 1.8 1.3 2.8 1.8h.1c.1-.1.2-.1.4-.2.9-.5 1.8-1 2.5-1.7.7-.6 1.4-1.3 1.9-2.1.3-.5.5-1 .4-1.6-.1-.9-.1-1.8-.1-2.8z" fill="url(#StaffBadge_svg__SVGID_1_)"></path></g><linearGradient id="StaffBadge_svg__SVGID_2_" gradientUnits="userSpaceOnUse" x1="4.592" y1="8" x2="11.408" y2="8"><stop offset="0" stop-color="#fd4d4d"></stop><stop offset="1" stop-color="#f26767"></stop></linearGradient><path d="M11.4 7.9V5v-.1c-.1 0-.3 0-.4-.1-.6-.1-1.2-.3-1.8-.5-.4-.1-.7-.3-1.1-.5h-.2c-.1.1-.3.2-.5.3-.6.3-1.3.6-2 .8-.2 0-.5 0-.8.1v3.9c.1.5.3.8.5 1.1.3.4.7.8 1.1 1.1.5.4 1.1.7 1.7 1H8c.2-.1.5-.2.7-.4.6-.3 1.1-.7 1.5-1.1.4-.4.7-.8.9-1.2.1-.2.2-.5.2-.7.1-.2.1-.5.1-.8z" fill="url(#StaffBadge_svg__SVGID_2_)"></path><path fill="none" d="M0 0h16v16H0z"></path></svg>                                    <span class="tooltiptext">Staff</span> </div>
+                                <div class="tooltip"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" contributions="12"><path d="M8 0L0 8l8 8 8-8-8-8zm-.8 5.1L4.3 8l2.9 2.9v2.6L1.7 8l5.5-5.5v2.6zm1.6 5.8L11.7 8 8.8 5.1V2.5L14.3 8l-5.5 5.5v-2.6z" fill="#5df4df"></path></svg>                                    <span class="tooltiptext">Turbo lvl. 1</span> </div>
+                                <div class="tooltip"> <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><g><rect fill="none" height="24" width="24"></rect><rect fill="none" height="24" width="24"></rect></g><g><path d="M23,12l-2.44-2.79l0.34-3.69l-3.61-0.82L15.4,1.5L12,2.96L8.6,1.5L6.71,4.69L3.1,5.5L3.44,9.2L1,12l2.44,2.79l-0.34,3.7 l3.61,0.82L8.6,22.5l3.4-1.47l3.4,1.46l1.89-3.19l3.61-0.82l-0.34-3.69L23,12z M9.38,16.01L7,13.61c-0.39-0.39-0.39-1.02,0-1.41 l0.07-0.07c0.39-0.39,1.03-0.39,1.42,0l1.61,1.62l5.15-5.16c0.39-0.39,1.03-0.39,1.42,0l0.07,0.07c0.39,0.39,0.39,1.02,0,1.41 l-5.92,5.94C10.41,16.4,9.78,16.4,9.38,16.01z"></path></g></svg>                                    <span class="tooltiptext">Verified</span> </div>
+
+                            </badge>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="center-flex green noselect pointer theme-XC12sDDSmaEE">
+
+                    Follow
+
+                </div>
+            </div>
+            <div class="center-flex theme-XC12sDDSfaEE">
+                <div class="center-flex theme-XC12svDDSaEE">
+                    <div class="center-flex theme-XCb12sDDSaEE">
+
+                    </div>
+                    <div class="center-flex theme-XC1n2sDDSaEE">
+
+                        <div class="theme-FSD234FDS32">
+                            SyeraChan
+                        </div>
+                        <div class="small-badges theme-SDFsdf2334DSF">
+                            <badge class="center-flex theme-FDSHGF45GFFFS" id="user_badges">
+                                <div class="tooltip"> <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><g id="StaffBadge_svg__KMcxqn_tif_1_"><linearGradient id="StaffBadge_svg__SVGID_1_" gradientUnits="userSpaceOnUse" x1="1.523" y1="8" x2="14.477" y2="8"><stop offset="0" stop-color="#fd4d4d"></stop><stop offset="1" stop-color="#f26767"></stop></linearGradient><path d="M1.5 2.3c.6-.1 1.1-.2 1.6-.3 1.3-.3 2.6-.8 3.8-1.4l.9-.6c.2 0 .3 0 .4.1.7.4 1.4.8 2.1 1.1 1.1.5 2.2.8 3.4 1 .2 0 .5.1.7.1v7.1c0 .5-.1.9-.3 1.4-.4.9-1 1.7-1.8 2.4-.9.8-1.8 1.5-2.9 2.1-.4.2-.8.4-1.3.7h-.2c-1.2-.6-2.3-1.2-3.3-2-.8-.6-1.6-1.3-2.1-2.1-.4-.6-.8-1.3-.9-2v-.4-5.3c-.1-.7-.1-1.3-.1-1.9zm11.7 4.1V3.3c0-.1 0-.1-.1-.1-1-.2-2.1-.5-3-.9-.7-.3-1.4-.7-2-1h-.2c-.3.2-.5.3-.8.5-1.4.6-2.8 1.1-4.2 1.4-.1 0-.1.1-.1.2V9.7c.1.5.3.9.5 1.3.5.8 1.1 1.4 1.9 2 .9.7 1.8 1.3 2.8 1.8h.1c.1-.1.2-.1.4-.2.9-.5 1.8-1 2.5-1.7.7-.6 1.4-1.3 1.9-2.1.3-.5.5-1 .4-1.6-.1-.9-.1-1.8-.1-2.8z" fill="url(#StaffBadge_svg__SVGID_1_)"></path></g><linearGradient id="StaffBadge_svg__SVGID_2_" gradientUnits="userSpaceOnUse" x1="4.592" y1="8" x2="11.408" y2="8"><stop offset="0" stop-color="#fd4d4d"></stop><stop offset="1" stop-color="#f26767"></stop></linearGradient><path d="M11.4 7.9V5v-.1c-.1 0-.3 0-.4-.1-.6-.1-1.2-.3-1.8-.5-.4-.1-.7-.3-1.1-.5h-.2c-.1.1-.3.2-.5.3-.6.3-1.3.6-2 .8-.2 0-.5 0-.8.1v3.9c.1.5.3.8.5 1.1.3.4.7.8 1.1 1.1.5.4 1.1.7 1.7 1H8c.2-.1.5-.2.7-.4.6-.3 1.1-.7 1.5-1.1.4-.4.7-.8.9-1.2.1-.2.2-.5.2-.7.1-.2.1-.5.1-.8z" fill="url(#StaffBadge_svg__SVGID_2_)"></path><path fill="none" d="M0 0h16v16H0z"></path></svg>                                    <span class="tooltiptext">Staff</span> </div>
+                                <div class="tooltip"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" contributions="12"><path d="M8 0L0 8l8 8 8-8-8-8zm-.8 5.1L4.3 8l2.9 2.9v2.6L1.7 8l5.5-5.5v2.6zm1.6 5.8L11.7 8 8.8 5.1V2.5L14.3 8l-5.5 5.5v-2.6z" fill="#5df4df"></path></svg>                                    <span class="tooltiptext">Turbo lvl. 1</span> </div>
+                                <div class="tooltip"> <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><g><rect fill="none" height="24" width="24"></rect><rect fill="none" height="24" width="24"></rect></g><g><path d="M23,12l-2.44-2.79l0.34-3.69l-3.61-0.82L15.4,1.5L12,2.96L8.6,1.5L6.71,4.69L3.1,5.5L3.44,9.2L1,12l2.44,2.79l-0.34,3.7 l3.61,0.82L8.6,22.5l3.4-1.47l3.4,1.46l1.89-3.19l3.61-0.82l-0.34-3.69L23,12z M9.38,16.01L7,13.61c-0.39-0.39-0.39-1.02,0-1.41 l0.07-0.07c0.39-0.39,1.03-0.39,1.42,0l1.61,1.62l5.15-5.16c0.39-0.39,1.03-0.39,1.42,0l0.07,0.07c0.39,0.39,0.39,1.02,0,1.41 l-5.92,5.94C10.41,16.4,9.78,16.4,9.38,16.01z"></path></g></svg>                                    <span class="tooltiptext">Verified</span> </div>
+
+                            </badge>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="center-flex green noselect pointer theme-XC12sDDSmaEE">
+
+                    Follow
+
+                </div>
+            </div>
+            <div class="center-flex theme-XC12sDDSfaEE">
+                <div class="center-flex theme-XC12svDDSaEE">
+                    <div class="center-flex theme-XCb12sDDSaEE">
+
+                    </div>
+                    <div class="center-flex theme-XC1n2sDDSaEE">
+
+                        <div class="theme-FSD234FDS32">
+                            SyeraChan
+                        </div>
+                        <div class="small-badges theme-SDFsdf2334DSF">
+                            <badge class="center-flex theme-FDSHGF45GFFFS" id="user_badges">
+                                <div class="tooltip"> <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><g id="StaffBadge_svg__KMcxqn_tif_1_"><linearGradient id="StaffBadge_svg__SVGID_1_" gradientUnits="userSpaceOnUse" x1="1.523" y1="8" x2="14.477" y2="8"><stop offset="0" stop-color="#fd4d4d"></stop><stop offset="1" stop-color="#f26767"></stop></linearGradient><path d="M1.5 2.3c.6-.1 1.1-.2 1.6-.3 1.3-.3 2.6-.8 3.8-1.4l.9-.6c.2 0 .3 0 .4.1.7.4 1.4.8 2.1 1.1 1.1.5 2.2.8 3.4 1 .2 0 .5.1.7.1v7.1c0 .5-.1.9-.3 1.4-.4.9-1 1.7-1.8 2.4-.9.8-1.8 1.5-2.9 2.1-.4.2-.8.4-1.3.7h-.2c-1.2-.6-2.3-1.2-3.3-2-.8-.6-1.6-1.3-2.1-2.1-.4-.6-.8-1.3-.9-2v-.4-5.3c-.1-.7-.1-1.3-.1-1.9zm11.7 4.1V3.3c0-.1 0-.1-.1-.1-1-.2-2.1-.5-3-.9-.7-.3-1.4-.7-2-1h-.2c-.3.2-.5.3-.8.5-1.4.6-2.8 1.1-4.2 1.4-.1 0-.1.1-.1.2V9.7c.1.5.3.9.5 1.3.5.8 1.1 1.4 1.9 2 .9.7 1.8 1.3 2.8 1.8h.1c.1-.1.2-.1.4-.2.9-.5 1.8-1 2.5-1.7.7-.6 1.4-1.3 1.9-2.1.3-.5.5-1 .4-1.6-.1-.9-.1-1.8-.1-2.8z" fill="url(#StaffBadge_svg__SVGID_1_)"></path></g><linearGradient id="StaffBadge_svg__SVGID_2_" gradientUnits="userSpaceOnUse" x1="4.592" y1="8" x2="11.408" y2="8"><stop offset="0" stop-color="#fd4d4d"></stop><stop offset="1" stop-color="#f26767"></stop></linearGradient><path d="M11.4 7.9V5v-.1c-.1 0-.3 0-.4-.1-.6-.1-1.2-.3-1.8-.5-.4-.1-.7-.3-1.1-.5h-.2c-.1.1-.3.2-.5.3-.6.3-1.3.6-2 .8-.2 0-.5 0-.8.1v3.9c.1.5.3.8.5 1.1.3.4.7.8 1.1 1.1.5.4 1.1.7 1.7 1H8c.2-.1.5-.2.7-.4.6-.3 1.1-.7 1.5-1.1.4-.4.7-.8.9-1.2.1-.2.2-.5.2-.7.1-.2.1-.5.1-.8z" fill="url(#StaffBadge_svg__SVGID_2_)"></path><path fill="none" d="M0 0h16v16H0z"></path></svg>                                    <span class="tooltiptext">Staff</span> </div>
+                                <div class="tooltip"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" contributions="12"><path d="M8 0L0 8l8 8 8-8-8-8zm-.8 5.1L4.3 8l2.9 2.9v2.6L1.7 8l5.5-5.5v2.6zm1.6 5.8L11.7 8 8.8 5.1V2.5L14.3 8l-5.5 5.5v-2.6z" fill="#5df4df"></path></svg>                                    <span class="tooltiptext">Turbo lvl. 1</span> </div>
+                                <div class="tooltip"> <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><g><rect fill="none" height="24" width="24"></rect><rect fill="none" height="24" width="24"></rect></g><g><path d="M23,12l-2.44-2.79l0.34-3.69l-3.61-0.82L15.4,1.5L12,2.96L8.6,1.5L6.71,4.69L3.1,5.5L3.44,9.2L1,12l2.44,2.79l-0.34,3.7 l3.61,0.82L8.6,22.5l3.4-1.47l3.4,1.46l1.89-3.19l3.61-0.82l-0.34-3.69L23,12z M9.38,16.01L7,13.61c-0.39-0.39-0.39-1.02,0-1.41 l0.07-0.07c0.39-0.39,1.03-0.39,1.42,0l1.61,1.62l5.15-5.16c0.39-0.39,1.03-0.39,1.42,0l0.07,0.07c0.39,0.39,0.39,1.02,0,1.41 l-5.92,5.94C10.41,16.4,9.78,16.4,9.38,16.01z"></path></g></svg>                                    <span class="tooltiptext">Verified</span> </div>
+
+                            </badge>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="center-flex green noselect pointer theme-XC12sDDSmaEE">
+
+                    Follow
+
+                </div>
+            </div>
+            <div class="center-flex theme-XC12sDDSfaEE">
+                <div class="center-flex theme-XC12svDDSaEE">
+                    <div class="center-flex theme-XCb12sDDSaEE">
+
+                    </div>
+                    <div class="center-flex theme-XC1n2sDDSaEE">
+                        SyeraChan
+                    </div>
+                </div>
+                <div class="center-flex theme-XC12sDDSmaEE">
+                    Follow
+                </div>
+            </div>
+            <div class="center-flex theme-XC12sDDSfaEE">
+                <div class="center-flex theme-XC12svDDSaEE">
+                    <div class="center-flex theme-XCb12sDDSaEE">
+
+                    </div>
+                    <div class="center-flex theme-XC1n2sDDSaEE">
+                        SyeraChan
+                    </div>
+                </div>
+                <div class="center-flex theme-XC12sDDSmaEE">
+                    Follow
+                </div>
+            </div>
+            <div class="center-flex theme-XC12sDDSfaEE">
+                <div class="center-flex theme-XC12svDDSaEE">
+                    <div class="center-flex theme-XCb12sDDSaEE">
+
+                    </div>
+                    <div class="center-flex theme-XC1n2sDDSaEE">
+                        SyeraChan
+                    </div>
+                </div>
+                <div class="center-flex theme-XC12sDDSmaEE">
+                    Follow
+                </div>
+            </div>
+            <div class="center-flex theme-XC12sDDSfaEE">
+                <div class="center-flex theme-XC12svDDSaEE">
+                    <div class="center-flex theme-XCb12sDDSaEE">
+
+                    </div>
+                    <div class="center-flex theme-XC1n2sDDSaEE">
+                        SyeraChan
+                    </div>
+                </div>
+                <div class="center-flex theme-XC12sDDSmaEE">
+                    Follow
+                </div>
+            </div>
+            <div class="center-flex theme-XC12sDDSfaEE">
+                <div class="center-flex theme-XC12svDDSaEE">
+                    <div class="center-flex theme-XCb12sDDSaEE">
+
+                    </div>
+                    <div class="center-flex theme-XC1n2sDDSaEE">
+                        SyeraChan
+                    </div>
+                </div>
+                <div class="center-flex theme-XC12sDDSmaEE">
+                    Follow
+                </div>
+            </div>
+            <div class="center-flex theme-XC12sDDSfaEE">
+                <div class="center-flex theme-XC12svDDSaEE">
+                    <div class="center-flex theme-XCb12sDDSaEE">
+
+                    </div>
+                    <div class="center-flex theme-XC1n2sDDSaEE">
+                        SyeraChan
+                    </div>
+                </div>
+                <div class="center-flex theme-XC12sDDSmaEE">
+                    Follow
+                </div>
+            </div>
+            <div class="center-flex theme-XC12sDDSfaEE">
+                <div class="center-flex theme-XC12svDDSaEE">
+                    <div class="center-flex theme-XCb12sDDSaEE">
+
+                    </div>
+                    <div class="center-flex theme-XC1n2sDDSaEE">
+                        SyeraChan
+                    </div>
+                </div>
+                <div class="center-flex theme-XC12sDDSmaEE">
+                    Follow
+                </div>
+            </div>
+            <div class="center-flex theme-XC12sDDSfaEE">
+                <div class="center-flex theme-XC12svDDSaEE">
+                    <div class="center-flex theme-XCb12sDDSaEE">
+
+                    </div>
+                    <div class="center-flex theme-XC1n2sDDSaEE">
+                        SyeraChan
+                    </div>
+                </div>
+                <div class="center-flex theme-XC12sDDSmaEE">
+                    Follow
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
