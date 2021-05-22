@@ -2030,6 +2030,29 @@ div[flow_data_loader] {
         margin: 5%;
         border-radius: 1rem;
     }
+    .theme-45FFDWEQArR3 {
+        width: -webkit-fill-available;
+        overflow: hidden;
+    }
+    .theme-45FGDWoQAKR3 {
+        width: -webkit-fill-available;
+    }
+    .theme-43GGD76HGHJ {
+        margin: unset;
+        background: var(--c14);
+        float: left;
+        top: 0;
+        display: flex;
+        z-index: 100;
+        position: fixed;
+        width: -webkit-fill-available;
+        height: -webkit-fill-available;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
 }
 
 .flow-offline {
