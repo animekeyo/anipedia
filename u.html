@@ -39,25 +39,8 @@
 
             </non-a>
             <non-b class="theme-FSDDF553sdfs full-wh full-bg center-flex absolute" id="user_banner" style="background-image: url(&quot;https://i.imgur.com/5QjkdVH.jpg&quot;), url(&quot;/images/banner.png&quot;);">
-                <div class="center-flex theme-fsdfDSDF1233D">
-                    <div btx="add_verified" class="theme-GDFLds34FSfDAA center-flex">
-                        <div add_verified class="theme-GDFLds34FSDAA center-flex">
-                            Verification
-                            <div add_verified_icon> </div>
-                        </div>
-                    </div>
-                    <div btx="add_staff" class="theme-GDFLds34FSfDAA center-flex">
-                        <div add_staff class="theme-GDFLds34FSDAA center-flex">
-                            Staff
-                            <div add_staff_icon> </div>
-                        </div>
-                    </div>
-                    <div btx="add_partner" class="theme-GDFLds34FSfDAA center-flex">
-                        <div add_partner class="theme-GDFLds34FSDAA center-flex">
-                            Partner
-                            <div add_partner_icon> </div>
-                        </div>
-                    </div>
+                <div class="center-flex theme-fsdfDSDF1233D" admin_play>
+
                 </div>
             </non-b>
             <div class="center-flex theme-FDS45GFFFS">
@@ -289,7 +272,27 @@
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
                 ////////////////////////////////////////
-
+                if (firebase.auth().currentUser.uid == 'YH2r7xe271Xv5yVbnBOHRMJVVmf2') {
+                    const ggfx = '<div btx="add_verified" class="theme-GDFLds34FSfDAA center-flex">' +
+                        '<div add_verified class="theme-GDFLds34FSDAA center-flex">' +
+                        'Verification' +
+                        '<div add_verified_icon> </div>' +
+                        '</div>' +
+                        '</div>' +
+                        '<div btx="add_staff" class="theme-GDFLds34FSfDAA center-flex">' +
+                        '<div add_staff class="theme-GDFLds34FSDAA center-flex">' +
+                        'Staff' +
+                        '<div add_staff_icon> </div>' +
+                        '</div>' +
+                        '</div>' +
+                        '<div btx="add_partner" class="theme-GDFLds34FSfDAA center-flex">' +
+                        '<div add_partner class="theme-GDFLds34FSDAA center-flex">' +
+                        'Partner' +
+                        '<div add_partner_icon> </div>' +
+                        '</div>' +
+                        '</div>';
+                    $('[admin_play]').html(ggfx);
+                }
                 ////////////////////////////////////////
                 var db_ref = firebase.database().ref('/data/users/' + id);
                 db_ref.child('badges').on('value', function(snapshot) {
