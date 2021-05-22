@@ -39,10 +39,14 @@
             align-content: flex-start;
         }
         
+        .theme-XC12sDDSmaEffDF {
+            z-index: 104;
+        }
+        
         .center-flex.theme-XCb12sDDSaEE {
             width: 3rem;
             height: 3rem;
-            background: var(--c14);
+            background-color: var(--c14);
             border-radius: 100%;
             /* margin: 0.35rem; */
             border: 0.2rem var(--c7) solid;
@@ -160,6 +164,23 @@
             border-radius: 100%;
         }
         
+        .theme-FSD234FDS32AA {
+            color: unset;
+            cursor: pointer;
+            text-decoration: unset;
+        }
+        
+        div[flow_data_loader] {
+            width: -webkit-fill-available;
+            height: -webkit-fill-available;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+        }
+        
         @media (max-width:980px) {
             .center-flex.theme-XC12sDDSmaEE,
             .center-flex.theme-XC12sDDSaEE,
@@ -249,12 +270,19 @@
                 height: 10vw;
                 box-shadow: 0px 0px 1px 1px var(--c10);
                 margin: 5vw;
-                z-index: 104;
             }
             .center-flex.absolute.theme-XC12sDDSmaEffDF svg {
                 width: 6vw;
                 height: 6vw;
             }
+        }
+        
+        .flow-offline {
+            border-color: var(--c12)!important;
+        }
+        
+        .flow-online {
+            border-color: var(--c7)!important;
         }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.7/dist/sweetalert2.all.min.js"></script>
@@ -269,311 +297,128 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="/scripts/purl.js"></script>
     <script src="/scripts/firebase.js"></script>
-    <script defer src="/scripts/com.js"></script>
+
 </head>
 
 <body>
-    <div class="full-wh fixed center-flex theme-XC12sDDSmaEffd">
-        <div class="center-flex absolute theme-XC12sDDSmaEffDF pointer noselect" icon_close>
+
+    <div class="full-wh fixed center-flex theme-XC12sDDSmaEffd" user_flow_list>
+        <div class="center-flex absolute theme-XC12sDDSmaEffDF pointer noselect" clear_user_flow_list icon_close>
 
         </div>
-        <div class="center-flex full-wh absolute theme-XC12sDDSaEECV">
+        <div class="center-flex full-wh absolute theme-XC12sDDSaEECV" clear_user_flow_list>
 
         </div>
-        <div class="center-flex theme-XC12sDDSaEE">
-            <div class="center-flex theme-XC12sDDSfaEE">
-                <div class="center-flex theme-XC12svDDSaEE">
-                    <div class="center-flex theme-XCb12sDDSaEE">
-
-                    </div>
-                    <div class="center-flex theme-XC1n2sDDSaEE">
-
-                        <div class="theme-FSD234FDS32">
-                            SyeraChan
-                        </div>
-                        <div class="small-badges theme-SDFsdf2334DSF">
-                            <badge class="center-flex theme-FDSHGF45GFFFS" id="user_badges">
-                                <div class="tooltip"> <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><g id="StaffBadge_svg__KMcxqn_tif_1_"><linearGradient id="StaffBadge_svg__SVGID_1_" gradientUnits="userSpaceOnUse" x1="1.523" y1="8" x2="14.477" y2="8"><stop offset="0" stop-color="#fd4d4d"></stop><stop offset="1" stop-color="#f26767"></stop></linearGradient><path d="M1.5 2.3c.6-.1 1.1-.2 1.6-.3 1.3-.3 2.6-.8 3.8-1.4l.9-.6c.2 0 .3 0 .4.1.7.4 1.4.8 2.1 1.1 1.1.5 2.2.8 3.4 1 .2 0 .5.1.7.1v7.1c0 .5-.1.9-.3 1.4-.4.9-1 1.7-1.8 2.4-.9.8-1.8 1.5-2.9 2.1-.4.2-.8.4-1.3.7h-.2c-1.2-.6-2.3-1.2-3.3-2-.8-.6-1.6-1.3-2.1-2.1-.4-.6-.8-1.3-.9-2v-.4-5.3c-.1-.7-.1-1.3-.1-1.9zm11.7 4.1V3.3c0-.1 0-.1-.1-.1-1-.2-2.1-.5-3-.9-.7-.3-1.4-.7-2-1h-.2c-.3.2-.5.3-.8.5-1.4.6-2.8 1.1-4.2 1.4-.1 0-.1.1-.1.2V9.7c.1.5.3.9.5 1.3.5.8 1.1 1.4 1.9 2 .9.7 1.8 1.3 2.8 1.8h.1c.1-.1.2-.1.4-.2.9-.5 1.8-1 2.5-1.7.7-.6 1.4-1.3 1.9-2.1.3-.5.5-1 .4-1.6-.1-.9-.1-1.8-.1-2.8z" fill="url(#StaffBadge_svg__SVGID_1_)"></path></g><linearGradient id="StaffBadge_svg__SVGID_2_" gradientUnits="userSpaceOnUse" x1="4.592" y1="8" x2="11.408" y2="8"><stop offset="0" stop-color="#fd4d4d"></stop><stop offset="1" stop-color="#f26767"></stop></linearGradient><path d="M11.4 7.9V5v-.1c-.1 0-.3 0-.4-.1-.6-.1-1.2-.3-1.8-.5-.4-.1-.7-.3-1.1-.5h-.2c-.1.1-.3.2-.5.3-.6.3-1.3.6-2 .8-.2 0-.5 0-.8.1v3.9c.1.5.3.8.5 1.1.3.4.7.8 1.1 1.1.5.4 1.1.7 1.7 1H8c.2-.1.5-.2.7-.4.6-.3 1.1-.7 1.5-1.1.4-.4.7-.8.9-1.2.1-.2.2-.5.2-.7.1-.2.1-.5.1-.8z" fill="url(#StaffBadge_svg__SVGID_2_)"></path><path fill="none" d="M0 0h16v16H0z"></path></svg>                                    <span class="tooltiptext">Staff</span> </div>
-                                <div class="tooltip"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" contributions="12"><path d="M8 0L0 8l8 8 8-8-8-8zm-.8 5.1L4.3 8l2.9 2.9v2.6L1.7 8l5.5-5.5v2.6zm1.6 5.8L11.7 8 8.8 5.1V2.5L14.3 8l-5.5 5.5v-2.6z" fill="#5df4df"></path></svg>                                    <span class="tooltiptext">Turbo lvl. 1</span> </div>
-                                <div class="tooltip"> <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><g><rect fill="none" height="24" width="24"></rect><rect fill="none" height="24" width="24"></rect></g><g><path d="M23,12l-2.44-2.79l0.34-3.69l-3.61-0.82L15.4,1.5L12,2.96L8.6,1.5L6.71,4.69L3.1,5.5L3.44,9.2L1,12l2.44,2.79l-0.34,3.7 l3.61,0.82L8.6,22.5l3.4-1.47l3.4,1.46l1.89-3.19l3.61-0.82l-0.34-3.69L23,12z M9.38,16.01L7,13.61c-0.39-0.39-0.39-1.02,0-1.41 l0.07-0.07c0.39-0.39,1.03-0.39,1.42,0l1.61,1.62l5.15-5.16c0.39-0.39,1.03-0.39,1.42,0l0.07,0.07c0.39,0.39,0.39,1.02,0,1.41 l-5.92,5.94C10.41,16.4,9.78,16.4,9.38,16.01z"></path></g></svg>                                    <span class="tooltiptext">Verified</span> </div>
-
-                            </badge>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="center-flex noselect pointer theme-XC12sDDSmaEE">
-                    Follow
-                </div>
-            </div>
-            <div class="center-flex theme-XC12sDDSfaEE">
-                <div class="center-flex theme-XC12svDDSaEE">
-                    <div class="center-flex theme-XCb12sDDSaEE">
-
-                    </div>
-                    <div class="center-flex theme-XC1n2sDDSaEE">
-
-                        <div class="theme-FSD234FDS32">
-                            SyeraChan
-                        </div>
-                        <div class="small-badges theme-SDFsdf2334DSF">
-                            <badge class="center-flex theme-FDSHGF45GFFFS" id="user_badges">
-                                <div class="tooltip"> <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><g id="StaffBadge_svg__KMcxqn_tif_1_"><linearGradient id="StaffBadge_svg__SVGID_1_" gradientUnits="userSpaceOnUse" x1="1.523" y1="8" x2="14.477" y2="8"><stop offset="0" stop-color="#fd4d4d"></stop><stop offset="1" stop-color="#f26767"></stop></linearGradient><path d="M1.5 2.3c.6-.1 1.1-.2 1.6-.3 1.3-.3 2.6-.8 3.8-1.4l.9-.6c.2 0 .3 0 .4.1.7.4 1.4.8 2.1 1.1 1.1.5 2.2.8 3.4 1 .2 0 .5.1.7.1v7.1c0 .5-.1.9-.3 1.4-.4.9-1 1.7-1.8 2.4-.9.8-1.8 1.5-2.9 2.1-.4.2-.8.4-1.3.7h-.2c-1.2-.6-2.3-1.2-3.3-2-.8-.6-1.6-1.3-2.1-2.1-.4-.6-.8-1.3-.9-2v-.4-5.3c-.1-.7-.1-1.3-.1-1.9zm11.7 4.1V3.3c0-.1 0-.1-.1-.1-1-.2-2.1-.5-3-.9-.7-.3-1.4-.7-2-1h-.2c-.3.2-.5.3-.8.5-1.4.6-2.8 1.1-4.2 1.4-.1 0-.1.1-.1.2V9.7c.1.5.3.9.5 1.3.5.8 1.1 1.4 1.9 2 .9.7 1.8 1.3 2.8 1.8h.1c.1-.1.2-.1.4-.2.9-.5 1.8-1 2.5-1.7.7-.6 1.4-1.3 1.9-2.1.3-.5.5-1 .4-1.6-.1-.9-.1-1.8-.1-2.8z" fill="url(#StaffBadge_svg__SVGID_1_)"></path></g><linearGradient id="StaffBadge_svg__SVGID_2_" gradientUnits="userSpaceOnUse" x1="4.592" y1="8" x2="11.408" y2="8"><stop offset="0" stop-color="#fd4d4d"></stop><stop offset="1" stop-color="#f26767"></stop></linearGradient><path d="M11.4 7.9V5v-.1c-.1 0-.3 0-.4-.1-.6-.1-1.2-.3-1.8-.5-.4-.1-.7-.3-1.1-.5h-.2c-.1.1-.3.2-.5.3-.6.3-1.3.6-2 .8-.2 0-.5 0-.8.1v3.9c.1.5.3.8.5 1.1.3.4.7.8 1.1 1.1.5.4 1.1.7 1.7 1H8c.2-.1.5-.2.7-.4.6-.3 1.1-.7 1.5-1.1.4-.4.7-.8.9-1.2.1-.2.2-.5.2-.7.1-.2.1-.5.1-.8z" fill="url(#StaffBadge_svg__SVGID_2_)"></path><path fill="none" d="M0 0h16v16H0z"></path></svg>                                    <span class="tooltiptext">Staff</span> </div>
-                                <div class="tooltip"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" contributions="12"><path d="M8 0L0 8l8 8 8-8-8-8zm-.8 5.1L4.3 8l2.9 2.9v2.6L1.7 8l5.5-5.5v2.6zm1.6 5.8L11.7 8 8.8 5.1V2.5L14.3 8l-5.5 5.5v-2.6z" fill="#5df4df"></path></svg>                                    <span class="tooltiptext">Turbo lvl. 1</span> </div>
-                                <div class="tooltip"> <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><g><rect fill="none" height="24" width="24"></rect><rect fill="none" height="24" width="24"></rect></g><g><path d="M23,12l-2.44-2.79l0.34-3.69l-3.61-0.82L15.4,1.5L12,2.96L8.6,1.5L6.71,4.69L3.1,5.5L3.44,9.2L1,12l2.44,2.79l-0.34,3.7 l3.61,0.82L8.6,22.5l3.4-1.47l3.4,1.46l1.89-3.19l3.61-0.82l-0.34-3.69L23,12z M9.38,16.01L7,13.61c-0.39-0.39-0.39-1.02,0-1.41 l0.07-0.07c0.39-0.39,1.03-0.39,1.42,0l1.61,1.62l5.15-5.16c0.39-0.39,1.03-0.39,1.42,0l0.07,0.07c0.39,0.39,0.39,1.02,0,1.41 l-5.92,5.94C10.41,16.4,9.78,16.4,9.38,16.01z"></path></g></svg>                                    <span class="tooltiptext">Verified</span> </div>
-
-                            </badge>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="center-flex green noselect pointer theme-XC12sDDSmaEE">
-
-                    Follow
-
-                </div>
-            </div>
-            <div class="center-flex theme-XC12sDDSfaEE">
-                <div class="center-flex theme-XC12svDDSaEE">
-                    <div class="center-flex theme-XCb12sDDSaEE">
-
-                    </div>
-                    <div class="center-flex theme-XC1n2sDDSaEE">
-
-                        <div class="theme-FSD234FDS32">
-                            SyeraChan
-                        </div>
-                        <div class="small-badges theme-SDFsdf2334DSF">
-                            <badge class="center-flex theme-FDSHGF45GFFFS" id="user_badges">
-                                <div class="tooltip"> <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><g id="StaffBadge_svg__KMcxqn_tif_1_"><linearGradient id="StaffBadge_svg__SVGID_1_" gradientUnits="userSpaceOnUse" x1="1.523" y1="8" x2="14.477" y2="8"><stop offset="0" stop-color="#fd4d4d"></stop><stop offset="1" stop-color="#f26767"></stop></linearGradient><path d="M1.5 2.3c.6-.1 1.1-.2 1.6-.3 1.3-.3 2.6-.8 3.8-1.4l.9-.6c.2 0 .3 0 .4.1.7.4 1.4.8 2.1 1.1 1.1.5 2.2.8 3.4 1 .2 0 .5.1.7.1v7.1c0 .5-.1.9-.3 1.4-.4.9-1 1.7-1.8 2.4-.9.8-1.8 1.5-2.9 2.1-.4.2-.8.4-1.3.7h-.2c-1.2-.6-2.3-1.2-3.3-2-.8-.6-1.6-1.3-2.1-2.1-.4-.6-.8-1.3-.9-2v-.4-5.3c-.1-.7-.1-1.3-.1-1.9zm11.7 4.1V3.3c0-.1 0-.1-.1-.1-1-.2-2.1-.5-3-.9-.7-.3-1.4-.7-2-1h-.2c-.3.2-.5.3-.8.5-1.4.6-2.8 1.1-4.2 1.4-.1 0-.1.1-.1.2V9.7c.1.5.3.9.5 1.3.5.8 1.1 1.4 1.9 2 .9.7 1.8 1.3 2.8 1.8h.1c.1-.1.2-.1.4-.2.9-.5 1.8-1 2.5-1.7.7-.6 1.4-1.3 1.9-2.1.3-.5.5-1 .4-1.6-.1-.9-.1-1.8-.1-2.8z" fill="url(#StaffBadge_svg__SVGID_1_)"></path></g><linearGradient id="StaffBadge_svg__SVGID_2_" gradientUnits="userSpaceOnUse" x1="4.592" y1="8" x2="11.408" y2="8"><stop offset="0" stop-color="#fd4d4d"></stop><stop offset="1" stop-color="#f26767"></stop></linearGradient><path d="M11.4 7.9V5v-.1c-.1 0-.3 0-.4-.1-.6-.1-1.2-.3-1.8-.5-.4-.1-.7-.3-1.1-.5h-.2c-.1.1-.3.2-.5.3-.6.3-1.3.6-2 .8-.2 0-.5 0-.8.1v3.9c.1.5.3.8.5 1.1.3.4.7.8 1.1 1.1.5.4 1.1.7 1.7 1H8c.2-.1.5-.2.7-.4.6-.3 1.1-.7 1.5-1.1.4-.4.7-.8.9-1.2.1-.2.2-.5.2-.7.1-.2.1-.5.1-.8z" fill="url(#StaffBadge_svg__SVGID_2_)"></path><path fill="none" d="M0 0h16v16H0z"></path></svg>                                    <span class="tooltiptext">Staff</span> </div>
-                                <div class="tooltip"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" contributions="12"><path d="M8 0L0 8l8 8 8-8-8-8zm-.8 5.1L4.3 8l2.9 2.9v2.6L1.7 8l5.5-5.5v2.6zm1.6 5.8L11.7 8 8.8 5.1V2.5L14.3 8l-5.5 5.5v-2.6z" fill="#5df4df"></path></svg>                                    <span class="tooltiptext">Turbo lvl. 1</span> </div>
-                                <div class="tooltip"> <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><g><rect fill="none" height="24" width="24"></rect><rect fill="none" height="24" width="24"></rect></g><g><path d="M23,12l-2.44-2.79l0.34-3.69l-3.61-0.82L15.4,1.5L12,2.96L8.6,1.5L6.71,4.69L3.1,5.5L3.44,9.2L1,12l2.44,2.79l-0.34,3.7 l3.61,0.82L8.6,22.5l3.4-1.47l3.4,1.46l1.89-3.19l3.61-0.82l-0.34-3.69L23,12z M9.38,16.01L7,13.61c-0.39-0.39-0.39-1.02,0-1.41 l0.07-0.07c0.39-0.39,1.03-0.39,1.42,0l1.61,1.62l5.15-5.16c0.39-0.39,1.03-0.39,1.42,0l0.07,0.07c0.39,0.39,0.39,1.02,0,1.41 l-5.92,5.94C10.41,16.4,9.78,16.4,9.38,16.01z"></path></g></svg>                                    <span class="tooltiptext">Verified</span> </div>
-
-                            </badge>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="center-flex green noselect pointer theme-XC12sDDSmaEE">
-
-                    Follow
-
-                </div>
-            </div>
-            <div class="center-flex theme-XC12sDDSfaEE">
-                <div class="center-flex theme-XC12svDDSaEE">
-                    <div class="center-flex theme-XCb12sDDSaEE">
-
-                    </div>
-                    <div class="center-flex theme-XC1n2sDDSaEE">
-
-                        <div class="theme-FSD234FDS32">
-                            SyeraChan
-                        </div>
-                        <div class="small-badges theme-SDFsdf2334DSF">
-                            <badge class="center-flex theme-FDSHGF45GFFFS" id="user_badges">
-                                <div class="tooltip"> <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><g id="StaffBadge_svg__KMcxqn_tif_1_"><linearGradient id="StaffBadge_svg__SVGID_1_" gradientUnits="userSpaceOnUse" x1="1.523" y1="8" x2="14.477" y2="8"><stop offset="0" stop-color="#fd4d4d"></stop><stop offset="1" stop-color="#f26767"></stop></linearGradient><path d="M1.5 2.3c.6-.1 1.1-.2 1.6-.3 1.3-.3 2.6-.8 3.8-1.4l.9-.6c.2 0 .3 0 .4.1.7.4 1.4.8 2.1 1.1 1.1.5 2.2.8 3.4 1 .2 0 .5.1.7.1v7.1c0 .5-.1.9-.3 1.4-.4.9-1 1.7-1.8 2.4-.9.8-1.8 1.5-2.9 2.1-.4.2-.8.4-1.3.7h-.2c-1.2-.6-2.3-1.2-3.3-2-.8-.6-1.6-1.3-2.1-2.1-.4-.6-.8-1.3-.9-2v-.4-5.3c-.1-.7-.1-1.3-.1-1.9zm11.7 4.1V3.3c0-.1 0-.1-.1-.1-1-.2-2.1-.5-3-.9-.7-.3-1.4-.7-2-1h-.2c-.3.2-.5.3-.8.5-1.4.6-2.8 1.1-4.2 1.4-.1 0-.1.1-.1.2V9.7c.1.5.3.9.5 1.3.5.8 1.1 1.4 1.9 2 .9.7 1.8 1.3 2.8 1.8h.1c.1-.1.2-.1.4-.2.9-.5 1.8-1 2.5-1.7.7-.6 1.4-1.3 1.9-2.1.3-.5.5-1 .4-1.6-.1-.9-.1-1.8-.1-2.8z" fill="url(#StaffBadge_svg__SVGID_1_)"></path></g><linearGradient id="StaffBadge_svg__SVGID_2_" gradientUnits="userSpaceOnUse" x1="4.592" y1="8" x2="11.408" y2="8"><stop offset="0" stop-color="#fd4d4d"></stop><stop offset="1" stop-color="#f26767"></stop></linearGradient><path d="M11.4 7.9V5v-.1c-.1 0-.3 0-.4-.1-.6-.1-1.2-.3-1.8-.5-.4-.1-.7-.3-1.1-.5h-.2c-.1.1-.3.2-.5.3-.6.3-1.3.6-2 .8-.2 0-.5 0-.8.1v3.9c.1.5.3.8.5 1.1.3.4.7.8 1.1 1.1.5.4 1.1.7 1.7 1H8c.2-.1.5-.2.7-.4.6-.3 1.1-.7 1.5-1.1.4-.4.7-.8.9-1.2.1-.2.2-.5.2-.7.1-.2.1-.5.1-.8z" fill="url(#StaffBadge_svg__SVGID_2_)"></path><path fill="none" d="M0 0h16v16H0z"></path></svg>                                    <span class="tooltiptext">Staff</span> </div>
-                                <div class="tooltip"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" contributions="12"><path d="M8 0L0 8l8 8 8-8-8-8zm-.8 5.1L4.3 8l2.9 2.9v2.6L1.7 8l5.5-5.5v2.6zm1.6 5.8L11.7 8 8.8 5.1V2.5L14.3 8l-5.5 5.5v-2.6z" fill="#5df4df"></path></svg>                                    <span class="tooltiptext">Turbo lvl. 1</span> </div>
-                                <div class="tooltip"> <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><g><rect fill="none" height="24" width="24"></rect><rect fill="none" height="24" width="24"></rect></g><g><path d="M23,12l-2.44-2.79l0.34-3.69l-3.61-0.82L15.4,1.5L12,2.96L8.6,1.5L6.71,4.69L3.1,5.5L3.44,9.2L1,12l2.44,2.79l-0.34,3.7 l3.61,0.82L8.6,22.5l3.4-1.47l3.4,1.46l1.89-3.19l3.61-0.82l-0.34-3.69L23,12z M9.38,16.01L7,13.61c-0.39-0.39-0.39-1.02,0-1.41 l0.07-0.07c0.39-0.39,1.03-0.39,1.42,0l1.61,1.62l5.15-5.16c0.39-0.39,1.03-0.39,1.42,0l0.07,0.07c0.39,0.39,0.39,1.02,0,1.41 l-5.92,5.94C10.41,16.4,9.78,16.4,9.38,16.01z"></path></g></svg>                                    <span class="tooltiptext">Verified</span> </div>
-
-                            </badge>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="center-flex green noselect pointer theme-XC12sDDSmaEE">
-
-                    Follow
-
-                </div>
-            </div>
-            <div class="center-flex theme-XC12sDDSfaEE">
-                <div class="center-flex theme-XC12svDDSaEE">
-                    <div class="center-flex theme-XCb12sDDSaEE">
-
-                    </div>
-                    <div class="center-flex theme-XC1n2sDDSaEE">
-
-                        <div class="theme-FSD234FDS32">
-                            SyeraChan
-                        </div>
-                        <div class="small-badges theme-SDFsdf2334DSF">
-                            <badge class="center-flex theme-FDSHGF45GFFFS" id="user_badges">
-                                <div class="tooltip"> <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><g id="StaffBadge_svg__KMcxqn_tif_1_"><linearGradient id="StaffBadge_svg__SVGID_1_" gradientUnits="userSpaceOnUse" x1="1.523" y1="8" x2="14.477" y2="8"><stop offset="0" stop-color="#fd4d4d"></stop><stop offset="1" stop-color="#f26767"></stop></linearGradient><path d="M1.5 2.3c.6-.1 1.1-.2 1.6-.3 1.3-.3 2.6-.8 3.8-1.4l.9-.6c.2 0 .3 0 .4.1.7.4 1.4.8 2.1 1.1 1.1.5 2.2.8 3.4 1 .2 0 .5.1.7.1v7.1c0 .5-.1.9-.3 1.4-.4.9-1 1.7-1.8 2.4-.9.8-1.8 1.5-2.9 2.1-.4.2-.8.4-1.3.7h-.2c-1.2-.6-2.3-1.2-3.3-2-.8-.6-1.6-1.3-2.1-2.1-.4-.6-.8-1.3-.9-2v-.4-5.3c-.1-.7-.1-1.3-.1-1.9zm11.7 4.1V3.3c0-.1 0-.1-.1-.1-1-.2-2.1-.5-3-.9-.7-.3-1.4-.7-2-1h-.2c-.3.2-.5.3-.8.5-1.4.6-2.8 1.1-4.2 1.4-.1 0-.1.1-.1.2V9.7c.1.5.3.9.5 1.3.5.8 1.1 1.4 1.9 2 .9.7 1.8 1.3 2.8 1.8h.1c.1-.1.2-.1.4-.2.9-.5 1.8-1 2.5-1.7.7-.6 1.4-1.3 1.9-2.1.3-.5.5-1 .4-1.6-.1-.9-.1-1.8-.1-2.8z" fill="url(#StaffBadge_svg__SVGID_1_)"></path></g><linearGradient id="StaffBadge_svg__SVGID_2_" gradientUnits="userSpaceOnUse" x1="4.592" y1="8" x2="11.408" y2="8"><stop offset="0" stop-color="#fd4d4d"></stop><stop offset="1" stop-color="#f26767"></stop></linearGradient><path d="M11.4 7.9V5v-.1c-.1 0-.3 0-.4-.1-.6-.1-1.2-.3-1.8-.5-.4-.1-.7-.3-1.1-.5h-.2c-.1.1-.3.2-.5.3-.6.3-1.3.6-2 .8-.2 0-.5 0-.8.1v3.9c.1.5.3.8.5 1.1.3.4.7.8 1.1 1.1.5.4 1.1.7 1.7 1H8c.2-.1.5-.2.7-.4.6-.3 1.1-.7 1.5-1.1.4-.4.7-.8.9-1.2.1-.2.2-.5.2-.7.1-.2.1-.5.1-.8z" fill="url(#StaffBadge_svg__SVGID_2_)"></path><path fill="none" d="M0 0h16v16H0z"></path></svg>                                    <span class="tooltiptext">Staff</span> </div>
-                                <div class="tooltip"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" contributions="12"><path d="M8 0L0 8l8 8 8-8-8-8zm-.8 5.1L4.3 8l2.9 2.9v2.6L1.7 8l5.5-5.5v2.6zm1.6 5.8L11.7 8 8.8 5.1V2.5L14.3 8l-5.5 5.5v-2.6z" fill="#5df4df"></path></svg>                                    <span class="tooltiptext">Turbo lvl. 1</span> </div>
-                                <div class="tooltip"> <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><g><rect fill="none" height="24" width="24"></rect><rect fill="none" height="24" width="24"></rect></g><g><path d="M23,12l-2.44-2.79l0.34-3.69l-3.61-0.82L15.4,1.5L12,2.96L8.6,1.5L6.71,4.69L3.1,5.5L3.44,9.2L1,12l2.44,2.79l-0.34,3.7 l3.61,0.82L8.6,22.5l3.4-1.47l3.4,1.46l1.89-3.19l3.61-0.82l-0.34-3.69L23,12z M9.38,16.01L7,13.61c-0.39-0.39-0.39-1.02,0-1.41 l0.07-0.07c0.39-0.39,1.03-0.39,1.42,0l1.61,1.62l5.15-5.16c0.39-0.39,1.03-0.39,1.42,0l0.07,0.07c0.39,0.39,0.39,1.02,0,1.41 l-5.92,5.94C10.41,16.4,9.78,16.4,9.38,16.01z"></path></g></svg>                                    <span class="tooltiptext">Verified</span> </div>
-
-                            </badge>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="center-flex green noselect pointer theme-XC12sDDSmaEE">
-
-                    Follow
-
-                </div>
-            </div>
-            <div class="center-flex theme-XC12sDDSfaEE">
-                <div class="center-flex theme-XC12svDDSaEE">
-                    <div class="center-flex theme-XCb12sDDSaEE">
-
-                    </div>
-                    <div class="center-flex theme-XC1n2sDDSaEE">
-
-                        <div class="theme-FSD234FDS32">
-                            SyeraChan
-                        </div>
-                        <div class="small-badges theme-SDFsdf2334DSF">
-                            <badge class="center-flex theme-FDSHGF45GFFFS" id="user_badges">
-                                <div class="tooltip"> <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><g id="StaffBadge_svg__KMcxqn_tif_1_"><linearGradient id="StaffBadge_svg__SVGID_1_" gradientUnits="userSpaceOnUse" x1="1.523" y1="8" x2="14.477" y2="8"><stop offset="0" stop-color="#fd4d4d"></stop><stop offset="1" stop-color="#f26767"></stop></linearGradient><path d="M1.5 2.3c.6-.1 1.1-.2 1.6-.3 1.3-.3 2.6-.8 3.8-1.4l.9-.6c.2 0 .3 0 .4.1.7.4 1.4.8 2.1 1.1 1.1.5 2.2.8 3.4 1 .2 0 .5.1.7.1v7.1c0 .5-.1.9-.3 1.4-.4.9-1 1.7-1.8 2.4-.9.8-1.8 1.5-2.9 2.1-.4.2-.8.4-1.3.7h-.2c-1.2-.6-2.3-1.2-3.3-2-.8-.6-1.6-1.3-2.1-2.1-.4-.6-.8-1.3-.9-2v-.4-5.3c-.1-.7-.1-1.3-.1-1.9zm11.7 4.1V3.3c0-.1 0-.1-.1-.1-1-.2-2.1-.5-3-.9-.7-.3-1.4-.7-2-1h-.2c-.3.2-.5.3-.8.5-1.4.6-2.8 1.1-4.2 1.4-.1 0-.1.1-.1.2V9.7c.1.5.3.9.5 1.3.5.8 1.1 1.4 1.9 2 .9.7 1.8 1.3 2.8 1.8h.1c.1-.1.2-.1.4-.2.9-.5 1.8-1 2.5-1.7.7-.6 1.4-1.3 1.9-2.1.3-.5.5-1 .4-1.6-.1-.9-.1-1.8-.1-2.8z" fill="url(#StaffBadge_svg__SVGID_1_)"></path></g><linearGradient id="StaffBadge_svg__SVGID_2_" gradientUnits="userSpaceOnUse" x1="4.592" y1="8" x2="11.408" y2="8"><stop offset="0" stop-color="#fd4d4d"></stop><stop offset="1" stop-color="#f26767"></stop></linearGradient><path d="M11.4 7.9V5v-.1c-.1 0-.3 0-.4-.1-.6-.1-1.2-.3-1.8-.5-.4-.1-.7-.3-1.1-.5h-.2c-.1.1-.3.2-.5.3-.6.3-1.3.6-2 .8-.2 0-.5 0-.8.1v3.9c.1.5.3.8.5 1.1.3.4.7.8 1.1 1.1.5.4 1.1.7 1.7 1H8c.2-.1.5-.2.7-.4.6-.3 1.1-.7 1.5-1.1.4-.4.7-.8.9-1.2.1-.2.2-.5.2-.7.1-.2.1-.5.1-.8z" fill="url(#StaffBadge_svg__SVGID_2_)"></path><path fill="none" d="M0 0h16v16H0z"></path></svg>                                    <span class="tooltiptext">Staff</span> </div>
-                                <div class="tooltip"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" contributions="12"><path d="M8 0L0 8l8 8 8-8-8-8zm-.8 5.1L4.3 8l2.9 2.9v2.6L1.7 8l5.5-5.5v2.6zm1.6 5.8L11.7 8 8.8 5.1V2.5L14.3 8l-5.5 5.5v-2.6z" fill="#5df4df"></path></svg>                                    <span class="tooltiptext">Turbo lvl. 1</span> </div>
-                                <div class="tooltip"> <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><g><rect fill="none" height="24" width="24"></rect><rect fill="none" height="24" width="24"></rect></g><g><path d="M23,12l-2.44-2.79l0.34-3.69l-3.61-0.82L15.4,1.5L12,2.96L8.6,1.5L6.71,4.69L3.1,5.5L3.44,9.2L1,12l2.44,2.79l-0.34,3.7 l3.61,0.82L8.6,22.5l3.4-1.47l3.4,1.46l1.89-3.19l3.61-0.82l-0.34-3.69L23,12z M9.38,16.01L7,13.61c-0.39-0.39-0.39-1.02,0-1.41 l0.07-0.07c0.39-0.39,1.03-0.39,1.42,0l1.61,1.62l5.15-5.16c0.39-0.39,1.03-0.39,1.42,0l0.07,0.07c0.39,0.39,0.39,1.02,0,1.41 l-5.92,5.94C10.41,16.4,9.78,16.4,9.38,16.01z"></path></g></svg>                                    <span class="tooltiptext">Verified</span> </div>
-
-                            </badge>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="center-flex green noselect pointer theme-XC12sDDSmaEE">
-
-                    Follow
-
-                </div>
-            </div>
-            <div class="center-flex theme-XC12sDDSfaEE">
-                <div class="center-flex theme-XC12svDDSaEE">
-                    <div class="center-flex theme-XCb12sDDSaEE">
-
-                    </div>
-                    <div class="center-flex theme-XC1n2sDDSaEE">
-
-                        <div class="theme-FSD234FDS32">
-                            SyeraChan
-                        </div>
-                        <div class="small-badges theme-SDFsdf2334DSF">
-                            <badge class="center-flex theme-FDSHGF45GFFFS" id="user_badges">
-                                <div class="tooltip"> <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><g id="StaffBadge_svg__KMcxqn_tif_1_"><linearGradient id="StaffBadge_svg__SVGID_1_" gradientUnits="userSpaceOnUse" x1="1.523" y1="8" x2="14.477" y2="8"><stop offset="0" stop-color="#fd4d4d"></stop><stop offset="1" stop-color="#f26767"></stop></linearGradient><path d="M1.5 2.3c.6-.1 1.1-.2 1.6-.3 1.3-.3 2.6-.8 3.8-1.4l.9-.6c.2 0 .3 0 .4.1.7.4 1.4.8 2.1 1.1 1.1.5 2.2.8 3.4 1 .2 0 .5.1.7.1v7.1c0 .5-.1.9-.3 1.4-.4.9-1 1.7-1.8 2.4-.9.8-1.8 1.5-2.9 2.1-.4.2-.8.4-1.3.7h-.2c-1.2-.6-2.3-1.2-3.3-2-.8-.6-1.6-1.3-2.1-2.1-.4-.6-.8-1.3-.9-2v-.4-5.3c-.1-.7-.1-1.3-.1-1.9zm11.7 4.1V3.3c0-.1 0-.1-.1-.1-1-.2-2.1-.5-3-.9-.7-.3-1.4-.7-2-1h-.2c-.3.2-.5.3-.8.5-1.4.6-2.8 1.1-4.2 1.4-.1 0-.1.1-.1.2V9.7c.1.5.3.9.5 1.3.5.8 1.1 1.4 1.9 2 .9.7 1.8 1.3 2.8 1.8h.1c.1-.1.2-.1.4-.2.9-.5 1.8-1 2.5-1.7.7-.6 1.4-1.3 1.9-2.1.3-.5.5-1 .4-1.6-.1-.9-.1-1.8-.1-2.8z" fill="url(#StaffBadge_svg__SVGID_1_)"></path></g><linearGradient id="StaffBadge_svg__SVGID_2_" gradientUnits="userSpaceOnUse" x1="4.592" y1="8" x2="11.408" y2="8"><stop offset="0" stop-color="#fd4d4d"></stop><stop offset="1" stop-color="#f26767"></stop></linearGradient><path d="M11.4 7.9V5v-.1c-.1 0-.3 0-.4-.1-.6-.1-1.2-.3-1.8-.5-.4-.1-.7-.3-1.1-.5h-.2c-.1.1-.3.2-.5.3-.6.3-1.3.6-2 .8-.2 0-.5 0-.8.1v3.9c.1.5.3.8.5 1.1.3.4.7.8 1.1 1.1.5.4 1.1.7 1.7 1H8c.2-.1.5-.2.7-.4.6-.3 1.1-.7 1.5-1.1.4-.4.7-.8.9-1.2.1-.2.2-.5.2-.7.1-.2.1-.5.1-.8z" fill="url(#StaffBadge_svg__SVGID_2_)"></path><path fill="none" d="M0 0h16v16H0z"></path></svg>                                    <span class="tooltiptext">Staff</span> </div>
-                                <div class="tooltip"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" contributions="12"><path d="M8 0L0 8l8 8 8-8-8-8zm-.8 5.1L4.3 8l2.9 2.9v2.6L1.7 8l5.5-5.5v2.6zm1.6 5.8L11.7 8 8.8 5.1V2.5L14.3 8l-5.5 5.5v-2.6z" fill="#5df4df"></path></svg>                                    <span class="tooltiptext">Turbo lvl. 1</span> </div>
-                                <div class="tooltip"> <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><g><rect fill="none" height="24" width="24"></rect><rect fill="none" height="24" width="24"></rect></g><g><path d="M23,12l-2.44-2.79l0.34-3.69l-3.61-0.82L15.4,1.5L12,2.96L8.6,1.5L6.71,4.69L3.1,5.5L3.44,9.2L1,12l2.44,2.79l-0.34,3.7 l3.61,0.82L8.6,22.5l3.4-1.47l3.4,1.46l1.89-3.19l3.61-0.82l-0.34-3.69L23,12z M9.38,16.01L7,13.61c-0.39-0.39-0.39-1.02,0-1.41 l0.07-0.07c0.39-0.39,1.03-0.39,1.42,0l1.61,1.62l5.15-5.16c0.39-0.39,1.03-0.39,1.42,0l0.07,0.07c0.39,0.39,0.39,1.02,0,1.41 l-5.92,5.94C10.41,16.4,9.78,16.4,9.38,16.01z"></path></g></svg>                                    <span class="tooltiptext">Verified</span> </div>
-
-                            </badge>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="center-flex green noselect pointer theme-XC12sDDSmaEE">
-
-                    Follow
-
-                </div>
-            </div>
-            <div class="center-flex theme-XC12sDDSfaEE">
-                <div class="center-flex theme-XC12svDDSaEE">
-                    <div class="center-flex theme-XCb12sDDSaEE">
-
-                    </div>
-                    <div class="center-flex theme-XC1n2sDDSaEE">
-                        SyeraChan
-                    </div>
-                </div>
-                <div class="center-flex theme-XC12sDDSmaEE">
-                    Follow
-                </div>
-            </div>
-            <div class="center-flex theme-XC12sDDSfaEE">
-                <div class="center-flex theme-XC12svDDSaEE">
-                    <div class="center-flex theme-XCb12sDDSaEE">
-
-                    </div>
-                    <div class="center-flex theme-XC1n2sDDSaEE">
-                        SyeraChan
-                    </div>
-                </div>
-                <div class="center-flex theme-XC12sDDSmaEE">
-                    Follow
-                </div>
-            </div>
-            <div class="center-flex theme-XC12sDDSfaEE">
-                <div class="center-flex theme-XC12svDDSaEE">
-                    <div class="center-flex theme-XCb12sDDSaEE">
-
-                    </div>
-                    <div class="center-flex theme-XC1n2sDDSaEE">
-                        SyeraChan
-                    </div>
-                </div>
-                <div class="center-flex theme-XC12sDDSmaEE">
-                    Follow
-                </div>
-            </div>
-            <div class="center-flex theme-XC12sDDSfaEE">
-                <div class="center-flex theme-XC12svDDSaEE">
-                    <div class="center-flex theme-XCb12sDDSaEE">
-
-                    </div>
-                    <div class="center-flex theme-XC1n2sDDSaEE">
-                        SyeraChan
-                    </div>
-                </div>
-                <div class="center-flex theme-XC12sDDSmaEE">
-                    Follow
-                </div>
-            </div>
-            <div class="center-flex theme-XC12sDDSfaEE">
-                <div class="center-flex theme-XC12svDDSaEE">
-                    <div class="center-flex theme-XCb12sDDSaEE">
-
-                    </div>
-                    <div class="center-flex theme-XC1n2sDDSaEE">
-                        SyeraChan
-                    </div>
-                </div>
-                <div class="center-flex theme-XC12sDDSmaEE">
-                    Follow
-                </div>
-            </div>
-            <div class="center-flex theme-XC12sDDSfaEE">
-                <div class="center-flex theme-XC12svDDSaEE">
-                    <div class="center-flex theme-XCb12sDDSaEE">
-
-                    </div>
-                    <div class="center-flex theme-XC1n2sDDSaEE">
-                        SyeraChan
-                    </div>
-                </div>
-                <div class="center-flex theme-XC12sDDSmaEE">
-                    Follow
-                </div>
-            </div>
-            <div class="center-flex theme-XC12sDDSfaEE">
-                <div class="center-flex theme-XC12svDDSaEE">
-                    <div class="center-flex theme-XCb12sDDSaEE">
-
-                    </div>
-                    <div class="center-flex theme-XC1n2sDDSaEE">
-                        SyeraChan
-                    </div>
-                </div>
-                <div class="center-flex theme-XC12sDDSmaEE">
-                    Follow
-                </div>
-            </div>
-            <div class="center-flex theme-XC12sDDSfaEE">
-                <div class="center-flex theme-XC12svDDSaEE">
-                    <div class="center-flex theme-XCb12sDDSaEE">
-
-                    </div>
-                    <div class="center-flex theme-XC1n2sDDSaEE">
-                        SyeraChan
-                    </div>
-                </div>
-                <div class="center-flex theme-XC12sDDSmaEE">
-                    Follow
-                </div>
-            </div>
+        <div flow_data class="center-flex theme-XC12sDDSaEE">
+            <div import_small_loader flow_data_loader></div>
         </div>
     </div>
+    <script src="/scripts/com.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js">
+    </script>
+    <script>
+        var rxxf = firebase.database().ref('/data/users/');
+        var id = '46kuBQQ2FcfaPfE4iXSPzF80mPL2';
+        rxxf.child(id + '/followers/').once('value', function(snapshot) {
+            snapshot.forEach((user) => {
+                var users = user.val().id;
+                var flow = '<div class="center-flex theme-XC12sDDSfaEE">' +
+                    '<div class="center-flex theme-XC12svDDSaEE">' +
+                    '<a href="/u?id=' + users + '"><div  class="center-flex theme-XCb12sDDSaEE full-bg " user-status-' + users + ' flow_user_profile_pic_' + users + '>' +
+                    '</div></a>' +
+                    '<div class="center-flex theme-XC1n2sDDSaEE">' +
+                    '<div class="theme-FSD234FDS32">' +
+                    '<a class="theme-FSD234FDS32AA" href="/u?id=' + users + '" user_displayName_' + users + '><div import_small_loader></div></a>' +
+                    '</div>' +
+                    '<div class="small-badges theme-SDFsdf2334DSF">' +
+                    '<badge class="center-flex theme-FDSHGF45GFFFS" user_badges_' + users + '>' +
+                    '</badge>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="center-flex noselect pointer theme-XC12sDDSmaEE">' +
+                    '<a class="theme-FSD234FDS32AA" href="/u?id=' + users + '">Open</a>' +
+                    '</div>' +
+                    '</div>';
+                $("[flow_data_loader]").hide()
+                $(flow).appendTo($("[flow_data]"))
+
+
+
+                var db_ref = firebase.database().ref('/data/users/' + users);
+                db_ref.on('value', function(snapshot) {
+                    var displayName = (snapshot.val() && snapshot.val().displayName);
+                    var profile_picture = (snapshot.val() && snapshot.val().profile_picture);
+                    var mainuserid = (snapshot.val() && snapshot.val().userid);
+                    var onlineState = (snapshot.val() && snapshot.val().onlineState);
+                    if (onlineState == true) {
+                        $('[user-status-' + mainuserid + ']').addClass('flow-online');
+                    } else {
+                        $('[user-status-' + mainuserid + ']').addClass('flow-offline');
+                    };
+                    $('[user_displayName_' + mainuserid + ']').text(displayName);
+                    $('[flow_user_profile_pic_' + mainuserid + ']').css('background-image', 'url(' + profile_picture + '),url(/images/icon.png)');
+                    console.log(displayName)
+                });
+                db_ref.once('value', function(snapshot) {
+
+                    var mainuserid = (snapshot.val() && snapshot.val().userid);
+
+
+                    db_ref.child('badges').once('value', function(user) {
+                        user.forEach((snapshot) => {
+                            var ggk = snapshot.key + snapshot.val();
+
+                            setTimeout(
+                                function() {
+                                    if (ggk == 'verifiedtrue') {
+                                        $('[user_badges_' + mainuserid + ']').prepend(icon_verified);
+                                        console.log('verified')
+                                    };
+                                    setTimeout(
+                                        function() {
+                                            if (ggk == 'partnertrue') {
+                                                $('[user_badges_' + mainuserid + ']').prepend(icon_turbo_1);
+                                                console.log('partner')
+                                            };
+                                            setTimeout(
+                                                function() {
+
+                                                    if (ggk == 'stafftrue') {
+                                                        $('[user_badges_' + mainuserid + ']').prepend(icon_staff);
+                                                        console.log('staff')
+                                                    };
+                                                }, 0001);
+
+                                        }, 0001);
+                                }, 0001);
+
+
+
+
+
+                        });
+                    });
+                });
+
+
+
+
+
+                console.log(users)
+            });
+        });
+
+
+        $('[clear_user_flow_list]').on('click', function() {
+            setTimeout(
+                function() {
+                    $('[user_flow_list]').remove()
+                }, 0200);
+            $('[user_flow_list]').fadeOut(100)
+        });
+    </script>
 </body>
 
 </html>

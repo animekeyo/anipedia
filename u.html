@@ -108,14 +108,14 @@
                     <div class="center-flex theme-FDS45fgfGFFFDFGS">
                         <!--BTN-->
                         Followers
-                        <span id="followers_button" class="theme-span-FSDF342D">
+                        <span followers_count class="theme-span-FSDF342D">
                             <div import_small_loader></div>
                         </span>
                     </div>
                     <div class="center-flex theme-FDS45fgfGFFFDFGS">
                         <!--BTN-->
                         Following
-                        <span id="following_button" class="theme-span-FSDF342D">
+                        <span following_count class="theme-span-FSDF342D">
                             <div import_small_loader></div>
                         </span>
                     </div>
@@ -274,43 +274,7 @@
             });
 
 
-        function bbedit() {
-            var x = document.getElementById("followerlist");
-            x.style.display = "block";
-            var x = document.getElementById("datafoll");
-            x.style.display = "none";
-            var x = document.getElementById("datafolling");
-            x.style.display = "none";
-            var x = document.getElementById("dataedit");
-            x.style.display = "block";
-        };
 
-        function following_button() {
-            var x = document.getElementById("followerlist");
-            x.style.display = "block";
-            var x = document.getElementById("datafoll");
-            x.style.display = "none";
-            var x = document.getElementById("dataedit");
-            x.style.display = "none";
-            var x = document.getElementById("datafolling");
-            x.style.display = "block";
-        };
-
-        function followers_button() {
-            var x = document.getElementById("followerlist");
-            x.style.display = "block";
-            var x = document.getElementById("datafoll");
-            x.style.display = "block";
-            var x = document.getElementById("datafolling");
-            x.style.display = "none";
-            var x = document.getElementById("dataedit");
-            x.style.display = "none";
-        };
-
-        function closex() {
-            var x = document.getElementById("followerlist");
-            x.style.display = "none";
-        };
 
 
 
@@ -593,7 +557,7 @@
                     var rxxf = firebase.database().ref('/data/users/');
                     rxxf.child(user.uid + '/followers/').on('value', function(snapshot) {
                         var foll = snapshot.numChildren();
-                        $("[id=followers_button]").text(foll);
+                        $("[followers_count]").text(foll);
                     });
 
                     rxxf.child(user.uid + '/followers/').once('value', function(snapshot) {
@@ -607,7 +571,7 @@
 
                     rxxf.child(user.uid + '/following/').on('value', function(snapshot) {
                         var foll = snapshot.numChildren();
-                        $("[id=following_button]").text(foll);
+                        $("[following_count]").text(foll);
                     });
 
                     rxxf.child(user.uid + '/following/').once('value', function(snapshot) {
@@ -626,7 +590,7 @@
                     var rxxf = firebase.database().ref('/data/users/');
                     rxxf.child(id + '/followers/').on('value', function(snapshot) {
                         var foll = snapshot.numChildren();
-                        $("[id=followers_button]").text(foll);
+                        $("[followers_count]").text(foll);
                     });
 
                     rxxf.child(id + '/followers/').once('value', function(snapshot) {
@@ -640,7 +604,7 @@
 
                     rxxf.child(id + '/following/').on('value', function(snapshot) {
                         var foll = snapshot.numChildren();
-                        $("[id=following_button]").text(foll);
+                        $("[following_count]").text(foll);
                     });
 
                     rxxf.child(id + '/following/').once('value', function(snapshot) {
