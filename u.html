@@ -105,14 +105,15 @@
                 </div>
                 <div class="full-wh center-flex theme-FDS45fgGFFFDFGS">
                     <!--Online/Following/Follower's Buttons-->
-                    <div class="center-flex theme-FDS45fgfGFFFDFGS">
+                    <div goflow btx_followers btx_mixed class="center-flex theme-FDS45fgfGFFFDFGS">
                         <!--BTN-->
+
                         Followers
                         <span followers_count class="theme-span-FSDF342D">
                             <div import_small_loader></div>
                         </span>
                     </div>
-                    <div class="center-flex theme-FDS45fgfGFFFDFGS">
+                    <div goflow btx_following btx_mixed class="center-flex theme-FDS45fgfGFFFDFGS">
                         <!--BTN-->
                         Following
                         <span following_count class="theme-span-FSDF342D">
@@ -138,6 +139,9 @@
     <script src="/scripts/com.js">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js">
+    </script>
+
+    <script src="/scripts/flow.js">
     </script>
     <script data-cfasync="false" type="text/javascript">
         function timeDifference(current, previous) {
@@ -201,6 +205,10 @@
 
         var url = window.location.href;
         var id = url.substring(url.lastIndexOf('?id=') + 4);
+
+        $('[btx_followers]').attr('flowpoint', 'followers');
+        $('[btx_following]').attr('flowpoint', 'following');
+        $('[btx_mixed]').attr('callpoint', id);
         firebase.database().ref('/data/users/').on('value', function(snapshot) {
             snapshot.forEach((user) => {
                 var displayName = (user.val() && user.val().displayName);
@@ -280,6 +288,8 @@
 
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
+                ////////////////////////////////////////
+
                 ////////////////////////////////////////
                 var db_ref = firebase.database().ref('/data/users/' + id);
                 db_ref.child('badges').on('value', function(snapshot) {
