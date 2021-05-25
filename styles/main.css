@@ -1739,9 +1739,17 @@ div[flow_data_loader] {
     background: #000000a3;
 }
 
+.mobi {
+    display: none;
+}
+
 @media (max-width:980px) {
     body {
+        padding-top: 4rem;
         padding-bottom: 4rem;
+    }
+    .mobi {
+        display: flex;
     }
     header {
         display: none!important;
@@ -2052,6 +2060,82 @@ div[flow_data_loader] {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+    }
+    .mobi {
+        display: flex;
+    }
+    .center-flex.theme-HEDfSDFS12SDA.fixed.full-wh {
+        color: var(--c6);
+        font-size: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        z-index: 111;
+        height: 0rem;
+        width: 0rem;
+    }
+    .center-flex.theme-HEDfSDFS12sSDA {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        align-content: center;
+        width: -webkit-fill-available;
+        position: fixed;
+        align-items: center;
+        padding: 0rem 1.6rem;
+        height: 3.8rem;
+        background: var(--c15);
+        border-bottom: .15rem solid var(--c13);
+        top: 0;
+        left: 0;
+    }
+    .code-dfjs34jHED {
+        width: 2rem;
+        height: 2rem;
+        background: var(--c6);
+        border-radius: 100%;
+    }
+    .code-dfjs34jHED svg {
+        fill: var(--c15);
+    }
+    .center-flex.theme-HEDfSDFhS12gSDA.full-bg {
+        width: 2rem;
+        height: 2rem;
+        background-color: var(--c6);
+        border-radius: 100%;
+    }
+    .center-flex.theme-HEDfShDFS12fSDA {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .center-flex.theme-HEDfSDFSghj12SDA {
+        width: -webkit-fill-available;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        background: var(--c15);
+        border-top: .15rem solid var(--c13);
+        align-content: center;
+        justify-content: space-between;
+        align-items: center;
+        height: 3.8rem;
+        padding: 0rem 1rem;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+    }
+    .code-HEDfSDgFjhS12SDA svg {
+        fill: var(--c9);
+        width: 1.7rem;
+        padding: .5rem;
+        margin: .5rem;
+        height: 1.7rem;
     }
 }
 
