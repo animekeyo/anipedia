@@ -71,7 +71,11 @@ $('[goflow]').on('click', function() {
                 db_ref.child('badges').once('value', function(user) {
                     user.forEach((snapshot) => {
                         var ggk = snapshot.key + snapshot.val();
-
+                        tippy('[tippy]', {
+                            inertia: true,
+                            hideOnClick: false,
+                            interactive: true,
+                        });
                         setTimeout(
                             function() {
                                 if (ggk == 'verifiedtrue') {

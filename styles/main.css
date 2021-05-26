@@ -178,6 +178,7 @@
 
 body {
     background-color: var(--c15);
+    color: var(--c9);
     font-family: C1;
     margin: unset;
     padding: unset;

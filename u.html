@@ -74,6 +74,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="/scripts/purl.js"></script>
 <script src="/scripts/firebase.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<!---/////////////////////// https://atomiks.github.io/ /////////////////////--->
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
+<!---/////////////////////// https://atomiks.github.io/ /////////////////////--->
 
 <body>
 
@@ -100,7 +107,7 @@
                 <div class="center-flex theme-FDS4SD5GfFFFS full-wh">
 
                     <div class="center-flex theme-FDFFS45GFFFS">
-                        <div id="user_profile_pic" user-status class="center-flex full-bg theme-GGFFDSf5GFFFS" style="background-image: url('/images/icon.png')">
+                        <div data-aos="zoom-in" data-aos-duration="050" data-aos-once="true" id="user_profile_pic" user-status class="center-flex full-bg theme-GGFFDSf5GFFFS" style="background-image: url('/images/icon.png')">
                             <!--Profile Pic-->
                         </div>
                         <div class="center-flex theme-FDSHG45GFFFS">
@@ -111,7 +118,7 @@
                                     <!--Name-->
                                     <div import_small_loader></div>
                                 </div>
-                                <div class="center-flex theme-FDFDS4GGGFFdFS">
+                                <div data-aos="zoom-in" data-aos-duration="050" data-aos-once="true" class="center-flex theme-FDFDS4GGGFFdFS">
                                     <!--displayName-->
                                     @SyeraChan
                                 </div>
@@ -126,7 +133,7 @@
 
                     <div class="center-flex theme-FDS45GFFFGHFS" follow_and_setting>
                         <!--Follow/Unfollow & Setting Button-->
-                        <div class="center-flex theme-FDS45fggfGFFFDFGS">
+                        <div data-aos="zoom-in" data-aos-duration="050" data-aos-once="true" class="center-flex theme-FDS45fggfGFFFDFGS">
                             <div import_small_loader></div>
                         </div>
                     </div>
@@ -283,7 +290,7 @@
                     const userid = doc.data().userid;
                     const time = doc.data().time;
                     console.log(dec);
-                    const px = '<div class="center-flex theme-22gk3D8EKJ">' +
+                    const px = '<div data-aos="zoom-in" data-aos-duration="250" data-aos-once="true" class="center-flex theme-22gk3D8EKJ">' +
                         '    <div class="center-flex theme-22gk3D8ER">' +
                         '        <div class="center-flex theme-33gk3D8ER">' +
                         '            <div id="pfp-' + userid + '" class="full-bg center-flex theme-26gk3D8ER">' +
@@ -744,6 +751,7 @@
                 $('[user-status]').addClass('offline');
             };
             $("[id=user_name]").text(displayName);
+
             $("[id=user_dec]").text(bio);
             if (bio == 0) {
                 if (id == userid) {
