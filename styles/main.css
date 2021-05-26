@@ -675,6 +675,10 @@ header {
     background: var(--c15);
 }
 
+box-ae {
+    width: -webkit-fill-available;
+}
+
 
 /*maincss*/
 
