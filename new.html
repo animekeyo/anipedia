@@ -96,6 +96,9 @@
         
         .center-flex.theme-XDS12DSF43DFfSd {
             font-size: 2rem;
+            gap: 1rem;
+            display: flex;
+            align-items: flex-start;
         }
         
         .center-flex.theme-XDS12DSF43fDFSd {
@@ -126,6 +129,35 @@
         
         .theme-xdz-33234sdfSDF.code-33234sdfSDF.center-flex {
             background: var(--c19);
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .theme-fdsdfDFS34SDFSD {
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
+        }
+        
+        .center-flex.full-bg.theme-pxo1por123ds443jkd {
+            width: 3rem;
+            height: 3rem;
+            background-color: var(--c13);
+            border-radius: 100%;
+        }
+        
+        .theme-FSDsasdvcxSDFSDc43.full-bg {
+            width: -webkit-fill-available;
+            height: 25rem;
+            background: var(--c6);
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: none;
+        }
+        
+        .theme-FSDsasdvcxSDFSDc43 video {
+            width: 60rem;
+            /* box-shadow: 0px 0px 100px 100px var(--c15); */
         }
     </style>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -163,18 +195,31 @@
         </div>
     </div>
     <div class=" center-flex theme-XDS12DSF43DFSd">
-        <div class=" center-flex theme-XDS12DSF4h3DFSd">
+        <div class=" noselect center-flex theme-XDS12DSF4h3DFSd">
+            <div data-aos="fade-in" tippy1 data-tippy-content="Sign in now???!!!?!?!" data-aos-duration="050" class="theme-FSDsasdvcxSDFSDc43 full-bg">
+                <video src="/videos/v1.mp4" autoplay muted loop>
+                
+                </video>
+            </div>
             <div class=" center-flex theme-XDS12DSF43DFfSd">
                 Welcome to animekeyo.
+                <div class=" pointer center-flex theme-fdsdfDFS34SDFSD">
+                    <div class="center-flex full-bg theme-pxo1por123ds443jkd">
+
+                    </div>
+                    <div class="theme-pxo1porg123ds443jk">
+                        SyeraChan
+                    </div>
+                </div>
             </div>
             <div class=" center-flex theme-XDS12DSF43fDFSd">
                 We are a community aimed at uniting anime fans. Join us as we carve a place on the internet fellow fans to make new friendships, discuss your thoughts/favorite anime, and get your game on
             </div>
             <div class="theme-xdz-33234sdfSffDF center-flex">
-                <div data-aos="zoom-in" data-aos-duration="050" class="theme-xdz-33234sdfSDF code-33234sdfSDF center-flex">
+                <div data-aos="zoom-in" data-aos-duration="050" class=" pointer theme-xdz-33234sdfSDF code-33234sdfSDF center-flex">
                     Sign in
                 </div>
-                <div tippy data-tippy-content="Tooltip" data-aos="zoom-in" data-aos-duration="050" class="theme-xdz-33234sdfSDF code-33234sdfSdf center-flex">
+                <div data-aos="zoom-in" data-aos-duration="050" class=" pointer theme-xdz-33234sdfSDF code-33234sdfSdf center-flex">
                     Join Discord
                 </div>
             </div>
@@ -183,9 +228,11 @@
     </div>
     <script>
         AOS.init();
-        tippy('[tippy]', {
+        tippy('[tippy1]', {
             inertia: true,
             hideOnClick: false,
+            interactive: true,
+            followCursor: true,
         });
     </script>
 </body>
