@@ -71,22 +71,29 @@ $('[goflow]').on('click', function() {
                 db_ref.child('badges').once('value', function(user) {
                     user.forEach((snapshot) => {
                         var ggk = snapshot.key + snapshot.val();
-                        tippy('[tippy]', {
-                            inertia: true,
-                            hideOnClick: false,
-                            interactive: true,
-                        });
                         setTimeout(
                             function() {
                                 if (ggk == 'verifiedtrue') {
                                     $('[user_badges_' + mainuserid + ']').prepend(icon_verified);
                                     console.log('verified')
+                                    tippy('[tippy]', {
+                                        inertia: true,
+                                        hideOnClick: false,
+                                        interactive: true,
+                                        theme: 'tomato',
+                                    });
                                 };
                                 setTimeout(
                                     function() {
                                         if (ggk == 'partnertrue') {
                                             $('[user_badges_' + mainuserid + ']').prepend(icon_turbo_1);
                                             console.log('partner')
+                                            tippy('[tippy]', {
+                                                inertia: true,
+                                                hideOnClick: false,
+                                                interactive: true,
+                                                theme: 'tomato',
+                                            });
                                         };
                                         setTimeout(
                                             function() {
@@ -94,6 +101,12 @@ $('[goflow]').on('click', function() {
                                                 if (ggk == 'stafftrue') {
                                                     $('[user_badges_' + mainuserid + ']').prepend(icon_staff);
                                                     console.log('staff')
+                                                    tippy('[tippy]', {
+                                                        inertia: true,
+                                                        hideOnClick: false,
+                                                        interactive: true,
+                                                        theme: 'tomato',
+                                                    });
                                                 };
                                             }, 0001);
 

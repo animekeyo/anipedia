@@ -38,6 +38,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                 inertia: true,
                 hideOnClick: false,
                 interactive: true,
+                theme: 'tomato',
             });
             const displayName = (snapshot.val() && snapshot.val().displayName);
             const profile_picture = (snapshot.val() && snapshot.val().profile_picture);
@@ -65,7 +66,12 @@ firebase.auth().onAuthStateChanged(function(user) {
         });
     } else {
         const link = window.location.pathname;
-        if (link == "/login") {} else {
+        alert(link);
+        if (link == "/login") {
+
+        } else if (link == "/") {
+
+        } else {
             window.location.href = "/login";
         }
     }

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <style>
+        @import url("/styles/main.css");
+        @import url("/styles/style.css");
+        body {
+            background-image: url(/images/b3.jpg);
+            /* box-shadow: inset 0px 20px 20px 20px black; */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        @media (max-width:850px) {}
+        
+        @media (max-width:1000px) {
+            logo-xx {
+                font-size: 2rem!important;
+            }
+            app-open-or-login {
+                font-size: 0.6rem!important;
+                padding: 0.4rem 0.7rem!important;
+                display: none!important;
+            }
+            top-header-xx {
+                height: 5rem!important;
+                gap: 20%!important;
+            }
+            top-bar-xx {
+                padding-bottom: 0rem!important;
+            }
+            second-header-xx {
+                margin: 0.5rem!important;
+            }
+            dex-xx {
+                font-size: 1.4rem!important;
+            }
+            options-sss-xx {
+                flex-direction: column!important;
+                margin: 1.2rem!important;
+                margin-top: 1rem!important;
+                font-size: 0.69rem!important;
+                gap: 0.5rem!important;
+                width: -webkit-fill-available;
+            }
+            btns-op-xx {
+                width: -webkit-fill-available!important;
+            }
+            second-bar-xx {
+                padding: 2rem!important;
+                gap: 1rem!important;
+                padding-top: unset!important;
+            }
+            namo-xxx {
+                font-size: 1rem!important;
+            }
+            tts {
+                width: -webkit-fill-available!important;
+                padding: 1.5rem!important;
+                border-radius: 0.5rem!important;
+            }
+            dex-xxx {
+                font-size: 0.8rem!important;
+            }
+        }
+        
+        top-bar-xx {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            float: left;
+            width: -webkit-fill-available;
+            height: auto;
+            color: var(--c9);
+            padding-bottom: 5rem;
+            /* margin-bottom: 5rem; */
+            /* background-color: #000000a1; */
+            border-radius: 0px 0px 45px 45px;
+            /* background-image: url(/images/p2.jpg); */
+            /* background-size: cover; */
+            /* filter: brightness(0.5); */
+            /* background-position: center; */
+        }
+        
+        top-header-xx {
+            float: left;
+            width: auto;
+            display: flex;
+            height: 5rem;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            gap: 45rem;
+        }
+        
+        logo-xx {
+            color: var(--c9);
+            text-transform: uppercase;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            font-size: 1.5rem;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        app-open-or-login {
+            color: var(--c15);
+            text-transform: uppercase;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            font-size: 0.7rem;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border-radius: 1000rem;
+            padding: 0.8rem 1.3rem;
+            background: var(--c9);
+        }
+        
+        second-header-xx {
+            float: left;
+            display: flex;
+            width: -webkit-fill-available;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            margin: 5rem;
+        }
+        
+        non-xx {
+            font-size: 1rem;
+            letter-spacing: 1.5px;
+            color: var(--c9);
+            opacity: 0.8;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+        
+        dex-xx {
+            font-size: 3rem;
+            margin: 1rem auto 0;
+            line-height: normal;
+            color: var(--header-color);
+            width: -webkit-fill-available;
+            max-width: 59rem;
+            text-align: center;
+        }
+        
+        second-bar-xx {
+            display: flex;
+            width: -webkit-fill-available;
+            flex-direction: column;
+            flex-wrap: wrap;
+            padding: 3rem;
+            padding-top: unset;
+            float: left;
+            gap: 1rem;
+            align-content: center;
+            color: var( --c9);
+            justify-content: center;
+            align-items: flex-start;
+        }
+        
+        tts {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-content: center;
+            gap: 0.5rem;
+            width: 40rem;
+            padding: 2rem;
+            justify-content: center;
+            background: var(--c15);
+            border-radius: 1rem;
+            align-items: flex-start;
+        }
+        
+        namo-xxx {
+            font-size: 1.5rem;
+            color: var(--c19);
+        }
+        
+        dex-xxx {
+            font-size: 1rem;
+        }
+        
+        btns-op-xx.open-inbro:hover {
+            background: var(--c14);
+            box-shadow: 0rem 0.3rem 0.7rem var(--c15);
+        }
+        
+        btns-op-xx.open-inbro {
+            background: var(--c15);
+            color: var(--c9);
+        }
+        
+        btns-op-xx {
+            color: var(--c15);
+            background: var(--c9);
+            padding: 1rem 1.5rem;
+            transition: 0.5s;
+            border-radius: 4rem;
+            width: 15.5rem;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            cursor: pointer;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        options-sss-xx {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: center;
+            margin: 2rem;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        btns-op-xx#op-dt-os:hover {
+            color: var(--c17);
+            box-shadow: 0rem 0.3rem 0.7rem var(--c15);
+        }
+        
+        btns-op-xx#op-dt-os::before {
+            content: "Download For";
+            margin-right: 0.3rem;
+        }
+        
+        div[load_open_btn] {
+            width: 130px;
+        }
+    </style>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase.js" integrity="sha512-6lfGMSk88X4s7EbxhApgmff4eU3uY3p+TN+zalPqeYZNErnUS5+Oxt98CEwEa8tQrUWUFCtEjmgHvO6tbTcurQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-analytics.min.js" integrity="sha512-tYYnZwf/eJg09q3LmQudGkU7otjD4bMYE6zIhQ0VTCnS5Ok3veLs47qbMVOC0flizr1ggOO3YlAe/NIOyXHYOA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-app.min.js" integrity="sha512-oI4k2PDOH6DrfL+QEOI93tNmCioPOR8iUvqJGSOU/+oqo6Y3ME2+SZEeZfrHciNiXjaGB+G4a8o76ftbHE78VQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-auth.min.js" integrity="sha512-l0i+O3AfLS/mtNotaGw8tg4qg5bVCZDEwUDiDjAicmBrR0G+lqMlmSozvfPcX1TwliG4tbuFgo2l/xAlFc0NkQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-database.min.js" integrity="sha512-gMSOOzrtVreCU7tq0PaPX+YfFhT0f5VXVucwDOWscAs6j8tz5OcBa9R66Pb88O6F2OJMCHy+/TY7vhM15Z/joQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase.min.js" integrity="sha512-8Lwt4up5Cw4G+UtP/kxD9Q3uCEF3QEtYDfWsw3UreavHaTWJiEbYGU8BCvI3N9thGHr0g7O1oyjEfMld9iyXdg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="/scripts/firebase.js"></script>
+    <script>
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+        //Check mobile device is Android
+        if (/android/i.test(userAgent)) {
+            $('[id=op-dt-os]').text(' Android');
+        }
+
+        //Check mobile device is IOS
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            $('[id=op-dt-os]').text(' IOS');
+        }
+
+        //Check device os is Windows (For Laptop and PC)
+        if (navigator.appVersion.indexOf("Win") != -1) {
+            $('[id=op-dt-os]').text(' Windows');
+        }
+
+        //Check device os is MAC (For Laptop and PC)
+        if (navigator.appVersion.indexOf("Mac") != -1) {
+            $('[id=op-dt-os]').text('MAC');
+        }
+
+        firebase.auth().onAuthStateChanged((user) => {
+
+            if (user) {
+                $('[load_open_btn]').html('<app-open-or-login onclick="appopenorlogin()">Open Keyo</app-open-or-login>');
+                appopenlinkhrefxxxxo = "/u?id=" + user.uid;
+
+            } else {
+                $('[load_open_btn]').html('<app-open-or-login onclick="appopenorlogin()">Login Senpai</app-open-or-login>');
+                appopenlinkhrefxxxxo = "/login";
+            }
+        });
+
+        function appopenorlogin() {
+            window.location.href = appopenlinkhrefxxxxo;
+        }
+    </script>
+</head>
+
+<body>
+    <top-bar-xx>
+        <top-header-xx>
+            <logo-xx>
+                AnimeKeyo
+            </logo-xx>
+            <div load_open_btn>
+
+            </div>
+        </top-header-xx>
+        <second-header-xx>
+            <non-xx>Welcome</non-xx>
+            <dex-xx>
+                AnimeKeyo is filled with and by people like you so enjoy.
+            </dex-xx>
+            <options-sss-xx>
+                <btns-op-xx id="op-dt-os">
+                    Weeebooo
+                </btns-op-xx>
+                <btns-op-xx onclick="appopenorlogin()" class="open-inbro">
+                    Open Keyo in your browser
+                </btns-op-xx>
+            </options-sss-xx>
+        </second-header-xx>
+    </top-bar-xx>
+    <second-bar-xx>
+        <tts>
+            <namo-xxx>
+                SHARE
+            </namo-xxx>
+            <dex-xxx>
+                Share what's new and life moments with your friends.
+            </dex-xxx>
+        </tts>
+        <tts>
+            <namo-xxx>
+                DISCOVER
+            </namo-xxx>
+            <dex-xxx>
+                Discover new people, create new connections and make new friends.
+            </dex-xxx>
+        </tts>
+        <tts>
+            <namo-xxx>
+                100% PRIVACY
+            </namo-xxx>
+            <dex-xxx>
+                You have full control over your personal information that you share.
+            </dex-xxx>
+        </tts>
+        <tts>
+            <namo-xxx>
+                MORE SECURITY
+            </namo-xxx>
+            <dex-xxx>
+                Your account is fully secure. We never share your data with third party.
+            </dex-xxx>
+        </tts>
+    </second-bar-xx>
+
+</body>
+
+</html>
