@@ -329,19 +329,67 @@
                         '    <img class="theme-52gk668ER full-wh center-flex" src="' + img + '">' +
                         '    <div class="center-flex full-wh theme-11gk448EDD">' +
                         '        <div class="center-flex theme-21gk448EDD">' +
-                        '            <div id="heart-' + link + '" class="center-flex theme-41gk448EDD">' +
+                        '            <div heart-id="' + link + '" class="center-flex theme-41gk448EDD">' +
                         icon_like +
                         '            </div>' +
                         '            <div class="center-flex theme-26gk448EDD">' +
                         '            </div>' +
                         '        </div>' +
-                        '        <div id="count-' + link + '" class="center-flex theme-27gk448EDD">' +
-                        '            100 Likes' +
+                        '        <div count-id="' + link + '" class="center-flex theme-27gk448EDD">' +
+                        '            <div import_small_loader></div>' +
                         '        </div>' +
                         '    </div>' +
                         '</div>';
                     $("[postlist]").prepend(px);
                     //////////////////////////////////////
+                    const user = firebase.auth().currentUser;
+                    var dxb = firebase.firestore().collection("users").doc(userid + '/posts/' + link + '/likes/' + user.uid);
+                    firebase.firestore().collection("users").doc(userid + '/posts/' + link).collection("likes").get().then(function(querySnapshot) {
+                        console.log(querySnapshot.size);
+                        $('[count-id=' + link + ']').text(querySnapshot.size);
+                    });
+
+                    dxb.onSnapshot((doc) => {
+
+                        if (doc.exists) {
+
+                            $('[heart-id=' + link + ']').css('background', 'var(--c19)');
+
+                        } else {
+
+                            $('[heart-id=' + link + ']').css('background', 'var(--c12)');
+
+                        }
+
+                    });
+
+                    $('[heart-id=' + link + ']').click(function() {
+
+
+
+                        dxb.get().then((doc) => {
+                            if (doc.exists) {
+                                console.log("Document data:", doc.data());
+                                var like = doc.data().like;
+
+                                if (like == true) {
+                                    dxb.delete();
+                                    console.log('Deleted')
+
+                                };
+                            } else {
+                                // doc.data() will be undefined in this case
+                                dxb.set({
+                                    like: true,
+                                    userid: user.uid,
+                                });
+                                console.log('Liked')
+                            }
+
+                        }).catch((error) => {
+                            console.log("Error getting document:", error);
+                        });
+                    });
 
                     //////////////////////////////////////
                     setTimeout(function() {
