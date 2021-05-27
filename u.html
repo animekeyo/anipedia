@@ -284,17 +284,7 @@
         $('[btx_followers]').attr('flowpoint', 'followers');
         $('[btx_following]').attr('flowpoint', 'following');
         $('[btx_mixed]').attr('callpoint', id);
-        firebase.database().ref('/data/users/').on('value', function(snapshot) {
-            snapshot.forEach((user) => {
-                var displayName = (user.val() && user.val().displayName);
-                var userid = (user.val() && user.val().userid);
-                var profile_picture = (user.val() && user.val().profile_picture);
 
-                $('[id=dname-' + userid + ']').text(displayName);
-                $('[id=pfp-' + userid + ']').css('background-image', 'url(' + profile_picture + '),url(https://animekeyo.com/anipedia/icons/icon.png)');
-
-            })
-        });
 
 
         var ddb = firebase.firestore();
@@ -350,7 +340,19 @@
                         '    </div>' +
                         '</div>';
                     $("[postlist]").prepend(px);
+                    setTimeout(function() {
+                        firebase.database().ref('/data/users/').on('value', function(snapshot) {
+                            snapshot.forEach((user) => {
+                                var displayName = (user.val() && user.val().displayName);
+                                var userid = (user.val() && user.val().userid);
+                                var profile_picture = (user.val() && user.val().profile_picture);
 
+                                $('[id=dname-' + userid + ']').text(displayName);
+                                $('[id=pfp-' + userid + ']').css('background-image', 'url(' + profile_picture + '),url(https://animekeyo.com/anipedia/icons/icon.png)');
+
+                            })
+                        });
+                    }, 0001)
 
 
                 });
