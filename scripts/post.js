@@ -112,21 +112,21 @@ firebase.auth().onAuthStateChanged(function(user) {
                 if (dec == 0) {
                     db.doc(user.uid + '/posts/' + create_link).set({
                         userid: user.uid,
-                        link: parseFloat(link),
+                        link: link,
                         img: img,
                         time: parseFloat(date),
                     });
                 } else if (!dec.replace(/\s/g, '').length) {
                     db.doc(user.uid + '/posts/' + create_link).set({
                         userid: user.uid,
-                        link: parseFloat(link),
+                        link: link,
                         img: img,
                         time: parseFloat(date),
                     });
                 } else {
                     db.doc(user.uid + '/posts/' + create_link).set({
                         userid: user.uid,
-                        link: parseFloat(link),
+                        link: link,
                         img: img,
                         dec: dec,
                         time: parseFloat(date),

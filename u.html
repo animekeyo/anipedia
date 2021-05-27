@@ -310,6 +310,7 @@
                     const dec = doc.data().dec;
                     const img = doc.data().img;
                     const userid = doc.data().userid;
+                    const link = doc.data().link;
                     const time = doc.data().time;
                     console.log(dec);
                     const px = '<div data-aos="zoom-in" data-aos-duration="250" data-aos-once="true" class="center-flex theme-22gk3D8EKJ">' +
@@ -328,18 +329,21 @@
                         '    <img class="theme-52gk668ER full-wh center-flex" src="' + img + '">' +
                         '    <div class="center-flex full-wh theme-11gk448EDD">' +
                         '        <div class="center-flex theme-21gk448EDD">' +
-                        '            <div class="center-flex theme-41gk448EDD">' +
+                        '            <div id="heart-' + link + '" class="center-flex theme-41gk448EDD">' +
                         icon_like +
                         '            </div>' +
                         '            <div class="center-flex theme-26gk448EDD">' +
                         '            </div>' +
                         '        </div>' +
-                        '        <div class="center-flex theme-27gk448EDD">' +
+                        '        <div id="count-' + link + '" class="center-flex theme-27gk448EDD">' +
                         '            100 Likes' +
                         '        </div>' +
                         '    </div>' +
                         '</div>';
                     $("[postlist]").prepend(px);
+                    //////////////////////////////////////
+
+                    //////////////////////////////////////
                     setTimeout(function() {
                         firebase.database().ref('/data/users/').on('value', function(snapshot) {
                             snapshot.forEach((user) => {
