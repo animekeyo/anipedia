@@ -1,12 +1,13 @@
 $('[goflow]').on('click', function() {
     const callpoint = $(this).attr("callpoint");
     const flowpoint = $(this).attr("flowpoint");
-
+    const contex = $(this).attr("contex");
     const rxxf = firebase.database().ref('/data/users/');
     const id = callpoint;
     const applytobody = '<div class="full-wh fixed center-flex theme-XC12sDDSmaEffd" user_flow_list>' +
         '<div class="center-flex absolute theme-XC12sDDSmaEffDF pointer noselect" clear_user_flow_list >' +
-        icon_close +
+        '<div class="center-flex theme-11gk448EDDDSFSGGG">' + icon_close + '</div>' +
+        '<div class="mobi center-flex theme-11gk448EDDDSFSGGG">' + contex + '</div>' +
         '</div>' +
         '<div class="center-flex full-wh absolute theme-XC12sDDSaEECV" clear_user_flow_list>' +
         '</div>' +
