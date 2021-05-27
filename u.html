@@ -7,6 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <style>
         @import url("/styles/main.css");
+        .theme-43GGD76HGHJ {
+            width: -webkit-fill-available;
+            margin: 4rem 0rem 0rem 0rem;
+            background: #0b0e114d;
+            float: left;
+            display: flex;
+            position: fixed;
+            top: 0;
+            overflow: hidden;
+            border-radius: 0;
+            z-index: 111;
+            height: -webkit-fill-available;
+        }
+        
         @media (max-width:980px) {
             .theme-43GGD76HGHJ {
                 margin: unset;
@@ -174,7 +188,18 @@
         <div class=" center-flex full-bg theme-FD54DGGHKKI" postlist>
 
         </div>
-        <div class="theme-43GGD76HGHJ center-flex" import_postjs>
+        <div unhidepostjs class="center-flex theme-ctpDFSD2213SffDFSD">
+            <div class="center-flex full-bg theme-ctpDFSD2213SDFSD" main_profile_picture>
+
+            </div>
+            <div class="center-flex theme-ctpDFSD22g13SDFSD">
+                Create a post
+            </div>
+            <div class="center-flex theme-ctpDFSD2213SDFSD" icon_c_plus>
+
+            </div>
+        </div>
+        <div style="display: none;" class="theme-43GGD76HGHJ center-flex" import_postjs>
 
         </div>
     </div>
@@ -187,6 +212,13 @@
     <script src="/scripts/flow.js">
     </script>
     <script data-cfasync="false" type="text/javascript">
+        $('[unhidepostjs]').on('click', function() {
+            $('[import_postjs]').show();
+        });
+        $('[hidepostjs]').on('click', function() {
+            $('[import_postjs]').hide();
+        });
+
         function timeDifference(current, previous) {
 
             var sPerMinute = 60;

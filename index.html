@@ -175,11 +175,6 @@
             border-radius: 10px;
         }
         
-        .center-flex.theme-FSDsasdvcdxSddd:hover {
-            width: 14rem;
-            height: 21rem;
-        }
-        
         .center-flex.theme-FSDsasdvcdxSddd {
             width: 13rem;
             height: 20rem;
@@ -264,16 +259,16 @@
         <div class=" noselect center-flex theme-XDS12DSF4h3DFSd">
             <div class="center-flex theme-FSDsasdvcxSDFSDc43 full-bg">
                 <div class="center-flex theme-FSDsasdvcxSDfFSDc43 full-bg">
-                    <div style="background-image: url(/images/ab1.jpg);" class="center-flex theme-FSDsasdvcdxSddd theme-FSDsasdvcdxSDFSDc43 full-bg">
+                    <div style="background-image: url(/images/ab1.jpg);" class="fdfdfdf center-flex theme-FSDsasdvcdxSddd theme-FSDsasdvcdxSDFSDc43 full-bg">
 
                     </div>
-                    <div style="background-image: url(/images/ab2.jpg);" class="center-flex theme-FSDsasdvcdxSddd theme-FSDsasdvcxSDFfSDc43 full-bg">
+                    <div style="background-image: url(/images/ab2.jpg);" class="fdfdfdf center-flex theme-FSDsasdvcdxSddd theme-FSDsasdvcxSDFfSDc43 full-bg">
 
                     </div>
-                    <div style="background-image: url(/images/ab3.jpg);" class="center-flex theme-FSDsasdvcdxSddd  theme-FSDsasdvcxSDFSgDc43 full-bg">
+                    <div style="background-image: url(/images/ab3.jpg);" class="fdfdfdf center-flex theme-FSDsasdvcdxSddd  theme-FSDsasdvcxSDFSgDc43 full-bg">
 
                     </div>
-                    <div style="background-image: url(/images/ab4.jpg);" class="center-flex theme-FSDsasdvcdxSddd  theme-FSDsasdvcxSDFShDc43 full-bg">
+                    <div style="background-image: url(/images/ab4.jpg);" class="fdfdfdf center-flex theme-FSDsasdvcdxSddd  theme-FSDsasdvcxSDFShDc43 full-bg">
 
                     </div>
 
@@ -329,6 +324,22 @@
             interactive: true,
             followCursor: true,
         });
+        $(".theme-FSDsasdvcdxSddd").hover(
+            function() {
+                $(this).removeClass("fdfdfdf")
+                $(".fdfdfdf").css('width', '12rem');
+                $(".fdfdfdf").css('height', '20rem');
+                $(this).css('width', '15.5rem');
+                $(this).css('height', '21rem');
+            },
+            function() {
+                $(this).addClass("fdfdfdf");
+                $(".fdfdfdf").css('width', '13rem');
+                $(".fdfdfdf").css('height', '20rem');
+                $(this).css('width', '13rem');
+                $(this).css('height', '20rem');
+            }
+        );
 
         /////////////////////////////////////////////////////////
     </script>
