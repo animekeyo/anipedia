@@ -142,7 +142,7 @@
                     <div class="center-flex theme-FFGEKgO233DF">
                         Custom Bio
                     </div>
-                    <div id="user_dec" class="center-flex theme-FFGEKO2h33DF">
+                    <div id="user_dec" class="noselect theme-FFGEKO2h33DF">
                         <div import_small_loader></div>
                     </div>
                 </div>
@@ -742,6 +742,7 @@
             var profile_picture = (snapshot.val() && snapshot.val().profile_picture);
             var banner = (snapshot.val() && snapshot.val().banner);
             var bio = (snapshot.val() && snapshot.val().bio);
+
             var userid = firebase.auth().currentUser.uid;
             var onlineState = (snapshot.val() && snapshot.val().onlineState);
             console.log(userid);
@@ -751,8 +752,18 @@
                 $('[user-status]').addClass('offline');
             };
             $("[id=user_name]").text(displayName);
+            ///////////////////STP///////////////
 
-            $("[id=user_dec]").text(bio);
+            const st2 = bio.replace(/(<([^>]+)>)/gi, "");
+            var st3 = st2.replace(/\[/g, '<span stb class="pointer theme-FDFgdf3243FDSDF">');
+            var st4 = st3.replace(/\]/g, '</span>');
+            $('[id=user_dec]').html(st4);
+            //////////////////////////////////////
+            $('[stb]').on('click', function() {
+                $(this).css('color', 'var(--c9)');
+                $(this).css('cursor', 'unset');
+            });
+
             if (bio == 0) {
                 if (id == userid) {
                     $("[id=user_dec]").html('<div click_bio_add class="theme-FFGEKOGGF33DF" open_setting>Empty Bio!!! Click <span style="color:var(--c19)">Here</span> to add bio. </div>');

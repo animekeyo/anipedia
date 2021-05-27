@@ -653,6 +653,10 @@
             }
             /*maincss*/
             
+            .theme-FFGEKO2h33DF {
+                line-height: 20px;
+            }
+            
             @media (min-width:980px) {
                 /*pccss*/
                 mobile-header {
@@ -1714,6 +1718,13 @@
             
             .mobi {
                 display: none;
+            }
+            
+            span.theme-FDFgdf3243FDSDF {
+                background: var(--c13);
+                color: var(--c13);
+                border-radius: 3px;
+                overflow: hidden;
             }
             
             @media (max-width:980px) {
