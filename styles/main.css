@@ -1451,10 +1451,10 @@
                 position: sticky;
                 top: 80px;
                 border-radius: var(--r1);
-                -webkit-border-radius: ;
-                -moz-border-radius: ;
-                -ms-border-radius: ;
-                -o-border-radius: ;
+                -webkit-border-radius: var(--r1);
+                -moz-border-radius: var(--r1);
+                -ms-border-radius: var(--r1);
+                -o-border-radius: var(--r1);
             }
             
             .tooltip {
