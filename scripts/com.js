@@ -11,7 +11,20 @@ firebase.auth().onAuthStateChanged(function(user) {
                     userid: user.uid
                 });
             };
-
+            if (snapshot.val().profile_picture) {
+                console.log(snapshot.val().profile_picture)
+            } else {
+                firebase.database().ref('/data/users/' + user.uid).update({
+                    profile_picture: ""
+                });
+            };
+            if (snapshot.val().profile_picture) {
+                console.log(snapshot.val().profile_picture)
+            } else {
+                firebase.database().ref('/data/users/' + user.uid).update({
+                    profile_picture: ""
+                });
+            };
             if (snapshot.val().displayName) {
                 console.log(snapshot.val().displayName)
             } else {
