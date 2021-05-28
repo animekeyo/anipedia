@@ -1790,6 +1790,16 @@
                     background: #000000a3;
                     margin: 3.9rem 0rem;
                 }
+                .center-flex.full-bg.theme-FD54DFRKKI {
+                    display: flex;
+                    flex-direction: column;
+                }
+                .center-flex.theme-ctpDFSD2213SffDFSD {
+                    position: sticky;
+                    bottom: 3.9rem;
+                    border-radius: unset;
+                    margin: 0rem;
+                }
                 body {
                     padding-top: 4rem;
                     padding-bottom: 4rem;
