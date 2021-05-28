@@ -842,13 +842,7 @@
                 $('[user-status]').addClass('offline');
             };
             $("[id=user_name]").text(displayName);
-            ///////////////////STP///////////////
 
-            const st2 = bio.replace(/(<([^>]+)>)/gi, "");
-            var st3 = st2.replace(/\[/g, '<span stb class="pointer theme-FDFgdf3243FDSDF">');
-            var st4 = st3.replace(/\]/g, '</span>');
-            $('[id=user_dec]').html(st4);
-            //////////////////////////////////////
             $('[stb]').on('click', function() {
                 $(this).css('color', 'var(--c9)');
                 $(this).css('cursor', 'unset');
@@ -861,7 +855,21 @@
                     $("[id=user_dec]").text('Looks like ' + displayName + ' didnt add bio!');
                 }
             } else {
+                if (typeof bio == "undefined") {
+                    if (id == userid) {
+                        $("[id=user_dec]").html('<div click_bio_add class="theme-FFGEKOGGF33DF" open_setting>Empty Bio!!! Click <span style="color:var(--c19)">Here</span> to add bio. </div>');
+                    } else {
+                        $("[id=user_dec]").text('Looks like ' + displayName + ' didnt add bio!');
+                    }
+                } else {
+                    ///////////////////STP///////////////
 
+                    const st2 = bio.replace(/(<([^>]+)>)/gi, "");
+                    var st3 = st2.replace(/\[/g, '<span stb class="pointer theme-FDFgdf3243FDSDF">');
+                    var st4 = st3.replace(/\]/g, '</span>');
+                    $('[id=user_dec]').html(st4);
+                    //////////////////////////////////////
+                };
             }
             $('[id=user_banner]').css('background-image', 'url(' + banner + '),url(/images/banner.png)');
             $('[id=user_profile_pic]').css('background-image', 'url(' + profile_picture + '),url(/images/icon.png)');
