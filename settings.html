@@ -6,7 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <style>
-        @import url("/styles/main.css?clear-11");
+        @import url("/styles/main.css?clear-12");
+        .center-flex.theme-fsdfsdfsdffsdfddfsdf svg {
+            fill: var(--c9);
+            width: 2rem;
+            height: 2rem;
+        }
+        
+        .center-flex.theme-fsdfsdfsdffsdf.mobiz {
+            position: fixed;
+            top: 0;
+            width: -webkit-fill-available;
+            height: 3.9rem;
+            z-index: 112;
+            background: var(--c15);
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: space-between;
+            padding: 0rem 1rem;
+            align-items: center;
+        }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.7/dist/sweetalert2.all.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -27,10 +47,18 @@
     <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
     <!---/////////////////////// https://atomiks.github.io/ /////////////////////--->
-    <script defer src="/scripts/com.js?clear-11"></script>
+    <script defer src="/scripts/com.js?clear-12"></script>
 </head>
 
 <body>
+    <div class="mobix center-flex theme-fsdfsdfsdffsdf">
+        <div top_dex_BTN class="center-flex theme-fsdfsdfsdffsdfddfsdf" icon_arrow_left>
+
+        </div>
+        <div top_dex class="center-flex theme-fsdfsfffdfsdfdsfsfsdf">
+
+        </div>
+    </div>
     <div mobile_header class="mobile-header">
 
     </div>
@@ -40,7 +68,7 @@
     <setting class=" center-flex full-bg full-wh fixed bg-b">
         <non class=" center-flex top-flex">
 
-            <non class="a center-flex">
+            <non top_dasda class="mobiz a center-flex">
 
 
                 <btnx class="a center-flex">User Settings</btnx>
@@ -58,7 +86,8 @@
                 <btnx btnexxo class="logout center-flex" logout_user>Log Out</btnx>
 
             </non>
-            <non class="b center-flex relative">
+
+            <non class="mobix b center-flex relative">
 
                 <box-ae page="Profile" style="display: none;">
                     <div class="theme-fdsd03sd3 relative">
@@ -225,7 +254,7 @@
     </setting>
     <input style="display: none;" id="uploadbanner" type="file" class="imgur" accept="image/*" data-max-size="5000" />
     <input style="display: none;" id="uploadpfp" type="file" class="imgur" accept="image/*" data-max-size="5000" />
-    <script src="/scripts/com.js?clear-11">
+    <script src="/scripts/com.js?clear-12">
     </script>
     <script>
         $("[disabled]").prop('disabled', true);
@@ -402,12 +431,22 @@
                                 $("[" + hashtagofurl + "]").css('background', 'var(--c19)');
                             }, 0000);
                     }, 000000);
+                $('[top_dex_BTN]').on('click', function() {
+
+                    $(".mobiz").addClass('mobix');
+                    $(".mobix").removeClass('mobiz');
+                    $('[top_dasda]').addClass('mobiz');
+
+                });
                 $('[btnexxo]').on('click', function() {
                     setTimeout(
                         function() {
                             const fullurlofmainpage = window.location.href;
                             const themainhashurl = $.url(fullurlofmainpage);
                             const hashtagofurl = themainhashurl.attr('fragment');
+                            $(".mobiz").removeClass('mobiz');
+                            $(".mobix").addClass('mobiz');
+                            $(".mobiz").removeClass('mobix');
                             $("[btnexxo]").css('background', 'var(--c14)');
                             setTimeout(
                                 function() {
