@@ -330,7 +330,6 @@
                         '    <div class="center-flex full-wh theme-11gk448EDD">' +
                         '        <div class="center-flex theme-21gk448EDD">' +
                         '            <div heart-id="' + link + '" class="center-flex theme-41gk448EDD">' +
-                        icon_like +
                         '            </div>' +
                         '            <div class="center-flex theme-26gk448EDD">' +
                         '            </div>' +
@@ -353,11 +352,11 @@
 
                         if (doc.exists) {
 
-                            $('[heart-id=' + link + ']').css('background', 'var(--c19)');
+                            $('[heart-id=' + link + ']').html(icon_like_fill);
 
                         } else {
 
-                            $('[heart-id=' + link + ']').css('background', 'var(--c12)');
+                            $('[heart-id=' + link + ']').html(icon_like);
 
                         }
 
@@ -375,7 +374,9 @@
                                 if (like == true) {
                                     dxb.delete();
                                     console.log('Deleted')
-
+                                    var ttx = $('[count-id=' + link + ']').text();
+                                    var ttz = parseFloat(ttx) - 1;
+                                    $('[count-id=' + link + ']').text(ttz);
                                 };
                             } else {
                                 // doc.data() will be undefihned in this case
@@ -383,6 +384,9 @@
                                     like: true,
                                     userid: user.uid,
                                 });
+                                var ttx = $('[count-id=' + link + ']').text();
+                                var ttz = parseFloat(ttx) + 1;
+                                $('[count-id=' + link + ']').text(ttz);
                                 console.log('Liked')
                             }
 

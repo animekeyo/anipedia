@@ -190,6 +190,7 @@
                 --wt: -webkit-fill-available;
                 --s1: 2px 2px 0 var(--c8), -2px -2px 0 var(--c5), 0px 0px 10px black;
                 --s2: 1px 2px 2px var(--c8), -1px -2px 2px var(--c5), 0px 0px 10px black;
+                --r1: 5px;
             }
             
             .feedbt-main {
@@ -668,7 +669,11 @@
                 flex-direction: row;
                 gap: 1rem;
                 justify-content: space-between;
-                border-radius: 10px;
+                border-radius: var(--r1);
+                -webkit-border-radius: var(--r1);
+                -moz-border-radius: var(--r1);
+                -ms-border-radius: var(--r1);
+                -o-border-radius: var(--r1);
             }
             
             .theme-ctpDFSD2213SDFSD {
@@ -683,7 +688,11 @@
                 background: var(--c15);
                 width: 80%;
                 height: 2.5rem;
-                border-radius: 10px;
+                border-radius: var(--r1);
+                -webkit-border-radius: var(--r1);
+                -moz-border-radius: var(--r1);
+                -ms-border-radius: var(--r1);
+                -o-border-radius: var(--r1);
             }
             
             .theme-ctpDFSD2213SDFSD svg {
@@ -1273,12 +1282,16 @@
             .theme-22gk3D8EKJ {
                 width: -webkit-fill-available;
                 overflow: hidden;
-                border-radius: 10px;
+                border-radius: var(--r1);
                 margin: 1rem 0rem;
                 height: fit-content;
                 background: var(--c14);
                 justify-content: flex-start;
                 color: var(--c9);
+                -webkit-border-radius: var(--r1);
+                -moz-border-radius: var(--r1);
+                -ms-border-radius: var(--r1);
+                -o-border-radius: var(--r1);
             }
             
             .theme-22gk3D8ER {
@@ -1329,11 +1342,9 @@
             }
             
             .theme-27gk448EDD,
-            .theme-41gk448EDD svg,
-            .theme-41gk448EDD svg path {
+            .theme-41gk448EDD svg {
                 margin: 14.5px;
-                fill: var(--c6)!important;
-                stroke: var(--c6)!important;
+                fill: var(--c6);
             }
             
             .theme-11gk448EDD {
@@ -1373,7 +1384,11 @@
                 display: flex;
                 position: sticky;
                 top: 80px;
-                border-radius: 10px;
+                border-radius: var(--r1);
+                -webkit-border-radius: ;
+                -moz-border-radius: ;
+                -ms-border-radius: ;
+                -o-border-radius: ;
             }
             
             .tooltip {
@@ -1433,7 +1448,7 @@
             .theme-FDS45GFFFS {
                 background: var(--c15);
                 color: var(--c9);
-                border-radius: 0px 0px 10px 10px;
+                border-radius: 0px 0px var(--r1) var(--r1);
                 height: inherit;
                 width: 60rem;
                 z-index: 1;
@@ -1443,6 +1458,10 @@
                 font-family: 'C1';
                 font-size: 1rem;
                 overflow: hidden;
+                -webkit-border-radius: 0px 0px var(--r1) var(--r1);
+                -moz-border-radius: 0px 0px var(--r1) var(--r1);
+                -ms-border-radius: 0px 0px var(--r1) var(--r1);
+                -o-border-radius: 0px 0px var(--r1) var(--r1);
             }
             
             .theme-FDS45fgGFFFDFGS {
@@ -1499,7 +1518,11 @@
             .theme-FDS45fggfGFFFDFGS {
                 padding: 0.8rem 1.8rem;
                 background: var(--c14);
-                border-radius: 10px;
+                border-radius: var(--r1);
+                -webkit-border-radius: var(--r1);
+                -moz-border-radius: var(--r1);
+                -ms-border-radius: var(--r1);
+                -o-border-radius: var(--r1);
             }
             
             .theme-GDFLds34FSDAA.center-flex {
