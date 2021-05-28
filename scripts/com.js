@@ -133,9 +133,6 @@ mobile_header = '    <div class="center-flex theme-HEDfSDFS12SDA mono-flex fixed
     '                <div class="center-flex theme-HEDfSDFS1h2jSDA code-dfjs34jHED" open_setting >' + icon_setting +
     '                    <!---inside-icon-image--->' +
     '                </div>' +
-    '                <div class="center-flex theme-HEDfSDFS1hj2SDA code-dfjs34jHED" logout_user >' + icon_logout +
-    '                    <!---inside-icon-image--->' +
-    '                </div>' +
     '            </div>' +
     '        </div>' +
     '        <div class="center-flex theme-HEDfSDFSghj12SDA">' +

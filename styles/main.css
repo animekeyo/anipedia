@@ -2515,6 +2515,9 @@
                     .center-flex.theme-DFSDeeeeDSFSD123 {
                         display: flex;
                     }
+                    .theme-fdsfd03sd3.code-fifd03sddd3 {
+                        display: none;
+                    }
                     .theme-fdsdd03sd3 {
                         display: flex;
                         height: fit-content;
@@ -2525,7 +2528,9 @@
                         align-items: center;
                         padding: 1.5rem;
                         gap: 1.5rem;
-                        width: fit-content;
+                        width: -webkit-fill-available;
+                        margin: 3px 8px 8px 8px;
+                        /* border-radius: unset; */
                     }
                     .center-flex.theme-fdsdg45sd3 {
                         margin: unset;
