@@ -11,26 +11,20 @@ firebase.auth().onAuthStateChanged(function(user) {
                     userid: user.uid
                 });
             };
-            if (snapshot.val().profile_picture) {
-                console.log(snapshot.val().profile_picture)
-            } else {
-                firebase.database().ref('/data/users/' + user.uid).update({
-                    profile_picture: ""
-                });
-            };
-            if (snapshot.val().banner) {
-                console.log(snapshot.val().banner)
-            } else {
+            if (typeof snapshot.val().banner == "undefined") {
                 firebase.database().ref('/data/users/' + user.uid).update({
                     banner: "/images/b1.jpg"
                 });
-            };
-            if (snapshot.val().profile_picture) {
-                console.log(snapshot.val().profile_picture)
             } else {
+                console.log(snapshot.val().banner)
+            };
+            if (typeof snapshot.val().profile_picture == "undefined") {
                 firebase.database().ref('/data/users/' + user.uid).update({
                     profile_picture: "/images/icon.png"
                 });
+            } else {
+                console.log(snapshot.val().profile_picture)
+
             };
             if (snapshot.val().displayName) {
                 console.log(snapshot.val().displayName)
