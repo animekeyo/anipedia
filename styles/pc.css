@@ -1,6 +1,8 @@
 @media (min-width:550px) {
     non.login-page {
         margin: 6% 35%;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         float: left;
         height: -webkit-fill-available;

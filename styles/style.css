@@ -23,6 +23,8 @@ box-notify {
     transition: 0.5s;
     border-radius: 4px;
     padding: 13px 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -183,6 +185,8 @@ loader.login-page {
     position: fixed;
     top: 0;
     left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     background: var(--c15);
     flex-wrap: nowrap;
@@ -193,6 +197,8 @@ loader.login-page {
 }
 
 svg.loader-svg {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -439,6 +445,8 @@ non.content-boxz {
     float: left;
     position: relative;
     --cbg: var(--c14);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -472,6 +480,8 @@ hhtx {
 
 profile-pic {
     background: var(--c15);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -489,6 +499,8 @@ profile-pic {
 display-name {
     color: var(--c9);
     font-size: 0.8vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -500,6 +512,8 @@ display-name {
 post-time {
     color: var(--c9);
     font-size: 0.5vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -529,6 +543,8 @@ contener-for-icons {
 
 like-button {
     background: var(--c19);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -545,6 +561,8 @@ like-button {
 
 share-button {
     background: var(--c13);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -561,6 +579,8 @@ share-button {
 likes-count {
     color: var(--c9);
     font-size: 0.5vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -579,6 +599,8 @@ post-dec {
 imageo {
     float: left;
     background: var(--c13);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: -webkit-fill-available;
     height: -webkit-fill-available;
@@ -591,6 +613,8 @@ imageo {
 
 imageo img {
     width: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -602,6 +626,8 @@ imageo img {
 
 g.svg-rect-btns {
     fill: var(--c9);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     float: left;
     overflow: hidden;
@@ -615,6 +641,8 @@ g.svg-rect-btns {
 svg.like-btn-svg {
     /* margin: 0vw; */
     float: left;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -626,6 +654,8 @@ svg.like-btn-svg {
 }
 
 bageo {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -665,6 +695,8 @@ intext {
     bottom: 3vw;
     color: var(--c9);
     font-size: 0.96666666666666666666666vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -679,6 +711,8 @@ intext {
 
 texto {
     float: left;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -689,6 +723,8 @@ texto {
 
 texto-og {
     width: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -700,6 +736,8 @@ texto-og {
 }
 
 intext-og {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -724,6 +762,8 @@ header-xo {
 }
 
 search-bar {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -740,6 +780,8 @@ search-bar input {
     border: unset;
     padding: 0vw 1vw;
     margin: 1.5vw 0.5vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -754,6 +796,8 @@ search-bar input {
 logo-x {
     color: var(--c19);
     text-transform: uppercase;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -765,6 +809,8 @@ logo-x {
 }
 
 menu-btns {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     color: var(--c9);
     flex-direction: row;
@@ -787,6 +833,8 @@ profile-options {
 }
 
 profile-imgo-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     background: var(--c15);
     flex-direction: column;
@@ -802,6 +850,8 @@ profile-imgo-menu {
 }
 
 notify-x {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     background: var(--c15);
     flex-direction: column;
@@ -823,6 +873,8 @@ like-button svg {
 }
 
 listonline {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -837,6 +889,8 @@ following-people-online {
     float: left;
     font-size: 1.2vw;
     width: -webkit-fill-available;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -849,6 +903,8 @@ following-people-online {
 
 list-of-people {
     width: -webkit-fill-available;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -861,6 +917,8 @@ list-of-people {
 profile-xo-oo {
     /* width: 2vw; */
     /* height: 2vw; */
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     background: var(--c15);
     flex-direction: column;
@@ -888,6 +946,8 @@ listo-xo {
 }
 
 usernamo-xox {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -900,6 +960,8 @@ usernamo-xox {
 time-xo {
     color: var(--c9);
     font-size: 0.5vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -915,6 +977,8 @@ list-home-feed {
 }
 
 profile-box-ox {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -929,6 +993,8 @@ profile-box-ox {
 
 banner-xo {
     width: -webkit-fill-available;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: 10vw;
     margin: 1vw;
@@ -959,6 +1025,8 @@ pfp-name-xo {
 }
 
 pfp-xo {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     background: var(--c15);
     flex-direction: column;
@@ -974,6 +1042,8 @@ pfp-xo {
 }
 
 name-xo {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -997,6 +1067,8 @@ foll-xo {
 foll-btns-xo {
     padding: 0.8vw 1vw;
     background: var(--c14);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -1007,6 +1079,8 @@ foll-btns-xo {
 }
 
 hash-tags-xo {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -1019,6 +1093,8 @@ hash-tags-xo {
 
 non-hash-xo {
     color: var(--c19);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -1043,6 +1119,8 @@ btns-x {
 }
 
 text-treading-topics {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     color: var(--c9);
     flex-direction: row;
@@ -1057,6 +1135,8 @@ text-treading-topics {
 }
 
 box-context {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -1072,6 +1152,8 @@ shots {
     background: var(--c14);
     margin: 0.5vw;
     margin-top: 1.5vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     overflow: hidden;
     float: left;
@@ -1088,6 +1170,8 @@ shots-box {
     width: 6.5vw;
     background: var(--c13);
     height: -webkit-fill-available;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -1106,6 +1190,8 @@ shots-box {
 
 shots-pfp {
     background: var(--c15);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
