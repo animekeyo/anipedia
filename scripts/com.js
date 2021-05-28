@@ -18,11 +18,18 @@ firebase.auth().onAuthStateChanged(function(user) {
                     profile_picture: ""
                 });
             };
+            if (snapshot.val().banner) {
+                console.log(snapshot.val().banner)
+            } else {
+                firebase.database().ref('/data/users/' + user.uid).update({
+                    banner: "/images/b1.jpg"
+                });
+            };
             if (snapshot.val().profile_picture) {
                 console.log(snapshot.val().profile_picture)
             } else {
                 firebase.database().ref('/data/users/' + user.uid).update({
-                    profile_picture: ""
+                    profile_picture: "/images/icon.png"
                 });
             };
             if (snapshot.val().displayName) {
