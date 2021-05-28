@@ -1877,6 +1877,19 @@
             }
             
             @media (max-width:980px) {
+                setting.center-flex.full-bg.full-wh.fixed.bg-b non.center-flex.top-flex {
+                    display: flex;
+                    flex-direction: column;
+                    width: -webkit-fill-available;
+                }
+                setting.center-flex.full-bg.full-wh.fixed.bg-b non.center-flex.top-flex non.a.center-flex {
+                    display: none;
+                }
+                setting.center-flex.full-bg.full-wh.fixed.bg-b non.center-flex.top-flex non.b.center-flex {
+                    width: -webkit-fill-available;
+                    height: -webkit-fill-available;
+                    padding-bottom: 4rem;
+                }
                 .center-flex.theme-XC12sDDSmaEffd {
                     z-index: 112;
                     background: #000000a3;
