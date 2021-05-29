@@ -44,8 +44,9 @@ $('[goflow]').on('click', function() {
                 '<a class="theme-FSD234FDS32AA" href="/u?id=' + users + '">Open</a>' +
                 '</div>' +
                 '</div>';
-            $("[flow_data_loader]").hide()
-            $(flow).appendTo($("[flow_data]"))
+            $("[flow_data_loader]").hide();
+
+            $(flow).appendTo($("[flow_data]"));
 
 
 

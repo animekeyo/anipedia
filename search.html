@@ -119,7 +119,7 @@
 
         </div>
         <div class="center-flex theme-ser123g123SDFDF">
-            <input search_users placeholder="Search user!" type="search" name="" id="">
+            <input search_usersx placeholder="Search user!" type="search" name="" id="">
         </div>
     </div>
     <div mobile_header class="mobile-header">
@@ -142,48 +142,137 @@
         });
 
 
-        $('[search_users]').keyup(function() {
-            var search_val = $('[search_users]').val();
-            $('user-search').css("height", "auto");
-            $('user-search').css("padding", "1rem");
-            $('non-ffg').css("height", "auto");
+        $('[search_usersx]').on('change', function() {
+            var search_val = $('[search_usersx]').val();
 
+
+            $('[import_search_datax]').html("");
             if (search_val == 0) {
 
 
-                setTimeout(
-                    function() {
-                        $('[import_search_datax]').html("");
-                        setTimeout(
-                            function() {
-                                $('[import_search_datax]').prepend('<nen>Not Found</nen>');
-                            }, 0001);
-                    }, 0001);
+
+                $('[import_search_datax]').prepend('<nen>Not Found</nen>');
+
             } else {
                 firebase.database().ref('/data').child('users').orderByChild('displayName').startAt(search_val).on("value", function(snapshot) {
-                    console.log(snapshot.val());
-                    snapshot.forEach(function(data) {
-                        console.log(data.val().displayName);
 
-                        setTimeout(
-                            function() {
-                                $('[import_search_datax]').html("");
-                                setTimeout(
-                                    function() {
-                                        const layout = '<div data-aos="fade-in" data-aos-duration="050" open_user userid="' + data.key + '" class="center-flex theme-dsfsd112FDfsdfsdf">' +
-                                            '<div style="background-image:url(' + data.val().profile_picture + ')" class="full-bg center-flex theme-dsfsd112fdfgFDfsdfsdf">' +
-                                            '</div>' +
-                                            '<div class="center-flex theme-dsfsd112FDfsdfgsdfsdf">' +
-                                            data.val().displayName +
-                                            '</div>' +
-                                            '</div>';
-                                        $(layout).appendTo($('[import_search_datax]'))
-                                        $('[open_user]').on('click', function() {
-                                            const valget = $(this).attr('userid');
-                                            window.location.href = "/u?id=" + valget;
-                                        });
-                                    }, 0001);
-                            }, 0001);
+
+                    $('[open_user]').on('click', function() {
+                        const valget = $(this).attr('userid');
+                        window.location.href = "/u?id=" + valget;
+                    });
+
+                    snapshot.forEach(function(data) {
+
+                        const layout = '<div  data-aos="fade-in" data-aos-duration="050" open_user userid="' + data.val().userid + '" class="center-flex theme-dsfsd112FDfsdfsdf">' +
+                            '<div style="background-image:url(' + data.val().profile_picture + ')" class="full-bg center-flex theme-dsfsd112fdfgFDfsdfsdf">' +
+                            '</div>' +
+                            '<div class="center-flex theme-dsfsd112FDfsdfgsdfsdf">' +
+                            data.val().displayName +
+                            '</div>' +
+                            '</div>';
+
+                        ////////////// $(layout).appendTo($('[import_search_datax]'))////////////
+
+                        /////////////////////////////////////////////
+                        var users = data.key;
+                        var flow = '<div class="center-flex theme-XC12sDDSfaEE">' +
+                            '<div class="center-flex theme-XC12svDDSaEE">' +
+                            '<a href="/u?id=' + users + '"><div  class="center-flex theme-XCb12sDDSaEE full-bg " user-status-' + users + ' flow_user_profile_pic_' + users + '>' +
+                            '</div></a>' +
+                            '<div class="center-flex theme-XC1n2sDDSaEE">' +
+                            '<div class="theme-FSD234FDS32">' +
+                            '<a class="theme-FSD234FDS32AA" href="/u?id=' + users + '" user_displayName_' + users + '><div import_small_loader></div></a>' +
+                            '</div>' +
+                            '<div class="small-badges theme-SDFsdf2334DSF">' +
+                            '<badge class="center-flex theme-FDSHGF45GFFFS" user_badges_' + users + '>' +
+                            '</badge>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '<div class="center-flex noselect pointer theme-XC12sDDSmaEE">' +
+                            '<a class="theme-FSD234FDS32AA" href="/u?id=' + users + '">Open</a>' +
+                            '</div>' +
+                            '</div>';
+
+                        $(flow).appendTo($("[import_search_datax]"));
+
+
+
+                        var db_ref = firebase.database().ref('/data/users/' + users);
+                        db_ref.on('value', function(snapshot) {
+                            var displayName = (snapshot.val() && snapshot.val().displayName);
+                            var profile_picture = (snapshot.val() && snapshot.val().profile_picture);
+                            var mainuserid = (snapshot.val() && snapshot.val().userid);
+                            var onlineState = (snapshot.val() && snapshot.val().onlineState);
+                            if (onlineState == true) {
+                                $('[user-status-' + mainuserid + ']').addClass('flow-online');
+                            } else {
+                                $('[user-status-' + mainuserid + ']').addClass('flow-offline');
+                            };
+                            $('[user_displayName_' + mainuserid + ']').text(displayName);
+                            $('[flow_user_profile_pic_' + mainuserid + ']').css('background-image', 'url(' + profile_picture + '),url(/images/icon.png)');
+                            console.log(displayName)
+                        });
+                        db_ref.once('value', function(snapshot) {
+
+                            var mainuserid = (snapshot.val() && snapshot.val().userid);
+
+
+                            db_ref.child('badges').once('value', function(user) {
+                                user.forEach((snapshot) => {
+                                    var ggk = snapshot.key + snapshot.val();
+                                    setTimeout(
+                                        function() {
+                                            if (ggk == 'verifiedtrue') {
+                                                $('[user_badges_' + mainuserid + ']').prepend(icon_verified);
+                                                console.log('verified')
+                                                tippy('[tippy]', {
+                                                    inertia: true,
+                                                    hideOnClick: false,
+                                                    interactive: true,
+                                                    theme: 'tomato',
+                                                });
+                                            };
+                                            setTimeout(
+                                                function() {
+                                                    if (ggk == 'partnertrue') {
+                                                        $('[user_badges_' + mainuserid + ']').prepend(icon_turbo_1);
+                                                        console.log('partner')
+                                                        tippy('[tippy]', {
+                                                            inertia: true,
+                                                            hideOnClick: false,
+                                                            interactive: true,
+                                                            theme: 'tomato',
+                                                        });
+                                                    };
+                                                    setTimeout(
+                                                        function() {
+
+                                                            if (ggk == 'stafftrue') {
+                                                                $('[user_badges_' + mainuserid + ']').prepend(icon_staff);
+                                                                console.log('staff')
+                                                                tippy('[tippy]', {
+                                                                    inertia: true,
+                                                                    hideOnClick: false,
+                                                                    interactive: true,
+                                                                    theme: 'tomato',
+                                                                });
+                                                            };
+                                                        }, 0001);
+
+                                                }, 0001);
+                                        }, 0001);
+
+
+
+
+
+                                });
+                            });
+                        });
+
+                        //////////////////////////////////////////////
 
                     });
                 });
