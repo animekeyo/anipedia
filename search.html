@@ -7,7 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <style>
         @import url("/styles/main.css?clear-24");
-        @media (max-width:980px) {}
+        @media (min-width:980px) {
+            .full-wh.center-flex.theme-dsfsd112FDfdfdfdddfsdfsdf {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                justify-content: center;
+                align-content: center;
+                margin-top: 5rem;
+            }
+        }
         
         .center-flex.theme-ser123123gfSDFDF svg {
             fill: var(--c9);
@@ -154,7 +164,7 @@
                 $('[import_search_datax]').prepend('<nen>Not Found</nen>');
 
             } else {
-                firebase.database().ref('/data').child('users').orderByChild('displayName').startAt(search_val).on("value", function(snapshot) {
+                firebase.database().ref('/data').child('users').orderByChild('displayName').startAt(search_val).once("value", function(snapshot) {
 
 
                     $('[open_user]').on('click', function() {
@@ -200,7 +210,7 @@
 
 
                         var db_ref = firebase.database().ref('/data/users/' + users);
-                        db_ref.on('value', function(snapshot) {
+                        db_ref.once('value', function(snapshot) {
                             var displayName = (snapshot.val() && snapshot.val().displayName);
                             var profile_picture = (snapshot.val() && snapshot.val().profile_picture);
                             var mainuserid = (snapshot.val() && snapshot.val().userid);
