@@ -101,6 +101,8 @@
 <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
 <!---/////////////////////// https://atomiks.github.io/ /////////////////////--->
+<script defer src="/scripts/goto.js"></script>
+<script defer src="/scripts/com.js?clear-21"></script>
 
 <body>
 
@@ -210,8 +212,7 @@
         </div>
     </div>
 
-    <script src="/scripts/com.js?clear-21">
-    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js">
     </script>
 
@@ -849,10 +850,7 @@
             };
             $("[id=user_name]").text(displayName);
 
-            $('[stb]').on('click', function() {
-                $(this).css('color', 'var(--c9)');
-                $(this).css('cursor', 'unset');
-            });
+
 
             if (bio == 0) {
                 if (id == userid) {
@@ -874,6 +872,11 @@
                     var st3 = st2.replace(/\[/g, '<span stb class="pointer theme-FDFgdf3243FDSDF">');
                     var st4 = st3.replace(/\]/g, '</span>');
                     $('[id=user_dec]').html(st4);
+
+                    $('[stb]').on('click', function() {
+                        $(this).css('color', 'var(--c9)');
+                        $(this).css('cursor', 'unset');
+                    });
                     //////////////////////////////////////
                 };
             }

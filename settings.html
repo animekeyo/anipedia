@@ -47,6 +47,7 @@
     <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
     <!---/////////////////////// https://atomiks.github.io/ /////////////////////--->
+    <script defer src="/scripts/goto.js"></script>
     <script defer src="/scripts/com.js?clear-21"></script>
 </head>
 
@@ -254,8 +255,7 @@
     </setting>
     <input style="display: none;" id="uploadbanner" type="file" class="imgur" accept="image/*" data-max-size="5000" />
     <input style="display: none;" id="uploadpfp" type="file" class="imgur" accept="image/*" data-max-size="5000" />
-    <script src="/scripts/com.js?clear-21">
-    </script>
+
     <script>
         $("[disabled]").prop('disabled', true);
 
@@ -460,13 +460,9 @@
                         }, 0000);
 
 
-
-
-
-                    console.log(sd);
                 });
 
-                /////////////////////////////////////////////////
+                //////////////////////////////////////////////////
                 $('[save_user_data]').on('click', function() {
                     var user = firebase.auth().currentUser;
                     var name = $('[data_name_input]').val();

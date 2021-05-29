@@ -2510,6 +2510,10 @@
                 display: unset;
             }
             
+            .center-flex.theme-fsdfsdfsdffsdf.mobiz {
+                display: none;
+            }
+            
             @media (max-width:980px) {
                 @media (max-width: 550px) {
                     .center-flex.theme-DFSDeeeeDSFSD123 {

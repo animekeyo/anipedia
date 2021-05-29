@@ -86,7 +86,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         } else if (link == "/") {
 
         } else {
-            window.location.href = "/login";
+            window.location.href = "/";
         }
     }
 });
@@ -129,8 +129,10 @@ icon_facebook = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xli
 small_loader = '<style>small_loader svg { animation: loading 0.5s linear infinite } @keyframes loading { to { transform: rotate(359deg) } }</style><loading class=" center-flex"><small_loader>' + icon_loader + '</small_loader></loading>';
 icon_account_circle = '<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>';
 post = '<script src="/scripts/post.js"></script><div class="center-flex theme-45FFDWEQArR3"><div class="full-wh center-flex theme-45FFDtEQAKR3"><div class="center-flex theme-4yFFDWEQAKR3"><div class="center-flex theme-45uFDWEQAKR3">Create a post</div><div class="center-flex theme-45iFDWEQAKR3">Fill the following fields to create a new post</div></div><div class="center-flex theme-45FFDWoQAKR3" click_upload_image>Upload Image</div><input class="theme-45FGDWoQAKR3" type="text" dec_input><div class="center-flex theme-45FFDWpQAKR3"><div go class="center-flex theme-45aFDWEQAKR3">Create post</div><div class="center-flex theme-45sFDWEQAKR3" hidepostjs>Cancel</div></div></div></div><input style="display: none;" upload_image type="file" class="imgur" accept="image/*" data-max-size="5000" /><hidden hidden></hidden>';
-header = '<script src="/scripts/search_user.js"></script><non class="full-wh main center-flex relative"><logo>animekeyo.</logo>    <user-search class=" center-flex absolute" style="height: 0rem;padding: 0rem;overflow: hidden;"><non-ffg import_search_data></non-ffg><a search_bar_close>Close</a></user-search><search class="center-flex"><non class="center-flex">' + icon_search + '</non><input placeholder="Search for rooms, users or categories" class="center-flex" type="search" search_users></search><div class="theme-fdfsd556ds"><profile-pic data-aos="zoom-in" data-aos-duration="050" main_name_alt class="full-bg center-flex" main_profile_picture main_profile_link></profile-pic><div data-aos="zoom-in" data-aos-duration="050" open_setting class="theme-fdfsdg56ds  center-flex">' + icon_setting + '</div><div data-aos="zoom-in" data-aos-duration="050" logout_user class="theme-fdfsdg56ds  center-flex">' + icon_logout + '</div></div></non>';
+header = '<script src="/scripts/search_user.js"></script><non class="full-wh main center-flex relative"><logo>animekeyo.</logo>    <user-search class=" center-flex absolute" style="height: 0rem;padding: 0rem;overflow: hidden;"><non-ffg import_search_data></non-ffg><a search_bar_close>Close</a></user-search><search class="center-flex"><non class="center-flex">' + icon_search + '</non><input placeholder="Search for rooms, users or categories" class="center-flex" type="search" search_users></search><div class="theme-fdfsd556ds"><profile-pic data-aos="zoom-in" data-aos-duration="050" main_name_alt class="full-bg center-flex" main_profile_picture main_profile_link></profile-pic><div data-aos="zoom-in" data-aos-duration="050" open_setting class="theme-fdfsdg56ds  center-flex">' + icon_setting + '</div></div></non>';
 /////////////////////////////MOBILE HEADER///////////////////////////
+
+
 mobile_header = '    <div class="center-flex theme-HEDfSDFS12SDA mono-flex fixed full-wh mobi">' +
     '        <div class="center-flex theme-HEDfSDFS12sSDA">' +
     '            <!---Top Bar--->' +
@@ -152,10 +154,10 @@ mobile_header = '    <div class="center-flex theme-HEDfSDFS12SDA mono-flex fixed
     '        </div>' +
     '        <div class="center-flex theme-HEDfSDFSghj12SDA">' +
     '            <!---Bottom Bar--->' +
-    '            <div class="center-flex theme-HEDfSDgFjhS12SDA code-HEDfSDgFjhS12SDA" go_to_home >' + icon_home +
+    '            <div  class="center-flex theme-HEDfSDgFjhS12SDA code-HEDfSDgFjhS12SDA" go_to_home >' + icon_home +
     '                <!---inside-icon-image--->' +
     '           </div>' +
-    '            <div class="center-flex theme-HEDfSDFgSgh12SDA code-HEDfSDgFjhS12SDA" go_to_search >' + icon_search +
+    '            <div goto to="search" class="center-flex theme-HEDfSDFgSgh12SDA code-HEDfSDgFjhS12SDA" go_to_search >' + icon_search +
     '                <!---inside-icon-image--->' +
     '            </div>' +
     '            <div class="center-flex theme-HEDfSDFgSgh12SDA code-HEDfSDgFjhS12SDA" go_to_upload>' + icon_upload +
@@ -173,6 +175,11 @@ mobile_header = '    <div class="center-flex theme-HEDfSDFS12SDA mono-flex fixed
 icon_auto_awesome = '<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><rect fill="none" height="24" width="24" x="0"/></g><g><g><polygon points="19,9 20.25,6.25 23,5 20.25,3.75 19,1 17.75,3.75 15,5 17.75,6.25"/><polygon points="19,15 17.75,17.75 15,19 17.75,20.25 19,23 20.25,20.25 23,19 20.25,17.75"/><path d="M11.5,9.5L9,4L6.5,9.5L1,12l5.5,2.5L9,20l2.5-5.5L17,12L11.5,9.5z M9.99,12.99L9,15.17l-0.99-2.18L5.83,12l2.18-0.99 L9,8.83l0.99,2.18L12.17,12L9.99,12.99z"/></g></g></svg>';
 loader = '<style>loader.center-flex.full-wh.fixed.bg-b svg {fill: var(--c9);width: 1.5rem;height: 1.5rem;animation: loading 0.5s linear infinite;}@keyframes loading {to {transform: rotate(359deg);}}</style><loader class=" center-flex full-wh fixed bg-b">' + icon_loader + '</loader>';
 icon_checkmark = '<svg xmlns="http://www.w3.org/2000/svg" height="24" fill="var(--c9)" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M18 7l-1.41-1.41-6.34 6.34 1.41 1.41L18 7zm4.24-1.41L11.66 16.17 7.48 12l-1.41 1.41L11.66 19l12-12-1.42-1.41zM.41 13.41L6 19l1.41-1.41L1.83 12 .41 13.41z"></path></svg>';
+
+
+$('[icon_google]').html(icon_google);
+$('[lg_google]').html(lg_google);
+$('[lg_facebook]').html(lg_facebook);
 $('[icon_google]').html(icon_google);
 $('[icon_staff]').html(icon_staff);
 $('[icon_owner]').html(icon_owner);

@@ -123,16 +123,6 @@
             margin: 1rem 0rem;
         }
         
-        .theme-xdz-33234sdfSffDF.center-flex {
-            max-width: 25rem;
-            width: -webkit-fill-available;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            flex-direction: row;
-            gap: 1rem;
-        }
-        
         .theme-xdz-33234sdfSDF.center-flex {
             width: -webkit-fill-available;
             height: 3rem;
@@ -198,12 +188,75 @@
             transition: 0.3s;
         }
         
+        .theme-gdfsdfSDFSDF23g23 svg {
+            width: 2rem;
+            height: 2rem;
+        }
+        
+        .theme-xdz-33234sdfSffDF.center-flex {
+            width: fit-content;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            align-items: center;
+            background: var(--c14);
+            font-size: 1.4rem;
+            padding: 1rem;
+            justify-content: flex-start;
+            border-radius: 5px;
+        }
+        
+        .center-flex.theme-gdfsdfSDFSDF23g23 {
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
+        }
+        
+        .center-flex.theme-gdfsdfSDFghSDF23g2kkk3 {
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
+            padding: 1rem 1.5rem;
+            height: 2rem;
+            width: fit-content;
+            background: var(--c15);
+            border-radius: 5px;
+        }
+        
+        .center-flex.theme-gdfsdfSDFghSDF23g23 svg {
+            width: 1.8rem;
+            height: 1.8rem;
+        }
+        
+        .theme-gdfsdfSDFSDF2323 {
+            padding: 1rem 2rem;
+        }
+        
         @media (max-width:1000px) {
             .center-flex.theme-XDS12DSF43DFSd {
                 margin: 1rem;
             }
-            .noselect.center-flex.theme-newhed1232sd34 {
-                margin: 0rem 1rem;
+            @media (max-width: 622px) {
+                .theme-xdz-33234sdfSffDF.center-flex {
+                    flex-direction: column;
+                    width: -webkit-fill-available;
+                    display: flex;
+                    align-items: flex-start;
+                }
+                .center-flex.theme-gdfsdfSDFSDF23g23 {
+                    flex-direction: column;
+                }
+                .center-flex.theme-gdfsdfSDFghSDF23g2kkk3 {
+                    width: -webkit-fill-available;
+                }
+                .center-flex.theme-gdfsdfSDFSDF23g23 {
+                    width: -webkit-fill-available;
+                }
+                .noselect.center-flex.theme-newhed1232sd34 {
+                    margin: 0rem 1rem;
+                }
             }
             .themexd23DFS43DSFSdsdf {
                 height: unset;
@@ -244,6 +297,7 @@
     <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
     <!---/////////////////////// https://atomiks.github.io/ /////////////////////--->
+
 </head>
 
 <body>
@@ -297,19 +351,14 @@
             <div class=" center-flex theme-XDS12DSF43fDFSd">
                 We are a community aimed at uniting anime fans. Join us as we carve a place on the internet fellow fans to make new friendships, discuss your thoughts/favorite anime, and get your game on
             </div>
-            <div class="theme-xdz-33234sdfSffDF center-flex">
-                <div index_xo data-aos="zoom-in" data-aos-duration="050" class=" pointer theme-xdz-33234sdfSDF code-33234sdfSDF center-flex">
-                    <div import_small_loader></div>
-                </div>
-                <div data-aos="zoom-in" data-aos-duration="050" class=" pointer theme-xdz-33234sdfSDF code-33234sdfSdf center-flex">
-                    Join Discord
-                </div>
+            <div class="theme-xdz-33234sdfSffDF center-flex" data_x>
+                <div import_small_loader></div>
             </div>
         </div>
 
     </div>
 
-    <script src="/scripts/com.js"></script>
+    <script src="/scripts/com.js?clear-14"></script>
     <script>
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
@@ -325,12 +374,32 @@
                     '</div>' +
                     '</div>';
                 $('[index_dx]').html(index_dx);
-                $('[index_xo]').html('<div main_profile_link >Open AnimeKeyo</div>');
+                setTimeout(function() {
+
+                    window.location.href = "/u?id=" + user.uid;
+
+                }, 2000)
             } else {
-                $('[gotologin]').on('click', function() {
-                    window.location.href = "/login";
-                });
-                $('[index_xo]').html('<div gotologin>Login Now</div>');
+                const lolol = '<div class="theme-gdfsdfSDFSDF2323">' +
+                    'Sign in with' +
+                    '</div>' +
+                    '<div class="center-flex  theme-gdfsdfSDFSDF23g23">' +
+                    '<div class="center-flex theme-gdfsdfSDFghSDF23g2kkk3">' +
+                    '<div class="center-flex theme-gdfsdfSDFghSDF23g23" icon_google>' +
+                    '</div>' +
+                    '<div onclick="GoogleAuth()" class="center-flex theme-gdfsdfSDFghSDFj23g2kkk3">' +
+                    'Google' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="center-flex theme-gdfsdfSDFghSDF23g2kkk3">' +
+                    '<div class="center-flex theme-gdfsdfSDFSghhDF23g23" icon_facebook>' +
+                    '</div>' +
+                    '<div class="center-flex theme-gdfsdfSDFghSDFj23g2kkk3">' +
+                    'Facebook' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>';
+                $('[data_x]').html(lolol);
             }
         });
         AOS.init();
@@ -358,6 +427,31 @@
         );
 
         /////////////////////////////////////////////////////////
+
+
+        function GoogleAuth() {
+            var provider = new firebase.auth.GoogleAuthProvider();
+            firebase.auth()
+                .signInWithPopup(provider)
+                .then((result) => {
+                    var credential = result.credential;
+
+                    // This gives you a Google Access Token. You can use it to access the Google API.
+                    var token = credential.accessToken;
+                    // The signed-in user info.
+                    var user = result.user;
+                    // ...
+                }).catch((error) => {
+                    // Handle Errors here.
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+                    // The email of the user's account used.
+                    var email = error.email;
+                    // The firebase.auth.AuthCredential type that was used.
+                    var credential = error.credential;
+                    // ...
+                });
+        };
     </script>
 </body>
 
