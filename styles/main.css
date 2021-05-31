@@ -2591,6 +2591,9 @@
                         align-items: center;
                     }
                 }
+                .theme-FSD234FDS32 {
+                    text-align: inherit;
+                }
                 .mobiz {
                     display: flex!important;
                 }
@@ -2866,7 +2869,7 @@
                 }
                 .theme-FDSHG45GFFFS,
                 .theme-FDSHGF45GFFFS {
-                    gap: 2vw;
+                    gap: 0.8rem;
                 }
                 .center-flex.absolute.theme-XC12sDDSmaEffDF {
                     left: 0;
