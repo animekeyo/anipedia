@@ -201,6 +201,14 @@
                 float: left;
             }
             
+            .theme-FSD234FDS32 {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width: 6rem;
+                text-align: center;
+            }
+            
             feedbt {
                 height: fit-content;
                 font-family: sans-serif;
