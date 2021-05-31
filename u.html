@@ -857,6 +857,7 @@
                     $('[afkTimeout]').text('Old User Account');
                 } else {
                     $('[afkTimeout]').html('<time class="timeSx" timex="' + afkTimeout + '"></time>');
+                    $('[afkTimeout]').css('color', 'var(--c11)');
                     setTimeout(
                         function() {
                             var current = Math.round((new Date()).getTime() / 1000);
