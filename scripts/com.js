@@ -4,6 +4,18 @@ firebase.auth().onAuthStateChanged(function(user) {
         $("[main_profile_email_val]").val(user.email);
         let db = firebase.firestore().collection("users");
         firebase.database().ref('/data/users/' + user.uid).once("value", snapshot => {
+            var ref = firebase.database().ref('/data/users/' + user.uid);
+            createTime = Date.now();
+            createTime = createTime.toString();
+            createTime = createTime.slice(0, -3);
+            createTime = parseInt(createTime);
+            ref.update({
+                onlineState: true,
+            });
+            ref.onDisconnect().update({
+                onlineState: false,
+                afkTimeout: createTime,
+            });
             if (snapshot.val().userid) {
                 console.log(snapshot.val().userid)
             } else {
