@@ -856,13 +856,13 @@
                 } else if (afkTimeout == 0) {
                     $('[afkTimeout]').text('Old User Account');
                 } else {
-                    $('[afkTimeout]').html('<time class="timeS" time="' + afkTimeout + '"><div import_small_loader></div></time>');
-                    var current = Math.round((new Date()).getTime() / 1000);
+                    $('[afkTimeout]').html('<time class="timeSx" timex="' + afkTimeout + '"></time>');
                     setTimeout(
                         function() {
-                            var elements = document.getElementsByClassName("timeS");
+                            var current = Math.round((new Date()).getTime() / 1000);
+                            var elements = document.getElementsByClassName("timeSx");
                             for (var i = 0; i < elements.length; i++) {
-                                var previous = elements[i].getAttribute("time");
+                                var previous = elements[i].getAttribute("timex");
                                 elements[i].innerHTML = timeDifference(current, previous);
 
                                 if ((current - previous) < 86400) {
@@ -870,6 +870,20 @@
                                 }
                             }
                         }, 0001);
+                    setInterval(
+                        function() {
+                            var current = Math.round((new Date()).getTime() / 1000);
+                            var elements = document.getElementsByClassName("timeSx");
+                            for (var i = 0; i < elements.length; i++) {
+                                var previous = elements[i].getAttribute("timex");
+                                elements[i].innerHTML = timeDifference(current, previous);
+
+                                if ((current - previous) < 86400) {
+                                    elements[i].parentNode.parentNode.classList.add("red-background");
+                                }
+                            }
+                        }, 1000);
+
                 };
                 console.log('User Offline');
             };
