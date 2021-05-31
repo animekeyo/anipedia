@@ -857,6 +857,19 @@
                     $('[afkTimeout]').text('Old User Account');
                 } else {
                     $('[afkTimeout]').html('<time class="timeS" time="' + afkTimeout + '"><div import_small_loader></div></time>');
+                    var current = Math.round((new Date()).getTime() / 1000);
+                    setTimeout(
+                        function() {
+                            var elements = document.getElementsByClassName("timeS");
+                            for (var i = 0; i < elements.length; i++) {
+                                var previous = elements[i].getAttribute("time");
+                                elements[i].innerHTML = timeDifference(current, previous);
+
+                                if ((current - previous) < 86400) {
+                                    elements[i].parentNode.parentNode.classList.add("red-background");
+                                }
+                            }
+                        }, 0001);
                 };
                 console.log('User Offline');
             };
