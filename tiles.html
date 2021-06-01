@@ -8,6 +8,45 @@
     <title>Document</title>
     <style>
         @import url("/styles/main.css");
+        .center-flex.theme-com32jFDSSDF {
+            min-width: 30px;
+            width: -webkit-fill-available;
+            max-width: 30px;
+            border-radius: 100%!important;
+        }
+        
+        .center-flex.theme-com32FdDSSDF,
+        .center-flex.theme-com3f2FDSSDF,
+        .center-flex.theme-com32jFDSSDF {
+            outline: unset;
+            border: unset;
+            background-color: var(--c15);
+            border-radius: 5px;
+            color: var(--c19);
+            height: inherit;
+            font-family: 'C1';
+        }
+        
+        .center-flex.theme-com32FdDSSDF,
+        .center-flex.theme-com3f2FDSSDF {
+            padding: 0 0.8rem;
+        }
+        
+        input.center-flex.theme-com32FdDSSDF {
+            width: -webkit-fill-available;
+        }
+        
+        .center-flex.theme-com32FDhSSDF {
+            width: -webkit-fill-available;
+            height: 30px;
+            padding: 0.8rem;
+            background: var(--c14);
+            display: flex;
+            flex-direction: row;
+            gap: 0.8rem;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+        }
     </style>
 </head>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.7/dist/sweetalert2.all.min.js"></script>
@@ -31,17 +70,13 @@
 <!---/////////////////////// https://atomiks.github.io/ /////////////////////--->
 
 <body>
-    <div class="center-flex theme-ctpDFSD2213SffDFSD">
-        <div class="center-flex full-bg theme-ctpDFSD2213SDFSD" main_profile_picture>
+    <form class="center-flex code-com32FDhSSdDF theme-com32FDhSSDF">
+        <div main_profile_picture class="full-bg center-flex theme-com32jFDSSDF">
 
         </div>
-        <div class="center-flex theme-ctpDFSD22g13SDFSD">
-            Create a post
-        </div>
-        <div class="center-flex theme-ctpDFSD2213SDFSD" icon_c_plus>
-
-        </div>
-    </div>
+        <input type="text" aria-label="Add a comment…" placeholder="Add a comment…" autocomplete="off" autocorrect="off" class="center-flex theme-com32FdDSSDF" required>
+        <input type="submit" value="Post" class="center-flex theme-com3f2FDSSDF">
+    </form>
     <script src="/scripts/com.js">
     </script>
 </body>

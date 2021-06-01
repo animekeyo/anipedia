@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <style>
-        @import url("/styles/main.css?clear-25611");
+        @import url("/styles/main.css?clear-233");
         .theme-43GGD76HGHJ {
             width: -webkit-fill-available;
             margin: 4rem 0rem 0rem 0rem;
@@ -132,14 +132,14 @@
                             <!--Profile Pic-->
                         </div>
                         <div class="center-flex theme-FDSHG45GFFFS">
-                            <div class="center-flex code-dfjs34jFDS334 theme-FDFDS45GFFFS">
+                            <div class=" center-flex code-dfjs34jFDS334 theme-FDFDS45GFFFS">
                                 <!--Display Name-->
 
                                 <div id="user_name" class="center-flex theme-FDFDS4GGGF3FFS">
                                     <!--Name-->
                                     <div import_small_loader></div>
                                 </div>
-                                <div afkTimeout data-aos="zoom-in" data-aos-duration="050" data-aos-once="true" class="center-flex theme-FDFDS4GGGFFdFS">
+                                <div afkTimeout data-aos="zoom-in" data-aos-duration="050" data-aos-once="true" class="noselect center-flex theme-FDFDS4GGGFFdFS">
                                     <!--afkTimeout-->
 
                                 </div>
@@ -152,7 +152,7 @@
                         </div>
                     </div>
 
-                    <div class="center-flex theme-FDS45GFFFGHFS" follow_and_setting>
+                    <div class="noselect center-flex theme-FDS45GFFFGHFS" follow_and_setting>
                         <!--Follow/Unfollow & Setting Button-->
                         <div data-aos="zoom-in" data-aos-duration="050" data-aos-once="true" class="center-flex theme-FDS45fggfGFFFDFGS">
                             <div import_small_loader></div>
@@ -160,7 +160,7 @@
                     </div>
                 </div>
                 <div class="center-flex theme-FFGEKO233DF">
-                    <div class="center-flex theme-FFGEKgO233DF">
+                    <div class="noselect center-flex theme-FFGEKgO233DF">
                         Custom Bio
                     </div>
                     <div id="user_dec" class="noselect theme-FFGEKO2h33DF">
@@ -169,7 +169,7 @@
                 </div>
                 <div class="full-wh center-flex theme-FDS45fgGFFFDFGS">
                     <!--Online/Following/Follower's Buttons-->
-                    <div contex="Followers" goflow btx_followers btx_mixed class="center-flex theme-FDS45fgfGFFFDFGS">
+                    <div contex="Followers" goflow btx_followers btx_mixed class="noselect center-flex theme-FDS45fgfGFFFDFGS">
                         <!--BTN-->
 
                         Followers
@@ -177,7 +177,7 @@
                             <div import_small_loader></div>
                         </span>
                     </div>
-                    <div contex="Following" goflow btx_following btx_mixed class="center-flex theme-FDS45fgfGFFFDFGS">
+                    <div contex="Following" goflow btx_following btx_mixed class="noselect center-flex theme-FDS45fgfGFFFDFGS">
                         <!--BTN-->
                         Following
                         <span following_count class="theme-span-FSDF342D">
@@ -214,7 +214,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js">
     </script>
-    <script defer src="/scripts/com.js?clear-26521"></script>
+    <script defer src="/scripts/com.js?clear-876521"></script>
     <script defer src="/scripts/goto.js"></script>
     <script defer src="/scripts/flow.js"></script>
     <script data-cfasync="false" type="text/javascript">
@@ -311,14 +311,15 @@
                                 }
                             }
                         }, 0100);
-                    ///////////////////////////////////////////////////////////
+                    //////////////////////////////POST/////////////////////////////
                     console.log(doc.id);
                     const dec = doc.data().dec;
                     const img = doc.data().img;
                     const userid = doc.data().userid;
                     const link = doc.data().link;
                     const time = doc.data().time;
-                    console.log(dec);
+                    const user = firebase.auth().currentUser;
+                    console.log('Current User' + user.uid);
                     const px = '<div data-aos="zoom-in" data-aos-duration="250" data-aos-once="true" class="center-flex theme-22gk3D8EKJ">' +
                         '    <div class="center-flex theme-22gk3D8ER">' +
                         '        <div class="center-flex theme-33gk3D8ER">' +
@@ -344,10 +345,15 @@
                         '            <div import_small_loader></div>' +
                         '        </div>' +
                         '    </div>' +
+                        '<form add_comment class="center-flex code-com32FDhSSdDF theme-com32FDhSSDF">' +
+                        '<div main_profile_picture class="full-bg center-flex theme-com32jFDSSDF">' +
+                        '</div>' +
+                        '<input add_comment_input add_comment_userid="' + userid + '" add_comment_id="' + link + '" type="text" aria-label="Add a comment…" placeholder="Add a comment…" autocomplete="off" autocorrect="off" class="center-flex theme-com32FdDSSDF" required>' +
+                        '<input add_comment_btn add_comment_btn_id="' + link + '" type="submit" value="Post" class="center-flex theme-com3f2FDSSDF">' +
+                        '</form>' +
                         '</div>';
                     $("[postlist]").prepend(px);
                     //////////////////////////////////////
-                    const user = firebase.auth().currentUser;
                     var dxb = firebase.firestore().collection("users").doc(userid + '/posts/' + link + '/likes/' + user.uid);
                     firebase.firestore().collection("users").doc(userid + '/posts/' + link).collection("likes").get().then(function(querySnapshot) {
                         console.log(querySnapshot.size);
@@ -856,7 +862,7 @@
                 } else if (afkTimeout == 0) {
                     $('[afkTimeout]').text('Old User Account');
                 } else {
-                    $('[afkTimeout]').html('<time class="timeSx" timex="' + afkTimeout + '"></time>');
+                    $('[afkTimeout]').html('Active <time class="timeSx" timex="' + afkTimeout + '"></time>');
                     $('[afkTimeout]').css('color', 'var(--c11)');
                     setTimeout(
                         function() {

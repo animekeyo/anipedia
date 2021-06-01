@@ -79,6 +79,7 @@ firebase.auth().onAuthStateChanged(function(user) {
             $("[main_name_alt]").attr('title', displayName);
             $("[main_profile_banner]").css('background-image', 'url(' + banner + '),url(/images/b1.png)', 'background-position', 'center');
             $("[main_profile_picture]").css('background-image', 'url(' + profile_picture + '),url(/images/icon.png)');
+
             $('[main_profile_link]').on('click', function() {
                 window.location.href = "/u?id=" + user.uid;
             });
