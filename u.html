@@ -499,6 +499,12 @@
                         'King' +
                         '<div add_king_icon> </div>' +
                         '</div>' +
+                        '</div>' +
+                        '<div btx="add_simp" class="theme-GDFLds34FSfDAA center-flex">' +
+                        '<div add_simp class="theme-GDFLds34FSDAA center-flex">' +
+                        'Simp' +
+                        '<div add_simp_icon> </div>' +
+                        '</div>' +
                         '</div>';
                     $('[admin_play]').html(ggfx);
                 }
@@ -541,7 +547,15 @@
                     } else {
                         $('[add_king_icon]').html(icon_checkmark);
                     }
+                    const simp = (snapshot.val() && snapshot.val().simp);
+                    if (simp == true) {
+                        $('[id=user_badges]').prepend('<div  data-aos="zoom-in" class=" center-flex" tippy data-tippy-content="Ultra Simp"><img style="width: 1.5rem; height: 1.5rem; border-radius: 0.2rem;" src="https://cdn.discordapp.com/attachments/847879736092131388/849530189348470854/444436026149175297.png"></div>');
+                        $('[add_simp_icon]').html(icon_close);
+                    } else {
+                        $('[add_simp_icon]').html(icon_checkmark);
+                    }
                 });
+
                 if (user.uid == 'YH2r7xe271Xv5yVbnBOHRMJVVmf2') {
                     $('[add_verified]').show();
                     $('[add_verified]').on('click', function() {
@@ -619,6 +633,22 @@
                             } else {
                                 db_ref.update({
                                     king: true,
+                                });
+                            };
+                        });
+                    });
+                    $('[add_simp]').show();
+                    $('[add_simp]').on('click', function() {
+                        var db_ref = firebase.database().ref('/data/users/' + id).child('badges');
+                        db_ref.once('value', function(snapshot) {
+                            var simp = (snapshot.val() && snapshot.val().simp);
+                            if (simp == true) {
+                                db_ref.update({
+                                    simp: false,
+                                });
+                            } else {
+                                db_ref.update({
+                                    simp: true,
                                 });
                             };
                         });
