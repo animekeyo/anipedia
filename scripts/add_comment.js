@@ -1,5 +1,6 @@
-$('[add_comment_btn]').on('click', function() {
+$(document).on('click', '[add_comment_btn]', function() {
     ///////////////////////////////
+    console.log('Working BTN')
     const d = new Date();
     const aag = d.getTime();
     const aaf = d.getFullYear();
@@ -14,13 +15,14 @@ $('[add_comment_btn]').on('click', function() {
     const user = firebase.auth().currentUser;
     const user_id = $('[add_comment_id=' + key + ']').attr('add_comment_userid');
     ////////////////////////////////
-    const data_ruf = firebase.firestore().collection("users").doc(user_id + '/posts/' + key + '/comments/' + create_link + '/' + user.uid);
+
+    var data_ruf = firebase.firestore().collection("users").doc(user_id + '/posts/' + key + '/comments/' + create_link).collection(user.uid);
     if (val == 0) {
-
+        console.log('Erro -> Comment');
     } else if (val == '') {
-
+        console.log('Erro -> Comment');
     } else if (val == '  ') {
-
+        console.log('Erro -> Comment');
     } else {
         data_ruf.set({
             comment: val,
@@ -28,4 +30,5 @@ $('[add_comment_btn]').on('click', function() {
         });
         console.log('Comment Added!! <3')
     };
+
 });

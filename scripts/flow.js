@@ -110,6 +110,34 @@ $('[goflow]').on('click', function() {
                                                         theme: 'tomato',
                                                     });
                                                 };
+                                                setTimeout(
+                                                    function() {
+
+                                                        if (ggk == 'testertrue') {
+                                                            $('[user_badges_' + mainuserid + ']').prepend(icon_beta_tester);
+                                                            console.log('tester')
+                                                            tippy('[tippy]', {
+                                                                inertia: true,
+                                                                hideOnClick: false,
+                                                                interactive: true,
+                                                                theme: 'tomato',
+                                                            });
+                                                        };
+                                                        setTimeout(
+                                                            function() {
+
+                                                                if (ggk == 'kingtrue') {
+                                                                    $('[user_badges_' + mainuserid + ']').prepend(icon_owner);
+                                                                    console.log('owner')
+                                                                    tippy('[tippy]', {
+                                                                        inertia: true,
+                                                                        hideOnClick: false,
+                                                                        interactive: true,
+                                                                        theme: 'tomato',
+                                                                    });
+                                                                };
+                                                            }, 0001);
+                                                    }, 0001);
                                             }, 0001);
 
                                     }, 0001);

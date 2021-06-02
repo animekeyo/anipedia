@@ -214,9 +214,10 @@
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js">
     </script>
-    <script defer src="/scripts/com.js?clear-876521"></script>
+    <script defer src="/scripts/com.js?clear-894531"></script>
     <script defer src="/scripts/goto.js"></script>
-    <script defer src="/scripts/flow.js"></script>
+    <script defer src="/scripts/flow.js?clear-096521"></script>
+
     <script data-cfasync="false" type="text/javascript">
         $('[unhidepostjs]').on('click', function() {
             $('[import_postjs]').show();
@@ -281,9 +282,6 @@
         }
     </script>
     <script>
-        //////////////////////////////////////// TIME JS PLUGIN ////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
         var url = window.location.href;
         var id = url.substring(url.lastIndexOf('?id=') + 4);
 
@@ -291,6 +289,44 @@
         $('[btx_following]').attr('flowpoint', 'following');
         $('[btx_mixed]').attr('callpoint', id);
 
+        //////////////////////////////////////// ////////////////////////////////////////////////////////
+        $(document).on('click', '[add_comment_btn]', function() {
+            ///////////////////////////////
+            console.log('Working BTN')
+            const d = new Date();
+            const aag = d.getTime();
+            const aaf = d.getFullYear();
+            const aae = d.getMonth();
+            const aah = d.getMilliseconds();
+            const aahx = d.getDay();
+            const create_link = aag + "" + aaf + "" + aae + "" + aah + "" + aahx;
+
+            ///////////////////////////////
+            const key = $(this).attr('add_comment_btn_id');
+            const val = $('[add_comment_id=' + key + ']').val();
+            const user = firebase.auth().currentUser;
+            const user_id = $('[add_comment_id=' + key + ']').attr('add_comment_userid');
+            ////////////////////////////////
+
+            var data_ruf = firebase.firestore().collection('users').doc(user_id).collection('posts').doc(key).collection('comments').doc(create_link).collection(user.uid);
+            console.log(data_ruf)
+            if (val == 0) {
+                console.log('Erro -> Comment');
+            } else if (val == '') {
+                console.log('Erro -> Comment');
+            } else if (val == '  ') {
+                console.log('Erro -> Comment');
+            } else {
+                data_ruf.set({
+                    comment: val,
+                    userid: user.uid,
+                });
+                console.log('Comment Added!! <3')
+            };
+
+        });
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
         var ddb = firebase.firestore();
@@ -320,6 +356,7 @@
                     const time = doc.data().time;
                     const user = firebase.auth().currentUser;
                     console.log('Current User' + user.uid);
+
                     const px = '<div data-aos="zoom-in" data-aos-duration="250" data-aos-once="true" class="center-flex theme-22gk3D8EKJ">' +
                         '    <div class="center-flex theme-22gk3D8ER">' +
                         '        <div class="center-flex theme-33gk3D8ER">' +
@@ -345,12 +382,12 @@
                         '            <div import_small_loader></div>' +
                         '        </div>' +
                         '    </div>' +
-                        '<form add_comment class="center-flex code-com32FDhSSdDF theme-com32FDhSSDF">' +
+                        '<div add_comment class="center-flex code-com32FDhSSdDF theme-com32FDhSSDF">' +
                         '<div main_profile_picture class="full-bg center-flex theme-com32jFDSSDF">' +
                         '</div>' +
-                        '<input add_comment_input add_comment_userid="' + userid + '" add_comment_id="' + link + '" type="text" aria-label="Add a comment…" placeholder="Add a comment…" autocomplete="off" autocorrect="off" class="center-flex theme-com32FdDSSDF" required>' +
-                        '<input add_comment_btn add_comment_btn_id="' + link + '" type="submit" value="Post" class="center-flex theme-com3f2FDSSDF">' +
-                        '</form>' +
+                        '<input add_comment_input add_comment_userid="' + userid + '" add_comment_id="' + link + '" type="text" placeholder="Add a comment…"  class="center-flex theme-com32FdDSSDF">' +
+                        '<div add_comment_btn add_comment_btn_id="' + link + '" class="center-flex theme-com3f2FDSSDF">Post</div>' +
+                        '</div>' +
                         '</div>';
                     $("[postlist]").prepend(px);
                     //////////////////////////////////////
@@ -451,6 +488,16 @@
                         '<div add_partner class="theme-GDFLds34FSDAA center-flex">' +
                         'Partner' +
                         '<div add_partner_icon> </div>' +
+                        '</div></div>' +
+                        '<div btx="add_beta_tester" class="theme-GDFLds34FSfDAA center-flex">' +
+                        '<div add_beta_tester class="theme-GDFLds34FSDAA center-flex">' +
+                        'Tester' +
+                        '<div add_beta_tester_icon> </div>' +
+                        '</div></div>' +
+                        '<div btx="add_king" class="theme-GDFLds34FSfDAA center-flex">' +
+                        '<div add_king class="theme-GDFLds34FSDAA center-flex">' +
+                        'King' +
+                        '<div add_king_icon> </div>' +
                         '</div>' +
                         '</div>';
                     $('[admin_play]').html(ggfx);
@@ -479,6 +526,20 @@
                         $('[add_staff_icon]').html(icon_close);
                     } else {
                         $('[add_staff_icon]').html(icon_checkmark);
+                    }
+                    const tester = (snapshot.val() && snapshot.val().tester);
+                    if (tester == true) {
+                        $('[id=user_badges]').prepend(icon_beta_tester);
+                        $('[add_beta_tester_icon]').html(icon_close);
+                    } else {
+                        $('[add_beta_tester_icon]').html(icon_checkmark);
+                    }
+                    const king = (snapshot.val() && snapshot.val().king);
+                    if (king == true) {
+                        $('[id=user_badges]').prepend(icon_owner);
+                        $('[add_king_icon]').html(icon_close);
+                    } else {
+                        $('[add_king_icon]').html(icon_checkmark);
                     }
                 });
                 if (user.uid == 'YH2r7xe271Xv5yVbnBOHRMJVVmf2') {
@@ -526,6 +587,38 @@
                             } else {
                                 db_ref.update({
                                     staff: true,
+                                });
+                            };
+                        });
+                    });
+                    $('[add_beta_tester]').show();
+                    $('[add_beta_tester]').on('click', function() {
+                        var db_ref = firebase.database().ref('/data/users/' + id).child('badges');
+                        db_ref.once('value', function(snapshot) {
+                            var tester = (snapshot.val() && snapshot.val().tester);
+                            if (tester == true) {
+                                db_ref.update({
+                                    tester: false,
+                                });
+                            } else {
+                                db_ref.update({
+                                    tester: true,
+                                });
+                            };
+                        });
+                    });
+                    $('[add_king]').show();
+                    $('[add_king]').on('click', function() {
+                        var db_ref = firebase.database().ref('/data/users/' + id).child('badges');
+                        db_ref.once('value', function(snapshot) {
+                            var king = (snapshot.val() && snapshot.val().king);
+                            if (king == true) {
+                                db_ref.update({
+                                    king: false,
+                                });
+                            } else {
+                                db_ref.update({
+                                    king: true,
                                 });
                             };
                         });
