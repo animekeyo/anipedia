@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <style>
-        @import url("/styles/main.css?clear-233");
+        @import url("/styles/main.css?clear-233sgdf");
         .theme-43GGD76HGHJ {
             width: -webkit-fill-available;
             margin: 4rem 0rem 0rem 0rem;
@@ -214,10 +214,11 @@
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js">
     </script>
-    <script defer src="/scripts/com.js?clear-894531"></script>
+    <script defer src="/scripts/com.js?clear-8d4531"></script>
     <script defer src="/scripts/goto.js"></script>
-    <script defer src="/scripts/flow.js?clear-096521"></script>
-
+    <script defer src="/scripts/flow.js?clear-09fd6521"></script>
+    <script defer src="/scripts/add_comment.js?clear-34gsdf234"></script>
+    <script defer src="/scripts/get_comment.js?clear-34g2sdcxdfc34"></script>
     <script data-cfasync="false" type="text/javascript">
         $('[unhidepostjs]').on('click', function() {
             $('[import_postjs]').show();
@@ -290,41 +291,6 @@
         $('[btx_mixed]').attr('callpoint', id);
 
         //////////////////////////////////////// ////////////////////////////////////////////////////////
-        $(document).on('click', '[add_comment_btn]', function() {
-            ///////////////////////////////
-            console.log('Working BTN')
-            const d = new Date();
-            const aag = d.getTime();
-            const aaf = d.getFullYear();
-            const aae = d.getMonth();
-            const aah = d.getMilliseconds();
-            const aahx = d.getDay();
-            const create_link = aag + "" + aaf + "" + aae + "" + aah + "" + aahx;
-
-            ///////////////////////////////
-            const key = $(this).attr('add_comment_btn_id');
-            const val = $('[add_comment_id=' + key + ']').val();
-            const user = firebase.auth().currentUser;
-            const user_id = $('[add_comment_id=' + key + ']').attr('add_comment_userid');
-            ////////////////////////////////
-
-            var data_ruf = firebase.firestore().collection('users').doc(user_id).collection('posts').doc(key).collection('comments').doc(create_link).collection(user.uid);
-            console.log(data_ruf)
-            if (val == 0) {
-                console.log('Erro -> Comment');
-            } else if (val == '') {
-                console.log('Erro -> Comment');
-            } else if (val == '  ') {
-                console.log('Erro -> Comment');
-            } else {
-                data_ruf.set({
-                    comment: val,
-                    userid: user.uid,
-                });
-                console.log('Comment Added!! <3')
-            };
-
-        });
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -382,6 +348,15 @@
                         '            <div import_small_loader></div>' +
                         '        </div>' +
                         '    </div>' +
+                        '<div class="center-flex theme-fsdfsSDFSD324234hgfghsdf">' +
+                        '<div comment_box>' +
+                        '<div get_comment user_id="' + userid + '" post_id="' + link + '" class="center-flex theme-fsdfsSDfsdFSD324234sdf">' +
+                        'Load Comments' +
+                        '</div>' +
+                        '<div comment_data="' + link + '">' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>' +
                         '<div add_comment class="center-flex code-com32FDhSSdDF theme-com32FDhSSDF">' +
                         '<div main_profile_picture class="full-bg center-flex theme-com32jFDSSDF">' +
                         '</div>' +

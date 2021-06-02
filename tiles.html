@@ -4,48 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Document</title>
     <style>
-        @import url("/styles/main.css");
-        .center-flex.theme-com32jFDSSDF {
-            min-width: 30px;
-            width: -webkit-fill-available;
-            max-width: 30px;
-            border-radius: 100%!important;
-        }
-        
-        .center-flex.theme-com32FdDSSDF,
-        .center-flex.theme-com3f2FDSSDF,
-        .center-flex.theme-com32jFDSSDF {
-            outline: unset;
-            border: unset;
-            background-color: var(--c15);
-            border-radius: 5px;
-            color: var(--c19);
-            height: inherit;
-            font-family: 'C1';
-        }
-        
-        .center-flex.theme-com32FdDSSDF,
-        .center-flex.theme-com3f2FDSSDF {
-            padding: 0 0.8rem;
-        }
-        
-        input.center-flex.theme-com32FdDSSDF {
-            width: -webkit-fill-available;
-        }
-        
-        .center-flex.theme-com32FDhSSDF {
-            width: -webkit-fill-available;
-            height: 30px;
-            padding: 0.8rem;
-            background: var(--c14);
+        @import url("/styles/main.css?clear32423");
+        .center-flex.theme-fsdfsdSDD3fghfg24234f {
             display: flex;
-            flex-direction: row;
-            gap: 0.8rem;
-            flex-wrap: nowrap;
-            justify-content: space-between;
+            flex-direction: column;
+            color: var(--c9);
+            gap: 5px;
+            font-size: small;
+            align-items: flex-start;
+            margin-top: 3px;
+        }
+        
+        .center-flex.theme-fsdfassSDFSD3dg34sdf {
+            font-family: sans-serif;
         }
     </style>
 </head>
@@ -69,15 +43,71 @@
 <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
 <!---/////////////////////// https://atomiks.github.io/ /////////////////////--->
 
-<body>
-    <div class="center-flex code-com32FDhSSdDF theme-com32FDhSSDF">
-        <div main_profile_picture class="full-bg center-flex theme-com32jFDSSDF">
 
+<body>
+    <div class="center-flex theme-fsdfsSDFSD324234hgfghsdf">
+
+        <div comment_box>
+            <div get_comment user_id="46kuBQQ2FcfaPfE4iXSPzF80mPL2" post_id="1622125548362202143624" class="center-flex theme-fsdfsSDfsdFSD324234sdf">
+                Load Comments
+            </div>
+            <div comment_data>
+
+            </div>
         </div>
-        <input type="text" aria-label="Add a comment…" placeholder="Add a comment…" autocomplete="off" autocorrect="off" class="center-flex theme-com32FdDSSDF" required>
-        <div type="submit" value="Post" class="center-flex theme-com3f2FDSSDF">Post</div>
     </div>
     <script src="/scripts/com.js">
+    </script>
+    <script>
+        $('[get_comment]').on('click', function() {
+            $(this).remove();
+            const user_id = $(this).attr("user_id");
+            const post_id = $(this).attr("post_id");
+            const user = firebase.auth().currentUser;
+            const data_ruf = firebase.database().ref('/data/users/');
+            console.log('1works');
+            data_ruf.child(user_id + '/posts/' + post_id + '/comments/').once('value', function(snapshot) {
+                snapshot.forEach((user) => {
+
+                    data_ruf.child(user_id + '/posts/' + post_id + '/comments/' + user.key).once('value', function(snapxshot) {
+                        snapxshot.forEach((snapxshotx) => {
+                            const user_id = snapxshotx.val().userid;
+                            data_ruf.child(user_id).once('value', function(vx) {
+                                //////////////////////
+
+                                //////////////////////
+                                const user_id = snapxshotx.val().userid;
+                                const user_comment = snapxshotx.val().comment;
+                                const user_displayName = vx.val().displayName;
+                                const user_profile_picture = vx.val().profile_picture;
+                                const data = '<div class="center-flex theme-fsdfsxSDhfg324234">' +
+                                    '<div style="background-image:url(' + user_profile_picture + ')" class="full-bg center-flex theme-fsdrfsSDFSfghfghD32423">' +
+                                    '<!---Proile Pic---->' +
+                                    '</div>' +
+                                    '<div class="center-flex theme-fsdfsdSDD3fghfg24234f">' +
+
+                                    '<div class="center-flex theme-fsdfssdfSDFSD3fghfffdf">' +
+                                    user_displayName +
+                                    '</div>' +
+                                    '<div class="center-flex theme-fsdfassSDFSD3dg34sdf">' +
+                                    user_comment +
+                                    '</div>' +
+                                    '</div>' +
+
+                                    '</div>';
+                                $(data).appendTo($('[comment_data]'));
+                                console.log(snapxshotx.val().userid);
+                                console.log(snapxshotx.val().comment);
+                                console.log(vx.val().displayName);
+                                console.log(vx.val().profile_picture);
+
+                            });
+                        });
+
+                    });
+                })
+            });
+        });
     </script>
 </body>
 

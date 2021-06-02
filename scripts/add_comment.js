@@ -15,8 +15,7 @@ $(document).on('click', '[add_comment_btn]', function() {
     const user = firebase.auth().currentUser;
     const user_id = $('[add_comment_id=' + key + ']').attr('add_comment_userid');
     ////////////////////////////////
-
-    var data_ruf = firebase.firestore().collection("users").doc(user_id + '/posts/' + key + '/comments/' + create_link).collection(user.uid);
+    const data_ruf = firebase.database().ref('/data/users/' + user_id + '/posts/' + key + '/comments/' + create_link + '/' + user.uid);
     if (val == 0) {
         console.log('Erro -> Comment');
     } else if (val == '') {
@@ -24,11 +23,12 @@ $(document).on('click', '[add_comment_btn]', function() {
     } else if (val == '  ') {
         console.log('Erro -> Comment');
     } else {
-        data_ruf.set({
+        data_ruf.update({
             comment: val,
             userid: user.uid,
         });
         console.log('Comment Added!! <3')
+        $('[add_comment_id=' + key + ']').val();
     };
 
 });
