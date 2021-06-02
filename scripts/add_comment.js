@@ -28,7 +28,7 @@ $(document).on('click', '[add_comment_btn]', function() {
             userid: user.uid,
         });
         console.log('Comment Added!! <3')
-        $('[add_comment_id=' + key + ']').val();
+        $('[add_comment_input]').val("");
     };
 
 });

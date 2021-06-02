@@ -2601,6 +2601,33 @@
                 align-items: flex-start;
                 padding: 10px;
                 background: var(--c15);
+                max-height: 10rem;
+                overflow-y: scroll;
+                justify-content: flex-start;
+            }
+            
+            .center-flex.theme-fsdfsSDFSD324234hgfghsdf::-webkit-scrollbar {
+                width: 8px;
+                border-radius: 100rem;
+                -webkit-border-radius: 100rem;
+                -moz-border-radius: 100rem;
+                -ms-border-radius: 100rem;
+                -o-border-radius: 100rem;
+            }
+            
+            .center-flex.theme-fsdfsSDFSD324234hgfghsdf::-webkit-scrollbar-thumb {
+                background-color: var(--c12);
+                width: 0rem;
+                border-radius: 100rem;
+                -webkit-border-radius: 100rem;
+                -moz-border-radius: 100rem;
+                -ms-border-radius: 100rem;
+                -o-border-radius: 100rem;
+            }
+            
+            .center-flex.theme-fsdfsSDFSD324234hgfghsdf::-webkit-scrollbar-track {
+                background: var(--c15);
+                margin: 1rem 0rem;
             }
             
             div[comment_box] {

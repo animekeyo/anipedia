@@ -1,5 +1,4 @@
-$(document).on('click', '[get_comment]', function() {
-    $(this).remove();
+$('[get_comment]').each(function(index) {
     const user_id = $(this).attr("user_id");
     const post_id = $(this).attr("post_id");
     const user = firebase.auth().currentUser;
@@ -16,7 +15,15 @@ $(document).on('click', '[get_comment]', function() {
 
                         //////////////////////
                         const user_id = snapxshotx.val().userid;
-                        const user_comment = snapxshotx.val().comment;
+                        const st2x = snapxshotx.val().comment.replace(/(<([^>]+)>)/gi, "");
+                        var st3x = st2x.replace(/\[/g, '<span stb class="pointer theme-FDFgdf3243FDSDF">');
+                        var st4x = st3x.replace(/\]/g, '</span>');
+                        $(document).on('click', '[stb]', function() {
+                            $(this).css('color', 'var(--c9)');
+                            $(this).css('cursor', 'unset');
+                        });
+
+                        const user_comment = st4x;
                         const user_displayName = vx.val().displayName;
                         const user_profile_picture = vx.val().profile_picture;
                         const data = '<div class="center-flex theme-fsdfsxSDhfg324234">' +
