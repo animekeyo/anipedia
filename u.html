@@ -217,8 +217,6 @@
     <script defer src="/scripts/com.js?clear-8d4531"></script>
     <script defer src="/scripts/goto.js"></script>
     <script defer src="/scripts/flow.js?clear-09fd6521"></script>
-    <script defer src="/scripts/add_comment.js?clear-34ggxsdf234"></script>
-
     <script data-cfasync="false" type="text/javascript">
         $('[unhidepostjs]').on('click', function() {
             $('[import_postjs]').show();
@@ -298,6 +296,9 @@
         var ddb = firebase.firestore();
         ddb.collection("users").doc(id).collection("posts").get()
             .then(querySnapshot => {
+                setTimeout(function name(params) {
+                    $.getScript('/scripts/get_comment.js', function() {});
+                }, 0001)
                 querySnapshot.forEach(doc => {
                     //////////////////////////////////////////////////////////
                     var current = Math.round((new Date()).getTime() / 1000);
@@ -364,9 +365,7 @@
                         '</div>' +
                         '</div>';
                     $("[postlist]").prepend(px);
-                    setTimeout(function name(params) {
-                        $.getScript('/scripts/get_comment.js', function() {});
-                    }, 0001)
+
 
                     //////////////////////////////////////
                     var dxb = firebase.firestore().collection("users").doc(userid + '/posts/' + link + '/likes/' + user.uid);
