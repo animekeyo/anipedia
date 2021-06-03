@@ -7,20 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Document</title>
     <style>
-        @import url("/styles/main.css?clear32423");
-        .center-flex.theme-fsdfsdSDD3fghfg24234f {
-            display: flex;
-            flex-direction: column;
-            color: var(--c9);
-            gap: 5px;
-            font-size: small;
-            align-items: flex-start;
-            margin-top: 3px;
-        }
-        
-        .center-flex.theme-fsdfassSDFSD3dg34sdf {
-            font-family: sans-serif;
-        }
+        @import url("/styles/main.css?clear32dfs423");
     </style>
 </head>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.7/dist/sweetalert2.all.min.js"></script>
@@ -42,88 +29,29 @@
 <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
 <!---/////////////////////// https://atomiks.github.io/ /////////////////////--->
-
+<script src="/scripts/linky.js?clear-123"></script>
 
 <body>
-    <div class="center-flex theme-fsdfsdfsdfSDF223432">No Comments Found</div>
-    <div class="center-flex theme-fsdfsSDFSD324234hgfghsdf">
-
-        <div comment_box>
-            <div get_comment user_id="46kuBQQ2FcfaPfE4iXSPzF80mPL2" post_id="1622125548362202143624" class="center-flex theme-fsdfsSDfsdFSD324234sdf">
-                Load Comments
-            </div>
-            <div comment_data="1622125548362202143624">
-
-            </div>
-        </div>
-        <div comment_box>
-            <div get_comment user_id="46kuBQQ2FcfaPfE4iXSPzF80mPL2" post_id="162212489509720214974" class="center-flex theme-fsdfsSDfsdFSD324234sdf">
-                Load Comments
-            </div>
-            <div comment_data="162212489509720214974">
-
-            </div>
-        </div>
+    <div class="url">
+        https://github.com/AnSavvides should turn into a link, while <a href="https://twitter.com/andrs">this link should stay untouched</a>.
     </div>
-    <script src="/scripts/com.js">
-    </script>
+    <div class="twitter-mentions">
+        @andrs should get highlighted! Not an e-mail such as @example.com though.
+    </div>
+    <div class="instagram-mentions">
+        We do instagram too! Check out @instagram!
+    </div>
+    <div class="hashtags">
+        Need hashtags linkified? Don't worry - #wegotyoucovered!
+    </div>
+    <div class="github-mentions">
+        You can find @AnSavvides on GitHub!
+    </div>
+    <script src="/scripts/com.js?clear-12333"></script>
+
+
     <script>
-        $('[get_comment]').each(function(index) {
-            const user_id = $(this).attr("user_id");
-            const post_id = $(this).attr("post_id");
-            const user = firebase.auth().currentUser;
-            const data_ruf = firebase.database().ref('/data/users/');
-            console.log('1works');
-            data_ruf.child(user_id + '/posts/' + post_id + '/comments/').once('value', function(snapshot) {
-                snapshot.forEach((user) => {
-
-                    data_ruf.child(user_id + '/posts/' + post_id + '/comments/' + user.key).once('value', function(snapxshot) {
-                        snapxshot.forEach((snapxshotx) => {
-                            const user_id = snapxshotx.val().userid;
-                            data_ruf.child(user_id).once('value', function(vx) {
-                                //////////////////////
-
-                                //////////////////////
-                                const user_id = snapxshotx.val().userid;
-                                const st2x = snapxshotx.val().comment.replace(/(<([^>]+)>)/gi, "");
-                                var st3x = st2x.replace(/\[/g, '<span stb class="pointer theme-FDFgdf3243FDSDF">');
-                                var st4x = st3x.replace(/\]/g, '</span>');
-                                $(document).on('click', '[stb]', function() {
-                                    $(this).css('color', 'var(--c9)');
-                                    $(this).css('cursor', 'unset');
-                                });
-
-                                const user_comment = st4x;
-                                const user_displayName = vx.val().displayName;
-                                const user_profile_picture = vx.val().profile_picture;
-                                const data = '<div class="center-flex theme-fsdfsxSDhfg324234">' +
-                                    '<div style="background-image:url(' + user_profile_picture + ')" class="full-bg center-flex theme-fsdrfsSDFSfghfghD32423">' +
-                                    '<!---Proile Pic---->' +
-                                    '</div>' +
-                                    '<div class="center-flex theme-fsdfsdSDD3fghfg24234f">' +
-
-                                    '<div class="center-flex theme-fsdfssdfSDFSD3fghfffdf">' +
-                                    user_displayName +
-                                    '</div>' +
-                                    '<div class="center-flex theme-fsdfassSDFSD3dg34sdf">' +
-                                    user_comment +
-                                    '</div>' +
-                                    '</div>' +
-
-                                    '</div>';
-                                $(data).appendTo($('[comment_data=' + post_id + ']'));
-                                console.log(snapxshotx.val().userid);
-                                console.log(snapxshotx.val().comment);
-                                console.log(vx.val().displayName);
-                                console.log(vx.val().profile_picture);
-
-                            });
-                        });
-
-                    });
-                })
-            });
-        });
+        $.getScript('/scripts/linky.js', function() {});
     </script>
 </body>
 

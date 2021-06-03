@@ -216,4 +216,5 @@ $('[icon_search]').html(icon_search);
 $('[icon_home]').html(icon_home);
 $('[icon_close]').html(icon_close);
 $('[icon_explore]').html(icon_explore);
+
 AOS.init();

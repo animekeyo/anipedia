@@ -2585,6 +2585,9 @@
             
             .center-flex.theme-fsdfassSDFSD3dg34sdf {
                 font-family: sans-serif;
+                display: flex;
+                flex-direction: row;
+                word-break: break-word;
             }
             
             .center-flex.theme-fsdfsxSDhfg324234 {
@@ -2641,6 +2644,12 @@
             .center-flex.theme-com3f2FDSSDF {
                 width: 30px;
                 padding: 0rem 3px;
+            }
+            
+            a:-webkit-any-link {
+                cursor: pointer;
+                color: #6063ff;
+                text-decoration: none;
             }
             
             @media (max-width:980px) {

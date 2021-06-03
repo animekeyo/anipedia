@@ -9,10 +9,13 @@ $('[get_comment]').each(function(index) {
         if (snapshot.exists()) {
             console.log("000000000000exists!0000000000");
             const email = snapshot.val();
+            $.getScript('/scripts/linky.js', function() {});
         } else {
             $('[comment_data=' + post_id + ']').html('<div class="center-flex theme-fsdfsdfsdfSDF223432">No Comments Found</div>')
         }
+
     });
+
     data_ruf.child(user_id + '/posts/' + post_id + '/comments/').once('value', function(snapshot) {
 
         snapshot.forEach((user) => {
@@ -46,7 +49,7 @@ $('[get_comment]').each(function(index) {
                             '<div class="center-flex theme-fsdfssdfSDFSD3fghfffdf">' +
                             user_displayName +
                             '</div>' +
-                            '<div class="center-flex theme-fsdfassSDFSD3dg34sdf">' +
+                            '<div class="center-flex  user_comment theme-fsdfassSDFSD3dg34sdf">' +
                             user_comment +
                             '</div>' +
                             '</div>' +
