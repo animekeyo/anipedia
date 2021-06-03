@@ -3,12 +3,23 @@ $('[get_comment]').each(function(index) {
     const post_id = $(this).attr("post_id");
     const user = firebase.auth().currentUser;
     const data_ruf = firebase.database().ref('/data/users/');
+
     console.log('1works');
+    firebase.database().ref('/data/users/' + user_id + '/posts/' + post_id + '/comments').once("value", snapshot => {
+        if (snapshot.exists()) {
+            console.log("000000000000exists!0000000000");
+            const email = snapshot.val();
+        } else {
+            $('[comment_data=' + post_id + ']').html('<div class="center-flex theme-fsdfsdfsdfSDF223432">No Comments Found</div>')
+        }
+    });
     data_ruf.child(user_id + '/posts/' + post_id + '/comments/').once('value', function(snapshot) {
+
         snapshot.forEach((user) => {
 
             data_ruf.child(user_id + '/posts/' + post_id + '/comments/' + user.key).once('value', function(snapxshot) {
                 snapxshot.forEach((snapxshotx) => {
+
                     const user_id = snapxshotx.val().userid;
                     data_ruf.child(user_id).once('value', function(vx) {
                         //////////////////////
