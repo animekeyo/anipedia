@@ -11,14 +11,6 @@
         z-index: 102;
     }
     
-    [offline_users].center-flex.theme-dfsdSDF23g44DFG {
-        margin-top: unset;
-    }
-    
-    [online_users].center-flex.theme-dfsdSDF23g44DFG {
-        margin-top: 5px;
-    }
-    
     .center-flex.code-SADASD3243.theme-dfsdSDF23g44DFG {
         margin: 0rem 2.0rem;
         margin-bottom: 1.5rem;
@@ -55,6 +47,74 @@
         display: flex;
         align-items: flex-start;
     }
+    
+    [online_users].center-flex.theme-dfsdSDF23g44DFG {
+        margin-top: 5px;
+        background: var(--c14);
+        margin: 1rem;
+        padding: 1rem 1rem;
+        border-radius: 10px;
+    }
+    
+    [offline_users].center-flex.theme-dfsdSDF23g44DFG {
+        margin-top: unset;
+        filter: brightness(0.5);
+        user-select: none;
+    }
+    
+    @media (max-width:1415px) {
+        .center-flex.theme-dfsdSDFh2344DFG.fixed {
+            width: 103px;
+        }
+        .center-flex.theme-dfsdsSDF2344DFG {
+            display: none;
+        }
+        .center-flex.code-SADASD3243.theme-dfsdSDF23g44DFG {
+            margin: 0px 23.5px;
+            margin-bottom: unset;
+        }
+        [online_users].center-flex.theme-dfsdSDF23g44DFG {
+            border-radius: 100rem;
+        }
+        @media (max-width:1167px) {
+            .center-flex.theme-dfsdSDFh2344DFG.fixed {
+                height: 103px;
+                width: -webkit-fill-available;
+                display: flex;
+                flex-direction: row;
+                bottom: 0;
+                top: unset;
+            }
+            .center-flex.code-SADASD3243.theme-dfsdSDF23g44DFG {
+                height: -webkit-fill-available;
+                width: 56px;
+                display: flex;
+                align-items: center;
+            }
+            .center-flex.theme-dfsdSDF23g44DFG {
+                display: flex;
+                flex-direction: row;
+                margin: 0;
+                width: auto;
+                padding: 0;
+                justify-content: flex-start;
+            }
+            [offline_users].center-flex.theme-dfsdSDF23g44DFG {
+                display: flex;
+                align-items: center;
+                height: -webkit-fill-available;
+                width: fit-content;
+            }
+            @media (max-width: 980px) {
+                .center-flex.theme-dfsdSDFh2344DFG.fixed {
+                    bottom: 4rem;
+                }
+                .center-flex.code-SADASD3243.theme-dfsdSDF23g44DFG {
+                    display: none;
+                }
+            }
+        }
+    }
 </style>
 <div class="center-flex theme-dfsdSDFh2344DFG fixed">
     <div class="center-flex code-SADASD3243 theme-dfsdSDF23g44DFG">
@@ -82,6 +142,9 @@
     }
 </script>
 <script>
+    $(document).on('click', 'click_unhide', function() {
+
+    });
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             const data_ruf = firebase.database().ref('/data/users/');
