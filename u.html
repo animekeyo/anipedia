@@ -1038,7 +1038,7 @@
                     var st4 = st3.replace(/\]/g, '</span>');
                     $('[id=user_dec]').html(st4);
 
-                    $('[stb]').on('click', function() {
+                    $(document).on('click', '[stb]', function() {
                         $(this).css('color', 'var(--c9)');
                         $(this).css('cursor', 'unset');
                     });
