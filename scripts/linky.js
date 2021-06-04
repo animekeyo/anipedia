@@ -90,7 +90,7 @@
 
 }(jQuery));
 
-$('.user_comment').linky({
+$('.theme-FFGEKO2h33DF').linky({
     mentions: true,
     urls: true,
     hashtags: true,

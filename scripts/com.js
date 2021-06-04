@@ -16,6 +16,13 @@ firebase.auth().onAuthStateChanged(function(user) {
                 onlineState: false,
                 afkTimeout: createTime,
             });
+            if (snapshot.val().username) {
+                console.log(snapshot.val().username)
+            } else {
+                firebase.database().ref('/data/users/' + user.uid).update({
+                    username: 'keyo' + createTime,
+                });
+            };
             if (snapshot.val().userid) {
                 console.log(snapshot.val().userid)
             } else {

@@ -1,15 +1,11 @@
 $('[get_comment]').each(function(index) {
     const user_id = $(this).attr("user_id");
     const post_id = $(this).attr("post_id");
-    const user = firebase.auth().currentUser;
     const data_ruf = firebase.database().ref('/data/users/');
 
-    console.log('1works');
     firebase.database().ref('/data/users/' + user_id + '/posts/' + post_id + '/comments').once("value", snapshot => {
         if (snapshot.exists()) {
             console.log("000000000000exists!0000000000");
-            const email = snapshot.val();
-            $.getScript('/scripts/linky.js', function() {});
         } else {
             $('[comment_data=' + post_id + ']').html('<div class="center-flex theme-fsdfsdfsdfSDF223432">No Comments Found</div>')
         }
@@ -25,10 +21,7 @@ $('[get_comment]').each(function(index) {
 
                     const user_id = snapxshotx.val().userid;
                     data_ruf.child(user_id).once('value', function(vx) {
-                        //////////////////////
 
-                        //////////////////////
-                        const user_id = snapxshotx.val().userid;
                         const st2x = snapxshotx.val().comment.replace(/(<([^>]+)>)/gi, "");
                         var st3x = st2x.replace(/\[/g, '<span stb class="pointer theme-FDFgdf3243FDSDF">');
                         var st4x = st3x.replace(/\]/g, '</span>');
@@ -56,10 +49,6 @@ $('[get_comment]').each(function(index) {
 
                             '</div>';
                         $(data).appendTo($('[comment_data=' + post_id + ']'));
-                        console.log(snapxshotx.val().userid);
-                        console.log(snapxshotx.val().comment);
-                        console.log(vx.val().displayName);
-                        console.log(vx.val().profile_picture);
 
                     });
                 });

@@ -1,0 +1,115 @@
+<style>
+    .center-flex.theme-dfsdSDFh2344DFG.fixed {
+        background: var(--c15);
+        height: -webkit-fill-available;
+        width: 14rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        overflow: hidden;
+        margin-top: 4rem;
+        z-index: 102;
+    }
+    
+    [offline_users].center-flex.theme-dfsdSDF23g44DFG {
+        margin-top: unset;
+    }
+    
+    [online_users].center-flex.theme-dfsdSDF23g44DFG {
+        margin-top: 5px;
+    }
+    
+    .center-flex.code-SADASD3243.theme-dfsdSDF23g44DFG {
+        margin: 0rem 2.0rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .full-bg.center-flex.theme-dfsdSDF2344DaFG {
+        width: 35px;
+        height: 35px;
+        background-color: var(--c15);
+        border-radius: 100rem;
+        border: 2px solid var(--c15);
+    }
+    
+    .center-flex.theme-dfsdsSDF2344DFG {
+        font-size: 0.85rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 7rem;
+        /* text-align: center; */
+        display: block;
+    }
+    
+    .center-flex.theme-dfsdSDfF2344DFG {
+        display: flex;
+        flex-direction: row;
+        gap: 0.8rem;
+    }
+    
+    .center-flex.theme-dfsdSDF23g44DFG {
+        gap: 1.5rem;
+        margin: 2rem;
+        width: -webkit-fill-available;
+        display: flex;
+        align-items: flex-start;
+    }
+</style>
+<div class="center-flex theme-dfsdSDFh2344DFG fixed">
+    <div class="center-flex code-SADASD3243 theme-dfsdSDF23g44DFG">
+        Online people
+    </div>
+    <div online_users class="center-flex theme-dfsdSDF23g44DFG">
+
+    </div>
+    <div offline_users class="center-flex theme-dfsdSDF23g44DFG">
+
+    </div>
+</div>
+<script>
+    function online_users_card(name, user_userid, status, profilepic) {
+        const com = '<div userid="' + user_userid + '" class="center-flex theme-dfsdSDfF2344DFG">' +
+            '<div style=" ' + status + '  background-image:url(' + profilepic + ')" class="full-bg center-flex theme-dfsdSDF2344DaFG">' +
+
+            '</div>' +
+            '<div class="center-flex theme-dfsdsSDF2344DFG">' +
+            name +
+            '</div>' +
+            '</div>';
+        return com
+    }
+</script>
+<script>
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            const data_ruf = firebase.database().ref('/data/users/');
+
+            data_ruf.child(user.uid + '/following/').on('value', function(snapshot) {
+                snapshot.forEach((user) => {
+                    var user_id = user.val().id;
+                    data_ruf.child(user_id).on('value', function(vx) {
+                        const user_displayName = vx.val().displayName;
+                        const user_profile_picture = vx.val().profile_picture;
+                        const user_onlineState = vx.val().onlineState;
+                        const user_userid = vx.val().userid;
+                        if (user_onlineState == true) {
+                            $('[offline_users]').find('[userid=' + user_userid + ']').hide();
+                            var user_status = 'box-shadow: 0px 0px 0px 2px var( --c7);';
+                            const load = online_users_card(user_displayName, user_userid, user_status, user_profile_picture);
+                            $(load).appendTo($('[online_users]'));
+                        } else {
+                            $('[online_users]').find('[userid=' + user_userid + ']').hide();
+                            var user_status = 'box-shadow: 0px 0px 0px 3px var( --c12);';
+                            const load = online_users_card(user_displayName, user_userid, user_status, user_profile_picture);
+                            $(load).appendTo($('[offline_users]'));
+                        }
+
+
+
+                    });
+                })
+            });
+        }
+    });
+</script>

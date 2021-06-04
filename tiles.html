@@ -8,10 +8,53 @@
     <title>Document</title>
     <style>
         @import url("/styles/main.css?clear32dfs423");
+        .center-flex.theme-dfsdSDFh2344DFG.fixed {
+            background: #151a2187;
+            height: -webkit-fill-available;
+            width: 15rem;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            overflow: hidden;
+        }
+        
+        .full-bg.center-flex.theme-dfsdSDF2344DaFG {
+            width: 35px;
+            height: 35px;
+            background-color: var(--c15);
+            border-radius: 100rem;
+            border: 2px solid var(--c15);
+        }
+        
+        .center-flex.theme-dfsdsSDF2344DFG {
+            font-size: 0.85rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 7rem;
+            /* text-align: center; */
+            display: block;
+        }
+        
+        .center-flex.theme-dfsdSDfF2344DFG {
+            display: flex;
+            flex-direction: row;
+            gap: 0.8rem;
+        }
+        
+        .center-flex.theme-dfsdSDF23g44DFG {
+            gap: 1.5rem;
+            margin: 2rem;
+            width: -webkit-fill-available;
+            display: flex;
+            align-items: flex-start;
+        }
     </style>
 </head>
+<!---/////////////////////////------sweetalert------/////////////////////////--->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.7/dist/sweetalert2.all.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<!---/////////////////////////------firebase------/////////////////////////--->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-firestore.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-analytics.min.js"></script>
@@ -19,39 +62,127 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-auth.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-database.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!---/////////////////////////------MAIN SCRIPTS------/////////////////////////--->
 <script src="/scripts/purl.js"></script>
 <script src="/scripts/firebase.js"></script>
+<!---/////////////////////////------jquery------/////////////////////////--->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!---/////////////////////////------aos------/////////////////////////--->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<!---/////////////////////// https://atomiks.github.io/ /////////////////////--->
+<!---/////////////////////////------tippy------/////////////////////////--->
 <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
 <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
-<!---/////////////////////// https://atomiks.github.io/ /////////////////////--->
-<script src="/scripts/linky.js?clear-123"></script>
+<!---/////////////////////////------react------/////////////////////////--->
+<script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<!--------------------------------babel--------------------------------->
 
 <body>
-    <div class="url">
-        https://github.com/AnSavvides should turn into a link, while <a href="https://twitter.com/andrs">this link should stay untouched</a>.
-    </div>
-    <div class="twitter-mentions">
-        @andrs should get highlighted! Not an e-mail such as @example.com though.
-    </div>
-    <div class="instagram-mentions">
-        We do instagram too! Check out @instagram!
-    </div>
-    <div class="hashtags">
-        Need hashtags linkified? Don't worry - #wegotyoucovered!
-    </div>
-    <div class="github-mentions">
-        You can find @AnSavvides on GitHub!
-    </div>
-    <script src="/scripts/com.js?clear-12333"></script>
+    <div class="center-flex theme-dfsdSDFh2344DFG fixed">
+        <div online_users class="center-flex theme-dfsdSDF23g44DFG">
 
+        </div>
+        <div offline_users class="center-flex theme-dfsdSDF23g44DFG">
+
+        </div>
+    </div>
+    <div id="root"></div>
 
     <script>
-        $.getScript('/scripts/linky.js', function() {});
+        function online_users_card(name, user_userid, status, profilepic) {
+            const com = '<div userid="' + user_userid + '" class="center-flex theme-dfsdSDfF2344DFG">' +
+                '<div style=" ' + status + '  background-image:url(' + profilepic + ')" class="full-bg center-flex theme-dfsdSDF2344DaFG">' +
+
+                '</div>' +
+                '<div class="center-flex theme-dfsdsSDF2344DFG">' +
+                name +
+                '</div>' +
+                '</div>';
+            return com
+        }
+    </script>
+    <script>
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                const data_ruf = firebase.database().ref('/data/users/');
+
+                data_ruf.child(user.uid + '/following/').on('value', function(snapshot) {
+                    snapshot.forEach((user) => {
+                        var user_id = user.val().id;
+                        data_ruf.child(user_id).on('value', function(vx) {
+                            const user_displayName = vx.val().displayName;
+                            const user_profile_picture = vx.val().profile_picture;
+                            const user_onlineState = vx.val().onlineState;
+                            const user_userid = vx.val().userid;
+                            if (user_onlineState == true) {
+                                $('[offline_users]').find('[userid=' + user_userid + ']').hide();
+                                var user_status = 'box-shadow: 0px 0px 0px 2px var( --c7);';
+                                const load = online_users_card(user_displayName, user_userid, user_status, user_profile_picture);
+                                $(load).appendTo($('[online_users]'));
+                            } else {
+                                $('[online_users]').find('[userid=' + user_userid + ']').hide();
+                                var user_status = 'box-shadow: 0px 0px 0px 3px var( --c12);';
+                                const load = online_users_card(user_displayName, user_userid, user_status, user_profile_picture);
+                                $(load).appendTo($('[offline_users]'));
+                            }
+
+
+
+                        });
+                    })
+                });
+            }
+        });
+    </script>
+    <script>
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+
+
+                $('button').on('click', function() {
+                    const name = $('input').val();
+                    const data = firebase.database().ref('/data/usernames/' + $('input').val());
+                    data.set({
+                        userid: user.uid,
+                        username: name,
+                    }).then(function() {
+                        console.log('DONE')
+                    }).catch(function(error) {
+                        swal("Error");
+                    });
+
+                    ////////firebase.database().ref('/data/users/' + user).on("value", snapshot => {
+                    ///// if (snapshot.val().username) {
+
+                    //////   console.log(snapshot.val().username);
+                    /////  const data = firebase.database().ref('/data/usernames/' + snapshot.val().username);
+                    ////// data.remove().then(function() {
+                    /////     data.set({
+                    //////         userid: user,
+                    /////           username: name,
+                    ////     }).then(function() {
+                    ///         console.log('DONE')
+                    ///      }).catch(function(error) {
+                    //swal("Error");
+                    //       });
+                    //      console.log('DONE Remove')
+                    //   }).catch(function(error) {
+                    //      swal("Error");
+                    //  });
+                    // } else {
+
+                    //  }
+
+                });
+
+                // })
+
+
+            }
+        });
     </script>
 </body>
 
