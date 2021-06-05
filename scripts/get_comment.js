@@ -48,7 +48,8 @@ $('[get_comment]').each(function(index) {
                             '</div>' +
 
                             '</div>';
-                        $(data).appendTo($('[comment_data=' + post_id + ']'));
+                        $('[comment_data=' + post_id + ']').prepend(data)
+                            //$(data).appendTo($('[comment_data=' + post_id + ']'));
 
                     });
                 });

@@ -67,12 +67,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         });
         const data = firebase.database().ref('/data/users/' + user.uid);
         data.on('value', function(snapshot) {
-            tippy('[tippy]', {
-                inertia: true,
-                hideOnClick: false,
-                interactive: true,
-                theme: 'tomato',
-            });
+
             const displayName = (snapshot.val() && snapshot.val().displayName);
             const profile_picture = (snapshot.val() && snapshot.val().profile_picture);
             const banner = (snapshot.val() && snapshot.val().banner);
@@ -150,7 +145,7 @@ icon_facebook = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xli
 small_loader = '<style>small_loader svg { animation: loading 0.5s linear infinite } @keyframes loading { to { transform: rotate(359deg) } }</style><loading class=" center-flex"><small_loader>' + icon_loader + '</small_loader></loading>';
 icon_account_circle = '<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>';
 post = '<script src="/scripts/post.js"></script><div class="center-flex theme-45FFDWEQArR3"><div class="full-wh center-flex theme-45FFDtEQAKR3"><div class="center-flex theme-4yFFDWEQAKR3"><div class="center-flex theme-45uFDWEQAKR3">Create a post</div><div class="center-flex theme-45iFDWEQAKR3">Fill the following fields to create a new post</div></div><div class="center-flex theme-45FFDWoQAKR3" click_upload_image>Upload Image</div><input class="theme-45FGDWoQAKR3" type="text" dec_input><div class="center-flex theme-45FFDWpQAKR3"><div go class="center-flex theme-45aFDWEQAKR3">Create post</div><div class="center-flex theme-45sFDWEQAKR3" hidepostjs>Cancel</div></div></div></div><input style="display: none;" upload_image type="file" class="imgur" accept="image/*" data-max-size="5000" /><hidden hidden></hidden>';
-header = '<script src="/scripts/search_user.js"></script><non class="full-wh main center-flex relative"><logo>animekeyo.</logo>    <user-search class=" center-flex absolute" style="height: 0rem;padding: 0rem;overflow: hidden;"><non-ffg import_search_data></non-ffg><a search_bar_close>Close</a></user-search><search class="center-flex"><non class="center-flex">' + icon_search + '</non><input placeholder="Search for rooms, users or categories" class="center-flex" type="search" search_users></search><div class="theme-fdfsd556ds"><profile-pic data-aos="zoom-in" data-aos-duration="050" main_name_alt class="full-bg center-flex" main_profile_picture main_profile_link></profile-pic><div data-aos="zoom-in" data-aos-duration="050" open_setting class="theme-fdfsdg56ds  center-flex">' + icon_setting + '</div></div></non>';
+header = '<script src="/scripts/search_user.js"></script><non class="full-wh main center-flex relative"><logo>animekeyo.</logo>    <user-search class=" center-flex absolute" style="height: 0rem;padding: 0rem;overflow: hidden;"><non-ffg import_search_data></non-ffg><a search_bar_close>Close</a></user-search><search class="center-flex"><non class="center-flex">' + icon_search + '</non><input placeholder="Search for rooms, users or categories" class="center-flex" type="search" search_users></search><div class="theme-fdfsd556ds"><profile-pic tippy data-tippy-content="Profile" data-aos="zoom-in" data-aos-duration="050" class="full-bg center-flex" main_profile_picture main_profile_link></profile-pic><div tippy data-tippy-content="Settings" data-aos="zoom-in" data-aos-duration="050" open_setting class="theme-fdfsdg56ds  center-flex">' + icon_setting + '</div></div></non>';
 /////////////////////////////MOBILE HEADER///////////////////////////
 
 

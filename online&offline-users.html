@@ -1,4 +1,13 @@
 <style>
+    @media (min-width:1167px) {
+        [online_users].center-flex.theme-dfsdSDF23g44DFG {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            transition: 1s;
+        }
+    }
+    
     .center-flex.theme-dfsdSDFh2344DFG.fixed {
         background: var(--c15);
         height: -webkit-fill-available;
@@ -9,6 +18,11 @@
         overflow: hidden;
         margin-top: 4rem;
         z-index: 102;
+    }
+    
+    .center-flex.theme-dfsdSDFh2344DFG.fixed {
+        overflow: hidden;
+        overflow-y: scroll;
     }
     
     .center-flex.code-SADASD3243.theme-dfsdSDF23g44DFG {
@@ -54,12 +68,24 @@
         margin: 1rem;
         padding: 1rem 1rem;
         border-radius: 10px;
+        user-select: none;
     }
     
     [offline_users].center-flex.theme-dfsdSDF23g44DFG {
         margin-top: unset;
-        filter: brightness(0.5);
         user-select: none;
+    }
+    
+    .center-flex.theme-dfsdSDFh2344DFG.fixed::-webkit-scrollbar {
+        display: none;
+    }
+    /* Hide scrollbar for IE, Edge and Firefox */
+    
+    .center-flex.theme-dfsdSDFh2344DFG.fixed {
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
     }
     
     @media (max-width:1415px) {
@@ -106,8 +132,37 @@
                 width: fit-content;
             }
             @media (max-width: 980px) {
+                [online_users].center-flex.theme-dfsdSDF23g44DFG {
+                    margin-top: unset;
+                    margin: 01rem;
+                    padding: unset;
+                    border-radius: unset;
+                    gap: 01rem;
+                    height: -webkit-fill-available;
+                    display: flex;
+                    align-items: center;
+                    background: unset;
+                    background-color: unset;
+                }
+                [offline_users].center-flex.theme-dfsdSDF23g44DFG {
+                    display: flex;
+                    align-items: center;
+                    height: -webkit-fill-available;
+                    width: fit-content;
+                    gap: 01rem;
+                }
+                .full-bg.center-flex.theme-dfsdSDF2344DaFG {
+                    width: 30px;
+                    height: 30px;
+                    border: 1px solid var(--c15);
+                }
                 .center-flex.theme-dfsdSDFh2344DFG.fixed {
-                    bottom: 4rem;
+                    height: 55px;
+                }
+                .center-flex.theme-dfsdSDFh2344DFG.fixed {
+                    bottom: 63px;
+                    overflow-x: scroll;
+                    overflow-y: unset;
                 }
                 .center-flex.code-SADASD3243.theme-dfsdSDF23g44DFG {
                     display: none;
@@ -148,10 +203,10 @@
     ///////////////////
     function online_users_card(name, user_userid, profilepic) {
         const com = '<div open_user userid="' + user_userid + '" class="center-flex theme-dfsdSDfF2344DFG">' +
-            '<div style=" background-image:url(' + profilepic + ')" class="full-bg center-flex theme-dfsdSDF2344DaFG">' +
+            '<div  style=" background-image:url(' + profilepic + ')" class="full-bg center-flex theme-dfsdSDF2344DaFG">' +
 
             '</div>' +
-            '<div class="center-flex theme-dfsdsSDF2344DFG">' +
+            '<div  class="center-flex theme-dfsdsSDF2344DFG">' +
             name +
             '</div>' +
             '</div>';
@@ -181,6 +236,7 @@
                             const user_profile_picture = vx.val().profile_picture;
                             const user_onlineState = vx.val().onlineState;
                             const user_userid = vx.val().userid;
+
                             $('.code-SADASD3243').text('Online people');
                             $('[online_users]').css('background', 'var(--c14)');
                             if (user_onlineState == true) {
@@ -190,6 +246,8 @@
                             } else {
                                 $('[online_users]').find('[userid=' + user_userid + ']').hide();
                                 $('[offline_users]').find('[userid=' + user_userid + ']').show();
+                                $('[offline_users]').find('[userid=' + user_userid + ']').css('filter', 'brightness(0.5)');
+
                                 $('[offline_users]').find('[userid=' + user_userid + '] > .theme-dfsdSDF2344DaFG').css('box-shadow', '0px 0px 0px 3px var( --c12)');
 
                             }
