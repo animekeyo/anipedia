@@ -13,7 +13,7 @@
     
     .center-flex.code-SADASD3243.theme-dfsdSDF23g44DFG {
         margin: 0rem 2.0rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: unset;
     }
     
     .full-bg.center-flex.theme-dfsdSDF2344DaFG {
@@ -36,6 +36,7 @@
     
     .center-flex.theme-dfsdSDfF2344DFG {
         display: flex;
+        cursor: pointer;
         flex-direction: row;
         gap: 0.8rem;
     }
@@ -50,7 +51,6 @@
     
     [online_users].center-flex.theme-dfsdSDF23g44DFG {
         margin-top: 5px;
-        background: var(--c14);
         margin: 1rem;
         padding: 1rem 1rem;
         border-radius: 10px;
@@ -118,7 +118,24 @@
 </style>
 <div class="center-flex theme-dfsdSDFh2344DFG fixed">
     <div class="center-flex code-SADASD3243 theme-dfsdSDF23g44DFG">
-        Online people
+        <div class="center-flex full-wh">
+            <style>
+                small_loader svg {
+                    animation: loading 0.5s linear infinite
+                }
+                
+                @keyframes loading {
+                    to {
+                        transform: rotate(359deg)
+                    }
+                }
+            </style>
+            <loading class=" center-flex">
+                <small_loader>
+                    <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><rect fill="none" height="24" width="24"/><path d="M4,9L4,9c0.26,0.26,0.34,0.63,0.25,0.98c-0.35,1.36-0.36,2.87,0.1,4.38c0.88,2.91,3.44,5.1,6.44,5.55 c5.52,0.81,10.19-4.06,9.03-9.62c-0.65-3.13-3.23-5.61-6.37-6.16c-1.21-0.21-2.38-0.15-3.46,0.13C9.64,4.35,9.26,4.26,9.01,4.01l0,0 C8.45,3.45,8.73,2.52,9.48,2.32c1.47-0.38,3.06-0.44,4.7-0.09c3.98,0.86,7.09,4.18,7.7,8.2c1.04,6.81-4.82,12.58-11.64,11.42 C6.23,21.16,2.98,17.99,2.2,14c-0.31-1.59-0.24-3.12,0.12-4.53C2.52,8.72,3.45,8.45,4,9z M6,12c0-3.31,2.69-6,6-6s6,2.69,6,6 s-2.69,6-6,6S6,15.31,6,12z M7,5.5C7,6.33,6.33,7,5.5,7S4,6.33,4,5.5S4.67,4,5.5,4S7,4.67,7,5.5z"/></svg>
+                </small_loader>
+            </loading>
+        </div>
     </div>
     <div online_users class="center-flex theme-dfsdSDF23g44DFG">
 
@@ -130,7 +147,7 @@
 <script>
     ///////////////////
     function online_users_card(name, user_userid, profilepic) {
-        const com = '<div userid="' + user_userid + '" class="center-flex theme-dfsdSDfF2344DFG">' +
+        const com = '<div open_user userid="' + user_userid + '" class="center-flex theme-dfsdSDfF2344DFG">' +
             '<div style=" background-image:url(' + profilepic + ')" class="full-bg center-flex theme-dfsdSDF2344DaFG">' +
 
             '</div>' +
@@ -142,9 +159,7 @@
     }
 </script>
 <script>
-    $(document).on('click', 'click_unhide', function() {
-
-    });
+    $.getScript('/scripts/open_user.js', function() {});
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             const data_ruf = firebase.database().ref('/data/users/');
@@ -166,6 +181,8 @@
                             const user_profile_picture = vx.val().profile_picture;
                             const user_onlineState = vx.val().onlineState;
                             const user_userid = vx.val().userid;
+                            $('.code-SADASD3243').text('Online people');
+                            $('[online_users]').css('background', 'var(--c14)');
                             if (user_onlineState == true) {
                                 $('[offline_users]').find('[userid=' + user_userid + ']').hide();
                                 $('[online_users]').find('[userid=' + user_userid + ']').show();
