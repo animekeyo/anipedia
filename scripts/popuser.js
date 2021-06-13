@@ -57,18 +57,14 @@ $.each($('[popuserid]'), function() {
 
                             ////////////////////////////////
                             if (bio == 0) {
-                                if (user.uid == userid) {
-                                    var boix = '<div click_bio_add class="theme-FFGEKOGGF33DF" open_setting>Empty Bio!!! Click <span style="color:var(--c19)">Here</span> to add bio. </div>';
-                                } else {
-                                    var boix = 'Looks like ' + displayName + ' didnt add bio!';
-                                }
+
+                                var boix = 'Looks like ' + displayName + ' didnt add bio!';
+
                             } else {
                                 if (typeof bio == "undefined") {
-                                    if (user.uid == userid) {
-                                        var boix = '<div click_bio_add class="theme-FFGEKOGGF33DF" open_setting>Empty Bio!!! Click <span style="color:var(--c19)">Here</span> to add bio. </div>';
-                                    } else {
-                                        var boix = 'Looks like ' + displayName + ' didnt add bio!';
-                                    }
+
+                                    var boix = 'Looks like ' + displayName + ' didnt add bio!';
+
                                 } else {
                                     ///////////////////STP///////////////
 
@@ -85,35 +81,103 @@ $.each($('[popuserid]'), function() {
                                     $.getScript('/scripts/linky.js', function() {});
                                 };
                             }
+                            ///////////////////////////////////////////
+                            var db_ref = firebase.database().ref('/data/users/' + userid);
+
+                            db_ref.child('badges').once('value', function(snapshot) {
+                                console.log('working badges');
+                                const verified = (snapshot.val() && snapshot.val().verified);
+                                if (verified == true) {
+                                    var verified_x = icon_verified;
+
+                                } else {
+                                    var verified_x = '';
+
+                                }
+                                const partner = (snapshot.val() && snapshot.val().partner);
+                                if (partner == true) {
+                                    var partner_x = icon_turbo_1;
+
+                                } else {
+                                    var partner_x = '';
+                                }
+                                const staff = (snapshot.val() && snapshot.val().staff);
+                                if (staff == true) {
+
+                                    var staff_x = icon_staff;
+                                } else {
+                                    var staff_x = '';
+                                }
+                                const tester = (snapshot.val() && snapshot.val().tester);
+                                if (tester == true) {
+                                    var tester_x = icon_beta_tester;
+                                } else {
+                                    var tester_x = '';
+                                }
+                                const king = (snapshot.val() && snapshot.val().king);
+                                if (king == true) {
+
+                                    var king_x = icon_owner;
+                                } else {
+                                    var king_x = '';
+                                }
+                                const simp = (snapshot.val() && snapshot.val().simp);
+                                if (simp == true) {
+                                    var simp_x = '<div  class=" center-flex" tippy data-tippy-content="Ultra Simp"><img style="width: 1.5rem; height: 1.5rem; border-radius: 0.2rem;" src="https://cdn.discordapp.com/attachments/847879736092131388/849530189348470854/444436026149175297.png"></div>';
+
+                                } else {
+                                    var simp_x = '';
+                                }
+                                console.log('working+')
+                                const badges_x = simp_x +
+                                    king_x +
+                                    tester_x +
+                                    staff_x +
+                                    partner_x +
+                                    verified_x;
+
+                                const profile_card =
+                                    '<div class="center-flex pvcard1231FDSDFSDF">' +
+
+                                    '<div style="background-image:url(' + banner + ')" class="full-bg center-flex pvcard1231FDSfffdddseDFSDF">' +
+                                    '<div open_user userid="' + userid + '" style="background-image:url(' + profile_picture + ')" class="pointer full-bg center-flex pvcafsgdfd1231FDSDFSDF"> <!--PROFLE PIC--> </div>' +
+                                    '</div>' +
+                                    '<div class="center-flex pvcard1231sdDSsdfDaaFSDF">' +
+                                    '<div class="center-flex pvcard12sdcv31FDSDFSDF"> ' + displayName + ' <!--DISPLAY NAME-->  </div>' +
+                                    '<div class="center-flex pvcard123ad1FDSDvxweqFSDF"> @' + username + ' <!--USERNAME-->  </div>' +
+                                    '</div>' +
+                                    '<badge badges_x="' + userid + '" class="center-flex code-fsdfsdfFSDF theme-FDSHGF45GFFFS">' +
+
+                                    '</badge>' +
+                                    '<div class="center-flex pvcard1231FDsaSSDF">' +
+                                    '<div class="center-flex pvcard1231FDsaghfgh24ggg5SDFSDF">Bio</div>' +
+                                    '<div class="center-flex pvcard1231FDsa24ggg5SDFSDF"> ' + boix + ' <!-- BIO--> </div>' +
+                                    '</div>' +
+                                    '<div class="center-flex pvcard1231FDsa24ggg5SDFddSDF">View Profile</div>' +
+                                    '</div>';
+                                setTimeout(function() {
+                                    $('[popopen_user]').html(profile_card)
+                                    setTimeout(function() {
+                                        $('[badges_x=' + userid + ']').html(badges_x);
+                                    }, 0001)
+                                }, 0001)
+
+
+                                console.log(displayName);
+                                console.log(profile_picture);
+                                console.log(banner);
+                                console.log(bio);
+                                console.log(userid);
+                                console.log(onlineState);
+                                console.log(afkTimeout);
+                                console.log(username);
+                            });
+
                             //////////////////////////////////
-                            console.log('working+')
-                            const profile_card =
-                                '<div class="center-flex pvcard1231FDSDFSDF">' +
 
-                                '<div style="background-image:url(' + banner + ')" class="full-bg center-flex pvcard1231FDSfffdddseDFSDF">' +
-                                '<div open_user userid="' + userid + '" style="background-image:url(' + profile_picture + ')" class="pointer full-bg center-flex pvcafsgdfd1231FDSDFSDF"> <!--PROFLE PIC--> </div>' +
-                                '<div class="center-flex pvcard1231sdDSsdfDaaFSDF">' +
-                                '<div class="center-flex pvcard12sdcv31FDSDFSDF"> ' + displayName + ' <!--DISPLAY NAME-->  </div>' +
-                                '<div class="center-flex pvcard123ad1FDSDvxweqFSDF"> @' + username + ' <!--USERNAME-->  </div>' +
-                                '<div class="center-flex pvcard1231FdfDS213dfsDFSDF"> <!--BADGES--> </div>' +
-                                '</div>' +
-
-                                '</div>' +
-                                '<div class="center-flex pvcard1231FDsaghfgh24ggg5SDFSDF">Bio</div>' +
-                                '<div class="center-flex pvcard1231FDsa24ggg5SDFSDF"> ' + boix + ' <!-- BIO--> </div>' +
-                                '<div class="center-flex pvcard1231FDsa24ggg5SDFddSDF">View Profile</div>' +
-                                '</div>';
-                            $('[popopen_user]').html(profile_card)
-                            console.log(displayName);
-                            console.log(profile_picture);
-                            console.log(banner);
-                            console.log(bio);
-                            console.log(userid);
-                            console.log(onlineState);
-                            console.log(afkTimeout);
-                            console.log(username);
                         }
                     );
+
                 },
                 0001
             )

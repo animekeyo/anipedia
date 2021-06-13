@@ -232,12 +232,13 @@
                         const load = online_users_card(user_displayName, user_userid, user_profile_picture);
                         $(load).appendTo($('[offline_users]'));
                         $(load).appendTo($('[online_users]'));
+                        $.getScript('/scripts/popuser.js?423hgghxdgsdkffgdddssdddddd42DfdsdfFSDF', function() {});
                         data_ruf.child(user_id).on('value', function(vx) {
                             const user_displayName = vx.val().displayName;
                             const user_profile_picture = vx.val().profile_picture;
                             const user_onlineState = vx.val().onlineState;
                             const user_userid = vx.val().userid;
-                            $.getScript('/scripts/popuser.js?423hgghxdgsdk42DfdsdfFSDF', function() {});
+
                             $('.code-SADASD3243').text('Online people');
                             $('[online_users]').css('background', 'var(--c14)');
                             if (user_onlineState == true) {
