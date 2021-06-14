@@ -57,7 +57,7 @@
         background-color: #1667F3;
         height: 100%;
         width: 30%;
-        left: -30%;
+        left: -29%;
     }
     
     #navigation a {
@@ -87,8 +87,8 @@
         const user = firebase.auth().currentUser;
         // listen for hammer overall document
 
-
-        var swipe = new Hammer(document);
+        var myElement = document.getElementById('navigation');
+        var swipe = new Hammer(myElement);
 
         swipe.on('panright panleft', function(e) {
             e.preventDefault();
@@ -101,7 +101,7 @@
             if (e.type == 'panleft') {
                 // close/hide menu
                 $('#navigation').animate({
-                    left: '-30%'
+                    left: '-25%'
                 });
             }
 
