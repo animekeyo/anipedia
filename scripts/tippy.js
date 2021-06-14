@@ -6,10 +6,11 @@ $(document).on(
         tippy('[tippy]', {
             inertia: true,
             hideOnClick: false,
-            interactive: true,
+
             delay: 0,
             zIndex: 9999,
             duration: 0,
+            appendTo: () => document.body,
             animateFill: false,
             theme: 'tomato',
         })
