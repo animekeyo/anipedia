@@ -72,48 +72,23 @@
         background: url(https://s26.postimg.org/fi10zsufd/hammer.png) top no-repeat;
     }
 </style>
+<div style="background: black; width: 100px; height: 60;color: white;" go_to_owner>
+    GO TO OWNRE
+</div>
+<pop class="the-mefsdfs">
+
+</pop>
 
 <body>
-    <div id="navigation">
-        <a href="#">Home</a>
-        <a href="#">About us</a>
-        <a href="#">Contact</a>
-    </div>
-    <div>
-        test my frriend
-    </div>
-    <script src="/scripts/com.js"></script>
     <script>
-        const user = firebase.auth().currentUser;
-        // listen for hammer overall document
+        $(document).on('click', '[go_to_owner]', function() {
 
-        var myElement = document.getElementById('navigation');
-        var swipe = new Hammer(myElement);
-        var swipea = new Hammer(document);
-        swipea.on('panright press panleft', function(e) {
-            e.preventDefault();
-            if (e.type == 'panleft') {
-                // close/hide menu
-                $('#navigation').animate({
-                    left: '-29%'
-                });
+            if ($('pop').hasClass('the-mefsdfs')) {
+                $('pop').removeClass('the-mefsdfs')
+            } else {
+                $('pop').addClass('the-mefsdfs')
             }
-            if (e.type == 'press') {
-                // close/hide menu
-                $('#navigation').animate({
-                    left: '-29%'
-                });
-            }
-        });
-        swipe.on('panright panleft', function(e) {
-            e.preventDefault();
-            if (e.type == 'panright') {
-                // open menu
-                $('#navigation').animate({
-                    left: '0'
-                });
-            };
-        });
+        })
     </script>
 </body>
 
