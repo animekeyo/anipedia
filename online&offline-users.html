@@ -11,7 +11,7 @@
         left: unset;
         z-index: 102;
         gap: 0.8rem;
-        right: -11.9rem;
+        right: 0;
         padding: 1rem;
     }
     
@@ -93,7 +93,7 @@
     .center-flex.theme-dfsdSDFh2344DFG.fixed::-webkit-scrollbar {
         display: none;
     }
-    /* Hide scrollbar for IE, Edge and Firefoxxxx */
+    /* Hide scrollbar for IE, Edge and Firefox */
     
     .center-flex.theme-dfsdSDFh2344DFG.fixed {
         -ms-overflow-style: none;
@@ -101,9 +101,101 @@
         scrollbar-width: none;
         /* Firefox */
     }
+    
+    @media (max-width:1415px) {
+        .center-flex.theme-dfsdSDFh2344DFG.fixed {
+            width: 103px;
+        }
+        .center-flex.theme-dfsdsSDF2344DFG {
+            display: none;
+        }
+        @media (max-width:1167px) {
+            .center-flex.theme-dfsdSDFh2344DFG.fixed {
+                height: 103px;
+                width: -webkit-fill-available;
+                display: flex;
+                flex-direction: row;
+                bottom: 0;
+                top: unset;
+            }
+            .center-flex.theme-dfsdSDF23g44DFG {
+                display: flex;
+                flex-direction: row;
+                margin: 0;
+                width: auto;
+                padding: 0;
+                justify-content: flex-start;
+            }
+            [offline_users].center-flex.theme-dfsdSDF23g44DFG {
+                display: flex;
+                align-items: center;
+                height: -webkit-fill-available;
+                width: fit-content;
+            }
+            @media (max-width: 980px) {
+                .theme-fsdsdfADFF324.center-flex {
+                    position: fixed!important;
+                    top: 60px!important;
+                    left: -18rem!important;
+                    transition: unset!important;
+                    right: unset!important;
+                    transform: unset!important;
+                    width: 20rem;
+                    height: auto;
+                }
+                .center-flex.theme-dfsdsSDF2344DFG {
+                    display: unset;
+                }
+                .center-flex.code-SADASD3243.theme-dfsdSDF23g44DFG {
+                    display: unset;
+                }
+                [online_users].center-flex.theme-dfsdSDF23g44DFG {
+                    margin-bottom: unset;
+                    display: flex;
+                    align-items: center;
+                    height: fit-content;
+                    width: fit-content;
+                    gap: 01rem;
+                    flex-direction: column;
+                    flex-wrap: nowrap;
+                    align-content: center;
+                    justify-content: flex-start;
+                }
+                [offline_users].center-flex.theme-dfsdSDF23g44DFG {
+                    display: flex;
+                    align-items: center;
+                    height: fit-content;
+                    width: fit-content;
+                    gap: 01rem;
+                    flex-direction: column;
+                }
+                .full-bg.center-flex.theme-dfsdSDF2344DaFG {
+                    width: 30px;
+                    height: 30px;
+                    border: 1px solid var(--c15);
+                }
+                .center-flex.theme-dfsdSDFh2344DFG.fixed {
+                    overflow-x: scroll;
+                    overflow-y: unset;
+                    height: -webkit-fill-available;
+                    width: 13rem;
+                    padding: 2rem 2rem;
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: nowrap;
+                    align-content: center;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                }
+                .center-flex.code-SADASD3243.theme-dfsdSDF23g44DFG {
+                    display: none;
+                }
+            }
+        }
+    }
 </style>
 <pop>
-    <div id="navigation" class="center-flex theme-dfsdSDFh2344DFG fixed">
+    <div class="center-flex theme-dfsdSDFh2344DFG fixed">
         <div class="center-flex code-SADASD3243 theme-dfsdSDF23g44DFG">
             <div class="center-flex full-wh">
                 <style>
@@ -135,24 +227,6 @@
     </div>
 </pop>
 <script>
-    var myElement = document.getElementById('navigation');
-    var swipe = new Hammer(myElement);
-    swipe.on('panright panleft', function(e) {
-        e.preventDefault();
-        if (e.type == 'panleft') {
-            // open menu
-            $('#navigation').animate({
-                right: '0'
-            });
-        };
-        if (e.type == 'panright') {
-            // close/hide menu
-            $('#navigation').animate({
-                right: '-11.9rem'
-            });
-        }
-
-    });
     ///////////////////
     function online_users_card(name, user_userid, profilepic) {
         const com = '<div popuserid="' + user_userid + '" userid="' + user_userid + '" class="center-flex theme-dfsdSDfF2344DFG">' +
@@ -185,7 +259,7 @@
                         const load = online_users_card(user_displayName, user_userid, user_profile_picture);
                         $(load).appendTo($('[offline_users]'));
                         $(load).appendTo($('[online_users]'));
-                        $.getScript('/scripts/popuser.js?423hgghxdgsdkffgdddssdddddd42DfdsdfFSDF', function() {});
+                        $.getScript('/scripts/popuser.js?443hgghxdgsdkffgdddssdddddd42DfdsdfFSF', function() {});
                         data_ruf.child(user_id).on('value', function(vx) {
                             const user_displayName = vx.val().displayName;
                             const user_profile_picture = vx.val().profile_picture;
