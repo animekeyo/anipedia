@@ -89,7 +89,22 @@
 
         var myElement = document.getElementById('navigation');
         var swipe = new Hammer(myElement);
-
+        var swipea = new Hammer(document);
+        swipea.on('panright press panleft', function(e) {
+            e.preventDefault();
+            if (e.type == 'panleft') {
+                // close/hide menu
+                $('#navigation').animate({
+                    left: '-29%'
+                });
+            }
+            if (e.type == 'press') {
+                // close/hide menu
+                $('#navigation').animate({
+                    left: '-29%'
+                });
+            }
+        });
         swipe.on('panright panleft', function(e) {
             e.preventDefault();
             if (e.type == 'panright') {
@@ -98,13 +113,6 @@
                     left: '0'
                 });
             };
-            if (e.type == 'panleft') {
-                // close/hide menu
-                $('#navigation').animate({
-                    left: '-25%'
-                });
-            }
-
         });
     </script>
 </body>
