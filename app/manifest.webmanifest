@@ -1,7 +1,7 @@
 {
     "theme_color": "#0b0e11",
     "background_color": "#0b0e11",
-    "display": "minimal-ui",
+    "display": "standalone",
     "scope": "/app/",
     "start_url": "/app/",
     "name": "Anime Keyo",
