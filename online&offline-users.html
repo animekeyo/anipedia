@@ -11,7 +11,7 @@
         left: unset;
         z-index: 102;
         gap: 0.8rem;
-        right: -12rem;
+        right: -11rem;
         padding: 1rem;
     }
     
@@ -135,8 +135,8 @@
     </div>
 </pop>
 <script>
-    var swipe = new Hammer(document);
-
+    var myElement = document.getElementById('navigation');
+    var swipe = new Hammer(myElement);
     swipe.on('panright panleft', function(e) {
         e.preventDefault();
         if (e.type == 'panleft') {
@@ -148,7 +148,7 @@
         if (e.type == 'panright') {
             // close/hide menu
             $('#navigation').animate({
-                right: '-12rem'
+                right: '-11rem'
             });
         }
 
