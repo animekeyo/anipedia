@@ -133,6 +133,9 @@
                 width: fit-content;
             }
             @media (max-width: 980px) {
+                .the-mefsdfs {
+                    display: none;
+                }
                 .theme-fsdsdfADFF324.center-flex {
                     position: fixed!important;
                     top: 60px!important;
@@ -160,6 +163,7 @@
                     flex-wrap: nowrap;
                     align-content: center;
                     justify-content: flex-start;
+                    margin-bottom: 1rem;
                 }
                 [offline_users].center-flex.theme-dfsdSDF23g44DFG {
                     display: flex;
@@ -188,13 +192,13 @@
                     align-items: flex-start;
                 }
                 .center-flex.code-SADASD3243.theme-dfsdSDF23g44DFG {
-                    display: none;
+                    display: unset;
                 }
             }
         }
     }
 </style>
-<pop>
+<pop class="the-mefsdfs">
     <div class="center-flex theme-dfsdSDFh2344DFG fixed">
         <div class="center-flex code-SADASD3243 theme-dfsdSDF23g44DFG">
             <div class="center-flex full-wh">
@@ -228,6 +232,14 @@
 </pop>
 <script>
     ///////////////////
+    $(document).on('click', '[go_to_owner]', function() {
+        if ($('pop').hasClass('the-mefsdfs')) {
+            $('pop').removeClass('the-mefsdfs')
+        } else {
+            $('pop').addClass('the-mefsdfs')
+        }
+    })
+
     function online_users_card(name, user_userid, profilepic) {
         const com = '<div popuserid="' + user_userid + '" userid="' + user_userid + '" class="center-flex theme-dfsdSDfF2344DFG">' +
             '<div class=" relative full-bg center-flex theme-dfsdSDF2344DaFG">' +
