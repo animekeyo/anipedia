@@ -11,7 +11,7 @@
         left: unset;
         z-index: 102;
         gap: 0.8rem;
-        right: 0;
+        right: -12rem;
         padding: 1rem;
     }
     
@@ -103,7 +103,7 @@
     }
 </style>
 <pop>
-    <div class="center-flex theme-dfsdSDFh2344DFG fixed">
+    <div id="navigation" class="center-flex theme-dfsdSDFh2344DFG fixed">
         <div class="center-flex code-SADASD3243 theme-dfsdSDF23g44DFG">
             <div class="center-flex full-wh">
                 <style>
@@ -135,6 +135,24 @@
     </div>
 </pop>
 <script>
+    var swipe = new Hammer(document);
+
+    swipe.on('panright panleft', function(e) {
+        e.preventDefault();
+        if (e.type == 'panleft') {
+            // open menu
+            $('#navigation').animate({
+                right: '0'
+            });
+        };
+        if (e.type == 'panright') {
+            // close/hide menu
+            $('#navigation').animate({
+                right: '-12rem'
+            });
+        }
+
+    });
     ///////////////////
     function online_users_card(name, user_userid, profilepic) {
         const com = '<div popuserid="' + user_userid + '" userid="' + user_userid + '" class="center-flex theme-dfsdSDfF2344DFG">' +
