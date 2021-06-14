@@ -57,7 +57,7 @@
         background-color: #1667F3;
         height: 100%;
         width: 30%;
-        left: -100%;
+        left: -30%;
     }
     
     #navigation a {
@@ -86,19 +86,22 @@
     <script>
         const user = firebase.auth().currentUser;
         // listen for hammer overall document
+
+
         var swipe = new Hammer(document);
 
-        swipe.on('swiperight swipeleft', function(e) {
+        swipe.on('panright panleft', function(e) {
             e.preventDefault();
-            if (e.type == 'swiperight') {
+            if (e.type == 'panright') {
                 // open menu
                 $('#navigation').animate({
                     left: '0'
                 });
-            } else {
+            };
+            if (e.type == 'panleft') {
                 // close/hide menu
                 $('#navigation').animate({
-                    left: '-100%'
+                    left: '-30%'
                 });
             }
 
