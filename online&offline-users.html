@@ -133,9 +133,6 @@
                 width: fit-content;
             }
             @media (max-width: 980px) {
-                .the-mefsdfs {
-                    display: none;
-                }
                 .theme-fsdsdfADFF324.center-flex {
                     position: fixed!important;
                     top: 60px!important;
@@ -183,6 +180,7 @@
                     overflow-y: unset;
                     height: -webkit-fill-available;
                     width: 13rem;
+                    right: -17rem;
                     padding: 2rem 2rem;
                     display: flex;
                     flex-direction: column;
@@ -234,9 +232,17 @@
     ///////////////////
     $(document).on('click', '[go_to_owner]', function() {
         if ($('pop').hasClass('the-mefsdfs')) {
+
             $('pop').removeClass('the-mefsdfs')
+            $('.theme-dfsdSDFh2344DFG').animate({
+                right: '0rem'
+            })
+
         } else {
             $('pop').addClass('the-mefsdfs')
+            $('.theme-dfsdSDFh2344DFG').animate({
+                right: '-17rem'
+            })
         }
     })
 

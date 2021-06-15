@@ -71,6 +71,15 @@
         background-color: #fff;
         background: url(https://s26.postimg.org/fi10zsufd/hammer.png) top no-repeat;
     }
+    
+    pop {
+        position: fixed;
+        right: -10rem;
+        width: 10rem;
+        height: -webkit-fill-available;
+        background: blue;
+        top: 0;
+    }
 </style>
 <div style="background: black; width: 100px; height: 60;color: white;" go_to_owner>
     GO TO OWNRE
@@ -82,11 +91,18 @@
 <body>
     <script>
         $(document).on('click', '[go_to_owner]', function() {
-
             if ($('pop').hasClass('the-mefsdfs')) {
+
                 $('pop').removeClass('the-mefsdfs')
+                $('pop').animate({
+                    right: '0rem'
+                })
+
             } else {
                 $('pop').addClass('the-mefsdfs')
+                $('pop').animate({
+                    right: '-10rem'
+                })
             }
         })
     </script>
