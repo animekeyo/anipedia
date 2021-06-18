@@ -771,7 +771,6 @@
                     transition: 0.2s;
                     color: var(--c9);
                     flex-direction: row!important;
-                    font-family: 'Roboto';
                     font-weight: 900;
                 }
                 header non.main search {
@@ -800,11 +799,11 @@
                     top: 0;
                     position: fixed;
                     color: var(--c9);
+                    font-family: 'C1';
                     z-index: 100;
                 }
                 header non.main logo {
                     font-size: 1.3rem;
-                    font-family: 'Roboto';
                     font-weight: 900;
                     letter-spacing: 0.02rem;
                 }
@@ -2749,6 +2748,146 @@
             
             .center-flex.code-fsdfsdfFSDF.theme-FDSHGF45GFFFS {
                 margin: 0rem 1rem;
+            }
+            
+            .theme-app24FDDSSD1 {
+                width: 60rem;
+                overflow: hidden;
+                margin-top: 4rem;
+                display: flex;
+                align-items: flex-start;
+                overflow-x: scroll;
+            }
+            
+            .theme-app24FDDSSD1::-webkit-scrollbar {
+                border-radius: 100rem;
+                transition: 0.5s;
+                height: 7px;
+            }
+            
+            .theme-app24FDDSSD1::-webkit-scrollbar-thumb {
+                background-color: var(--c7);
+                outline: unset;
+                border-radius: 100rem;
+                transition: 0.5s;
+                width: 0rem;
+            }
+            
+            .theme-app24FDDSSD1::-webkit-scrollbar-track {
+                background: var(--c14);
+            }
+            
+            .center-flex.theme-app23DECSSX1 {
+                width: auto;
+                height: 7rem;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-content: center;
+                justify-content: flex-start;
+                align-items: center;
+                background: var(--c14);
+                border-radius: 5px;
+                padding: 0rem 1.5rem;
+            }
+            
+            .full-bg.center-flex.theme-app23DECSSX4 {
+                width: 38px;
+                height: 38px;
+            }
+            
+            .center-flex.theme-app23DECSSX5 {
+                font-size: 0.65rem;
+                word-break: break-word;
+                width: 4rem;
+                display: flex;
+                text-align: left;
+                align-items: flex-start;
+            }
+            
+            .center-flex.theme-app23DECSSX2 {
+                height: 1rem;
+                padding: 1.5rem 1rem;
+                margin: 0.5rem;
+                display: flex;
+                width: 7rem;
+                gap: 10px;
+                background: var(--c13);
+                border-radius: 5px;
+                justify-content: center;
+            }
+            
+            .center-flex.theme-app23DECSSX3 {
+                height: -webkit-fill-available;
+                display: flex;
+                gap: 0.5rem;
+                justify-content: flex-start;
+                flex-direction: row;
+            }
+            
+            .center-flex.theme-app23DECSSX6 {
+                background: var(--c15);
+                padding: 0.3rem 0.6rem;
+                font-size: 0.8rem;
+                border-radius: 5px;
+            }
+            
+            .theme-app24FDDSSD11 {
+                width: 60rem;
+                min-height: 10rem;
+                height: fit-content;
+                background: var(--c14);
+                border-radius: 5px;
+            }
+            
+            .center-flex.theme-app23DECSSX12 {
+                display: flex;
+                flex-direction: row;
+                gap: 0.5rem;
+                justify-content: flex-start;
+                margin: 1rem;
+            }
+            
+            .center-flex.full-wh.theme-app246FDDSSD1 {
+                gap: 1rem;
+            }
+            
+            .center-flex.theme-app23DECSSX123 {
+                padding: 0.7rem 0.9rem;
+                background: var(--c15);
+                border-radius: 5px;
+            }
+            
+            .center-flex.theme-appDFXCE21 {
+                width: 13.7rem;
+                height: 15rem;
+                border-radius: 5px;
+                background: var(--c15);
+            }
+            
+            .theme-app24FDDSSD11 {
+                width: 60rem;
+                min-height: 10rem;
+                height: fit-content;
+                background: var(--c14);
+                border-radius: 5px;
+                margin-bottom: 1rem;
+            }
+            
+            .center-flex.theme-appDFXCE2 {
+                display: flex;
+                flex-direction: row;
+                gap: 1rem;
+                flex-wrap: wrap;
+                align-content: flex-start;
+                justify-content: center;
+                align-items: flex-start;
+            }
+            
+            .avatarStack-2Dr8S9 img {
+                border-radius: 100%;
+                width: 32px;
+                height: 32px;
             }
             /*/////////////////////////////////////////////////////*/
             

@@ -156,7 +156,7 @@ $.each($('[popuserid]'), function() {
                                         '<div class="center-flex pvcard1231FDsaghfgh24ggg5SDFSDF">Bio</div>' +
                                         '<div class="center-flex pvcard1231FDsa24ggg5SDFSDF"> ' + boix + ' <!-- BIO--> </div>' +
                                         '</div>' +
-                                        '<div class="center-flex pvcard1231FDsa24ggg5SDFddSDF">View Profile</div>' +
+                                        '<div open_user userid="' + userid + '" class="center-flex pvcard1231FDsa24ggg5SDFddSDF">View Profile</div>' +
                                         '</div>';
                                     setTimeout(function() {
                                         $('[popopen_user]').html(profile_card)

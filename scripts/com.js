@@ -1,110 +1,3 @@
-firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-        $("[main_profile_uid_val]").val(user.uid);
-        $("[main_profile_email_val]").val(user.email);
-        let db = firebase.firestore().collection("users");
-        firebase.database().ref('/data/users/' + user.uid).once("value", snapshot => {
-            var ref = firebase.database().ref('/data/users/' + user.uid);
-            createTime = Date.now();
-            createTime = createTime.toString();
-            createTime = createTime.slice(0, -3);
-            createTime = parseInt(createTime);
-            ref.update({
-                onlineState: true,
-            });
-            ref.onDisconnect().update({
-                onlineState: false,
-                afkTimeout: createTime,
-            });
-            if (snapshot.val().username) {
-                console.log(snapshot.val().username)
-            } else {
-                firebase.database().ref('/data/users/' + user.uid).update({
-                    username: 'keyo' + createTime,
-                });
-            };
-            if (snapshot.val().userid) {
-                console.log(snapshot.val().userid)
-            } else {
-                firebase.database().ref('/data/users/' + user.uid).update({
-                    userid: user.uid
-                });
-            };
-            if (typeof snapshot.val().banner == "undefined") {
-                firebase.database().ref('/data/users/' + user.uid).update({
-                    banner: "/images/b1.jpg"
-                });
-            } else {
-                console.log(snapshot.val().banner)
-            };
-            if (typeof snapshot.val().profile_picture == "undefined") {
-                firebase.database().ref('/data/users/' + user.uid).update({
-                    profile_picture: "/images/icon.png"
-                });
-            } else {
-                console.log(snapshot.val().profile_picture)
-
-            };
-            if (snapshot.val().displayName) {
-                console.log(snapshot.val().displayName)
-            } else {
-                firebase.database().ref('/data/users/' + user.uid).update({
-                    displayName: user.displayName
-                });
-            };
-
-            if (snapshot.val().profile_picture) {
-                console.log(snapshot.val().profile_picture)
-            } else {
-                firebase.database().ref('/data/users/' + user.uid).update({
-                    profile_picture: user.photoURL
-                });
-            };
-        });
-        db.doc(user.uid).set({
-            id: user.uid,
-            name: user.displayName,
-        });
-        const data = firebase.database().ref('/data/users/' + user.uid);
-        data.on('value', function(snapshot) {
-
-            const displayName = (snapshot.val() && snapshot.val().displayName);
-            const profile_picture = (snapshot.val() && snapshot.val().profile_picture);
-            const banner = (snapshot.val() && snapshot.val().banner);
-            const bio = (snapshot.val() && snapshot.val().bio);
-            const onlineState = (snapshot.val() && snapshot.val().onlineState);
-            $("[main_name]").text(displayName);
-            $("[main_name_val]").val(displayName);
-            $("[main_bio]").text(bio);
-            $("[main_bio_val]").val(bio);
-            $('head').prepend('<title>' + displayName + ' on AnimeKeyo.com</title>');
-            $("[main_name_alt]").attr('title', displayName);
-            $("[main_profile_banner]").css('background-image', 'url(' + banner + '),url(/images/b1.png)', 'background-position', 'center');
-            $("[main_profile_picture]").css('background-image', 'url(' + profile_picture + '),url(/images/icon.png)');
-
-            $('[main_profile_link]').on('click', function() {
-                window.location.href = "/u?id=" + user.uid;
-            });
-            $('[open_setting]').on('click', function() {
-                window.location.href = "/settings#Profile";
-            });
-            $('[logout_user]').on('click', function() {
-                firebase.auth().signOut();
-            });
-
-        });
-    } else {
-        const link = window.location.pathname;
-        alert(link);
-        if (link == "/login") {
-
-        } else if (link == "/") {
-
-        } else {
-            window.location.href = "/";
-        }
-    }
-});
 l1 = '<div class="tooltip"> <svg xmlns="http://www.w3.org/2000/svg" width="161" height="161" viewBox="0 0 161 161" fill="none"> <path d="M80.2775 79.8184H0.499023L80.2775 159.635V79.8184Z" fill="url(#paint0_linear)"/> <path d="M80.2783 79.8183V0.00195312L160.057 79.8183H80.2783Z" fill="url(#paint1_linear)"/> <path d="M80.2783 79.8164V159.633L160.057 79.8164H80.2783Z" fill="url(#paint2_linear)"/> <path d="M80.2773 80.8144V0.998047L0.498853 80.8144H80.2773Z" fill="url(#paint3_linear)"/> <rect width="56.4253" height="56.4253" transform="matrix(0.706939 -0.707275 0.706939 0.707275 40.3887 79.8184)" fill="url(#paint4_radial)"/> <g filter="url(#filter0_f)"> <rect width="56.4253" height="56.4253" transform="matrix(0.706939 -0.707275 0.706939 0.707275 40.3887 79.8184)" stroke="white" stroke-width="0.508822"/> </g> <defs> <filter id="filter0_f" x="36.6371" y="36.1586" width="87.2822" height="87.3204" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"> <feFlood flood-opacity="0" result="BackgroundImageFix"/> <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/> <feGaussianBlur stdDeviation="1.69607" result="effect1_foregroundBlur"/> </filter> <linearGradient id="paint0_linear" x1="94.693" y1="160.762" x2="-23.608" y2="132.12" gradientUnits="userSpaceOnUse"> <stop stop-color="#F9F9F9"/> <stop offset="1" stop-color="#D4D6DC"/> </linearGradient> <linearGradient id="paint1_linear" x1="161.184" y1="94.2406" x2="132.504" y2="-24.104" gradientUnits="userSpaceOnUse"> <stop stop-color="#E9EAED"/> <stop offset="1" stop-color="#C5C7CF"/> </linearGradient> <linearGradient id="paint2_linear" x1="153.773" y1="73.7268" x2="126.515" y2="182.818" gradientUnits="userSpaceOnUse"> <stop stop-color="#C5C7D0"/> <stop offset="1" stop-color="#CFD0D7"/> </linearGradient> <linearGradient id="paint3_linear" x1="6.78241" y1="86.9041" x2="34.0408" y2="-22.1876" gradientUnits="userSpaceOnUse"> <stop stop-color="#E6E7EA"/> <stop offset="1" stop-color="#F3F3F4"/> </linearGradient> <radialGradient id="paint4_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(23.4929 13.0727) rotate(67.9223) scale(37.8815 44.6858)"> <stop stop-color="#D7D8DE"/> <stop offset="1" stop-color="#F3F3F4"/> </radialGradient> </defs> </svg> <span class="tooltiptext">Partner</span> </div>';
 l2 = '<div class="tooltip"><svg width="192" height="192" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M95.6208 96.168H0L95.6208 191.834V96.168Z" fill="url(#paint0_linear)"/> <path d="M95.6211 96.1682V0.501953L191.242 96.1682H95.6211Z" fill="url(#paint1_linear)"/> <path d="M95.6211 96.1677V191.834L191.242 96.1677H95.6211Z" fill="url(#paint2_linear)"/> <path d="M95.6208 96.168H0L95.6208 0.501728V96.168Z" fill="url(#paint3_linear)"/> <rect width="67.6302" height="67.6302" transform="matrix(0.706939 -0.707275 0.706939 0.707275 47.8105 96.168)" fill="url(#paint4_linear)"/> <path fill-rule="evenodd" clip-rule="evenodd" d="M46.3965 96.168L95.6208 46.9203L144.845 96.168L95.6208 145.416L46.3965 96.168ZM49.2242 96.168L95.6208 142.587L142.017 96.168L95.6208 49.7494L49.2242 96.168Z" fill="url(#paint5_linear)"/> <path d="M51.502 139.5C25.502 126 14.002 106.5 8.00195 96.5H0.501953L10.502 106.5L82.502 179V177C74.902 157.4 87.1686 145.667 94.002 142.5L85.002 133.5C85.3353 140.333 77.7094 153.108 51.502 139.5Z" fill="#93E8FF"/> <path opacity="0.2" fill-rule="evenodd" clip-rule="evenodd" d="M84.5704 114.069C95.7666 124.276 110.657 130.501 127.002 130.501C153.769 130.501 176.638 113.807 185.764 90.2629L104.24 8.73828C80.6955 17.8647 64.002 40.7332 64.002 67.5006C64.002 83.8452 70.2261 98.736 80.4335 109.932L84.5704 114.069Z" fill="#74E4FF"/> <path d="M110.002 61.5L97.002 48.5C122.524 52.4265 106.879 19.0946 96.1034 1L138.002 42.5L179.502 84.5L140.502 60.5C101.702 36.9 104.169 51.1667 110.002 61.5Z" fill="url(#paint6_linear)"/> <g filter="url(#filter0_f)"> <path d="M96.002 28.5L97.1046 47.3974L116.002 48.5L97.1046 49.6026L96.002 68.5L94.8993 49.6026L76.002 48.5L94.8993 47.3974L96.002 28.5Z" fill="white"/> </g> <path d="M96.002 28.5L97.1046 47.3974L116.002 48.5L97.1046 49.6026L96.002 68.5L94.8993 49.6026L76.002 48.5L94.8993 47.3974L96.002 28.5Z" fill="white"/> <defs> <filter id="filter0_f" x="72.002" y="24.5" width="48" height="48" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"> <feFlood flood-opacity="0" result="BackgroundImageFix"/> <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/> <feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur"/> </filter> <linearGradient id="paint0_linear" x1="90.9997" y1="125.501" x2="63.7148" y2="156.688" gradientUnits="userSpaceOnUse"> <stop stop-color="#65B5FF"/> <stop offset="1" stop-color="#64E4FF"/> </linearGradient> <linearGradient id="paint1_linear" x1="219" y1="120.501" x2="176.684" y2="-3.38687" gradientUnits="userSpaceOnUse"> <stop offset="0.14601" stop-color="#8EECFF"/> <stop offset="1" stop-color="#A8EFFF"/> </linearGradient> <linearGradient id="paint2_linear" x1="183.711" y1="88.8688" x2="151.039" y2="219.624" gradientUnits="userSpaceOnUse"> <stop stop-color="#2E3DB0"/> <stop offset="1" stop-color="#55C1F2"/> </linearGradient> <linearGradient id="paint3_linear" x1="112.899" y1="-0.849905" x2="-3.35213" y2="24.8128" gradientUnits="userSpaceOnUse"> <stop stop-color="#2354C0"/> <stop offset="1" stop-color="#A3E9FF"/> </linearGradient> <linearGradient id="paint4_linear" x1="-14.5908" y1="27.5901" x2="83.8536" y2="23.0658" gradientUnits="userSpaceOnUse"> <stop offset="0.0203454" stop-color="#2A67C4"/> <stop offset="0.349209" stop-color="#2E3AB0"/> <stop offset="1" stop-color="#79E8FF"/> </linearGradient> <linearGradient id="paint5_linear" x1="96" y1="46.5015" x2="96.0434" y2="138.001" gradientUnits="userSpaceOnUse"> <stop stop-color="#D7F8FF"/> <stop offset="0.176669" stop-color="#9EEDFF"/> <stop offset="0.432173" stop-color="#66E3FF"/> <stop offset="0.685688" stop-color="white" stop-opacity="0"/> </linearGradient> <linearGradient id="paint6_linear" x1="135.002" y1="54" x2="96.002" y2="48" gradientUnits="userSpaceOnUse"> <stop stop-color="#D3F6FF"/> <stop offset="0.603219" stop-color="#D3F6FF"/> <stop offset="1" stop-color="white"/> </linearGradient> </defs> </svg> <span class="tooltiptext">Partner</span> </div>';
 l3 = '<svg width="198" height="188" viewBox="0 0 198 188" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M99.1503 42.9219L128.988 64.1793L157.117 85.0371L146 119L134.976 153.181L99.1503 153.934L63.3249 153.181L52.4891 119.033L41.1836 85.0371L70.3121 64.1793L99.1503 42.9219Z" fill="url(#paint0_linear)"/> <path d="M99.1504 42.9224V0L197.872 71.6804L157.096 84.9863L99.1504 42.9224Z" fill="url(#paint1_linear)"/> <path d="M99.1507 43.3521V0.429688L0 72.1101L41.2055 84.9868L99.1507 43.3521Z" fill="url(#paint2_linear)"/> <path d="M134.776 153.232L160 187.5L197.872 71.6797L157.096 84.9856L134.776 153.232Z" fill="url(#paint3_linear)"/> <path d="M63.5249 153.232L37.7715 187.57H160.1L134.776 153.232H63.5249Z" fill="url(#paint4_linear)"/> <path d="M63.5256 153.233L37.7722 187.571L0.429688 72.1094L41.2059 84.9861L63.5256 153.233Z" fill="url(#paint5_linear)"/> <path d="M99 43.5C35.5 83.689 28 78.5 2.5 70.5L0 72L41 85.5L99 43.5Z" fill="#64DBFF"/> <path opacity="0.2" d="M50.5 129C34.9 158.2 12.6667 109.5 3.5 81.5L20.5 135L38 187.5C39 177.5 41 136.5 63.5 153L50.5 113C51.7 123.4 51 128 50.5 129Z" fill="url(#paint6_linear)"/> <path opacity="0.2" fill-rule="evenodd" clip-rule="evenodd" d="M178.284 130.388C167.237 136.512 154.526 140 141 140C98.4741 140 64 105.526 64 63C64 43.3903 71.3304 25.4927 83.4005 11.8979L99.5 0.5L197.5 72L178.284 130.388Z" fill="#74E4FF"/> <path d="M154.5 62C142.009 61.4638 110.333 50.6667 99 43L157 85C164 69.5 175 68.5 198 72L116 12.5C147.5 38.5 172.5 62.7727 154.5 62Z" fill="url(#paint7_linear)"/> <path fill-rule="evenodd" clip-rule="evenodd" d="M99.1411 41.6875L129.577 63.3709L158.292 84.6638L146.952 119.307L146.951 119.311L135.71 154.166L99.1511 154.935L62.5891 154.166L51.541 119.349L51.5368 119.336L40.0029 84.6538L69.7251 63.3708L99.1411 41.6875ZM99.1611 44.1574L70.8952 64.9929L42.366 85.4216L53.4432 118.731L64.0624 152.197L99.1511 152.934L134.243 152.197L145.049 118.693L145.05 118.689L155.943 85.4116L128.401 64.9887L99.1611 44.1574Z" fill="url(#paint8_linear)"/> <path opacity="0.1" d="M104.5 187.5C78.8997 172.7 94.833 158.833 106 153.5H135.5L160 187.5H104.5Z" fill="white"/> <g filter="url(#filter0_f)"> <path d="M156 66L157.322 81.6781L173 83L157.322 84.3219L156 100L154.678 84.3219L139 83L154.678 81.6781L156 66Z" fill="white"/> </g> <path d="M156 66L157.322 81.6781L173 83L157.322 84.3219L156 100L154.678 84.3219L139 83L154.678 81.6781L156 66Z" fill="white"/> <path d="M156 61L157.851 61.0746L159.689 61.2978L161.504 61.6683L163.283 62.1837L165.015 62.8405L166.689 63.6345L168.293 64.5606L169.817 65.6128L171.252 66.7843L172.588 68.0673L173.816 69.4538L174.929 70.9345L175.919 72.5L176.779 74.1401L177.505 75.8441L178.092 77.601L178.535 79.3994L178.832 81.2277L178.981 83.0739V84.9261L178.832 86.7723L178.535 88.6006L178.092 90.399L177.505 92.1559L176.779 93.8599L175.919 95.5L174.929 97.0655L173.816 98.5462L172.588 99.9327L171.252 101.216L169.817 102.387L168.293 103.439L166.689 104.365L165.015 105.16L163.283 105.816L161.504 106.332L159.689 106.702L157.851 106.925L156 107L154.149 106.925L152.311 106.702L150.496 106.332L148.717 105.816L146.985 105.16L145.311 104.365L143.707 103.439L142.183 102.387L140.748 101.216L139.412 99.9327L138.184 98.5462L137.071 97.0655L136.081 95.5L135.221 93.8599L134.495 92.1559L133.908 90.399L133.465 88.6006L133.168 86.7723L133.019 84.9261V83.0739L133.168 81.2277L133.465 79.3994L133.908 77.601L134.495 75.8441L135.221 74.1401L136.081 72.5L137.071 70.9345L138.184 69.4538L139.412 68.0673L140.748 66.7843L142.183 65.6128L143.707 64.5606L145.311 63.6345L146.985 62.8405L148.717 62.1837L150.496 61.6683L152.311 61.2978L154.149 61.0746L156 61Z" fill="white" fill-opacity="0.17"/> <defs> <filter id="filter0_f" x="135" y="62" width="42" height="42" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"> <feFlood flood-opacity="0" result="BackgroundImageFix"/> <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/> <feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur"/> </filter> <linearGradient id="paint0_linear" x1="75.9995" y1="178.5" x2="173.694" y2="42.3993" gradientUnits="userSpaceOnUse"> <stop offset="0.0203454" stop-color="#2A67C4"/> <stop offset="0.349209" stop-color="#2E3AB0"/> <stop offset="1" stop-color="#79E8FF"/> </linearGradient> <linearGradient id="paint1_linear" x1="95.6021" y1="108.13" x2="77.068" y2="20.4284" gradientUnits="userSpaceOnUse"> <stop offset="0.14601" stop-color="#A5F0FF"/> <stop offset="1" stop-color="#BAF3FF"/> </linearGradient> <linearGradient id="paint2_linear" x1="16.515" y1="93.2236" x2="-5.85897" y2="11.0055" gradientUnits="userSpaceOnUse"> <stop stop-color="#7CD0FF"/> <stop offset="1" stop-color="#2354C0"/> </linearGradient> <linearGradient id="paint3_linear" x1="144.56" y1="187.856" x2="113.737" y2="79.577" gradientUnits="userSpaceOnUse"> <stop stop-color="#55C1F2"/> <stop offset="1" stop-color="#2E3DB0"/> </linearGradient> <linearGradient id="paint4_linear" x1="178.5" y1="176.5" x2="70.2044" y2="231.201" gradientUnits="userSpaceOnUse"> <stop stop-color="#64E4FF"/> <stop offset="0.630208" stop-color="#458CD7"/> <stop offset="1" stop-color="#458CD7"/> </linearGradient> <linearGradient id="paint5_linear" x1="41.1297" y1="144.752" x2="-3.47915" y2="120.03" gradientUnits="userSpaceOnUse"> <stop stop-color="#5BB2EC"/> <stop offset="1" stop-color="#48D5FF"/> </linearGradient> <linearGradient id="paint6_linear" x1="57" y1="144" x2="18" y2="147" gradientUnits="userSpaceOnUse"> <stop stop-color="#FBFEFF"/> <stop offset="1" stop-color="#93E8FF" stop-opacity="0"/> </linearGradient> <linearGradient id="paint7_linear" x1="152.5" y1="41" x2="143" y2="77" gradientUnits="userSpaceOnUse"> <stop stop-color="white" stop-opacity="0.36"/> <stop offset="1" stop-color="white"/> </linearGradient> <linearGradient id="paint8_linear" x1="159.251" y1="41.6421" x2="54.2006" y2="151.474" gradientUnits="userSpaceOnUse"> <stop stop-color="#D7F8FF"/> <stop offset="0.176669" stop-color="#52B5EC"/> <stop offset="0.432173" stop-color="#CAF4FD"/> <stop offset="0.685688" stop-color="#D4F4FB" stop-opacity="0"/> </linearGradient> </defs> </svg> ';
@@ -145,7 +38,24 @@ icon_facebook = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xli
 small_loader = '<style>small_loader svg { animation: loading 0.5s linear infinite } @keyframes loading { to { transform: rotate(359deg) } }</style><loading class=" center-flex"><small_loader>' + icon_loader + '</small_loader></loading>';
 icon_account_circle = '<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>';
 post = '<script src="/scripts/post.js"></script><div class="center-flex theme-45FFDWEQArR3"><div class="full-wh center-flex theme-45FFDtEQAKR3"><div class="center-flex theme-4yFFDWEQAKR3"><div class="center-flex theme-45uFDWEQAKR3">Create a post</div><div class="center-flex theme-45iFDWEQAKR3">Fill the following fields to create a new post</div></div><div class="center-flex theme-45FFDWoQAKR3" click_upload_image>Upload Image</div><input class="theme-45FGDWoQAKR3" type="text" dec_input><div class="center-flex theme-45FFDWpQAKR3"><div go class="center-flex theme-45aFDWEQAKR3">Create post</div><div class="center-flex theme-45sFDWEQAKR3" hidepostjs>Cancel</div></div></div></div><input style="display: none;" upload_image type="file" class="imgur" accept="image/*" data-max-size="5000" /><hidden hidden></hidden>';
-header = '<script src="/scripts/search_user.js"></script><non class="full-wh main center-flex relative"><logo>animekeyo.</logo>    <user-search class=" center-flex absolute" style="height: 0rem;padding: 0rem;overflow: hidden;"><non-ffg import_search_data></non-ffg><a search_bar_close>Close</a></user-search><search class="center-flex"><non class="center-flex">' + icon_search + '</non><input placeholder="Search for rooms, users or categories" class="center-flex" type="search" search_users></search><div class="theme-fdfsd556ds"><profile-pic tippy data-tippy-content="Profile" data-aos="zoom-in" data-aos-duration="050" class="full-bg center-flex" main_profile_picture main_profile_link></profile-pic><div tippy data-tippy-content="Settings" data-aos="zoom-in" data-aos-duration="050" open_setting class="theme-fdfsdg56ds  center-flex">' + icon_setting + '</div></div></non>';
+
+header = '<script src="/scripts/search_user.js"></script><non class="full-wh main center-flex relative"><logo>animekeyo.</logo>    <user-search class=" center-flex absolute" style="height: 0rem;padding: 0rem;overflow: hidden;"><non-ffg import_search_data></non-ffg><a search_bar_close>Close</a></user-search><search class="center-flex"><non class="center-flex">' + icon_search + '</non><input placeholder="Search for rooms, users or categories" class="center-flex" type="search" search_users></search><div class="theme-fdfsd556ds">' +
+    '<div class=" relative full-bg center-flex theme-dfsdSDF2344DaFG">' +
+    '<svg main_profile_link xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32" fill="none">' +
+    '<foreignObject x="0" y="0" width="32" height="32">' +
+    '<div class="avatarStack-2Dr8S9">' +
+    '<img main_user_profile_pic_src src="https://i.imgur.com/FcQgh1B.png">' +
+    '</div>' +
+    '</foreignObject>' +
+    '<g id="Frame 1" clip-path="url(#clip0)">' +
+    '<rect width="32" height="32"></rect>' +
+    '<rect id="pfp 1" width="32" height="32" rx="16" fill="url(#pattern0)"></rect>' +
+    '<circle id="Ellipse 2" cx="27" cy="27" r="8.5" fill="var(--c15)"></circle>' +
+    '<circle id="Ellipse 1" cx="27" cy="27" r="5" tippy="" fill="var(--c7)" data-tippy-content="Online"></circle>' +
+    '</g></svg>' +
+    '</div>' +
+    '<div tippy data-tippy-content="Home" data-aos="zoom-in" data-aos-duration="050" open_home class="theme-fdfsdg56ds  center-flex">' + icon_home + '</div>' +
+    '<div tippy data-tippy-content="Settings" data-aos="zoom-in" data-aos-duration="050" open_setting class="theme-fdfsdg56ds  center-flex">' + icon_setting + '</div></div></non>';
 /////////////////////////////MOBILE HEADER///////////////////////////
 
 
@@ -218,5 +128,5 @@ $('[icon_search]').html(icon_search);
 $('[icon_home]').html(icon_home);
 $('[icon_close]').html(icon_close);
 $('[icon_explore]').html(icon_explore);
-
+$('body').prepend('<div  class="mobile-header">' + mobile_header + '</div><header class="full-wh center-flex" header>' + header + '</header>')
 AOS.init();

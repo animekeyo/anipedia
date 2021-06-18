@@ -4,28 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="manifest" href="manifest.webmanifest?clear-126">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Document</title>
     <style>
-        @import url("/styles/main.css?clear32dfs423");
-        body {
-            background: white;
-        }
+        @import url("/styles/main.css?clear-119");
     </style>
 </head>
+<!---//////////////////////////------jquery------/////////////////////////--->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <!---/////////////////////////------sweetalert------/////////////////////////--->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.7/dist/sweetalert2.all.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<!---/////////////////////////------firebase------/////////////////////////--->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-firestore.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-analytics.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-app.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-auth.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-database.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase.min.js"></script>
-<!---/////////////////////////------jquery------/////////////////////////--->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <!---/////////////////////////------hammer------/////////////////////////--->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
 <!---/////////////////////////------aos------/////////////////////////--->
@@ -39,73 +28,340 @@
 <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
 <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<!---/////////////////////////------firebase------/////////////////////////--->
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-functions.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-performance.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-remote-config.js"></script>
 <!---/////////////////////////------MAIN SCRIPTS------/////////////////////////--->
-<script src="/scripts/purl.js"></script>
-<script src="/scripts/firebase.js"></script>
-<script src="/scripts/tippy.js"></script>
+<script src="/scripts/purl.js?clear-111"></script>
+<script src="/scripts/firebase.js?clear-111"></script>
+<script src="/scripts/tippy.js?clear-111"></script>
+<script src="/scripts/open_user.js?clear-111"></script>
+<script src="/scripts/com_1.js?clear-114"></script>
 <!----------------------------------------------------------------->
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-        font-family: 'Open Sans', sans-serif;
+    .center-flex.theme-px123DFDR {
+        position: relative;
+        width: 600px;
+        height: 600px;
+        background: var(--c15);
+        border-radius: 7px;
+        display: flex;
+        justify-content: flex-start;
+        overflow: hidden;
+        align-items: flex-start;
     }
     
-    #navigation {
-        position: fixed;
-        top: 0;
-        background-color: #1667F3;
-        height: 100%;
-        width: 30%;
-        left: -29%;
+    .center-flex.theme-px123DFDR1 {
+        width: -webkit-fill-available;
+        height: 186px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
     }
     
-    #navigation a {
-        display: block;
-        margin: 20px;
-        text-decoration: none;
-        color: #fff;
-    }
-    
-    body {
-        background-color: #fff;
-        background: url(https://s26.postimg.org/fi10zsufd/hammer.png) top no-repeat;
-    }
-    
-    pop {
-        position: fixed;
-        right: -10rem;
-        width: 10rem;
+    .absolute.center-flex.theme-px123DFDR3 {
+        display: flex;
+        width: -webkit-fill-available;
         height: -webkit-fill-available;
-        background: blue;
-        top: 0;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin: 0rem 1rem;
+        justify-content: flex-start;
+        align-items: flex-end;
+        align-content: center;
+    }
+    
+    .center-flex.theme-px123DFDR2 {
+        width: -webkit-fill-available;
+        height: 120px;
+        background-color: var(--c7);
+    }
+    
+    .center-flex.theme-px123DFDR4 {
+        margin: 1rem 0.8rem;
+        /* margin-left: 8rem; */
+        width: -webkit-fill-available;
+        display: flex;
+        align-items: flex-end;
+    }
+    
+    .center-flex.theme-px123DFDR4D {
+        padding: 0.5rem 1rem;
+        width: 6rem;
+        background: var(--c7);
+        color: var(--c6);
+        border-radius: 5px;
+        font-family: 'C1';
+        text-transform: uppercase;
+    }
+    
+    .center-flex.theme-px123DFDR45 {
+        margin: 1rem 1.3rem;
+        width: -webkit-fill-available;
+        height: -webkit-fill-available;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        justify-content: flex-start;
+        align-content: flex-start;
+    }
+    
+    .center-flex.theme-px123DFDR451 {
+        font-size: 20px;
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+    
+    px.center-flex.theme-px123DFDR4512 {
+        padding: 0.3rem 0.4rem;
+        background-color: var(--c14);
+        font-size: 0.7rem;
+        text-transform: lowercase;
+    }
+    
+    .theme-px123DFDR4513xc.center-flex.code-fsdfsdfFSDF.theme-FDSHGF45GFFFS {
+        margin: unset;
+    }
+    
+    .full-wh.center-flex.theme-px123DFDR3Z img {
+        width: 105px;
+        height: 105px;
+        border-radius: 100rem;
+    }
+    
+    .center-flex.absolute.full-wh.theme-px123DFDRG {
+        background: #151a2170;
+    }
+    
+    .center-flex.theme-px123DFDR451s {
+        display: flex;
+        flex-direction: row;
+        width: -webkit-fill-available;
+        justify-content: flex-start;
+        height: 55px;
+        gap: 40px;
+        font-size: 0.85rem;
+        color: var(--c10);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        text-transform: capitalize;
+        letter-spacing: 0.3px;
+    }
+    
+    px.center-flex.theme-px123DFDR4511s {
+        border-bottom: 2px solid var(--c10);
+        height: inherit;
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+    
+    .center-flex.gtheme-px123DFFG.pvcard1231FDsaghfgh24ggg5SDFSDF,
+    .center-flex.gtheme-px123DFFG.pvcard1231FDsa24ggg5SDFSDF {
+        margin: unset;
+    }
+    
+    div[FOLLOW_EXMO] {
+        z-index: 1;
     }
 </style>
-<div style="background: black; width: 100px; height: 60;color: white;" go_to_owner>
-    GO TO OWNRE
-</div>
-<pop class="the-mefsdfs">
-
-</pop>
 
 <body>
-    <script>
-        $(document).on('click', '[go_to_owner]', function() {
-            if ($('pop').hasClass('the-mefsdfs')) {
+    <div class="center-flex fixed full-wh theme-fil123DX">
+        <div class="center-flex absolute full-wh theme-px123DFDRG">
 
-                $('pop').removeClass('the-mefsdfs')
-                $('pop').animate({
-                    right: '0rem'
-                })
+        </div>
+        <div class="center-flex theme-px123DFDR">
+            <div class="relative center-flex theme-px123DFDR1">
+                <div BANNER_EXMO class="center-flex full-bg theme-px123DFDR2">
 
-            } else {
-                $('pop').addClass('the-mefsdfs')
-                $('pop').animate({
-                    right: '-10rem'
-                })
-            }
-        })
-    </script>
+                </div>
+                <div class="center-flex theme-px123DFDR4">
+                    <div SFBTN_EXMO class="center-flex theme-px123DFDR4D">
+                        <div import_small_loader></div>
+                        <!--Follow/Unfollow-->
+                    </div>
+                </div>
+                <div class="absolute center-flex theme-px123DFDR3">
+
+                    <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+                        
+                    <circle cx="60" cy="60" r="60" fill="#0B0E11"/>
+                    
+                    <foreignObject x="0" y="0" width="120" height="120">
+                        <div class="full-wh center-flex theme-px123DFDR3Z">
+                            <!--Profile Image-->
+                            <img PFP_EXMO src="https://i.imgur.com/WntP0vl.jpg">
+                        </div>
+                    </foreignObject>
+                    <circle cx="100" cy="92" r="19" fill="#0B0E11"/>
+                    <circle cx="100" cy="92" r="12" fill="#43B581"/>
+                    <defs>
+                    </defs>
+                    </svg>
+
+                </div>
+            </div>
+            <div class="center-flex theme-px123DFDR45">
+                <div class="center-flex theme-px123DFDR451">
+                    <px NAME_EXMO class="center-flex theme-px123DFDR4511">
+                        <!--DisplayName-->
+                    </px>
+                    <px class="center-flex theme-px123DFDR4512">
+                        <!--Time-->
+
+                    </px>
+                </div>
+
+                <div class="center-flex theme-px123DFDR4513x">
+                    <badge class="center-flex theme-px123DFDR4513xc code-fsdfsdfFSDF theme-FDSHGF45GFFFS">
+                        <!--Badges-->
+                    </badge>
+                </div>
+
+                <div class="center-flex theme-px123DFDR451s">
+                    <px class="center-flex theme-px123DFDR4511s">
+                        Main
+                    </px>
+                    <px class="center-flex theme-px123DFDR4511s">
+                        Followers
+                        <count>
+                            10
+                        </count>
+                    </px>
+                    <px class="center-flex theme-px123DFDR4511s">
+                        Following
+                        <count>
+                            10
+                        </count>
+                    </px>
+                </div>
+                <div MAIN_CONTEXT class="theme-px123DFFG">
+                    <div class="center-flex gtheme-px123DFFG pvcard1231FDsaSSDF">
+                        <div class="center-flex gtheme-px123DFFG pvcard1231FDsaghfgh24ggg5SDFSDF">Bio</div>
+                        <div BIO_EXMO class="center-flex gtheme-px123DFFG pvcard1231FDsa24ggg5SDFSDF">
+
+                            <!-- BIO-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/scripts/com.js?clear-200"></script>
+        <script>
+            const rexo = firebase.database().ref('/data/users/46kuBQQ2FcfaPfE4iXSPzF80mPL2');
+
+            rexo.once('value', function(snapshot) {
+                const currentUserID = firebase.auth().currentUser.uid;
+                const userid = (snapshot.val() && snapshot.val().userid);
+                const displayName = (snapshot.val() && snapshot.val().displayName);
+                const profile_picture = (snapshot.val() && snapshot.val().profile_picture);
+                const banner = (snapshot.val() && snapshot.val().banner);
+                const bio = (snapshot.val() && snapshot.val().bio);
+                const onlineState = (snapshot.val() && snapshot.val().onlineState);
+                const afkTimeout = (snapshot.val() && snapshot.val().afkTimeout);
+                const username = (snapshot.val() && snapshot.val().username);
+
+                if (snapshot.exists()) {
+
+                    if (bio == 0) {
+                        if (userid == userid) {
+                            $("[BIO_EXMO]").html('<div click_bio_add class="theme-FFGEKOGGF33DF" open_setting>Empty Bio!!! Click <span style="color:var(--c19)">Here</span> to add bio. </div>');
+                        } else {
+                            $("[BIO_EXMO]").text('Looks like ' + displayName + ' didnt add bio!');
+                        }
+                    } else {
+                        if (typeof bio == "undefined") {
+                            if (userid == userid) {
+                                $("[BIO_EXMO]").html('<div click_bio_add class="theme-FFGEKOGGF33DF" open_setting>Empty Bio!!! Click <span style="color:var(--c19)">Here</span> to add bio. </div>');
+                            } else {
+                                $("[BIO_EXMO]").text('Looks like ' + displayName + ' didnt add bio!');
+                            }
+                        } else {
+                            ///////////////////STP///////////////
+
+                            const st2 = bio.replace(/(<([^>]+)>)/gi, "");
+                            const st3 = st2.replace(/\[/g, '<span stb class="pointer theme-FDFgdf3243FDSDF">');
+                            const st4 = st3.replace(/\]/g, '</span>');
+                            $('[BIO_EXMO]').html(st4);
+
+                            $(document).on('click', '[stb]', function() {
+                                $(this).css('color', 'var(--c9)');
+                                $(this).css('cursor', 'unset');
+                            });
+                            //////////////////////////////////////
+                            $.getScript('/scripts/linky.js', function() {});
+                        };
+                    }
+                    if (userid == currentUserID) {
+
+                        $('[SFBTN_EXMO]').html('<div open_setting><!--BTN-->Setting</div>');
+                    } else {
+
+                        $('[SFBTN_EXMO]').html('<div FOLLOW_EXMO><!--BTN-->Follow</div>');
+
+                    }
+
+                    const ruf = firebase.database().ref('/data/users/' + currentUserID + '/following/' + userid);
+                    const rxf = firebase.database().ref('/data/users/' + userid + '/followers/' + currentUserID);
+
+                    setTimeout(function() {
+                        ruf.on('value', function(snapshot) {
+                            const follow = (snapshot.val() && snapshot.val().follow);
+
+                            if (follow == true) {
+                                $("[FOLLOW_EXMO]").text("Unfollow");
+                            } else {
+                                $("[FOLLOW_EXMO]").text("Follow");
+                            };
+
+                        });
+                    }, 0001)
+
+
+                    $(document).on('click', '[FOLLOW_EXMO]', function() {
+                        ruf.once('value', function(snapshot) {
+                            const follow = (snapshot.val() && snapshot.val().follow);
+                            if (follow == true) {
+                                ruf.remove();
+                            } else {
+                                ruf.update({
+                                    follow: true,
+                                    id: userid,
+                                });
+                            };
+                        });
+                        rxf.once('value', function(snapshot) {
+                            const follow = (snapshot.val() && snapshot.val().follow);
+                            if (follow == true) {
+                                rxf.remove();
+                            } else {
+                                rxf.update({
+                                    follow: true,
+                                    id: currentUserID,
+                                });
+                            };
+                        });
+
+                    });
+
+
+
+                    $('[NAME_EXMO]').text(displayName);
+                    $('[PFP_EXMO]').attr('src', profile_picture);
+                    $('[BANNER_EXMO]').css('background-image', 'url(' + banner + '),url(/images/banner.png)');
+                }
+            });
+        </script>
 </body>
 
 </html>
