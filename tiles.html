@@ -49,7 +49,9 @@
 <style>
     .center-flex.theme-px123DFDR {
         position: relative;
-        width: 600px;
+        max-width: 600px;
+        width: -webkit-fill-available;
+        margin-top: 2.5rem;
         height: 600px;
         background: var(--c15);
         border-radius: 7px;
@@ -173,6 +175,10 @@
     div[FOLLOW_EXMO] {
         z-index: 1;
     }
+    
+    .center-flex.fixed.full-wh.theme-fil123DX {
+        z-index: 11111111;
+    }
 </style>
 
 <body>
@@ -204,7 +210,7 @@
                         </div>
                     </foreignObject>
                     <circle cx="100" cy="92" r="19" fill="#0B0E11"/>
-                    <circle cx="100" cy="92" r="12" fill="#43B581"/>
+                    <circle ONLINE_EXMO cx="100" cy="92" r="12"/>
                     <defs>
                     </defs>
                     </svg>
@@ -256,112 +262,117 @@
                 </div>
             </div>
         </div>
-        <script src="/scripts/com.js?clear-200"></script>
-        <script>
-            const rexo = firebase.database().ref('/data/users/46kuBQQ2FcfaPfE4iXSPzF80mPL2');
+    </div>
+    <script src="/scripts/com.js?clear-201"></script>
+    <script>
+        const rexo = firebase.database().ref('/data/users/46kuBQQ2FcfaPfE4iXSPzF80mPL2');
 
-            rexo.once('value', function(snapshot) {
-                const currentUserID = firebase.auth().currentUser.uid;
-                const userid = (snapshot.val() && snapshot.val().userid);
-                const displayName = (snapshot.val() && snapshot.val().displayName);
-                const profile_picture = (snapshot.val() && snapshot.val().profile_picture);
-                const banner = (snapshot.val() && snapshot.val().banner);
-                const bio = (snapshot.val() && snapshot.val().bio);
-                const onlineState = (snapshot.val() && snapshot.val().onlineState);
-                const afkTimeout = (snapshot.val() && snapshot.val().afkTimeout);
-                const username = (snapshot.val() && snapshot.val().username);
+        rexo.once('value', function(snapshot) {
+            const currentUserID = firebase.auth().currentUser.uid;
+            const userid = (snapshot.val() && snapshot.val().userid);
+            const displayName = (snapshot.val() && snapshot.val().displayName);
+            const profile_picture = (snapshot.val() && snapshot.val().profile_picture);
+            const banner = (snapshot.val() && snapshot.val().banner);
+            const bio = (snapshot.val() && snapshot.val().bio);
+            const onlineState = (snapshot.val() && snapshot.val().onlineState);
+            const afkTimeout = (snapshot.val() && snapshot.val().afkTimeout);
+            const username = (snapshot.val() && snapshot.val().username);
 
-                if (snapshot.exists()) {
-
-                    if (bio == 0) {
+            if (snapshot.exists()) {
+                if (onlineState == true) {
+                    $('[ONLINE_EXMO]').attr('fill', 'var(--c7)');
+                } else {
+                    $('[ONLINE_EXMO]').attr('fill', 'var(--c13)');
+                }
+                if (bio == 0) {
+                    if (userid == userid) {
+                        $("[BIO_EXMO]").html('<div click_bio_add class="theme-FFGEKOGGF33DF" open_setting>Empty Bio!!! Click <span style="color:var(--c19)">Here</span> to add bio. </div>');
+                    } else {
+                        $("[BIO_EXMO]").text('Looks like ' + displayName + ' didnt add bio!');
+                    }
+                } else {
+                    if (typeof bio == "undefined") {
                         if (userid == userid) {
                             $("[BIO_EXMO]").html('<div click_bio_add class="theme-FFGEKOGGF33DF" open_setting>Empty Bio!!! Click <span style="color:var(--c19)">Here</span> to add bio. </div>');
                         } else {
                             $("[BIO_EXMO]").text('Looks like ' + displayName + ' didnt add bio!');
                         }
                     } else {
-                        if (typeof bio == "undefined") {
-                            if (userid == userid) {
-                                $("[BIO_EXMO]").html('<div click_bio_add class="theme-FFGEKOGGF33DF" open_setting>Empty Bio!!! Click <span style="color:var(--c19)">Here</span> to add bio. </div>');
-                            } else {
-                                $("[BIO_EXMO]").text('Looks like ' + displayName + ' didnt add bio!');
-                            }
+                        ///////////////////STP///////////////
+
+                        const st2 = bio.replace(/(<([^>]+)>)/gi, "");
+                        const st3 = st2.replace(/\[/g, '<span stb class="pointer theme-FDFgdf3243FDSDF">');
+                        const st4 = st3.replace(/\]/g, '</span>');
+                        $('[BIO_EXMO]').html(st4);
+
+                        $(document).on('click', '[stb]', function() {
+                            $(this).css('color', 'var(--c9)');
+                            $(this).css('cursor', 'unset');
+                        });
+                        //////////////////////////////////////
+                        $.getScript('/scripts/linky.js', function() {});
+                    };
+                }
+                if (userid == currentUserID) {
+
+                    $('[SFBTN_EXMO]').html('<div open_setting><!--BTN-->Setting</div>');
+                } else {
+
+                    $('[SFBTN_EXMO]').html('<div FOLLOW_EXMO><!--BTN-->Follow</div>');
+
+                }
+
+                const ruf = firebase.database().ref('/data/users/' + currentUserID + '/following/' + userid);
+                const rxf = firebase.database().ref('/data/users/' + userid + '/followers/' + currentUserID);
+
+                setTimeout(function() {
+                    ruf.on('value', function(snapshot) {
+                        const follow = (snapshot.val() && snapshot.val().follow);
+
+                        if (follow == true) {
+                            $("[FOLLOW_EXMO]").text("Unfollow");
                         } else {
-                            ///////////////////STP///////////////
-
-                            const st2 = bio.replace(/(<([^>]+)>)/gi, "");
-                            const st3 = st2.replace(/\[/g, '<span stb class="pointer theme-FDFgdf3243FDSDF">');
-                            const st4 = st3.replace(/\]/g, '</span>');
-                            $('[BIO_EXMO]').html(st4);
-
-                            $(document).on('click', '[stb]', function() {
-                                $(this).css('color', 'var(--c9)');
-                                $(this).css('cursor', 'unset');
-                            });
-                            //////////////////////////////////////
-                            $.getScript('/scripts/linky.js', function() {});
+                            $("[FOLLOW_EXMO]").text("Follow");
                         };
-                    }
-                    if (userid == currentUserID) {
-
-                        $('[SFBTN_EXMO]').html('<div open_setting><!--BTN-->Setting</div>');
-                    } else {
-
-                        $('[SFBTN_EXMO]').html('<div FOLLOW_EXMO><!--BTN-->Follow</div>');
-
-                    }
-
-                    const ruf = firebase.database().ref('/data/users/' + currentUserID + '/following/' + userid);
-                    const rxf = firebase.database().ref('/data/users/' + userid + '/followers/' + currentUserID);
-
-                    setTimeout(function() {
-                        ruf.on('value', function(snapshot) {
-                            const follow = (snapshot.val() && snapshot.val().follow);
-
-                            if (follow == true) {
-                                $("[FOLLOW_EXMO]").text("Unfollow");
-                            } else {
-                                $("[FOLLOW_EXMO]").text("Follow");
-                            };
-
-                        });
-                    }, 0001)
-
-
-                    $(document).on('click', '[FOLLOW_EXMO]', function() {
-                        ruf.once('value', function(snapshot) {
-                            const follow = (snapshot.val() && snapshot.val().follow);
-                            if (follow == true) {
-                                ruf.remove();
-                            } else {
-                                ruf.update({
-                                    follow: true,
-                                    id: userid,
-                                });
-                            };
-                        });
-                        rxf.once('value', function(snapshot) {
-                            const follow = (snapshot.val() && snapshot.val().follow);
-                            if (follow == true) {
-                                rxf.remove();
-                            } else {
-                                rxf.update({
-                                    follow: true,
-                                    id: currentUserID,
-                                });
-                            };
-                        });
 
                     });
+                }, 0001)
+
+
+                $(document).on('click', '[FOLLOW_EXMO]', function() {
+                    ruf.once('value', function(snapshot) {
+                        const follow = (snapshot.val() && snapshot.val().follow);
+                        if (follow == true) {
+                            ruf.remove();
+                        } else {
+                            ruf.update({
+                                follow: true,
+                                id: userid,
+                            });
+                        };
+                    });
+                    rxf.once('value', function(snapshot) {
+                        const follow = (snapshot.val() && snapshot.val().follow);
+                        if (follow == true) {
+                            rxf.remove();
+                        } else {
+                            rxf.update({
+                                follow: true,
+                                id: currentUserID,
+                            });
+                        };
+                    });
+
+                });
 
 
 
-                    $('[NAME_EXMO]').text(displayName);
-                    $('[PFP_EXMO]').attr('src', profile_picture);
-                    $('[BANNER_EXMO]').css('background-image', 'url(' + banner + '),url(/images/banner.png)');
-                }
-            });
-        </script>
+                $('[NAME_EXMO]').text(displayName);
+                $('[PFP_EXMO]').attr('src', profile_picture);
+                $('[BANNER_EXMO]').css('background-image', 'url(' + banner + '),url(/images/banner.png)');
+            }
+        });
+    </script>
 </body>
 
 </html>

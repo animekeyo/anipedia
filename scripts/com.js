@@ -130,3 +130,18 @@ $('[icon_close]').html(icon_close);
 $('[icon_explore]').html(icon_explore);
 $('body').prepend('<div  class="mobile-header">' + mobile_header + '</div><header class="full-wh center-flex" header>' + header + '</header>')
 AOS.init();
+
+/////// PEOPLE LIST ONLINE/OFFLINE ////////
+setTimeout(
+        function() {
+            $('body').prepend('<div load_off></div>')
+            setTimeout(
+                function() {
+                    $("[load_off]").load("online&offline-users.html?clear-161");
+                },
+                0000
+            )
+        },
+        0000
+    )
+    /////// PEOPLE LIST ONLINE/OFFLINE ////////
