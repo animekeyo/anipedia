@@ -2757,6 +2757,183 @@
             }
             /*/////////////////////////////////////////////////////*/
             
+            .center-flex.theme-px123DFDR {
+                position: relative;
+                max-width: 600px;
+                width: -webkit-fill-available;
+                margin-top: 2.5rem;
+                height: 700px;
+                background: var(--c15);
+                border-radius: 7px;
+                display: flex;
+                justify-content: flex-start;
+                overflow: hidden;
+                align-items: flex-start;
+            }
+            
+            .center-flex.theme-px123DFDR1 {
+                width: -webkit-fill-available;
+                height: 286px;
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+            }
+            
+            .absolute.center-flex.theme-px123DFDR3 {
+                display: flex;
+                width: -webkit-fill-available;
+                height: -webkit-fill-available;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                margin: 0rem 1rem;
+                justify-content: flex-start;
+                align-items: flex-end;
+                align-content: center;
+            }
+            
+            .center-flex.theme-px123DFDR2 {
+                width: -webkit-fill-available;
+                height: 220px;
+                background-color: var(--c7);
+            }
+            
+            .center-flex.theme-px123DFDR4 {
+                margin: 1rem 0.8rem;
+                /* margin-left: 8rem; */
+                width: -webkit-fill-available;
+                display: flex;
+                align-items: flex-end;
+            }
+            
+            .center-flex.theme-px123DFDR4D {
+                padding: 0.5rem 1rem;
+                width: 6rem;
+                background: var(--c7);
+                color: var(--c6);
+                border-radius: 5px;
+                font-family: 'C1';
+            }
+            
+            .center-flex.theme-px123DFDR45 {
+                margin: 1rem 1.3rem;
+                width: -webkit-fill-available;
+                height: -webkit-fill-available;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+                justify-content: flex-start;
+                align-content: flex-start;
+            }
+            
+            .center-flex.theme-px123DFDR451 {
+                font-size: 20px;
+                display: flex;
+                flex-direction: row;
+                gap: 0.5rem;
+            }
+            
+            px.center-flex.theme-px123DFDR4512 {
+                padding: 0.3rem 0.4rem;
+                background-color: var(--c14);
+                font-size: 0.7rem;
+                text-transform: lowercase;
+            }
+            
+            .theme-px123DFDR4513xc.center-flex.code-fsdfsdfFSDF.theme-FDSHGF45GFFFS {
+                margin: unset;
+            }
+            
+            .full-wh.center-flex.theme-px123DFDR3Z img {
+                width: 105px;
+                height: 105px;
+                border-radius: 100rem;
+            }
+            
+            .center-flex.absolute.full-wh.theme-px123DFDRG {
+                background: #000000bf;
+            }
+            
+            .center-flex.theme-px123DFDR451s {
+                display: flex;
+                flex-direction: row;
+                width: -webkit-fill-available;
+                justify-content: flex-start;
+                height: 55px;
+                gap: 40px;
+                font-size: 0.85rem;
+                color: var(--c10);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+                text-transform: capitalize;
+                letter-spacing: 0.3px;
+            }
+            
+            px.center-flex.theme-px123DFDR4511sx {
+                height: inherit;
+                display: flex;
+                flex-direction: row;
+                gap: 0.5rem;
+                cursor: pointer;
+                user-select: none;
+            }
+            
+            px.center-flex.theme-px123DFDR4511s {
+                border-bottom: 2px solid var(--c10);
+                color: var(--c6);
+                cursor: default;
+            }
+            
+            px.center-flex.theme-px123DFDR4511sx:hover {
+                border-bottom: 2px solid var(--c10);
+                color: var(--c6);
+            }
+            
+            .center-flex.gtheme-px123DFFG.pvcard1231FDsaghfgh24ggg5SDFSDF,
+            .center-flex.gtheme-px123DFFG.pvcard1231FDsa24ggg5SDFSDF {
+                margin: unset;
+            }
+            
+            div[FOLLOW_EXMO] {
+                z-index: 1;
+            }
+            
+            .center-flex.fixed.full-wh.theme-fil123DX {
+                z-index: 1111;
+            }
+            
+            .center-flex.code-px12DECD.theme-dfsdSDfF2344DFG {
+                margin-bottom: 8px;
+                margin-top: 8px;
+            }
+            
+            .theme-px123DFFG {
+                width: -webkit-fill-available;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                align-content: flex-start;
+                flex-wrap: nowrap;
+                height: 270px;
+                justify-content: flex-start;
+                overflow-y: scroll;
+            }
+            
+            .theme-px123DFFG::-webkit-scrollbar {
+                display: none;
+            }
+            /* Hide scrollbar for IE, Edge and Firefox */
+            
+            .theme-px123DFFG {
+                -ms-overflow-style: none;
+                /* IE and Edge */
+                scrollbar-width: none;
+                /* Firefox */
+            }
+            
+            .center-flex.theme-ASerE {
+                margin-top: 6rem;
+            }
+            
             @media (max-width:980px) {
                 @media (max-width: 550px) {
                     .center-flex.theme-DFSDeeeeDSFSD123 {

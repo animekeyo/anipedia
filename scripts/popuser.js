@@ -143,7 +143,7 @@ $.each($('[popuserid]'), function() {
                                         '<div class="center-flex pvcard1231FDSDFSDF">' +
 
                                         '<div style="background-image:url(' + banner + ')" class="full-bg center-flex pvcard1231FDSfffdddseDFSDF">' +
-                                        '<div open_user userid="' + userid + '" style="background-image:url(' + profile_picture + ')" class="pointer full-bg center-flex pvcafsgdfd1231FDSDFSDF"> <!--PROFLE PIC--> </div>' +
+                                        '<div getview userid="' + userid + '" style="background-image:url(' + profile_picture + ')" class="pointer full-bg center-flex pvcafsgdfd1231FDSDFSDF"> <!--PROFLE PIC--> </div>' +
                                         '</div>' +
                                         '<div class="center-flex pvcard1231sdDSsdfDaaFSDF">' +
                                         '<div class="center-flex pvcard12sdcv31FDSDFSDF"> ' + displayName + ' <!--DISPLAY NAME-->  </div>' +
@@ -156,7 +156,7 @@ $.each($('[popuserid]'), function() {
                                         '<div class="center-flex pvcard1231FDsaghfgh24ggg5SDFSDF">Bio</div>' +
                                         '<div class="center-flex pvcard1231FDsa24ggg5SDFSDF"> ' + boix + ' <!-- BIO--> </div>' +
                                         '</div>' +
-                                        '<div open_user userid="' + userid + '" class="center-flex pvcard1231FDsa24ggg5SDFddSDF">View Profile</div>' +
+                                        '<div getview userid="' + userid + '" class="center-flex pvcard1231FDsa24ggg5SDFddSDF">View Profile</div>' +
                                         '</div>';
                                     setTimeout(function() {
                                         $('[popopen_user]').html(profile_card)
