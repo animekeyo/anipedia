@@ -121,13 +121,6 @@
 <!----------------------------------------------------------------->
 
 <body>
-
-    <div mobile_header class="mobile-header">
-
-    </div>
-    <header class="full-wh center-flex" header>
-
-    </header>
     <profile-info class="center-flex relative">
         <banner class="center-flex relative">
             <non-ag class="full-wh full-bg center-flex absolute" id="user_banner" style="background-image: url(&quot;https://i.imgur.com/5QjkdVH.jpg&quot;), url(&quot;/images/banner.png&quot;);">
@@ -233,76 +226,17 @@
 
         </div>
     </div>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js">
-    </script>
-    <script defer src="/scripts/com.js?clear-200"></script>
-    <script defer src="/scripts/goto.js"></script>
-    <script defer src="/scripts/flow.js?clear-112"></script>
+    <script src="/scripts/com.js?clear-202"></script>
+    <script src="/scripts/goto.js"></script>
+    <script src="/scripts/flow.js?clear-112"></script>
     <script src="/scripts/add_comment.js?clear-112"></script>
-    <script data-cfasync="false" type="text/javascript">
+    <script>
         $('[unhidepostjs]').on('click', function() {
             $('[import_postjs]').show();
         });
         $('[hidepostjs]').on('click', function() {
             $('[import_postjs]').hide();
         });
-
-        function timeDifference(current, previous) {
-
-            var sPerMinute = 60;
-            var sPerHour = sPerMinute * 60;
-            var sPerDay = sPerHour * 24;
-            var sPerMonth = sPerDay * 30;
-            var sPerYear = sPerDay * 365;
-
-            var elapsed = current - previous;
-            if (elapsed < sPerMinute) {
-                var output = Math.round(elapsed);
-                if (output == 1) {
-                    return Math.round(elapsed) + ' sec ago';
-                } else {
-                    return Math.round(elapsed) + ' secs ago';
-                }
-            } else if (elapsed < sPerHour) {
-                var output = Math.round(elapsed / sPerMinute);
-                if (output == 1) {
-                    return Math.round(elapsed / sPerMinute) + ' min ago';
-                } else {
-                    return Math.round(elapsed / sPerMinute) + ' mins ago';
-                }
-            } else if (elapsed < sPerDay) {
-                var output = Math.round(elapsed / sPerHour);
-                if (output == 1) {
-                    return Math.round(elapsed / sPerHour) + ' hr ago';
-                } else {
-                    return Math.round(elapsed / sPerHour) + ' hrs ago';
-                }
-            } else if (elapsed < sPerMonth) {
-                var output = Math.round(elapsed / sPerDay);
-                if (output == 1) {
-                    return Math.round(elapsed / sPerDay) + ' day ago';
-                } else {
-                    return Math.round(elapsed / sPerDay) + ' days ago';
-                }
-            } else if (elapsed < sPerYear) {
-                var output = Math.round(elapsed / sPerMonth);
-                if (output == 1) {
-                    return Math.round(elapsed / sPerMonth) + ' month ago';
-                } else {
-                    return Math.round(elapsed / sPerMonth) + ' months ago';
-                }
-            } else {
-                var output = Math.round(elapsed / sPerYear);
-                if (output == 1) {
-                    return Math.round(elapsed / sPerYear) + ' year ago';
-                } else {
-                    return Math.round(elapsed / sPerYear) + ' years ago';
-
-                }
-            }
-        }
     </script>
     <script>
         var url = window.location.href;

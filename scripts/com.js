@@ -145,3 +145,57 @@ setTimeout(
         0000
     )
     /////// PEOPLE LIST ONLINE/OFFLINE ////////
+function timeDifference(current, previous) {
+
+    var sPerMinute = 60;
+    var sPerHour = sPerMinute * 60;
+    var sPerDay = sPerHour * 24;
+    var sPerMonth = sPerDay * 30;
+    var sPerYear = sPerDay * 365;
+
+    var elapsed = current - previous;
+    if (elapsed < sPerMinute) {
+        var output = Math.round(elapsed);
+        if (output == 1) {
+            return Math.round(elapsed) + ' sec ago';
+        } else {
+            return Math.round(elapsed) + ' secs ago';
+        }
+    } else if (elapsed < sPerHour) {
+        var output = Math.round(elapsed / sPerMinute);
+        if (output == 1) {
+            return Math.round(elapsed / sPerMinute) + ' min ago';
+        } else {
+            return Math.round(elapsed / sPerMinute) + ' mins ago';
+        }
+    } else if (elapsed < sPerDay) {
+        var output = Math.round(elapsed / sPerHour);
+        if (output == 1) {
+            return Math.round(elapsed / sPerHour) + ' hr ago';
+        } else {
+            return Math.round(elapsed / sPerHour) + ' hrs ago';
+        }
+    } else if (elapsed < sPerMonth) {
+        var output = Math.round(elapsed / sPerDay);
+        if (output == 1) {
+            return Math.round(elapsed / sPerDay) + ' day ago';
+        } else {
+            return Math.round(elapsed / sPerDay) + ' days ago';
+        }
+    } else if (elapsed < sPerYear) {
+        var output = Math.round(elapsed / sPerMonth);
+        if (output == 1) {
+            return Math.round(elapsed / sPerMonth) + ' month ago';
+        } else {
+            return Math.round(elapsed / sPerMonth) + ' months ago';
+        }
+    } else {
+        var output = Math.round(elapsed / sPerYear);
+        if (output == 1) {
+            return Math.round(elapsed / sPerYear) + ' year ago';
+        } else {
+            return Math.round(elapsed / sPerYear) + ' years ago';
+
+        }
+    }
+}

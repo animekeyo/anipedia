@@ -177,7 +177,7 @@
     }
     
     .center-flex.fixed.full-wh.theme-fil123DX {
-        z-index: 11111111;
+        z-index: 1111;
     }
 </style>
 
@@ -229,42 +229,58 @@
                 </div>
 
                 <div class="center-flex theme-px123DFDR4513x">
-                    <badge class="center-flex theme-px123DFDR4513xc code-fsdfsdfFSDF theme-FDSHGF45GFFFS">
+                    <badge pxbadges class="center-flex theme-px123DFDR4513xc code-fsdfsdfFSDF theme-FDSHGF45GFFFS">
                         <!--Badges-->
                     </badge>
                 </div>
 
                 <div class="center-flex theme-px123DFDR451s">
-                    <px class="center-flex theme-px123DFDR4511s">
+                    <px pxBTN px="Main" class="center-flex theme-px123DFDR4511s">
                         Main
                     </px>
-                    <px class="center-flex theme-px123DFDR4511s">
+                    <px pxBTN px="Followers" class="center-flex theme-px123DFDR4511s">
                         Followers
-                        <count>
-                            10
+                        <count class="followers">
+                            0
                         </count>
                     </px>
-                    <px class="center-flex theme-px123DFDR4511s">
+                    <px pxBTN px="Following" class="center-flex theme-px123DFDR4511s">
                         Following
-                        <count>
-                            10
+                        <count class="following">
+                            0
                         </count>
                     </px>
                 </div>
-                <div MAIN_CONTEXT class="theme-px123DFFG">
-                    <div class="center-flex gtheme-px123DFFG pvcard1231FDsaSSDF">
-                        <div class="center-flex gtheme-px123DFFG pvcard1231FDsaghfgh24ggg5SDFSDF">Bio</div>
-                        <div BIO_EXMO class="center-flex gtheme-px123DFFG pvcard1231FDsa24ggg5SDFSDF">
+                <div class="theme-px123DFFG">
+                    <div px-pg px-page="Main">
+                        <div class="center-flex gtheme-px123DFFG pvcard1231FDsaSSDF">
+                            <div class="center-flex gtheme-px123DFFG pvcard1231FDsaghfgh24ggg5SDFSDF">Bio</div>
+                            <div BIO_EXMO class="center-flex gtheme-px123DFFG pvcard1231FDsa24ggg5SDFSDF">
 
-                            <!-- BIO-->
+                                <!-- BIO-->
+                            </div>
                         </div>
+                    </div>
+                    <div style="display: none;" px-pg px-page="Followers">
+
+                    </div>
+                    <div style="display: none;" px-pg px-page="Following">
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="/scripts/com.js?clear-201"></script>
+    <script src="/scripts/com.js?clear-202"></script>
     <script>
+        $(document).on('click', '[pxBTN]', function() {
+            const page = $(this).attr('px');
+            $('[px-pg]').hide()
+            $('[px-page="' + page + '"]').show()
+        });
+
+
+
         const rexo = firebase.database().ref('/data/users/46kuBQQ2FcfaPfE4iXSPzF80mPL2');
 
         rexo.once('value', function(snapshot) {
@@ -313,6 +329,155 @@
                         $.getScript('/scripts/linky.js', function() {});
                     };
                 }
+
+
+
+                /////////////////////////BADGES//////////////////////////////
+                const database_badges = firebase.database().ref('/data/users/' + userid);
+                database_badges.child('badges').on('value', function(snapshot) {
+                    console.log('working badges');
+                    const verified = (snapshot.val() && snapshot.val().verified);
+                    if (verified == true) {
+                        $('[pxbadges]').prepend(icon_verified);
+                        $('[add_verified_icon]').html(icon_close);
+                    } else {
+                        $('[add_verified_icon]').html(icon_checkmark);
+                    }
+                    const partner = (snapshot.val() && snapshot.val().partner);
+                    if (partner == true) {
+                        $('[pxbadges]').prepend(icon_turbo_1);
+                        $('[add_partner_icon]').html(icon_close);
+                    } else {
+                        $('[add_partner_icon]').html(icon_checkmark);
+                    }
+                    const staff = (snapshot.val() && snapshot.val().staff);
+                    if (staff == true) {
+                        $('[pxbadges]').prepend(icon_staff);
+                        $('[add_staff_icon]').html(icon_close);
+                    } else {
+                        $('[add_staff_icon]').html(icon_checkmark);
+                    }
+                    const tester = (snapshot.val() && snapshot.val().tester);
+                    if (tester == true) {
+                        $('[pxbadges]').prepend(icon_beta_tester);
+                        $('[add_beta_tester_icon]').html(icon_close);
+                    } else {
+                        $('[add_beta_tester_icon]').html(icon_checkmark);
+                    }
+                    const king = (snapshot.val() && snapshot.val().king);
+                    if (king == true) {
+                        $('[pxbadges]').prepend(icon_owner);
+                        $('[add_king_icon]').html(icon_close);
+                    } else {
+                        $('[add_king_icon]').html(icon_checkmark);
+                    }
+                    const simp = (snapshot.val() && snapshot.val().simp);
+                    if (simp == true) {
+                        $('[pxbadges]').prepend('<div  data-aos="zoom-in" class=" center-flex" tippy data-tippy-content="Ultra Simp"><img style="width: 1.5rem; height: 1.5rem; border-radius: 0.2rem;" src="https://cdn.discordapp.com/attachments/847879736092131388/849530189348470854/444436026149175297.png"></div>');
+                        $('[add_simp_icon]').html(icon_close);
+                    } else {
+                        $('[add_simp_icon]').html(icon_checkmark);
+                    }
+                });
+                ///////////////////////////FOLLOWING/FOLLOWERS///////////////////////////
+                if (userid == currentUserID) {
+
+                    const database = firebase.database().ref('/data/users/');
+                    database.child(currentUserID + '/followers/').on('value', function(snapshot) {
+                        const foll = snapshot.numChildren();
+                        $("count.followers").text(foll);
+                    });
+
+                    database.child(currentUserID + '/followers/').once('value', function(snapshot) {
+                        snapshot.forEach((user) => {
+                            const users = user.val().id;
+
+                        });
+                    });
+
+                    database.child(currentUserID + '/following/').on('value', function(snapshot) {
+                        const foll = snapshot.numChildren();
+                        $("count.following").text(foll);
+                    });
+
+                    database.child(currentUserID + '/following/').once('value', function(snapshot) {
+                        snapshot.forEach((user) => {
+                            const users = user.val().id;
+
+                        });
+                    });
+
+
+
+                } else {
+
+
+                    const database = firebase.database().ref('/data/users/');
+                    database.child(userid + '/followers/').on('value', function(snapshot) {
+                        const foll = snapshot.numChildren();
+                        $("count.followers").text(foll);
+                    });
+
+                    database.child(userid + '/followers/').once('value', function(snapshot) {
+                        snapshot.forEach((user) => {
+                            const useridx = user.val().id;
+
+                            database.child(useridx).once('value', function(snapshot) {
+                                const userid = (snapshot.val() && snapshot.val().userid);
+                                const displayName = (snapshot.val() && snapshot.val().displayName);
+                                const profile_picture = (snapshot.val() && snapshot.val().profile_picture);
+                                const banner = (snapshot.val() && snapshot.val().banner);
+                                const bio = (snapshot.val() && snapshot.val().bio);
+                                const onlineState = (snapshot.val() && snapshot.val().onlineState);
+                                const afkTimeout = (snapshot.val() && snapshot.val().afkTimeout);
+                                const username = (snapshot.val() && snapshot.val().username);
+                                if (onlineState == true) {
+
+                                    const data =
+                                        '<div popuserid="' + userid + '" userid="' + useridx + '" class="center-flex code-px12DECD theme-dfsdSDfF2344DFG" aria-expanded="false">' +
+                                        '<div class=" relative full-bg center-flex theme-dfsdSDF2344DaFG"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32" fill="none"> <foreignObject x="0" y="0" width="32" height="32"><div class="avatarStack-2Dr8S9">' +
+                                        '<img src="' + profile_picture + '">' +
+                                        '</div></foreignObject> <g id="Frame 1" clip-path="url(#clip0)"> <rect width="32" height="32"></rect> <rect id="pfp 1" width="32" height="32" rx="16" fill="url(#pattern0)"></rect> <circle id="Ellipse 2" cx="27" cy="27" r="8.5" fill="var(--c15)"></circle> <circle id="Ellipse 1" cx="27" cy="27" r="5" tippy="" fill="var(--c7)" data-tippy-content="Online"></circle> </g> </svg>' +
+                                        '<div class="center-flex theme-dfsdsSDF2344ST"></div>' +
+                                        '</div>' +
+                                        '<div class="center-flex theme-dfsdsSDF2344DFG">' + displayName + '</div>' +
+                                        '</div>';
+                                    $('[px-page="Followers"]').prepend(data);
+                                } else {
+                                    const data =
+                                        '<div popuserid="' + userid + '" userid="' + useridx + '" class="center-flex code-px12DECD theme-dfsdSDfF2344DFG" aria-expanded="false">' +
+                                        '<div class=" relative full-bg center-flex theme-dfsdSDF2344DaFG"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32" fill="none"> <foreignObject x="0" y="0" width="32" height="32"><div class="avatarStack-2Dr8S9">' +
+                                        '<img src="' + profile_picture + '">' +
+                                        '</div></foreignObject> <g id="Frame 1" clip-path="url(#clip0)"> <rect width="32" height="32"></rect> <rect id="pfp 1" width="32" height="32" rx="16" fill="url(#pattern0)"></rect> <circle id="Ellipse 2" cx="27" cy="27" r="8.5" fill="var(--c15)"></circle> <circle id="Ellipse 1" cx="27" cy="27" r="5" tippy="" fill="var(--c13)" data-tippy-content="Online"></circle> </g> </svg>' +
+                                        '<div class="center-flex theme-dfsdsSDF2344ST"></div>' +
+                                        '</div>' +
+                                        '<div class="center-flex theme-dfsdsSDF2344DFG">' + displayName + '</div>' +
+                                        '</div>';
+                                    $('[px-page="Followers"]').prepend(data);
+                                }
+
+                            });
+
+
+                        });
+                    });
+
+                    database.child(userid + '/following/').on('value', function(snapshot) {
+                        const foll = snapshot.numChildren();
+                        $("count.following").text(foll);
+                    });
+
+                    database.child(userid + '/following/').once('value', function(snapshot) {
+                        snapshot.forEach((user) => {
+                            const users = user.val().id;
+
+                        });
+                    });
+
+                }
+
+                //////////////////////////////////////////////////////////////
+
                 if (userid == currentUserID) {
 
                     $('[SFBTN_EXMO]').html('<div open_setting><!--BTN-->Setting</div>');
