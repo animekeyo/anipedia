@@ -359,7 +359,7 @@
         $(document).on("change", 'input[type="file"]', function() {
 
             var $files = $(this).get(0).files;
-            var appendto = $(this).attr('icon');
+            const appendtoc = $(this).attr('icon');
             if ($files.length) {
 
                 // Reject big files
@@ -396,11 +396,11 @@
                     },
                     success: function(res) {
                         console.log(res.data.link);
-
+                        console.log(appendtoc)
                         var user = firebase.auth().currentUser;
                         var pfp = res.data.link;
 
-                        $('[' + appendto + ']').css('background-image', pfp)
+                        $('[' + appendtoc + ']').css('background-image', pfp)
 
                     },
                     error: function() {
