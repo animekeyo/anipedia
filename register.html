@@ -232,10 +232,11 @@
             'click',
             '[button-auth]',
             function() {
-                const auth = $(this).attr('auth');
-                supabase.auth.signIn({
-                    provider: auth,
-                })
+                // const auth = $(this).attr('auth');
+                // supabase.auth.signIn({
+                //     provider: auth,
+                //  })
+                swal('Error', 'Auth Option is not available at the moment')
             })
     </script>
 </body>
