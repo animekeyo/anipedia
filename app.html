@@ -964,31 +964,37 @@
                     onlineState: false,
                     afkTimeout: createTime,
                 });
-                if (snapshot.val().username) {
 
-                } else {
-                    firebase.database().ref('/data/users/' + user.uid).update({
-                        username: 'keyo' + createTime,
-                    });
-                };
-                if (snapshot.val().userid) {
-
-                } else {
-                    firebase.database().ref('/data/users/' + user.uid).update({
-                        userid: user.uid
-                    });
-                };
                 if (typeof snapshot.val().banner == "undefined") {
                     firebase.database().ref('/data/users/' + user.uid).update({
                         banner: "/images/b1.jpg"
-                    });
+                    }).then(
+                        function name(params) {
+                            location.reload();
+                        }
+                    );
+                } else {
+
+                };
+                if (typeof snapshot.val().userid == "undefined") {
+                    firebase.database().ref('/data/users/' + user.uid).update({
+                        userid: user.uid
+                    }).then(
+                        function name(params) {
+                            location.reload();
+                        }
+                    );
                 } else {
 
                 };
                 if (typeof snapshot.val().profile_picture == "undefined") {
                     firebase.database().ref('/data/users/' + user.uid).update({
                         profile_picture: "/images/icon.png"
-                    });
+                    }).then(
+                        function name(params) {
+                            location.reload();
+                        }
+                    );
                 } else {
 
 
@@ -996,7 +1002,11 @@
                 if (typeof snapshot.val().displayName == "undefined") {
                     firebase.database().ref('/data/users/' + user.uid).update({
                         displayName: 'keyo' + createTime,
-                    });
+                    }).then(
+                        function name(params) {
+                            location.reload();
+                        }
+                    );
                 } else {
 
 
@@ -1004,26 +1014,16 @@
                 if (typeof snapshot.val().username == "undefined") {
                     firebase.database().ref('/data/users/' + user.uid).update({
                         username: 'keyo' + createTime,
-                    });
+                    }).then(
+                        function name(params) {
+                            location.reload();
+                        }
+                    );
                 } else {
 
 
                 };
-                if (snapshot.val().displayName) {
 
-                } else {
-                    firebase.database().ref('/data/users/' + user.uid).update({
-                        displayName: user.displayName
-                    });
-                };
-
-                if (snapshot.val().profile_picture) {
-
-                } else {
-                    firebase.database().ref('/data/users/' + user.uid).update({
-                        profile_picture: user.photoURL
-                    });
-                };
                 console.log('Current Logged in User = ' + snapshot.val().displayName)
                 console.log('User ID = ' + snapshot.val().userid)
 

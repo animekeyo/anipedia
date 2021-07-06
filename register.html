@@ -144,53 +144,44 @@
                         afkTimeout: createTime,
                     });
                     ref.once("value", snapshot => {
-                        if (snapshot.val().username) {
-
-                        } else {
+                        if (profile_image) {
                             firebase.database().ref('/data/users/' + user.uid).update({
+                                profile_picture: profile_image,
+                                banner: "/images/bg1.jpg",
+                                userid: user.uid,
                                 username: 'keyo' + createTime,
-                            });
-                        }
-                        if (snapshot.val().userid) {
-
+                                displayName: name,
+                            }).then(
+                                function name(params) {
+                                    $('.theme-LOGaDSS21').fadeOut()
+                                    setTimeout(function() {
+                                        window.location.href = "/app";
+                                    }, 0000)
+                                    supabase.auth.signOut().then((response) => {
+                                        console.log('Log out from Supabase')
+                                    })
+                                }
+                            );
                         } else {
                             firebase.database().ref('/data/users/' + user.uid).update({
-                                userid: user.uid
-                            });
+                                profile_picture: "/images/icon.png",
+                                banner: "/images/bg1.jpg",
+                                userid: user.uid,
+                                username: 'keyo' + createTime,
+                                displayName: name,
+                            }).then(
+                                function name(params) {
+                                    $('.theme-LOGaDSS21').fadeOut()
+                                    setTimeout(function() {
+                                        window.location.href = "/app";
+                                    }, 0000)
+                                    supabase.auth.signOut().then((response) => {
+                                        console.log('Log out from Supabase')
+                                    })
+                                }
+                            );
                         }
-                        if (snapshot.val().banner) {
 
-                        } else {
-                            firebase.database().ref('/data/users/' + user.uid).update({
-                                banner: "/images/b1.jpg"
-                            });
-                        }
-                        if (snapshot.val().profile_picture) {
-
-                        } else {
-                            if (profile_image) {
-                                firebase.database().ref('/data/users/' + user.uid).update({
-                                    profile_picture: profile_image
-                                });
-                            } else {
-                                firebase.database().ref('/data/users/' + user.uid).update({
-                                    profile_picture: "/images/icon.png"
-                                });
-                            }
-
-                        }
-                        if (snapshot.val().displayName) {
-
-                        } else {
-                            if (name) {
-                                firebase.database().ref('/data/users/' + user.uid).update({
-                                    displayName: name
-                                });
-                            } else {
-
-                            }
-
-                        }
                     });
                 })
                 .catch((error) => {
@@ -232,13 +223,7 @@
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
                 // User is signed in.
-                $('.theme-LOGaDSS21').fadeOut()
-                setTimeout(function() {
-                    window.location.href = "/app";
-                }, 0000)
-                supabase.auth.signOut().then((response) => {
-                    console.log('Log out from Supabase')
-                })
+
             } else {
                 // User is signed out.
             }
