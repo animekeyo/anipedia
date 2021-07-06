@@ -399,8 +399,11 @@
                         console.log(appendtoc)
                         var user = firebase.auth().currentUser;
                         var pfp = res.data.link;
-
-                        $('[' + appendtoc + ']').css('background-image', pfp)
+                        if (appendtoc == 'upload-server-banner') {
+                            $('[upload-server-icon]').css('background-image', 'url(' + pfp + ')')
+                        } else {
+                            $('[upload-server-banner]').css('background-image', 'url(' + pfp + ')')
+                        }
 
                     },
                     error: function() {
