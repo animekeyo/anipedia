@@ -399,9 +399,9 @@
 
                         var user = firebase.auth().currentUser;
                         var pfp = res.data.link;
-                        $("document").ready(function() {
-                            $('[' + appendto + ']').css('background-image', pfp)
-                        });
+
+                        $('[' + appendto + ']').css('background-image', pfp)
+
                     },
                     error: function() {
 
