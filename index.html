@@ -175,51 +175,56 @@
 </body>
 <script src="/scripts/com.js?clear-203"></script>
 <script>
-    const linkx = window.location.pathname;
-    $('body').prepend('<a linkx="' + linkx + '"><a>')
-    firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-            const user = firebase.auth().currentUser;
-            const ref = firebase.database().ref('/data/users/' + user.uid);
-            ref.once("value", snapshot => {
-                if (snapshot.val().profile_picture) {
-                    const data =
-                        '<a href="/app" class="center-flex full-bg pointer code-ho123DSg1x theme-ho123DSg1"></a>';
-                    $('.theme-ho123DSg').html(data)
-                    $('.code-ho123DSg1x').css('background-image', 'url(' + snapshot.val().profile_picture + ')')
-                } else {
+    const _0x2cce = ['2ezdFak', 'profile_picture', '5TNZAaI', '1qJpaxY', 'body', 'val', '5dxFVMr', 'html', 'I\x20think\x20the\x20link=\x22\x22\x20is\x20empty\x20or\x20some\x20type\x20of\x20other\x20error\x20#CC1', 'auth', '1008374NxZQiO', 'Supabase\x20US#\x20logout', 'onAuthStateChanged', 'link', '[button]', 'click', '746jupOdR', '1063suFnha', '165777KEjiIh', 'prepend', 'location', 'currentUser', 'linkx', '931429iNtWbh', 'log', 'background-image', 'value', 'database', '1kBNrrw', 'css', '103387gftCNW', '\x22><a>', 'url(', '634280xuDMBA', 'pathname', '<a\x20linkx=\x22', 'onAuthStateChange', '245678AxwGRy', 'uid', '<div\x20button\x20link=\x22login\x22\x20class=\x22center-flex\x20pointer\x20code-ho123DSg1\x20theme-ho123DSg1\x22>\x20Login\x20</div>', 'replace'];
 
-                }
-            })
-
-        } else {
-            supabase.auth.onAuthStateChange((user) => {
-                if (user) {
-                    const link = $('a').attr('linkx');
-                    const new_string = link.replace('/', '');
-                    console.log(new_string)
-                    window.location.href = "/register" + new_string;
-                } else {
-                    console.log('Supabase US# logout')
-                }
+    function _0x5489(_0x5acb30, _0x33a8ca) {
+        return _0x5489 = function(_0x2cce9f, _0x5489ab) {
+            _0x2cce9f = _0x2cce9f - 0x73;
+            let _0x69e0e4 = _0x2cce[_0x2cce9f];
+            return _0x69e0e4;
+        }, _0x5489(_0x5acb30, _0x33a8ca);
+    }
+    const _0x193e56 = _0x5489;
+    (function(_0x368a03, _0x34daec) {
+        const _0x5acf44 = _0x5489;
+        while (!![]) {
+            try {
+                const _0x4858e6 = parseInt(_0x5acf44(0x8d)) * parseInt(_0x5acf44(0x8e)) + -parseInt(_0x5acf44(0x75)) + parseInt(_0x5acf44(0x7d)) * parseInt(_0x5acf44(0x9b)) + parseInt(_0x5acf44(0x80)) * parseInt(_0x5acf44(0x94)) + -parseInt(_0x5acf44(0x87)) * parseInt(_0x5acf44(0x99)) + -parseInt(_0x5acf44(0x8f)) * parseInt(_0x5acf44(0x7f)) + parseInt(_0x5acf44(0x79)) * parseInt(_0x5acf44(0x83));
+                if (_0x4858e6 === _0x34daec) break;
+                else _0x368a03['push'](_0x368a03['shift']());
+            } catch (_0x33c164) {
+                _0x368a03['push'](_0x368a03['shift']());
+            }
+        }
+    }(_0x2cce, 0xa7fb4));
+    const linkx = window[_0x193e56(0x91)][_0x193e56(0x76)];
+    $(_0x193e56(0x81))[_0x193e56(0x90)](_0x193e56(0x77) + linkx + _0x193e56(0x73)), firebase[_0x193e56(0x86)]()[_0x193e56(0x89)](function(_0x3cd5df) {
+        const _0x2cea4a = _0x193e56;
+        if (_0x3cd5df) {
+            const _0x5db649 = firebase[_0x2cea4a(0x86)]()[_0x2cea4a(0x92)],
+                _0x5b23b8 = firebase[_0x2cea4a(0x98)]()['ref']('/data/users/' + _0x5db649[_0x2cea4a(0x7a)]);
+            _0x5b23b8['once'](_0x2cea4a(0x97), _0x1b3c0c => {
+                const _0x2cda08 = _0x2cea4a;
+                if (_0x1b3c0c[_0x2cda08(0x82)]()[_0x2cda08(0x7e)]) {
+                    const _0x4fe28d = '<a\x20href=\x22/app\x22\x20class=\x22center-flex\x20full-bg\x20pointer\x20code-ho123DSg1x\x20theme-ho123DSg1\x22></a>';
+                    $('.theme-ho123DSg')[_0x2cda08(0x84)](_0x4fe28d), $('.code-ho123DSg1x')[_0x2cda08(0x9a)](_0x2cda08(0x96), _0x2cda08(0x74) + _0x1b3c0c['val']()[_0x2cda08(0x7e)] + ')');
+                } else {}
             });
-            const data =
-                '<div button link="login" class="center-flex pointer code-ho123DSg1 theme-ho123DSg1"> Login </div>' +
-                '<div button link="register" class="center-flex pointer code-ho123DSg12 theme-ho123DSg1"> Join Keyo </div>';
-            $('.theme-ho123DSg').html(data)
-            $(document).on(
-                'click',
-                '[button]',
-                function() {
-
-                    const link = $(this).attr('link')
-                    if (link) {
-                        window.location.href = "/" + link;
-                    } else {
-                        console.log('I think the link="" is empty or some type of other error #CC1')
-                    }
-                }
-            )
+        } else {
+            supabase[_0x2cea4a(0x86)][_0x2cea4a(0x78)](_0x1fffee => {
+                const _0x113671 = _0x2cea4a;
+                if (_0x1fffee) {
+                    const _0x5b19d9 = $('a')['attr'](_0x113671(0x93)),
+                        _0x986a0 = _0x5b19d9[_0x113671(0x7c)]('/', '');
+                    console[_0x113671(0x95)](_0x986a0), window['location']['href'] = '/register' + _0x986a0;
+                } else console[_0x113671(0x95)](_0x113671(0x88));
+            });
+            const _0x21d9f3 = _0x2cea4a(0x7b) + '<div\x20button\x20link=\x22register\x22\x20class=\x22center-flex\x20pointer\x20code-ho123DSg12\x20theme-ho123DSg1\x22>\x20Join\x20Keyo\x20</div>';
+            $('.theme-ho123DSg')[_0x2cea4a(0x84)](_0x21d9f3), $(document)['on'](_0x2cea4a(0x8c), _0x2cea4a(0x8b), function() {
+                const _0x28f3f9 = _0x2cea4a,
+                    _0xb2cb60 = $(this)['attr'](_0x28f3f9(0x8a));
+                _0xb2cb60 ? window[_0x28f3f9(0x91)]['href'] = '/' + _0xb2cb60 : console[_0x28f3f9(0x95)](_0x28f3f9(0x85));
+            });
         }
     });
 </script>

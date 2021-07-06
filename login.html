@@ -89,139 +89,97 @@
 
     </div>
     <script>
-        $(".LOGaDSS22x").on("submit", function(event) {
-            event.preventDefault()
-            console.log('workin')
-            const email = $('[in_email]').val()
-            const password = $('[in_password]').val()
+        const _0x5332 = ['496175RYgzav', '146191MYuAob', '3KxJwpM', 'full_name', '[in_name]', 'val', '[in_email]', 'email', 'height', 'signOut', 'message', 'onDisconnect', 'displayName', 'username', 'banner', '547bcHHnO', 'slice', 'auth', '[in_password]', 'userid', '536457yNQhoO', 'fadeOut', '200242zuKIGL', 'css', 'submit', 'preventDefault', 'then', '1EbozdA', 'toString', 'database', 'user', '.center-flex.theme-LOGaDSS222', '/data/users/', 'signIn', 'location', 'url(', '[button-auth]', 'uid', 'click', 'once', '2073470tQtMoi', '/app', '[PFPX]', '31qzMVUY', 'currentUser', '/images/b1.jpg', 'ref', 'code', '31182pFwEWl', 'now', 'keyo', 'prepend', '<div\x20PFPX\x20class=\x22full-bg\x20avaterx-theme-sdDAD\x22>\x20</div>', '.theme-LOGaDSS21', '/images/icon.png', 'attr', 'hide', 'update', 'user_metadata', 'image', 'log', 'onAuthStateChanged', '.LOGaDSS22x', 'avatar_url'];
+        const _0x51f5de = _0x40b7;
 
-            firebase.auth().signInWithEmailAndPassword(email, password)
-                .then((userxs) => {
-                    // Signed in
-                    const user = firebase.auth().currentUser;
-
-                    const ref = firebase.database().ref('/data/users/' + user.uid);
-
-                    createTime = Date.now();
-                    createTime = createTime.toString();
-                    createTime = createTime.slice(0, -3);
-                    createTime = parseInt(createTime);
-                    ref.update({
-                        onlineState: true,
-                    });
-                    ref.onDisconnect().update({
-                        onlineState: false,
-                        afkTimeout: createTime,
-                    });
-                    ref.once("value", snapshot => {
-                        if (snapshot.val().username) {
-
-                        } else {
-                            firebase.database().ref('/data/users/' + user.uid).update({
-                                username: 'keyo' + createTime,
-                            });
-                        }
-                        if (snapshot.val().userid) {
-
-                        } else {
-                            firebase.database().ref('/data/users/' + user.uid).update({
-                                userid: user.uid
-                            });
-                        }
-                        if (snapshot.val().banner) {
-
-                        } else {
-                            firebase.database().ref('/data/users/' + user.uid).update({
-                                banner: "/images/b1.jpg"
-                            });
-                        }
-                        if (snapshot.val().profile_picture) {
-
-                        } else {
-                            if (profile_image) {
-                                firebase.database().ref('/data/users/' + user.uid).update({
-                                    profile_picture: profile_image
-                                });
-                            } else {
-                                firebase.database().ref('/data/users/' + user.uid).update({
-                                    profile_picture: "/images/icon.png"
-                                });
-                            }
-
-                        }
-                        if (snapshot.val().displayName) {
-
-                        } else {
-                            if (name) {
-                                firebase.database().ref('/data/users/' + user.uid).update({
-                                    displayName: name
-                                });
-                            } else {
-
-                            }
-
-                        }
-                    });
-                })
-                .catch((error) => {
-                    var errorCode = error.code;
-                    var errorMessage = error.message;
-                    swal(errorMessage)
-                });
-
-        })
-        firebase.auth().onAuthStateChanged(function(user) {
-            if (user) {
-                // User is signed in.
-                $('.theme-LOGaDSS21').fadeOut()
-                setTimeout(function() {
-                    window.location.href = "/app";
-                }, 0000)
-                supabase.auth.signOut().then((response) => {
-                    console.log('Log out from Supabase')
-                })
-            } else {
-                // User is signed out.
+        function _0x40b7(_0x6b0ce6, _0x3ae228) {
+            return _0x40b7 = function(_0x53325d, _0x40b7e9) {
+                _0x53325d = _0x53325d - 0x151;
+                let _0x2f17f9 = _0x5332[_0x53325d];
+                return _0x2f17f9;
+            }, _0x40b7(_0x6b0ce6, _0x3ae228);
+        }(function(_0x1c2503, _0x2bb55b) {
+            const _0x3c18bf = _0x40b7;
+            while (!![]) {
+                try {
+                    const _0x4fedde = -parseInt(_0x3c18bf(0x154)) * -parseInt(_0x3c18bf(0x178)) + -parseInt(_0x3c18bf(0x17f)) * parseInt(_0x3c18bf(0x16b)) + -parseInt(_0x3c18bf(0x16a)) + -parseInt(_0x3c18bf(0x17d)) + -parseInt(_0x3c18bf(0x159)) * -parseInt(_0x3c18bf(0x184)) + -parseInt(_0x3c18bf(0x169)) + parseInt(_0x3c18bf(0x151));
+                    if (_0x4fedde === _0x2bb55b) break;
+                    else _0x1c2503['push'](_0x1c2503['shift']());
+                } catch (_0x41abd1) {
+                    _0x1c2503['push'](_0x1c2503['shift']());
+                }
             }
-        });
-        supabase.auth.onAuthStateChange((userx) => {
-            if (userx) {
-
-                const user = supabase.auth.user()
-                if (user) {
-                    console.log(user.user_metadata.avatar_url)
-                    console.log(user.user_metadata.full_name)
-                    console.log(user.email)
-                    console.log(user)
-                    $('[in_email]').val(user.email)
-                    $('[in_name]').val(user.user_metadata.full_name)
-                    if (user.user_metadata.avatar_url) {
-                        const data = '<div PFPX class="full-bg avaterx-theme-sdDAD"> </div>';
-                        $('.LOGaDSS22x').prepend(data)
-                        $('.theme-LOGaDSS21').css('height', '600px')
-                        $('[PFPX]').attr('image', user.user_metadata.avatar_url)
-                        $('[PFPX]').css('background-image', 'url(' + user.user_metadata.avatar_url + ')')
-                        $('.agree-message.agree-message.cc-DS34R').hide()
-                        $('.center-flex.theme-LOGaDSS222').hide()
+        }(_0x5332, 0x5382c), $(_0x51f5de(0x167))['on'](_0x51f5de(0x181), function(_0x3a4d23) {
+            const _0x40c5fb = _0x51f5de;
+            _0x3a4d23[_0x40c5fb(0x182)](), console[_0x40c5fb(0x165)]('workin');
+            const _0x464b0d = $(_0x40c5fb(0x16f))[_0x40c5fb(0x16e)](),
+                _0x5661f4 = $(_0x40c5fb(0x17b))['val']();
+            firebase['auth']()['signInWithEmailAndPassword'](_0x464b0d, _0x5661f4)[_0x40c5fb(0x183)](_0x915fb0 => {
+                const _0x65802e = _0x40c5fb,
+                    _0x5eea68 = firebase['auth']()[_0x65802e(0x155)],
+                    _0x371343 = firebase[_0x65802e(0x186)]()[_0x65802e(0x157)](_0x65802e(0x189) + _0x5eea68[_0x65802e(0x18e)]);
+                createTime = Date[_0x65802e(0x15a)](), createTime = createTime[_0x65802e(0x185)](), createTime = createTime[_0x65802e(0x179)](0x0, -0x3), createTime = parseInt(createTime), _0x371343[_0x65802e(0x162)]({
+                    'onlineState': !![]
+                }), _0x371343[_0x65802e(0x174)]()[_0x65802e(0x162)]({
+                    'onlineState': ![],
+                    'afkTimeout': createTime
+                }), _0x371343[_0x65802e(0x190)]('value', _0x2aafed => {
+                    const _0x364beb = _0x65802e;
+                    if (_0x2aafed['val']()[_0x364beb(0x176)]) {} else firebase[_0x364beb(0x186)]()[_0x364beb(0x157)](_0x364beb(0x189) + _0x5eea68['uid'])['update']({
+                        'username': _0x364beb(0x15b) + createTime
+                    });
+                    if (_0x2aafed[_0x364beb(0x16e)]()[_0x364beb(0x17c)]) {} else firebase[_0x364beb(0x186)]()[_0x364beb(0x157)](_0x364beb(0x189) + _0x5eea68[_0x364beb(0x18e)])[_0x364beb(0x162)]({
+                        'userid': _0x5eea68[_0x364beb(0x18e)]
+                    });
+                    if (_0x2aafed[_0x364beb(0x16e)]()[_0x364beb(0x177)]) {} else firebase[_0x364beb(0x186)]()['ref'](_0x364beb(0x189) + _0x5eea68[_0x364beb(0x18e)])[_0x364beb(0x162)]({
+                        'banner': _0x364beb(0x156)
+                    });
+                    if (_0x2aafed[_0x364beb(0x16e)]()['profile_picture']) {} else profile_image ? firebase['database']()[_0x364beb(0x157)](_0x364beb(0x189) + _0x5eea68[_0x364beb(0x18e)])[_0x364beb(0x162)]({
+                        'profile_picture': profile_image
+                    }) : firebase[_0x364beb(0x186)]()['ref'](_0x364beb(0x189) + _0x5eea68[_0x364beb(0x18e)])[_0x364beb(0x162)]({
+                        'profile_picture': _0x364beb(0x15f)
+                    });
+                    if (_0x2aafed[_0x364beb(0x16e)]()[_0x364beb(0x175)]) {} else {
+                        if (name) firebase[_0x364beb(0x186)]()[_0x364beb(0x157)]('/data/users/' + _0x5eea68['uid'])[_0x364beb(0x162)]({
+                            'displayName': name
+                        });
+                        else {}
+                    }
+                });
+            })['catch'](_0x41c87d => {
+                const _0x1ebe88 = _0x40c5fb;
+                var _0x1ae41d = _0x41c87d[_0x1ebe88(0x158)],
+                    _0x288daf = _0x41c87d[_0x1ebe88(0x173)];
+                swal(_0x288daf);
+            });
+        }), firebase[_0x51f5de(0x17a)]()[_0x51f5de(0x166)](function(_0x585e2a) {
+            const _0x5ef67e = _0x51f5de;
+            if (_0x585e2a) $(_0x5ef67e(0x15e))[_0x5ef67e(0x17e)](), setTimeout(function() {
+                const _0x3ceef7 = _0x5ef67e;
+                window[_0x3ceef7(0x18b)]['href'] = _0x3ceef7(0x152);
+            }, 0x0), supabase[_0x5ef67e(0x17a)][_0x5ef67e(0x172)]()['then'](_0x5b3111 => {
+                console['log']('Log\x20out\x20from\x20Supabase');
+            });
+            else {}
+        }), supabase[_0x51f5de(0x17a)]['onAuthStateChange'](_0x477266 => {
+            const _0x423add = _0x51f5de;
+            if (_0x477266) {
+                const _0x3d0afe = supabase[_0x423add(0x17a)][_0x423add(0x187)]();
+                if (_0x3d0afe) {
+                    console[_0x423add(0x165)](_0x3d0afe[_0x423add(0x163)][_0x423add(0x168)]), console[_0x423add(0x165)](_0x3d0afe['user_metadata'][_0x423add(0x16c)]), console[_0x423add(0x165)](_0x3d0afe[_0x423add(0x170)]), console['log'](_0x3d0afe), $(_0x423add(0x16f))['val'](_0x3d0afe[_0x423add(0x170)]), $(_0x423add(0x16d))[_0x423add(0x16e)](_0x3d0afe['user_metadata']['full_name']);
+                    if (_0x3d0afe['user_metadata']['avatar_url']) {
+                        const _0x4614c6 = _0x423add(0x15d);
+                        $(_0x423add(0x167))[_0x423add(0x15c)](_0x4614c6), $('.theme-LOGaDSS21')[_0x423add(0x180)](_0x423add(0x171), '600px'), $(_0x423add(0x153))[_0x423add(0x160)](_0x423add(0x164), _0x3d0afe[_0x423add(0x163)][_0x423add(0x168)]), $(_0x423add(0x153))[_0x423add(0x180)]('background-image', _0x423add(0x18c) + _0x3d0afe[_0x423add(0x163)][_0x423add(0x168)] + ')'), $('.agree-message.agree-message.cc-DS34R')[_0x423add(0x161)](), $(_0x423add(0x188))[_0x423add(0x161)]();
                     }
                 }
-
-            } else {
-                // User is signed out
-                // ...
-            }
-        });
-        //let { user, error } = await supabase.auth.signIn({ provider: 'github' })
-
-        $(document).on(
-            'click',
-            '[button-auth]',
-            function() {
-                const auth = $(this).attr('auth');
-                supabase.auth.signIn({
-                    provider: auth,
-                })
-            })
+            } else {}
+        }), $(document)['on'](_0x51f5de(0x18f), _0x51f5de(0x18d), function() {
+            const _0x122966 = _0x51f5de,
+                _0x50e26a = $(this)[_0x122966(0x160)](_0x122966(0x17a));
+            supabase[_0x122966(0x17a)][_0x122966(0x18a)]({
+                'provider': _0x50e26a
+            });
+        }));
     </script>
 </body>
 

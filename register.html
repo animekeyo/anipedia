@@ -120,140 +120,100 @@
 
     </div>
     <script>
-        $(".LOGaDSS22x").on("submit", function(event) {
-            event.preventDefault()
-            console.log('workin')
-            const email = $('[in_email]').val()
-            const name = $('[in_name]').val()
-            const profile_image = $('[PFPX]').attr('image')
-            const password = $('[in_password]').val()
+        const _0x4961 = ['4fZhkRj', '[in_password]', 'currentUser', 'attr', 'now', 'createUserWithEmailAndPassword', '280yepDPA', 'full_name', '27SCwlrO', '[button-auth]', 'hide', 'workin', 'image', 'log', '/data/users/', '1QeURqa', '/images/b1.jpg', 'keyo', 'catch', '/app', 'code', 'val', '456681sbpqZE', 'uid', '[in_name]', '2ARLxzZ', '.theme-LOGaDSS21', 'ref', 'Log\x20out\x20from\x20Supabase', 'update', '589144IiiivX', 'profile_picture', '208739DImkrt', 'prepend', 'username', 'displayName', '571QOCCTa', 'message', 'location', '600px', '97646paWbDz', 'background-image', 'email', '[PFPX]', '7728PQqAJJ', 'then', 'href', '330625LObUae', 'preventDefault', '.LOGaDSS22x', 'auth', 'slice', 'database', 'user', 'submit', 'onAuthStateChange', 'fadeOut', 'avatar_url', 'signOut', '[in_email]', '<div\x20PFPX\x20class=\x22full-bg\x20avaterx-theme-sdDAD\x22>\x20</div>', 'signIn', 'user_metadata', '.center-flex.theme-LOGaDSS222', 'css', 'click'];
+        const _0x36b834 = _0x243f;
 
-            firebase.auth().createUserWithEmailAndPassword(email, password)
-                .then((userxs) => {
-                    // Signed in
-                    const user = firebase.auth().currentUser;
-                    const ref = firebase.database().ref('/data/users/' + user.uid);
-
-                    createTime = Date.now();
-                    createTime = createTime.toString();
-                    createTime = createTime.slice(0, -3);
-                    createTime = parseInt(createTime);
-                    ref.update({
-                        onlineState: true,
+        function _0x243f(_0x3fb3e3, _0x5b75fe) {
+            return _0x243f = function(_0x4961c5, _0x243fc8) {
+                _0x4961c5 = _0x4961c5 - 0xa5;
+                let _0x39f06b = _0x4961[_0x4961c5];
+                return _0x39f06b;
+            }, _0x243f(_0x3fb3e3, _0x5b75fe);
+        }(function(_0x1b95f0, _0x184bb6) {
+            const _0x1d44ba = _0x243f;
+            while (!![]) {
+                try {
+                    const _0x4e4124 = -parseInt(_0x1d44ba(0xb8)) + parseInt(_0x1d44ba(0xca)) * -parseInt(_0x1d44ba(0xe4)) + -parseInt(_0x1d44ba(0xd1)) + parseInt(_0x1d44ba(0xc6)) * -parseInt(_0x1d44ba(0xa8)) + parseInt(_0x1d44ba(0xc2)) * parseInt(_0x1d44ba(0xb1)) + parseInt(_0x1d44ba(0xaa)) * parseInt(_0x1d44ba(0xce)) + -parseInt(_0x1d44ba(0xc0)) * -parseInt(_0x1d44ba(0xbb));
+                    if (_0x4e4124 === _0x184bb6) break;
+                    else _0x1b95f0['push'](_0x1b95f0['shift']());
+                } catch (_0x3cfa1d) {
+                    _0x1b95f0['push'](_0x1b95f0['shift']());
+                }
+            }
+        }(_0x4961, 0x3ef79), $(_0x36b834(0xd3))['on'](_0x36b834(0xd8), function(_0x393dfa) {
+            const _0x390e6c = _0x36b834;
+            _0x393dfa[_0x390e6c(0xd2)](), console[_0x390e6c(0xaf)](_0x390e6c(0xad));
+            const _0x5116f3 = $(_0x390e6c(0xdd))[_0x390e6c(0xb7)](),
+                _0x4093a8 = $(_0x390e6c(0xba))['val'](),
+                _0x31b911 = $('[PFPX]')[_0x390e6c(0xa5)](_0x390e6c(0xae)),
+                _0x302223 = $(_0x390e6c(0xe5))[_0x390e6c(0xb7)]();
+            firebase['auth']()[_0x390e6c(0xa7)](_0x5116f3, _0x302223)[_0x390e6c(0xcf)](_0x437a9e => {
+                const _0x544c81 = _0x390e6c,
+                    _0x57eff6 = firebase[_0x544c81(0xd4)]()[_0x544c81(0xe6)],
+                    _0x255591 = firebase[_0x544c81(0xd6)]()['ref'](_0x544c81(0xb0) + _0x57eff6[_0x544c81(0xb9)]);
+                createTime = Date[_0x544c81(0xa6)](), createTime = createTime['toString'](), createTime = createTime[_0x544c81(0xd5)](0x0, -0x3), createTime = parseInt(createTime), _0x255591[_0x544c81(0xbf)]({
+                    'onlineState': !![]
+                }), _0x255591['onDisconnect']()[_0x544c81(0xbf)]({
+                    'onlineState': ![],
+                    'afkTimeout': createTime
+                }), _0x255591['once']('value', _0x352f36 => {
+                    const _0x44d3f0 = _0x544c81;
+                    if (_0x352f36[_0x44d3f0(0xb7)]()[_0x44d3f0(0xc4)]) {} else firebase[_0x44d3f0(0xd6)]()[_0x44d3f0(0xbd)]('/data/users/' + _0x57eff6[_0x44d3f0(0xb9)])['update']({
+                        'username': _0x44d3f0(0xb3) + createTime
                     });
-                    ref.onDisconnect().update({
-                        onlineState: false,
-                        afkTimeout: createTime,
+                    if (_0x352f36['val']()['userid']) {} else firebase[_0x44d3f0(0xd6)]()['ref']('/data/users/' + _0x57eff6[_0x44d3f0(0xb9)])['update']({
+                        'userid': _0x57eff6[_0x44d3f0(0xb9)]
                     });
-                    ref.once("value", snapshot => {
-                        if (snapshot.val().username) {
-
-                        } else {
-                            firebase.database().ref('/data/users/' + user.uid).update({
-                                username: 'keyo' + createTime,
-                            });
-                        }
-                        if (snapshot.val().userid) {
-
-                        } else {
-                            firebase.database().ref('/data/users/' + user.uid).update({
-                                userid: user.uid
-                            });
-                        }
-                        if (snapshot.val().banner) {
-
-                        } else {
-                            firebase.database().ref('/data/users/' + user.uid).update({
-                                banner: "/images/b1.jpg"
-                            });
-                        }
-                        if (snapshot.val().profile_picture) {
-
-                        } else {
-                            if (profile_image) {
-                                firebase.database().ref('/data/users/' + user.uid).update({
-                                    profile_picture: profile_image
-                                });
-                            } else {
-                                firebase.database().ref('/data/users/' + user.uid).update({
-                                    profile_picture: "/images/icon.png"
-                                });
-                            }
-
-                        }
-                        if (snapshot.val().displayName) {
-
-                        } else {
-                            if (name) {
-                                firebase.database().ref('/data/users/' + user.uid).update({
-                                    displayName: name
-                                });
-                            } else {
-
-                            }
-
-                        }
+                    if (_0x352f36[_0x44d3f0(0xb7)]()['banner']) {} else firebase[_0x44d3f0(0xd6)]()[_0x44d3f0(0xbd)]('/data/users/' + _0x57eff6[_0x44d3f0(0xb9)])['update']({
+                        'banner': _0x44d3f0(0xb2)
                     });
-                })
-                .catch((error) => {
-                    var errorCode = error.code;
-                    var errorMessage = error.message;
-                    swal(errorMessage)
+                    if (_0x352f36[_0x44d3f0(0xb7)]()[_0x44d3f0(0xc1)]) {} else _0x31b911 ? firebase[_0x44d3f0(0xd6)]()[_0x44d3f0(0xbd)](_0x44d3f0(0xb0) + _0x57eff6['uid'])[_0x44d3f0(0xbf)]({
+                        'profile_picture': _0x31b911
+                    }) : firebase[_0x44d3f0(0xd6)]()[_0x44d3f0(0xbd)](_0x44d3f0(0xb0) + _0x57eff6[_0x44d3f0(0xb9)])[_0x44d3f0(0xbf)]({
+                        'profile_picture': '/images/icon.png'
+                    });
+                    if (_0x352f36['val']()[_0x44d3f0(0xc5)]) {} else {
+                        if (_0x4093a8) firebase[_0x44d3f0(0xd6)]()[_0x44d3f0(0xbd)]('/data/users/' + _0x57eff6[_0x44d3f0(0xb9)])['update']({
+                            'displayName': _0x4093a8
+                        });
+                        else {}
+                    }
                 });
-
-        })
-
-        supabase.auth.onAuthStateChange((userx) => {
-            if (userx) {
-
-                const user = supabase.auth.user()
-                if (user) {
-                    console.log(user.user_metadata.avatar_url)
-                    console.log(user.user_metadata.full_name)
-                    console.log(user.email)
-                    console.log(user)
-                    $('[in_email]').val(user.email)
-                    $('[in_name]').val(user.user_metadata.full_name)
-                    if (user.user_metadata.avatar_url) {
-                        const data = '<div PFPX class="full-bg avaterx-theme-sdDAD"> </div>';
-                        $('.LOGaDSS22x').prepend(data)
-                        $('.theme-LOGaDSS21').css('height', '600px')
-                        $('[PFPX]').attr('image', user.user_metadata.avatar_url)
-                        $('[PFPX]').css('background-image', 'url(' + user.user_metadata.avatar_url + ')')
-                        $('.agree-message.agree-message.cc-DS34R').hide()
-                        $('.center-flex.theme-LOGaDSS222').hide()
+            })[_0x390e6c(0xb4)](_0x5bde15 => {
+                const _0x47df2b = _0x390e6c;
+                var _0x1811e5 = _0x5bde15[_0x47df2b(0xb6)],
+                    _0x5e1650 = _0x5bde15[_0x47df2b(0xc7)];
+                swal(_0x5e1650);
+            });
+        }), supabase[_0x36b834(0xd4)][_0x36b834(0xd9)](_0x37ec7f => {
+            const _0x5e08e0 = _0x36b834;
+            if (_0x37ec7f) {
+                const _0x2c1c45 = supabase[_0x5e08e0(0xd4)][_0x5e08e0(0xd7)]();
+                if (_0x2c1c45) {
+                    console[_0x5e08e0(0xaf)](_0x2c1c45[_0x5e08e0(0xe0)]['avatar_url']), console[_0x5e08e0(0xaf)](_0x2c1c45[_0x5e08e0(0xe0)]['full_name']), console[_0x5e08e0(0xaf)](_0x2c1c45[_0x5e08e0(0xcc)]), console[_0x5e08e0(0xaf)](_0x2c1c45), $(_0x5e08e0(0xdd))[_0x5e08e0(0xb7)](_0x2c1c45[_0x5e08e0(0xcc)]), $(_0x5e08e0(0xba))['val'](_0x2c1c45[_0x5e08e0(0xe0)][_0x5e08e0(0xa9)]);
+                    if (_0x2c1c45[_0x5e08e0(0xe0)][_0x5e08e0(0xdb)]) {
+                        const _0x31943e = _0x5e08e0(0xde);
+                        $(_0x5e08e0(0xd3))[_0x5e08e0(0xc3)](_0x31943e), $(_0x5e08e0(0xbc))[_0x5e08e0(0xe2)]('height', _0x5e08e0(0xc9)), $(_0x5e08e0(0xcd))[_0x5e08e0(0xa5)]('image', _0x2c1c45[_0x5e08e0(0xe0)]['avatar_url']), $('[PFPX]')['css'](_0x5e08e0(0xcb), 'url(' + _0x2c1c45[_0x5e08e0(0xe0)][_0x5e08e0(0xdb)] + ')'), $('.agree-message.agree-message.cc-DS34R')[_0x5e08e0(0xac)](), $(_0x5e08e0(0xe1))[_0x5e08e0(0xac)]();
                     }
                 }
-
-            } else {
-                // User is signed out
-                // ...
-            }
-        });
-        //let { user, error } = await supabase.auth.signIn({ provider: 'github' })
-        firebase.auth().onAuthStateChanged(function(user) {
-            if (user) {
-                // User is signed in.
-                $('.theme-LOGaDSS21').fadeOut()
-                setTimeout(function() {
-                    window.location.href = "/app";
-                }, 0000)
-                supabase.auth.signOut().then((response) => {
-                    console.log('Log out from Supabase')
-                })
-            } else {
-                // User is signed out.
-            }
-        });
-        $(document).on(
-            'click',
-            '[button-auth]',
-            function() {
-                const auth = $(this).attr('auth');
-                supabase.auth.signIn({
-                    provider: auth,
-                })
-            })
+            } else {}
+        }), firebase[_0x36b834(0xd4)]()['onAuthStateChanged'](function(_0x5a2b56) {
+            const _0x35b140 = _0x36b834;
+            if (_0x5a2b56) $(_0x35b140(0xbc))[_0x35b140(0xda)](), setTimeout(function() {
+                const _0x43041c = _0x35b140;
+                window[_0x43041c(0xc8)][_0x43041c(0xd0)] = _0x43041c(0xb5);
+            }, 0x0), supabase['auth'][_0x35b140(0xdc)]()[_0x35b140(0xcf)](_0x5f5d85 => {
+                const _0x4ce5fd = _0x35b140;
+                console['log'](_0x4ce5fd(0xbe));
+            });
+            else {}
+        }), $(document)['on'](_0x36b834(0xe3), _0x36b834(0xab), function() {
+            const _0x1fb717 = _0x36b834,
+                _0x464ef7 = $(this)[_0x1fb717(0xa5)]('auth');
+            supabase[_0x1fb717(0xd4)][_0x1fb717(0xdf)]({
+                'provider': _0x464ef7
+            });
+        }));
     </script>
 </body>
 

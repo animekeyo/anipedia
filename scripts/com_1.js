@@ -1,108 +1,25 @@
-firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-        $("[main_profile_uid_val]").val(user.uid);
-        $("[main_profile_email_val]").val(user.email);
+const _0x3d17 = ['[open_home]', 'onAuthStateChanged', '1rALKDf', 'pathname', 'text', '[main_bio_val]', 'email', 'value', '41xgypfi', '788731fkjLdG', 'once', 'location', 'keyo', '[main_name_val]', '523105ZPRHtt', 'val', '187pYVMRk', 'undefined', 'ref', '[main_profile_banner]', '4361RhVHpy', 'onlineState', 'title', '[logout_user]', 'profile_picture', 'href', 'uid', 'bio', '/settings#Profile', '),url(/images/icon.png)', 'onDisconnect', '320SkxvJm', '651778ULneWf', '/images/b1.jpg', 'auth', 'banner', '\x20on\x20AnimeKeyo.com</title>', 'update', 'userid', '/u?id=', 'username', 'src', '2419154RiLXXq', 'displayName', 'log', 'database', 'toString', '1hgGVti', '/images/icon.png', '[open_setting]', 'slice', 'center', '1511RyMLqz', '2YNjZmH', 'signOut', '[main_name]', '/app', 'now', '32974nqiDlI', 'click', '[main_bio]', 'attr', 'url(', '),url(/images/b1.png)', 'css', '/data/users/', 'background-image', '[main_user_profile_pic_src]', '[main_name_alt]'];
+const _0x5077a0 = _0x1e70;
 
-        firebase.database().ref('/data/users/' + user.uid).once("value", snapshot => {
-            const ref = firebase.database().ref('/data/users/' + user.uid);
-            createTime = Date.now();
-            createTime = createTime.toString();
-            createTime = createTime.slice(0, -3);
-            createTime = parseInt(createTime);
-            ref.update({
-                onlineState: true,
-            });
-            ref.onDisconnect().update({
-                onlineState: false,
-                afkTimeout: createTime,
-            });
-            if (snapshot.val().username) {
-                console.log(snapshot.val().username)
-            } else {
-                firebase.database().ref('/data/users/' + user.uid).update({
-                    username: 'keyo' + createTime,
-                });
-            };
-            if (snapshot.val().userid) {
-                console.log(snapshot.val().userid)
-            } else {
-                firebase.database().ref('/data/users/' + user.uid).update({
-                    userid: user.uid
-                });
-            };
-            if (typeof snapshot.val().banner == "undefined") {
-                firebase.database().ref('/data/users/' + user.uid).update({
-                    banner: "/images/b1.jpg"
-                });
-            } else {
-                console.log(snapshot.val().banner)
-            };
-            if (typeof snapshot.val().profile_picture == "undefined") {
-                firebase.database().ref('/data/users/' + user.uid).update({
-                    profile_picture: "/images/icon.png"
-                });
-            } else {
-                console.log(snapshot.val().profile_picture)
-
-            };
-            if (snapshot.val().displayName) {
-                console.log(snapshot.val().displayName)
-            } else {
-                firebase.database().ref('/data/users/' + user.uid).update({
-                    displayName: user.displayName
-                });
-            };
-
-            if (snapshot.val().profile_picture) {
-                console.log(snapshot.val().profile_picture)
-            } else {
-                firebase.database().ref('/data/users/' + user.uid).update({
-                    profile_picture: user.photoURL
-                });
-            };
-        });
-
-        const data = firebase.database().ref('/data/users/' + user.uid);
-        data.on('value', function(snapshot) {
-
-            const displayName = (snapshot.val() && snapshot.val().displayName);
-            const profile_picture = (snapshot.val() && snapshot.val().profile_picture);
-            const banner = (snapshot.val() && snapshot.val().banner);
-            const bio = (snapshot.val() && snapshot.val().bio);
-            const onlineState = (snapshot.val() && snapshot.val().onlineState);
-            $("[main_name]").text(displayName);
-            $("[main_name_val]").val(displayName);
-            $("[main_bio]").text(bio);
-            $("[main_bio_val]").val(bio);
-            $('head').prepend('<title>' + displayName + ' on AnimeKeyo.com</title>');
-            $("[main_name_alt]").attr('title', displayName);
-            $('[main_user_profile_pic_src]').attr('src', profile_picture)
-            $("[main_profile_banner]").css('background-image', 'url(' + banner + '),url(/images/b1.png)', 'background-position', 'center');
-            $("[main_profile_picture]").css('background-image', 'url(' + profile_picture + '),url(/images/icon.png)');
-
-            $(document).on('click', '[main_profile_link]', function() {
-                window.location.href = "/u?id=" + user.uid;
-            });
-            $(document).on('click', '[open_setting]', function() {
-                window.location.href = "/settings#Profile";
-            });
-            $(document).on('click', '[open_home]', function() {
-                window.location.href = "/app";
-            });
-            $(document).on('click', '[logout_user]', function() {
-                firebase.auth().signOut();
-            });
-
-        });
-    } else {
-        const link = window.location.pathname;
-        alert(link);
-        if (link == "/login") {
-
-        } else if (link == "/") {
-
-        } else {
-            window.location.href = "/";
-        }
-    }
-});
+function _0x1e70(_0x36ec5e, _0x3e9caa) { return _0x1e70 = function(_0x3d1756, _0x1e7008) { _0x3d1756 = _0x3d1756 - 0x1cd; let _0x1d9b1f = _0x3d17[_0x3d1756]; return _0x1d9b1f; }, _0x1e70(_0x36ec5e, _0x3e9caa); }(function(_0x3d2760, _0x1ca84f) { const _0x304027 = _0x1e70; while (!![]) { try { const _0x17d812 = -parseInt(_0x304027(0x1ee)) * parseInt(_0x304027(0x1f2)) + parseInt(_0x304027(0x1cd)) * parseInt(_0x304027(0x1fd)) + -parseInt(_0x304027(0x1e6)) * parseInt(_0x304027(0x1d3)) + -parseInt(_0x304027(0x1ce)) * parseInt(_0x304027(0x1fe)) + parseInt(_0x304027(0x1e7)) + parseInt(_0x304027(0x20d)) * parseInt(_0x304027(0x1ec)) + parseInt(_0x304027(0x208)) * parseInt(_0x304027(0x1e0)); if (_0x17d812 === _0x1ca84f) break;
+            else _0x3d2760['push'](_0x3d2760['shift']()); } catch (_0x22372d) { _0x3d2760['push'](_0x3d2760['shift']()); } } }(_0x3d17, 0xb5859), firebase['auth']()[_0x5077a0(0x1df)](function(_0x5793a8) { const _0x23ad08 = _0x5077a0; if (_0x5793a8) { $('[main_profile_uid_val]')['val'](_0x5793a8[_0x23ad08(0x1f8)]), $('[main_profile_email_val]')[_0x23ad08(0x1ed)](_0x5793a8[_0x23ad08(0x1e4)]), firebase[_0x23ad08(0x20b)]()[_0x23ad08(0x1f0)](_0x23ad08(0x1da) + _0x5793a8[_0x23ad08(0x1f8)])[_0x23ad08(0x1e8)](_0x23ad08(0x1e5), _0x225c04 => { const _0x47e971 = _0x23ad08,
+                _0xe1d0fb = firebase[_0x47e971(0x20b)]()[_0x47e971(0x1f0)]('/data/users/' + _0x5793a8[_0x47e971(0x1f8)]);
+            createTime = Date[_0x47e971(0x1d2)](), createTime = createTime[_0x47e971(0x20c)](), createTime = createTime[_0x47e971(0x210)](0x0, -0x3), createTime = parseInt(createTime), _0xe1d0fb[_0x47e971(0x203)]({ 'onlineState': !![] }), _0xe1d0fb[_0x47e971(0x1fc)]()['update']({ 'onlineState': ![], 'afkTimeout': createTime });
+            _0x225c04['val']()[_0x47e971(0x206)] ? console['log'](_0x225c04[_0x47e971(0x1ed)]()[_0x47e971(0x206)]) : firebase[_0x47e971(0x20b)]()[_0x47e971(0x1f0)](_0x47e971(0x1da) + _0x5793a8[_0x47e971(0x1f8)])[_0x47e971(0x203)]({ 'username': _0x47e971(0x1ea) + createTime });;
+            _0x225c04[_0x47e971(0x1ed)]()[_0x47e971(0x204)] ? console[_0x47e971(0x20a)](_0x225c04[_0x47e971(0x1ed)]()[_0x47e971(0x204)]) : firebase['database']()[_0x47e971(0x1f0)](_0x47e971(0x1da) + _0x5793a8['uid'])[_0x47e971(0x203)]({ 'userid': _0x5793a8[_0x47e971(0x1f8)] });;
+            typeof _0x225c04[_0x47e971(0x1ed)]()[_0x47e971(0x201)] == _0x47e971(0x1ef) ? firebase[_0x47e971(0x20b)]()[_0x47e971(0x1f0)](_0x47e971(0x1da) + _0x5793a8['uid'])[_0x47e971(0x203)]({ 'banner': _0x47e971(0x1ff) }) : console[_0x47e971(0x20a)](_0x225c04[_0x47e971(0x1ed)]()[_0x47e971(0x201)]);;
+            typeof _0x225c04['val']()[_0x47e971(0x1f6)] == _0x47e971(0x1ef) ? firebase[_0x47e971(0x20b)]()['ref'](_0x47e971(0x1da) + _0x5793a8[_0x47e971(0x1f8)])['update']({ 'profile_picture': _0x47e971(0x20e) }) : console['log'](_0x225c04[_0x47e971(0x1ed)]()[_0x47e971(0x1f6)]);;
+            _0x225c04[_0x47e971(0x1ed)]()['displayName'] ? console[_0x47e971(0x20a)](_0x225c04[_0x47e971(0x1ed)]()[_0x47e971(0x209)]) : firebase[_0x47e971(0x20b)]()[_0x47e971(0x1f0)](_0x47e971(0x1da) + _0x5793a8[_0x47e971(0x1f8)])['update']({ 'displayName': _0x5793a8[_0x47e971(0x209)] });;
+            _0x225c04[_0x47e971(0x1ed)]()[_0x47e971(0x1f6)] ? console[_0x47e971(0x20a)](_0x225c04['val']()[_0x47e971(0x1f6)]) : firebase['database']()['ref'](_0x47e971(0x1da) + _0x5793a8['uid'])['update']({ 'profile_picture': _0x5793a8['photoURL'] });; }); const _0x3460fc = firebase[_0x23ad08(0x20b)]()[_0x23ad08(0x1f0)](_0x23ad08(0x1da) + _0x5793a8['uid']);
+        _0x3460fc['on'](_0x23ad08(0x1e5), function(_0x4accbb) { const _0x1b96cc = _0x23ad08,
+                _0x5b24a5 = _0x4accbb['val']() && _0x4accbb[_0x1b96cc(0x1ed)]()['displayName'],
+                _0x676801 = _0x4accbb[_0x1b96cc(0x1ed)]() && _0x4accbb[_0x1b96cc(0x1ed)]()[_0x1b96cc(0x1f6)],
+                _0x5ede23 = _0x4accbb['val']() && _0x4accbb[_0x1b96cc(0x1ed)]()[_0x1b96cc(0x201)],
+                _0xff2741 = _0x4accbb['val']() && _0x4accbb[_0x1b96cc(0x1ed)]()[_0x1b96cc(0x1f9)],
+                _0x2c1702 = _0x4accbb['val']() && _0x4accbb[_0x1b96cc(0x1ed)]()[_0x1b96cc(0x1f3)];
+            $(_0x1b96cc(0x1d0))[_0x1b96cc(0x1e2)](_0x5b24a5), $(_0x1b96cc(0x1eb))[_0x1b96cc(0x1ed)](_0x5b24a5), $(_0x1b96cc(0x1d5))['text'](_0xff2741), $(_0x1b96cc(0x1e3))['val'](_0xff2741), $('head')['prepend']('<title>' + _0x5b24a5 + _0x1b96cc(0x202)), $(_0x1b96cc(0x1dd))['attr'](_0x1b96cc(0x1f4), _0x5b24a5), $(_0x1b96cc(0x1dc))[_0x1b96cc(0x1d6)](_0x1b96cc(0x207), _0x676801), $(_0x1b96cc(0x1f1))['css'](_0x1b96cc(0x1db), 'url(' + _0x5ede23 + _0x1b96cc(0x1d8), 'background-position', _0x1b96cc(0x211)), $('[main_profile_picture]')[_0x1b96cc(0x1d9)]('background-image', _0x1b96cc(0x1d7) + _0x676801 + _0x1b96cc(0x1fb)), $(document)['on'](_0x1b96cc(0x1d4), '[main_profile_link]', function() { const _0x4c1d61 = _0x1b96cc;
+                window[_0x4c1d61(0x1e9)][_0x4c1d61(0x1f7)] = _0x4c1d61(0x205) + _0x5793a8[_0x4c1d61(0x1f8)]; }), $(document)['on'](_0x1b96cc(0x1d4), _0x1b96cc(0x20f), function() { const _0xd79e46 = _0x1b96cc;
+                window['location'][_0xd79e46(0x1f7)] = _0xd79e46(0x1fa); }), $(document)['on'](_0x1b96cc(0x1d4), _0x1b96cc(0x1de), function() { const _0x4c6cf2 = _0x1b96cc;
+                window[_0x4c6cf2(0x1e9)][_0x4c6cf2(0x1f7)] = _0x4c6cf2(0x1d1); }), $(document)['on'](_0x1b96cc(0x1d4), _0x1b96cc(0x1f5), function() { const _0x4541a1 = _0x1b96cc;
+                firebase[_0x4541a1(0x200)]()[_0x4541a1(0x1cf)](); }); }); } else { const _0x45050b = window[_0x23ad08(0x1e9)][_0x23ad08(0x1e1)];
+        alert(_0x45050b); if (_0x45050b == '/login') {} else { if (_0x45050b == '/') {} else window['location'][_0x23ad08(0x1f7)] = '/'; } } }));
