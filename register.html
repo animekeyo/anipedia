@@ -1,0 +1,260 @@
+<html>
+
+<head>
+
+    <!---//////////////////////////------jquery------/////////////////////////--->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!---//////////////////////////------supabase------/////////////////////////--->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="/scripts/supabase.js"></script>
+    <!---/////////////////////////------sweetalert------/////////////////////////--->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.7/dist/sweetalert2.all.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!---/////////////////////////------hammer------/////////////////////////--->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
+    <!---/////////////////////////------aos------/////////////////////////--->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!---/////////////////////////------tippy------/////////////////////////--->
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
+    <!---/////////////////////////------react------/////////////////////////--->
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!---/////////////////////////------firebase------/////////////////////////--->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-functions.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-performance.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-remote-config.js"></script>
+    <!---/////////////////////////------MAIN SCRIPTS------/////////////////////////--->
+    <script src="/scripts/purl.js?clear-111"></script>
+    <script src="/scripts/firebase.js?clear-111"></script>
+    <script src="/scripts/tippy.js?clear-111"></script>
+    <script src="/scripts/open_user.js?clear-111"></script>
+    <script src="/scripts/get-view.js?clear-100"></script>
+    <!----------------------------------------------------------------->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="manifest" href="manifest.webmanifest?clear-126">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <style>
+        @import url("/styles/style.css?clear-6");
+    </style>
+
+</head>
+
+
+<body>
+    <a style="margin: 1rem;" href="/" class=" center-flex fixed logo-s ">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="24" fill="#12161B"></circle>
+            <path d="M37 15L29.7778 21.8421L24 15L18.2222 21.8421L11 15V32.7895H37V15ZM13.8889 41H34.1111C34.8773 41 35.6121 40.7117 36.1539 40.1984C36.6956 39.6851 37 38.989 37 38.2632V35.5263H11V38.2632C11 38.989 11.3044 39.6851 11.8461 40.1984C12.3879 40.7117 13.1227 41 13.8889 41Z" fill="white"></path>
+            <rect x="11" y="35" width="26" height="8" fill="#12161B"></rect>
+            </svg>
+    </a>
+    <div style="background-image: url(/images/b3.jpg);" class="full-wh full-bg center-flex theme-LOGaDSS2">
+
+        <div style="height: 600px;" class="center-flex relative theme-LOGaDSS21">
+            <div class="full-wh absolute center-flex theme-LOGaDSS22">
+
+                <form action="" class="center-flex LOGaDSS22x">
+
+                    <label for="">Username</label>
+                    <input in_name autocomplete="username" type="text" name="" id="" required>
+                    <label for="">Email</label>
+                    <input in_email autocomplete="email" type="email" name="" id="" required>
+                    <label for="">Password</label>
+                    <input in_password type="password" autocomplete="new-password" name="" id="" required>
+                    <button type="submit">Continue</button>
+                </form>
+                <a href="/login" class="center-flex theme-SDFET34DF">
+                    Already have an account?
+                </a>
+                <div data-v-6d5d5628="" data-v-c35114da="" class="agree-message agree-message cc-DS34R">
+                    ----------------------- O R -----------------------
+                </div>
+                <div class="center-flex theme-LOGaDSS222">
+                    <svg button-auth auth="facebook" width="200" height="200" viewBox="0 0 200 200" fill="none">
+                        <circle cx="100" cy="100" r="100" fill="#12161B"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M50 100.279C50 125.137 68.0542 145.808 91.6667 150V113.887H79.1667V100H91.6667V88.8875C91.6667 76.3875 99.7208 69.4458 111.112 69.4458C114.721 69.4458 118.612 70 122.221 70.5542V83.3333H115.833C109.721 83.3333 108.333 86.3875 108.333 90.2792V100H121.667L119.446 113.887H108.333V150C131.946 145.808 150 125.142 150 100.279C150 72.625 127.5 50 100 50C72.5 50 50 72.625 50 100.279Z" fill="white"/>
+                        </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" fill="none">
+                            <circle cx="100" cy="100" r="100" fill="#12161B"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M100 50C72.3833 50 50 72.3875 50 100C50 127.612 72.3833 150 100 150C127.612 150 150 127.612 150 100C150 72.3875 127.612 50 100 50ZM100.583 129.242C84.4667 129.242 71.4167 116.158 71.4167 100C71.4167 83.8417 84.4667 70.7583 100.583 70.7583C108.458 70.7583 115.042 73.6625 120.092 78.3792L111.867 86.6208V86.6042C108.804 83.6792 104.921 82.1792 100.583 82.1792C90.9583 82.1792 83.1375 90.3292 83.1375 99.9833C83.1375 109.629 90.9583 117.804 100.583 117.804C109.317 117.804 115.258 112.796 116.483 105.921H100.583V94.5167H128.021C128.387 96.475 128.583 98.5167 128.583 100.658C128.583 117.367 117.429 129.242 100.583 129.242V129.242Z" fill="white"/>
+                            </svg>
+                    <svg button-auth auth="discord" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" fill="none">
+                                <circle cx="100" cy="100" r="100" fill="#12161B"/>
+                                <g clip-path="url(#clip0)">
+                                <path d="M135.364 68.9461C128.907 65.914 122.084 63.7325 115.066 62.4562C115.002 62.4432 114.935 62.4508 114.876 62.478C114.817 62.5052 114.767 62.5505 114.735 62.6075C113.847 64.1623 112.854 66.1912 112.157 67.7935C104.59 66.5766 96.8822 66.5093 89.295 67.594C88.5501 65.8054 87.7071 64.0592 86.7698 62.3635C86.7374 62.3072 86.6888 62.2621 86.6302 62.234C86.5717 62.206 86.5061 62.1964 86.442 62.2064C79.4018 63.3575 72.5414 65.4196 66.0335 68.3411C65.9784 68.3636 65.9315 68.4025 65.8992 68.4524C52.764 87.7093 49.0451 106.569 50.628 125.238C50.6319 125.284 50.6451 125.329 50.667 125.37C50.6888 125.411 50.7188 125.448 50.7551 125.477C58.2544 131.135 66.6606 135.477 75.6148 138.319C75.678 138.338 75.7453 138.337 75.808 138.317C75.8707 138.297 75.9257 138.258 75.9658 138.205C77.9137 135.597 79.6545 132.842 81.1465 129.942C81.1673 129.902 81.1795 129.859 81.1823 129.814C81.1851 129.769 81.1783 129.725 81.1626 129.683C81.1468 129.641 81.1223 129.603 81.0908 129.571C81.0592 129.54 81.0213 129.515 80.9795 129.499C78.2945 128.444 75.6973 127.179 73.2122 125.714C73.1667 125.687 73.1285 125.65 73.101 125.604C73.0736 125.559 73.0577 125.508 73.0549 125.455C73.052 125.402 73.0623 125.35 73.0848 125.302C73.1072 125.254 73.1412 125.212 73.1836 125.181C73.713 124.792 74.2333 124.391 74.7441 123.978C74.7888 123.942 74.8425 123.919 74.8992 123.913C74.9559 123.906 75.0134 123.915 75.0653 123.939C91.3662 131.552 109.082 131.707 125.322 124.377C125.375 124.353 125.433 124.345 125.49 124.353C125.548 124.361 125.602 124.385 125.646 124.422C126.143 124.834 126.664 125.256 127.19 125.652C127.231 125.684 127.264 125.725 127.286 125.773C127.308 125.82 127.318 125.872 127.315 125.924C127.312 125.976 127.296 126.027 127.269 126.072C127.242 126.116 127.205 126.154 127.16 126.181C124.656 127.616 122.034 128.836 119.324 129.829C119.282 129.845 119.243 129.869 119.211 129.901C119.179 129.933 119.154 129.971 119.137 130.012C119.121 130.054 119.114 130.099 119.116 130.144C119.118 130.189 119.129 130.233 119.149 130.274C120.624 133.195 122.316 135.976 124.181 138.622C124.219 138.676 124.273 138.716 124.336 138.738C124.399 138.759 124.466 138.761 124.53 138.742C133.547 136.065 142.042 131.87 149.647 126.335C149.684 126.31 149.715 126.277 149.739 126.238C149.762 126.199 149.777 126.156 149.783 126.112C152.054 104.56 146.643 85.7743 135.492 69.0681C135.466 69.0118 135.421 68.967 135.364 68.9419L135.364 68.9461ZM83.7301 114.164C78.8011 114.121 74.7824 109.565 74.8309 104.007C74.8794 98.4527 78.902 93.9627 83.906 94.0063C88.9475 94.0503 92.9325 98.652 92.8052 104.168C92.7567 109.722 88.7341 114.208 83.7301 114.164V114.164ZM116.958 114.454C112.029 114.411 108.01 109.855 108.059 104.297C108.107 98.7427 112.126 94.2526 117.134 94.2963C122.175 94.3403 126.16 98.9419 126.033 104.458C125.985 110.012 122.004 114.498 116.958 114.454V114.454Z" fill="white"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0">
+                                <rect width="100" height="100" fill="white" transform="translate(50.8726 50) rotate(0.5)"/>
+                                </clipPath>
+                                </defs>
+                                </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" fill="none">
+                                    <circle cx="100" cy="100" r="100" fill="#12161B"/>
+                                    <path d="M100 50C72.3884 50 50 72.3884 50 100C50 127.612 72.3884 150 100 150C127.612 150 150 127.612 150 100C150 72.3884 127.612 50 100 50ZM124.029 87.6897C124.062 88.2143 124.062 88.7612 124.062 89.2969C124.062 105.681 111.585 124.554 88.7835 124.554C81.7522 124.554 75.2344 122.511 69.7433 118.996C70.7478 119.107 71.7076 119.152 72.7344 119.152C78.5379 119.152 83.8728 117.188 88.125 113.862C82.6786 113.75 78.1027 110.179 76.5402 105.268C78.4487 105.547 80.1674 105.547 82.1317 105.045C79.3273 104.475 76.8066 102.952 74.9979 100.734C73.1893 98.5166 72.2041 95.7411 72.2098 92.8795V92.7232C73.8504 93.6496 75.7813 94.2187 77.8013 94.2969C76.1032 93.1651 74.7105 91.6318 73.7468 89.8329C72.7831 88.034 72.2782 86.0251 72.2768 83.9844C72.2768 81.6741 72.8795 79.5647 73.9621 77.7344C77.0748 81.5663 80.959 84.7002 85.3623 86.9327C89.7656 89.1651 94.5894 90.4459 99.5201 90.692C97.7679 82.2656 104.063 75.4464 111.629 75.4464C115.201 75.4464 118.415 76.942 120.681 79.3527C123.482 78.8281 126.161 77.779 128.549 76.3728C127.623 79.2411 125.681 81.6629 123.103 83.192C125.603 82.9241 128.013 82.2321 130.246 81.2612C128.56 83.7388 126.451 85.9375 124.029 87.6897V87.6897Z" fill="white"/>
+                                    </svg>
+                </div>
+                <div data-v-6d5d5628="" data-v-c35114da="" class="agree-message agree-message">
+                    By creating an account, you are agreeing to the
+                    <a data-v-6d5d5628="" href="/terms-and-conditions" target="_blank" rel="noopener noreferrer">
+                        Terms and conditions
+                    </a> and the
+                    <a data-v-6d5d5628="" href="/privacy" target="_blank" rel="noopener noreferrer">
+                        Privacy policy
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        $(".LOGaDSS22x").on("submit", function(event) {
+            event.preventDefault()
+            console.log('workin')
+            const email = $('[in_email]').val()
+            const name = $('[in_name]').val()
+            const profile_image = $('[PFPX]').attr('image')
+            const password = $('[in_password]').val()
+
+            firebase.auth().createUserWithEmailAndPassword(email, password)
+                .then((userxs) => {
+                    // Signed in
+                    const user = firebase.auth().currentUser;
+                    const ref = firebase.database().ref('/data/users/' + user.uid);
+
+                    createTime = Date.now();
+                    createTime = createTime.toString();
+                    createTime = createTime.slice(0, -3);
+                    createTime = parseInt(createTime);
+                    ref.update({
+                        onlineState: true,
+                    });
+                    ref.onDisconnect().update({
+                        onlineState: false,
+                        afkTimeout: createTime,
+                    });
+                    ref.once("value", snapshot => {
+                        if (snapshot.val().username) {
+
+                        } else {
+                            firebase.database().ref('/data/users/' + user.uid).update({
+                                username: 'keyo' + createTime,
+                            });
+                        }
+                        if (snapshot.val().userid) {
+
+                        } else {
+                            firebase.database().ref('/data/users/' + user.uid).update({
+                                userid: user.uid
+                            });
+                        }
+                        if (snapshot.val().banner) {
+
+                        } else {
+                            firebase.database().ref('/data/users/' + user.uid).update({
+                                banner: "/images/b1.jpg"
+                            });
+                        }
+                        if (snapshot.val().profile_picture) {
+
+                        } else {
+                            if (profile_image) {
+                                firebase.database().ref('/data/users/' + user.uid).update({
+                                    profile_picture: profile_image
+                                });
+                            } else {
+                                firebase.database().ref('/data/users/' + user.uid).update({
+                                    profile_picture: "/images/icon.png"
+                                });
+                            }
+
+                        }
+                        if (snapshot.val().displayName) {
+
+                        } else {
+                            if (name) {
+                                firebase.database().ref('/data/users/' + user.uid).update({
+                                    displayName: name
+                                });
+                            } else {
+
+                            }
+
+                        }
+                    });
+                })
+                .catch((error) => {
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+                    swal(errorMessage)
+                });
+
+        })
+
+        supabase.auth.onAuthStateChange((userx) => {
+            if (userx) {
+
+                const user = supabase.auth.user()
+                if (user) {
+                    console.log(user.user_metadata.avatar_url)
+                    console.log(user.user_metadata.full_name)
+                    console.log(user.email)
+                    console.log(user)
+                    $('[in_email]').val(user.email)
+                    $('[in_name]').val(user.user_metadata.full_name)
+                    if (user.user_metadata.avatar_url) {
+                        const data = '<div PFPX class="full-bg avaterx-theme-sdDAD"> </div>';
+                        $('.LOGaDSS22x').prepend(data)
+                        $('.theme-LOGaDSS21').css('height', '600px')
+                        $('[PFPX]').attr('image', user.user_metadata.avatar_url)
+                        $('[PFPX]').css('background-image', 'url(' + user.user_metadata.avatar_url + ')')
+                        $('.agree-message.agree-message.cc-DS34R').hide()
+                        $('.center-flex.theme-LOGaDSS222').hide()
+                    }
+                }
+
+            } else {
+                // User is signed out
+                // ...
+            }
+        });
+        //let { user, error } = await supabase.auth.signIn({ provider: 'github' })
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                // User is signed in.
+                $('.theme-LOGaDSS21').fadeOut()
+                setTimeout(function() {
+                    window.location.href = "/app";
+                }, 0000)
+                supabase.auth.signOut().then((response) => {
+                    console.log('Log out from Supabase')
+                })
+            } else {
+                // User is signed out.
+            }
+        });
+        $(document).on(
+            'click',
+            '[button-auth]',
+            function() {
+                const auth = $(this).attr('auth');
+                supabase.auth.signIn({
+                    provider: auth,
+                })
+            })
+    </script>
+</body>
+
+</html>

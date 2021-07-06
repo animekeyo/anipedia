@@ -1,253 +1,228 @@
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title name></title>
-    <style>
-        @import url("/styles/main.css");
-    </style>
-    <script>
-        var meta = document.getElementsByName("description")[0]; //this assumes there is only one description
-        meta.setAttribute("content", "new description"); // set description
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.7/dist/sweetalert2.all.min.js"></script>
 
+    <!---//////////////////////////------jquery------/////////////////////////--->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!---//////////////////////////------supabase------/////////////////////////--->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="/scripts/supabase.js"></script>
+    <!---/////////////////////////------sweetalert------/////////////////////////--->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.7/dist/sweetalert2.all.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase.js" integrity="sha512-6lfGMSk88X4s7EbxhApgmff4eU3uY3p+TN+zalPqeYZNErnUS5+Oxt98CEwEa8tQrUWUFCtEjmgHvO6tbTcurQ==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-analytics.min.js" integrity="sha512-tYYnZwf/eJg09q3LmQudGkU7otjD4bMYE6zIhQ0VTCnS5Ok3veLs47qbMVOC0flizr1ggOO3YlAe/NIOyXHYOA==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-app.min.js" integrity="sha512-oI4k2PDOH6DrfL+QEOI93tNmCioPOR8iUvqJGSOU/+oqo6Y3ME2+SZEeZfrHciNiXjaGB+G4a8o76ftbHE78VQ==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-auth.min.js" integrity="sha512-l0i+O3AfLS/mtNotaGw8tg4qg5bVCZDEwUDiDjAicmBrR0G+lqMlmSozvfPcX1TwliG4tbuFgo2l/xAlFc0NkQ==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase-database.min.js" integrity="sha512-gMSOOzrtVreCU7tq0PaPX+YfFhT0f5VXVucwDOWscAs6j8tz5OcBa9R66Pb88O6F2OJMCHy+/TY7vhM15Z/joQ==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.3.2/firebase.min.js" integrity="sha512-8Lwt4up5Cw4G+UtP/kxD9Q3uCEF3QEtYDfWsw3UreavHaTWJiEbYGU8BCvI3N9thGHr0g7O1oyjEfMld9iyXdg==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
-    <script src="/scripts/firebase.js"></script>
+    <!---/////////////////////////------hammer------/////////////////////////--->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
+    <!---/////////////////////////------aos------/////////////////////////--->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!---/////////////////////////------tippy------/////////////////////////--->
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
+    <!---/////////////////////////------react------/////////////////////////--->
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!---/////////////////////////------firebase------/////////////////////////--->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-functions.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-performance.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-remote-config.js"></script>
+    <!---/////////////////////////------MAIN SCRIPTS------/////////////////////////--->
+    <script src="/scripts/purl.js?clear-111"></script>
+    <script src="/scripts/firebase.js?clear-111"></script>
+    <script src="/scripts/tippy.js?clear-111"></script>
+    <script src="/scripts/open_user.js?clear-111"></script>
+    <script src="/scripts/get-view.js?clear-100"></script>
+    <!----------------------------------------------------------------->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="manifest" href="manifest.webmanifest?clear-126">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <style>
-        @import url("/styles/main.css");
-         :root {
-            --white: #f0f2f5;
-        }
-        
-        body,
-        div {
-            margin: unset;
-            padding: unset;
-        }
-        
-        .full-bg {
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .tiles {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-content: center;
-        }
-        
-        .center-flex {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
-            align-content: center;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .absolute {
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-        
-        .relative {
-            position: relative;
-            top: 0;
-            left: 0;
-        }
-        
-        .full-wh {
-            width: -webkit-fill-available;
-            height: -webkit-fill-available;
-        }
-        
-        .rambo {
-            background: -webkit-gradient(linear, left top, left bottom, color-stop(-20%, #f037a5), color-stop(130%, #4001f5));
-            background: linear-gradient(#f037a5 -20%, #4001f5 130%);
-        }
-        
-        .fixed {
-            position: fixed;
-            top: 0;
-            left: 0;
-        }
-        
-        .bg-w {
-            background-color: var(--c9);
-        }
-        
-        .bg-b {
-            background-color: var(--c15);
-        }
-        
-        .c-b {
-            color: var(--c15);
-            fill: var(--c15);
-        }
-        
-        .c-w {
-            color: var(--c9);
-            fill: var(--c9);
-        }
-        
-        main-xo.center-flex.full-bg.full-wh {
-            background-image: url(/images/b1.jpg);
-            gap: 1rem;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            flex-wrap: wrap;
-            align-content: center;
-            align-items: flex-start;
-        }
-        
-        main-xo.center-flex.full-bg.full-wh non.center-flex:hover {
-            background: var(--c14);
-            box-shadow: 0rem 1rem 3rem 1rem var(--c15);
-            z-index: 100;
-        }
-        
-        main-xo.center-flex.full-bg.full-wh non.center-flex non-a.center-flex svg {
-            width: 2rem;
-            height: 2rem;
-        }
-        
-        main-xo.center-flex.full-bg.full-wh non.center-flex non-a.center-flex.google {
-            width: auto;
-            height: 1.5rem;
-        }
-        
-        main-xo.center-flex.full-bg.full-wh non.center-flex {
-            flex-direction: row;
-            gap: 0.5rem;
-            padding: 1rem;
-            font-size: 1rem;
-            border-radius: 0.5rem;
-            cursor: pointer;
-            color: var(--c9);
-            font-family: 'C1';
-            background: var(--c15);
-        }
-        
-        main-xo.center-flex.full-bg.full-wh non-c.center-flex {
-            width: 15rem;
-            font-size: 1rem;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            gap: 0.5rem;
-            color: var(--c9);
-            align-items: flex-start;
-        }
-        
-        main-xo.center-flex.full-bg.full-wh non-c.center-flex non-z {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            align-content: flex-start;
-            justify-content: flex-start;
-            align-items: center;
-        }
-        
-        main-xo.center-flex.full-bg.full-wh non-c.center-flex non-x {
-            font-size: 1.5rem;
-        }
+        @import url("/styles/style.css?clear-6");
     </style>
+
 </head>
 
+
 <body>
-    <non import_loader>
+    <a style="margin: 1rem;" href="/" class=" center-flex fixed logo-s ">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="24" fill="#12161B"></circle>
+            <path d="M37 15L29.7778 21.8421L24 15L18.2222 21.8421L11 15V32.7895H37V15ZM13.8889 41H34.1111C34.8773 41 35.6121 40.7117 36.1539 40.1984C36.6956 39.6851 37 38.989 37 38.2632V35.5263H11V38.2632C11 38.989 11.3044 39.6851 11.8461 40.1984C12.3879 40.7117 13.1227 41 13.8889 41Z" fill="white"></path>
+            <rect x="11" y="35" width="26" height="8" fill="#12161B"></rect>
+            </svg>
+    </a>
+    <div style="background-image: url(/images/b3.jpg);" class="full-wh full-bg center-flex theme-LOGaDSS2">
 
-    </non>
-    <main-xo class=" center-flex full-bg full-wh">
-        <non-c class=" center-flex">
-            <non-x>
-                Welcome
-            </non-x>
-            <non-z class=" center-flex ">
-                By logging in you accept our Privacy Policy and Terms of Service
-            </non-z>
+        <div style="height: 400px;" class="center-flex relative theme-LOGaDSS21">
+            <div class="full-wh absolute center-flex theme-LOGaDSS22">
 
-        </non-c>
-        <non onclick="GoogleAuth()" class=" center-flex">
-            <non-a class=" center-flex google" icon_google></non-a>
-            <non-b class=" center-flex">Login with Google</non-b>
-        </non>
-        <non class=" center-flex">
-            <non-a class=" center-flex" icon_facebook></non-a>
-            <non-b class=" center-flex">Login with Facebook</non-b>
-        </non>
-    </main-xo>
-    <script src="/scripts/com.js">
-    </script>
+                <form action="" class="center-flex LOGaDSS22x">
+                    <label for="">Email</label>
+                    <input in_email autocomplete="email" type="email" name="" id="" required>
+                    <label for="">Password</label>
+                    <input in_password type="password" autocomplete="new-password" name="" id="" required>
+                    <button type="submit">Login</button>
+                </form>
+                <a href="/register" class="center-flex theme-SDFET34DF">
+                    Register for new account!
+                </a>
+                <div data-v-6d5d5628="" data-v-c35114da="" class="agree-message agree-message">
+                    By creating an account, you are agreeing to the
+                    <a data-v-6d5d5628="" href="/terms-and-conditions" target="_blank" rel="noopener noreferrer">
+                        Terms and conditions
+                    </a> and the
+                    <a data-v-6d5d5628="" href="/privacy" target="_blank" rel="noopener noreferrer">
+                        Privacy policy
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
     <script>
-        firebase.auth().onAuthStateChanged((user) => {
-            if (user) {
-                // User is signed in, see docs for a list of available properties
-                // https://firebase.google.com/docs/reference/js/firebase.User
-                var uid = user.uid;
-                var name = user.displayName;
-                $('[name]').text(name);
+        $(".LOGaDSS22x").on("submit", function(event) {
+            event.preventDefault()
+            console.log('workin')
+            const email = $('[in_email]').val()
+            const password = $('[in_password]').val()
 
-                setTimeout(
-                    function() {
-                        $('loader').fadeIn();
-                        setTimeout(
-                            function() {
-                                window.location.href = "/u?id=" + uid;
-                            }, 0500);
-                    }, 1000);
-            } else {
-                setTimeout(
-                    function() {
-                        $('loader').fadeOut();
+            firebase.auth().signInWithEmailAndPassword(email, password)
+                .then((userxs) => {
+                    // Signed in
+                    const user = firebase.auth().currentUser;
 
-                    }, 1000);
+                    const ref = firebase.database().ref('/data/users/' + user.uid);
 
-            }
-        });
+                    createTime = Date.now();
+                    createTime = createTime.toString();
+                    createTime = createTime.slice(0, -3);
+                    createTime = parseInt(createTime);
+                    ref.update({
+                        onlineState: true,
+                    });
+                    ref.onDisconnect().update({
+                        onlineState: false,
+                        afkTimeout: createTime,
+                    });
+                    ref.once("value", snapshot => {
+                        if (snapshot.val().username) {
 
-        function GoogleAuth() {
-            var provider = new firebase.auth.GoogleAuthProvider();
-            firebase.auth()
-                .signInWithPopup(provider)
-                .then((result) => {
-                    var credential = result.credential;
+                        } else {
+                            firebase.database().ref('/data/users/' + user.uid).update({
+                                username: 'keyo' + createTime,
+                            });
+                        }
+                        if (snapshot.val().userid) {
 
-                    // This gives you a Google Access Token. You can use it to access the Google API.
-                    var token = credential.accessToken;
-                    // The signed-in user info.
-                    var user = result.user;
-                    // ...
-                }).catch((error) => {
-                    // Handle Errors here.
+                        } else {
+                            firebase.database().ref('/data/users/' + user.uid).update({
+                                userid: user.uid
+                            });
+                        }
+                        if (snapshot.val().banner) {
+
+                        } else {
+                            firebase.database().ref('/data/users/' + user.uid).update({
+                                banner: "/images/b1.jpg"
+                            });
+                        }
+                        if (snapshot.val().profile_picture) {
+
+                        } else {
+                            if (profile_image) {
+                                firebase.database().ref('/data/users/' + user.uid).update({
+                                    profile_picture: profile_image
+                                });
+                            } else {
+                                firebase.database().ref('/data/users/' + user.uid).update({
+                                    profile_picture: "/images/icon.png"
+                                });
+                            }
+
+                        }
+                        if (snapshot.val().displayName) {
+
+                        } else {
+                            if (name) {
+                                firebase.database().ref('/data/users/' + user.uid).update({
+                                    displayName: name
+                                });
+                            } else {
+
+                            }
+
+                        }
+                    });
+                })
+                .catch((error) => {
                     var errorCode = error.code;
                     var errorMessage = error.message;
-                    // The email of the user's account used.
-                    var email = error.email;
-                    // The firebase.auth.AuthCredential type that was used.
-                    var credential = error.credential;
-                    // ...
+                    swal(errorMessage)
                 });
-        };
+
+        })
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                // User is signed in.
+                $('.theme-LOGaDSS21').fadeOut()
+                setTimeout(function() {
+                    window.location.href = "/app";
+                }, 0000)
+                supabase.auth.signOut().then((response) => {
+                    console.log('Log out from Supabase')
+                })
+            } else {
+                // User is signed out.
+            }
+        });
+        supabase.auth.onAuthStateChange((userx) => {
+            if (userx) {
+
+                const user = supabase.auth.user()
+                if (user) {
+                    console.log(user.user_metadata.avatar_url)
+                    console.log(user.user_metadata.full_name)
+                    console.log(user.email)
+                    console.log(user)
+                    $('[in_email]').val(user.email)
+                    $('[in_name]').val(user.user_metadata.full_name)
+                    if (user.user_metadata.avatar_url) {
+                        const data = '<div PFPX class="full-bg avaterx-theme-sdDAD"> </div>';
+                        $('.LOGaDSS22x').prepend(data)
+                        $('.theme-LOGaDSS21').css('height', '600px')
+                        $('[PFPX]').attr('image', user.user_metadata.avatar_url)
+                        $('[PFPX]').css('background-image', 'url(' + user.user_metadata.avatar_url + ')')
+                        $('.agree-message.agree-message.cc-DS34R').hide()
+                        $('.center-flex.theme-LOGaDSS222').hide()
+                    }
+                }
+
+            } else {
+                // User is signed out
+                // ...
+            }
+        });
+        //let { user, error } = await supabase.auth.signIn({ provider: 'github' })
+
+        $(document).on(
+            'click',
+            '[button-auth]',
+            function() {
+                const auth = $(this).attr('auth');
+                supabase.auth.signIn({
+                    provider: auth,
+                })
+            })
     </script>
 </body>
-<html>
+
+</html>

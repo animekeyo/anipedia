@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="manifest" href="manifest.webmanifest?clear-126">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <style>
+        @import url("/styles/main.css?clear-121");
+    </style>
+</head>
+<!---//////////////////////////------jquery------/////////////////////////--->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!---/////////////////////////------sweetalert------/////////////////////////--->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.7/dist/sweetalert2.all.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<!---/////////////////////////------hammer------/////////////////////////--->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
+<!---/////////////////////////------aos------/////////////////////////--->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<!---/////////////////////////------tippy------/////////////////////////--->
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
+<!---/////////////////////////------react------/////////////////////////--->
+<script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<!---/////////////////////////------firebase------/////////////////////////--->
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-functions.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-performance.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-remote-config.js"></script>
+<!---/////////////////////////------MAIN SCRIPTS------/////////////////////////--->
+<script src="/scripts/purl.js?clear-111"></script>
+<script src="/scripts/firebase.js?clear-111"></script>
+<script src="/scripts/tippy.js?clear-111"></script>
+<script src="/scripts/open_user.js?clear-111"></script>
+<script src="/scripts/com_1.js?clear-113"></script>
+<script src="/scripts/get-view.js?clear-114"></script>
+<!----------------------------------------------------------------->
+<style>
+    .theme-app24FDDSSD1 {
+        max-width: 60rem;
+        width: -webkit-fill-available;
+        overflow: hidden;
+        margin-top: 4rem;
+        display: flex;
+        align-items: flex-start;
+        overflow-x: scroll;
+    }
+    
+    .theme-app24FDDSSD1::-webkit-scrollbar {
+        border-radius: 100rem;
+        transition: 0.5s;
+        height: 7px;
+    }
+    
+    .theme-app24FDDSSD1::-webkit-scrollbar-thumb {
+        background-color: var(--c7);
+        outline: unset;
+        border-radius: 100rem;
+        transition: 0.5s;
+        width: 0rem;
+    }
+    
+    .theme-app24FDDSSD1::-webkit-scrollbar-track {
+        background: var(--c14);
+    }
+    
+    .center-flex.theme-app23DECSSX1 {
+        width: auto;
+        height: 7rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: flex-start;
+        align-items: center;
+        background: var(--c14);
+        border-radius: 5px;
+        padding: 0rem 1.5rem;
+    }
+    
+    .full-bg.center-flex.theme-app23DECSSX4 {
+        width: 38px;
+        height: 38px;
+    }
+    
+    .center-flex.theme-app23DECSSX5 {
+        font-size: 0.65rem;
+        word-break: break-word;
+        width: 4rem;
+        display: flex;
+        text-align: left;
+        align-items: flex-start;
+    }
+    
+    .center-flex.theme-app23DECSSX2 {
+        height: 1rem;
+        padding: 1.5rem 1rem;
+        margin: 0.5rem;
+        display: flex;
+        width: 7rem;
+        gap: 10px;
+        background: var(--c13);
+        border-radius: 5px;
+        justify-content: center;
+    }
+    
+    .center-flex.theme-app23DECSSX3 {
+        height: -webkit-fill-available;
+        display: flex;
+        gap: 0.5rem;
+        justify-content: flex-start;
+        flex-direction: row;
+    }
+    
+    .center-flex.theme-app23DECSSX6 {
+        background: var(--c15);
+        padding: 0.3rem 0.6rem;
+        font-size: 0.8rem;
+        border-radius: 5px;
+    }
+    
+    .center-flex.theme-app23DECSSX12 {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+        justify-content: flex-start;
+        margin: 1rem;
+        flex-wrap: wrap;
+    }
+    
+    .center-flex.full-wh.theme-app246FDDSSD1 {
+        gap: 1rem;
+    }
+    
+    .center-flex.theme-app23DECSSX123 {
+        padding: 0.7rem 0.9rem;
+        background: var(--c15);
+        border-radius: 5px;
+    }
+    
+    .center-flex.theme-appDFXCE21 {
+        width: 13.7rem;
+        height: 15rem;
+        border-radius: 5px;
+        background: var(--c15);
+    }
+    
+    .theme-app24FDDSSD11 {
+        max-width: 60rem;
+        width: -webkit-fill-available;
+        min-height: 10rem;
+        height: fit-content;
+        background: var(--c14);
+        border-radius: 5px;
+        overflow: hidden;
+        margin-bottom: 1rem;
+    }
+    
+    .center-flex.theme-appDFXCE2 {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        justify-content: center;
+        align-items: flex-start;
+    }
+</style>
+
+<body>
+
+    <div class="center-flex full-wh theme-app246FDDSSD1">
+        <div class=" center-flex theme-app24FDDSSD1">
+
+            <div class="center-flex theme-app23DECSSX1">
+
+            </div>
+        </div>
+        <div class=" theme-app24FDDSSD11">
+            <div class="center-flex theme-app23DECSSX12">
+                <div class="center-flex theme-app23DECSSX123">
+                    Following
+                </div>
+                <div class="center-flex theme-app23DECSSX123">
+                    For You
+                </div>
+                <div style="color:var(--c19);" class="center-flex theme-app23DECSSX123">
+                    Hentai
+                </div>
+                <div class="center-flex theme-app23DECSSX123">
+                    Anime
+                </div>
+                <div class="center-flex theme-app23DECSSX123">
+                    Pixiv
+                </div>
+                <div class="center-flex theme-app23DECSSX123">
+                    Gaming
+                </div>
+                <div class="center-flex theme-app23DECSSX123">
+                    Art
+                </div>
+            </div>
+            <div class="center-flex theme-appDFXCE2">
+                <div class="center-flex theme-appDFXCE21">
+
+                </div>
+                <div class="center-flex theme-appDFXCE21">
+
+                </div>
+                <div class="center-flex theme-appDFXCE21">
+
+                </div>
+                <div class="center-flex theme-appDFXCE21">
+
+                </div>
+                <div class="center-flex theme-appDFXCE21">
+
+                </div>
+                <div class="center-flex theme-appDFXCE21">
+
+                </div>
+                <div class="center-flex theme-appDFXCE21">
+
+                </div>
+                <div class="center-flex theme-appDFXCE21">
+
+                </div>
+                <div class="center-flex theme-appDFXCE21">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="/scripts/com.js?clear-203"></script>
+    <script src="/scripts/goto.js"></script>
+    <script>
+        firebase.auth().onAuthStateChanged(function(x) {
+
+            if (x) {
+
+                const rexo = firebase.database().ref('/data/users/');
+
+                rexo.once('value', function(snapshot) {
+                    snapshot.forEach((user) => {
+                        const displayName = (user.val() && user.val().displayName);
+                        const userid = (user.val() && user.val().userid);
+                        const profile_picture = (user.val() && user.val().profile_picture);
+                        const onlineState = user.val().onlineState;
+
+
+                        rexo.child(x.uid + '/following/' + userid).once("value", snapshot => {
+
+                            if (snapshot.exists()) {
+
+                            } else {
+                                //PEOPLE THAT THE USER DONT FOLLOWING///
+                                if (x.uid == userid) {
+
+                                } else {
+                                    $.getScript('/scripts/popuser.js?443hgghxdgsdkffgdddssdddddd42DfdsdfFSF', function() {});
+                                    const fixno =
+                                        '<div popuserid="' + userid + '" userid="' + userid + '" class="center-flex theme-app23DECSSX2">' +
+                                        '<div class="center-flex theme-app23DECSSX3">' +
+                                        '<div class=" relative full-bg center-flex theme-dfsdSDF2344DaFG">' +
+                                        '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32" fill="none">' +
+                                        '<foreignObject x="0" y="0" width="32" height="32">' +
+                                        '<div class="avatarStack-2Dr8S9">' +
+                                        '<img src="' + profile_picture + '">' +
+                                        '</div>' +
+                                        '</foreignObject>' +
+                                        '<g id="Frame 1" clip-path="url(#clip0)">' +
+                                        '<rect width="32" height="32"></rect>' +
+                                        '<rect id="pfp 1" width="32" height="32" rx="16" fill="url(#pattern0)"></rect>' +
+                                        '<circle id="Ellipse 2" cx="27" cy="27" r="8.5" fill="var(--c13)"></circle>' +
+                                        '<circle id="Ellipse 1" cx="27" cy="27" r="5" tippy="" fill="var(--c14)" data-tippy-content="Offline"></circle>' +
+                                        '</g></svg>' +
+                                        '</div>' +
+                                        '<div style="color: var(--c9);" class="center-flex theme-app23DECSSX5">' +
+                                        displayName +
+                                        '</div>' +
+                                        '</div>' +
+
+                                        '</div>';
+                                    if (onlineState == true) {
+                                        const fixno =
+                                            '<div popuserid="' + userid + '" userid="' + userid + '" class="center-flex code-dfjsDFEDZ2 theme-app23DECSSX2">' +
+                                            '<div class="center-flex theme-app23DECSSX3">' +
+                                            '<div class=" relative full-bg center-flex theme-dfsdSDF2344DaFG">' +
+                                            '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32" fill="none">' +
+                                            '<foreignObject x="0" y="0" width="32" height="32">' +
+                                            '<div class="avatarStack-2Dr8S9">' +
+                                            '<img src="' + profile_picture + '">' +
+                                            '</div>' +
+                                            '</foreignObject>' +
+                                            '<g id="Frame 1" clip-path="url(#clip0)">' +
+                                            '<rect width="32" height="32"></rect>' +
+                                            '<rect id="pfp 1" width="32" height="32" rx="16" fill="url(#pattern0)"></rect>' +
+                                            '<circle id="Ellipse 2" cx="27" cy="27" r="8.5" fill="var(--c13)"></circle>' +
+                                            '<circle id="Ellipse 1" cx="27" cy="27" r="5" tippy="" fill="var(--c7)" data-tippy-content="Online"></circle>' +
+                                            '</g></svg>' +
+                                            '</div>' +
+                                            '<div style="color: var(--c9);" class="center-flex theme-app23DECSSX5">' +
+                                            displayName +
+                                            '</div>' +
+                                            '</div>' +
+
+                                            '</div>';
+                                        $('.theme-app23DECSSX1').prepend(fixno)
+                                    } else {
+                                        $('.theme-app23DECSSX1').prepend(fixno)
+                                    }
+
+                                }
+
+                            }
+                        });
+                    })
+                });
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>

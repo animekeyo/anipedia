@@ -275,10 +275,11 @@ $(document).on('click', '[getview]', function() {
                             const follow = (snapshot.val() && snapshot.val().follow);
 
                             if (follow == true) {
-                                $("[FOLLOW_EXMO]").text("Follow");
+
+                                $("[FOLLOW_EXMO]").text("Unfollow");
                                 $(".center-flex.theme-px123DFDR4D").css('background-color', 'var(--c7)');
                             } else {
-                                $("[FOLLOW_EXMO]").text("Unfollow");
+                                $("[FOLLOW_EXMO]").text("Follow");
                                 $(".center-flex.theme-px123DFDR4D").css('background-color', 'var(--c19)');
                             };
 

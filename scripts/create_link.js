@@ -1,7 +1,7 @@
-const d = new Date();
-const aag = d.getTime();
-const aaf = d.getFullYear();
-const aae = d.getMonth();
-const aah = d.getMilliseconds();
-const aahx = d.getDay();
-const create_link = aag + "" + aaf + "" + aae + "" + aah + "" + aahx;
+ DFCSEXCVRFDCFF = new Date();
+ DFCSEXCVRFDCFF2 = DFCSEXCVRFDCFF.getTime();
+ DFCSEXCVRFDCFF23 = DFCSEXCVRFDCFF.getFullYear();
+ DFCSEXCVRFDCFF234 = DFCSEXCVRFDCFF.getMonth();
+ DFCSEXCVRFDCFF2345 = DFCSEXCVRFDCFF.getMilliseconds();
+ DFCSEXCVRFDCFF23456 = DFCSEXCVRFDCFF.getDay();
+ create_link = DFCSEXCVRFDCFF2 + "" + DFCSEXCVRFDCFF23 + "" + DFCSEXCVRFDCFF234 + "" + DFCSEXCVRFDCFF2345 + "" + DFCSEXCVRFDCFF23456;

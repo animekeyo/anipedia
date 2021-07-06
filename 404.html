@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!---//////////////////////////------jquery------/////////////////////////--->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!---//////////////////////////------supabase------/////////////////////////--->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="/scripts/supabase.js"></script>
+    <!---/////////////////////////------sweetalert------/////////////////////////--->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.7/dist/sweetalert2.all.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!---/////////////////////////------hammer------/////////////////////////--->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
+    <!---/////////////////////////------aos------/////////////////////////--->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!---/////////////////////////------tippy------/////////////////////////--->
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
+    <!---/////////////////////////------react------/////////////////////////--->
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!---/////////////////////////------firebase------/////////////////////////--->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-functions.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-performance.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-remote-config.js"></script>
+    <!---/////////////////////////------MAIN SCRIPTS------/////////////////////////--->
+    <script src="/scripts/purl.js?clear-111"></script>
+    <script src="/scripts/firebase.js?clear-111"></script>
+    <script src="/scripts/tippy.js?clear-111"></script>
+    <script src="/scripts/open_user.js?clear-111"></script>
+    <script src="/scripts/get-view.js?clear-100"></script>
+    <!----------------------------------------------------------------->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="manifest" href="manifest.webmanifest?clear-126">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <style>
+        @import url("/styles/style.css?clear-6");
+    </style>
+    <style>
+        .theme-avDSF34D.center-flex.full-bg {
+            width: 70px;
+            height: 70px;
+            border-radius: 100rem;
+            background-color: var(--c13);
+        }
+        
+        form.center-flex.LOGaDSS22x button {
+            margin: 0;
+        }
+        
+        .theme-dsfSDF23DFx {
+            font-size: 1.5rem;
+        }
+        
+        .full-wh.center-flex.theme-LOGaDSS22 {
+            gap: 0.8rem;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+<script>
+    const str = window.location.pathname;
+    if (str.indexOf("/invite/") >= 0) {
+        const serverId = str.replace('/invite/', '');
+        const data = '<a style="margin: 1rem; z-index: 2;" href="/" class="fixed center-flex fixed logo-s "> <svg width="48" height="48" viewBox="0 0 48 48" fill="none"> <circle cx="24" cy="24" r="24" fill="#12161B"></circle> <path d="M37 15L29.7778 21.8421L24 15L18.2222 21.8421L11 15V32.7895H37V15ZM13.8889 41H34.1111C34.8773 41 35.6121 40.7117 36.1539 40.1984C36.6956 39.6851 37 38.989 37 38.2632V35.5263H11V38.2632C11 38.989 11.3044 39.6851 11.8461 40.1984C12.3879 40.7117 13.1227 41 13.8889 41Z" fill="white"></path> <rect x="11" y="35" width="26" height="8" fill="#12161B"></rect> </svg> </a> <div style="background-image: url(/images/b3.jpg);" class="fixed full-wh full-bg center-flex theme-LOGaDSS2"> <div style="height: 300px;" class="center-flex relative theme-LOGaDSS21"> <div class="full-wh absolute center-flex theme-LOGaDSS22"> <div server_icon class=" theme-avDSF34D center-flex full-bg"> </div> <div class="theme-dsfSDF23DF"> You have been invited to join </div> <div server_name class="theme-dsfSDF23DFx"> </div> <form action="" class="center-flex LOGaDSS22x"> <button join_server type="submit">Join Server</button> </form> </div> </div></div>';
+        $('body').prepend(data)
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                const currentUserID = firebase.auth().currentUser.uid;
+                const database = firebase.database().ref('/data/users/' + currentUserID + '/join/' + serverId);
+                database.on('value', function(snapshot) {
+                    if (snapshot.exists()) {
+                        window.location.href = "/app";
+                    } else {
+                        const database = firebase.database().ref('/data/servers/' + serverId);
+                        database.on('value', function(snapshot) {
+                            const userid = snapshot.val().userid;
+                            const serverId = snapshot.val().serverId;
+                            const database = firebase.database().ref('/data/users/' + userid + '/server/' + serverId);
+                            database.once('value', function(snapshot) {
+                                const serverName = (snapshot.val() && snapshot.val().serverName);
+                                const serverIcon = (snapshot.val() && snapshot.val().serverIcon);
+                                const serverId = (snapshot.val() && snapshot.val().serverId);
+                                const userid = (snapshot.val() && snapshot.val().userid);
+                                console.log(serverName)
+                                console.log(serverIcon)
+                                console.log(serverId)
+                                console.log(userid)
+                                $(document).on(
+                                    'click',
+                                    '[join_server]',
+                                    function() {
+                                        const serverId = $(this).attr('serverId');
+                                        const userid = $(this).attr('userid');
+
+                                        const database = firebase.database().ref('/data/users/' + userid + '/server/' + serverId);
+                                        const database2 = firebase.database().ref('/data/users/' + currentUserID + '/join/' + serverId);
+
+                                        if (serverId) {
+                                            if (userid) {
+                                                database2.once('value', function(snapshot) {
+                                                    if (snapshot.exists()) {
+
+                                                    } else {
+                                                        database.child('members').once('value', function(snapshot) {
+                                                            if (snapshot.exists()) {
+
+                                                            } else {
+                                                                database.child('members').child(currentUserID).update({
+                                                                    userid: currentUserID,
+                                                                    member: true,
+                                                                    mute: false,
+                                                                });
+                                                            }
+                                                        })
+                                                        database2.update({
+                                                            serverId: serverId,
+                                                            userid: userid,
+                                                        });
+                                                    }
+                                                })
+                                            }
+                                        }
+                                    });
+                                if (serverId) {
+                                    $('[join_server]').attr('serverId', serverId)
+                                }
+                                if (userid) {
+                                    $('[join_server]').attr('userid', userid)
+                                }
+                                if (serverIcon) {
+                                    $('[server_icon]').css('background-image', 'url(' + serverIcon + ')');
+                                    $('[server_icon]').text('');
+                                } else {
+                                    if (serverName) {
+                                        $('[server_icon]').text(serverName.slice(0, 1));
+                                    }
+                                }
+                                if (serverName) {
+                                    $('[server_name]').text(serverName)
+                                }
+                                if (userid == currentUserID) {
+                                    console.log('You Owned The Server')
+                                } else {
+                                    console.log('You Dont Owned The Server')
+                                }
+                            })
+
+                        })
+                    }
+                })
+
+                //const database2 = firebase.database().ref('/data/users/' + currentUserID + '/join/' + serverID);
+                //const database3 = firebase.database().ref('/data/servers/' + serverID);
+            } else {
+
+            }
+        })
+    } else {
+
+    }
+</script>
+
+</html>
