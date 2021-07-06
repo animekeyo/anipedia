@@ -145,7 +145,7 @@ setTimeout(
             $('bodyx').prepend('<div load_off></div>')
             setTimeout(
                 function() {
-                    $("[load_off]").load("online&offline-users.html?clear-162");
+                    $("[load_off]").load("online&offline-users.html?clear1-162");
                 },
                 0000
             )
