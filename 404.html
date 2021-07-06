@@ -75,81 +75,106 @@
 
 </body>
 <script>
-    const _0x3823 = ['/server/', 'update', 'ref', '174377ZhEEEM', '20314KJNJEh', 'value', '/app', '92022pPcZgK', '/data/users/', '[server_name]', 'href', 'pathname', '/join/', 'prepend', 'exists', '[join_server]', 'serverId', 'currentUser', 'attr', '<a\x20style=\x22margin:\x201rem;\x20z-index:\x202;\x22\x20href=\x22/\x22\x20class=\x22fixed\x20center-flex\x20fixed\x20logo-s\x20\x22>\x20<svg\x20width=\x2248\x22\x20height=\x2248\x22\x20viewBox=\x220\x200\x2048\x2048\x22\x20fill=\x22none\x22>\x20<circle\x20cx=\x2224\x22\x20cy=\x2224\x22\x20r=\x2224\x22\x20fill=\x22#12161B\x22></circle>\x20<path\x20d=\x22M37\x2015L29.7778\x2021.8421L24\x2015L18.2222\x2021.8421L11\x2015V32.7895H37V15ZM13.8889\x2041H34.1111C34.8773\x2041\x2035.6121\x2040.7117\x2036.1539\x2040.1984C36.6956\x2039.6851\x2037\x2038.989\x2037\x2038.2632V35.5263H11V38.2632C11\x2038.989\x2011.3044\x2039.6851\x2011.8461\x2040.1984C12.3879\x2040.7117\x2013.1227\x2041\x2013.8889\x2041Z\x22\x20fill=\x22white\x22></path>\x20<rect\x20x=\x2211\x22\x20y=\x2235\x22\x20width=\x2226\x22\x20height=\x228\x22\x20fill=\x22#12161B\x22></rect>\x20</svg>\x20</a>\x20<div\x20style=\x22background-image:\x20url(/images/b3.jpg);\x22\x20class=\x22fixed\x20full-wh\x20full-bg\x20center-flex\x20theme-LOGaDSS2\x22>\x20<div\x20style=\x22height:\x20300px;\x22\x20class=\x22center-flex\x20relative\x20theme-LOGaDSS21\x22>\x20<div\x20class=\x22full-wh\x20absolute\x20center-flex\x20theme-LOGaDSS22\x22>\x20<div\x20server_icon\x20class=\x22\x20theme-avDSF34D\x20center-flex\x20full-bg\x22>\x20</div>\x20<div\x20class=\x22theme-dsfSDF23DF\x22>\x20You\x20have\x20been\x20invited\x20to\x20join\x20</div>\x20<div\x20server_name\x20class=\x22theme-dsfSDF23DFx\x22>\x20</div>\x20<form\x20action=\x22\x22\x20class=\x22center-flex\x20LOGaDSS22x\x22>\x20<button\x20join_server\x20type=\x22submit\x22>Join\x20Server</button>\x20</form>\x20</div>\x20</div></div>', '187511RiKoqn', '/invite/', '184894kMoOlW', 'You\x20Owned\x20The\x20Server', 'indexOf', 'url(', '6553FgCbij', '[server_icon]', 'uid', 'serverName', 'once', 'child', 'slice', 'click', 'userid', 'css', '/data/servers/', '31mpjCqt', 'log', 'text', '203397KUJyyw', 'val', 'background-image', 'members', 'You\x20Dont\x20Owned\x20The\x20Server'];
+    const str = window.location.pathname;
+    if (str.indexOf("/invite/") >= 0) {
+        const serverId = str.replace('/invite/', '');
+        const data = '<a style="margin: 1rem; z-index: 2;" href="/" class="fixed center-flex fixed logo-s "> <svg width="48" height="48" viewBox="0 0 48 48" fill="none"> <circle cx="24" cy="24" r="24" fill="#12161B"></circle> <path d="M37 15L29.7778 21.8421L24 15L18.2222 21.8421L11 15V32.7895H37V15ZM13.8889 41H34.1111C34.8773 41 35.6121 40.7117 36.1539 40.1984C36.6956 39.6851 37 38.989 37 38.2632V35.5263H11V38.2632C11 38.989 11.3044 39.6851 11.8461 40.1984C12.3879 40.7117 13.1227 41 13.8889 41Z" fill="white"></path> <rect x="11" y="35" width="26" height="8" fill="#12161B"></rect> </svg> </a> <div style="background-image: url(/images/b3.jpg);" class="fixed full-wh full-bg center-flex theme-LOGaDSS2"> <div style="height: 300px;" class="center-flex relative theme-LOGaDSS21"> <div class="full-wh absolute center-flex theme-LOGaDSS22"> <div server_icon class=" theme-avDSF34D center-flex full-bg"> </div> <div class="theme-dsfSDF23DF"> You have been invited to join </div> <div server_name class="theme-dsfSDF23DFx"> </div> <form action="" class="center-flex LOGaDSS22x"> <button join_server type="submit">Join Server</button> </form> </div> </div></div>';
+        $('body').prepend(data)
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                const currentUserID = firebase.auth().currentUser.uid;
+                const database = firebase.database().ref('/data/users/' + currentUserID + '/join/' + serverId);
+                database.on('value', function(snapshot) {
+                    if (snapshot.exists()) {
+                        window.location.href = "/app";
+                    } else {
+                        const database = firebase.database().ref('/data/servers/' + serverId);
+                        database.on('value', function(snapshot) {
+                            const userid = snapshot.val().userid;
+                            const serverId = snapshot.val().serverId;
+                            const database = firebase.database().ref('/data/users/' + userid + '/server/' + serverId);
+                            database.once('value', function(snapshot) {
+                                const serverName = (snapshot.val() && snapshot.val().serverName);
+                                const serverIcon = (snapshot.val() && snapshot.val().serverIcon);
+                                const serverId = (snapshot.val() && snapshot.val().serverId);
+                                const userid = (snapshot.val() && snapshot.val().userid);
+                                console.log(serverName)
+                                console.log(serverIcon)
+                                console.log(serverId)
+                                console.log(userid)
+                                $(document).on(
+                                    'click',
+                                    '[join_server]',
+                                    function() {
+                                        const serverId = $(this).attr('serverId');
+                                        const userid = $(this).attr('userid');
 
-    function _0x7c16(_0xc85a66, _0x11218b) {
-        return _0x7c16 = function(_0x3823a5, _0x7c16ea) {
-            _0x3823a5 = _0x3823a5 - 0x105;
-            let _0x2e6df2 = _0x3823[_0x3823a5];
-            return _0x2e6df2;
-        }, _0x7c16(_0xc85a66, _0x11218b);
-    }
-    const _0x2b75ef = _0x7c16;
-    (function(_0x581cc8, _0x5d4bb4) {
-        const _0x46d9a2 = _0x7c16;
-        while (!![]) {
-            try {
-                const _0x5b274d = -parseInt(_0x46d9a2(0x120)) + -parseInt(_0x46d9a2(0x12f)) + -parseInt(_0x46d9a2(0x12d)) + -parseInt(_0x46d9a2(0x106)) + -parseInt(_0x46d9a2(0x114)) + parseInt(_0x46d9a2(0x11c)) + -parseInt(_0x46d9a2(0x11d)) * -parseInt(_0x46d9a2(0x111));
-                if (_0x5b274d === _0x5d4bb4) break;
-                else _0x581cc8['push'](_0x581cc8['shift']());
-            } catch (_0x12a7a9) {
-                _0x581cc8['push'](_0x581cc8['shift']());
-            }
-        }
-    }(_0x3823, 0x1fac6));
-    const str = window['location'][_0x2b75ef(0x124)];
-    if (str[_0x2b75ef(0x131)]('/invite/') >= 0x0) {
-        const serverId = str['replace'](_0x2b75ef(0x12e), ''),
-            data = _0x2b75ef(0x12c);
-        $('body')[_0x2b75ef(0x126)](data), firebase['auth']()['onAuthStateChanged'](function(_0x45271c) {
-            const _0x59e597 = _0x2b75ef;
-            if (_0x45271c) {
-                const _0x16cc36 = firebase['auth']()[_0x59e597(0x12a)][_0x59e597(0x108)],
-                    _0x5dd5e8 = firebase['database']()['ref'](_0x59e597(0x121) + _0x16cc36 + _0x59e597(0x125) + serverId);
-                _0x5dd5e8['on'](_0x59e597(0x11e), function(_0x257ef4) {
-                    const _0x4ab1ce = _0x59e597;
-                    if (_0x257ef4[_0x4ab1ce(0x127)]()) window['location'][_0x4ab1ce(0x123)] = _0x4ab1ce(0x11f);
-                    else {
-                        const _0x50d1c2 = firebase['database']()[_0x4ab1ce(0x11b)](_0x4ab1ce(0x110) + serverId);
-                        _0x50d1c2['on'](_0x4ab1ce(0x11e), function(_0x28d998) {
-                            const _0x5e8ed8 = _0x4ab1ce,
-                                _0x1146a7 = _0x28d998[_0x5e8ed8(0x115)]()[_0x5e8ed8(0x10e)],
-                                _0x29e71a = _0x28d998['val']()['serverId'],
-                                _0x1a6ce1 = firebase['database']()[_0x5e8ed8(0x11b)]('/data/users/' + _0x1146a7 + '/server/' + _0x29e71a);
-                            _0x1a6ce1['once'](_0x5e8ed8(0x11e), function(_0x43a613) {
-                                const _0x1e6d1f = _0x5e8ed8,
-                                    _0x563a31 = _0x43a613[_0x1e6d1f(0x115)]() && _0x43a613[_0x1e6d1f(0x115)]()[_0x1e6d1f(0x109)],
-                                    _0x9efc0f = _0x43a613['val']() && _0x43a613[_0x1e6d1f(0x115)]()['serverIcon'],
-                                    _0x214444 = _0x43a613['val']() && _0x43a613[_0x1e6d1f(0x115)]()[_0x1e6d1f(0x129)],
-                                    _0x334629 = _0x43a613[_0x1e6d1f(0x115)]() && _0x43a613['val']()[_0x1e6d1f(0x10e)];
-                                console[_0x1e6d1f(0x112)](_0x563a31), console[_0x1e6d1f(0x112)](_0x9efc0f), console[_0x1e6d1f(0x112)](_0x214444), console['log'](_0x334629), $(document)['on'](_0x1e6d1f(0x10d), _0x1e6d1f(0x128), function() {
-                                    const _0x14a531 = _0x1e6d1f,
-                                        _0x246286 = $(this)[_0x14a531(0x12b)](_0x14a531(0x129)),
-                                        _0x2c9c1a = $(this)[_0x14a531(0x12b)](_0x14a531(0x10e)),
-                                        _0x499c4f = firebase['database']()[_0x14a531(0x11b)](_0x14a531(0x121) + _0x2c9c1a + _0x14a531(0x119) + _0x246286),
-                                        _0x5c47b4 = firebase['database']()['ref'](_0x14a531(0x121) + _0x16cc36 + _0x14a531(0x125) + _0x246286);
-                                    _0x246286 && (_0x2c9c1a && _0x5c47b4['once']('value', function(_0x41e739) {
-                                        const _0x8cc20d = _0x14a531;
-                                        if (_0x41e739[_0x8cc20d(0x127)]()) {} else _0x499c4f[_0x8cc20d(0x10b)](_0x8cc20d(0x117))[_0x8cc20d(0x10a)](_0x8cc20d(0x11e), function(_0x464204) {
-                                            const _0x3390a0 = _0x8cc20d;
-                                            if (_0x464204['exists']()) {} else _0x499c4f[_0x3390a0(0x10b)]('members')['child'](_0x16cc36)[_0x3390a0(0x11a)]({
-                                                'userid': _0x16cc36,
-                                                'member': !![],
-                                                'mute': ![]
-                                            });
-                                        }), _0x5c47b4[_0x8cc20d(0x11a)]({
-                                            'serverId': _0x246286,
-                                            'userid': _0x2c9c1a
-                                        });
-                                    }));
-                                }), _0x214444 && $(_0x1e6d1f(0x128))['attr'](_0x1e6d1f(0x129), _0x214444), _0x334629 && $(_0x1e6d1f(0x128))[_0x1e6d1f(0x12b)](_0x1e6d1f(0x10e), _0x334629), _0x9efc0f ? ($(_0x1e6d1f(0x107))[_0x1e6d1f(0x10f)](_0x1e6d1f(0x116), _0x1e6d1f(0x105) + _0x9efc0f + ')'), $('[server_icon]')[_0x1e6d1f(0x113)]('')) : _0x563a31 && $(_0x1e6d1f(0x107))['text'](_0x563a31[_0x1e6d1f(0x10c)](0x0, 0x1)), _0x563a31 && $(_0x1e6d1f(0x122))[_0x1e6d1f(0x113)](_0x563a31), _0x334629 == _0x16cc36 ? console[_0x1e6d1f(0x112)](_0x1e6d1f(0x130)) : console[_0x1e6d1f(0x112)](_0x1e6d1f(0x118));
-                            });
-                        });
+                                        const database = firebase.database().ref('/data/users/' + userid + '/server/' + serverId);
+                                        const database2 = firebase.database().ref('/data/users/' + currentUserID + '/join/' + serverId);
+
+                                        if (serverId) {
+                                            if (userid) {
+                                                database2.once('value', function(snapshot) {
+                                                    if (snapshot.exists()) {
+
+                                                    } else {
+                                                        database.child('members').once('value', function(snapshot) {
+                                                            if (snapshot.exists()) {
+
+                                                            } else {
+                                                                database.child('members').child(currentUserID).update({
+                                                                    userid: currentUserID,
+                                                                    member: true,
+                                                                    mute: false,
+                                                                });
+                                                            }
+                                                        })
+                                                        database2.update({
+                                                            serverId: serverId,
+                                                            userid: userid,
+                                                        });
+                                                    }
+                                                })
+                                            }
+                                        }
+                                    });
+                                if (serverId) {
+                                    $('[join_server]').attr('serverId', serverId)
+                                }
+                                if (userid) {
+                                    $('[join_server]').attr('userid', userid)
+                                }
+                                if (serverIcon) {
+                                    $('[server_icon]').css('background-image', 'url(' + serverIcon + ')');
+                                    $('[server_icon]').text('');
+                                } else {
+                                    if (serverName) {
+                                        $('[server_icon]').text(serverName.slice(0, 1));
+                                    }
+                                }
+                                if (serverName) {
+                                    $('[server_name]').text(serverName)
+                                }
+                                if (userid == currentUserID) {
+                                    console.log('You Owned The Server')
+                                } else {
+                                    console.log('You Dont Owned The Server')
+                                }
+                            })
+
+                        })
                     }
-                });
-            } else {}
-        });
-    } else {}
+                })
+
+                //const database2 = firebase.database().ref('/data/users/' + currentUserID + '/join/' + serverID);
+                //const database3 = firebase.database().ref('/data/servers/' + serverID);
+            } else {
+
+            }
+        })
+    } else {
+
+    }
 </script>
 
 </html>

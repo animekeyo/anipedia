@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'C1';
-    src: url('/fonts/GothamBold.ttf?clear-1');
+    src: url('/fonts/GothamBold.ttf');
 }
 
 @font-face {
     font-family: 'C2';
-    src: url('/fonts/Alata-Regular.ttf?clear-1');
+    src: url('/fonts/Alata-Regular.ttf');
 }
 
 
