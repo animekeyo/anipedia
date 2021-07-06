@@ -399,7 +399,7 @@
                         console.log(appendtoc)
                         var user = firebase.auth().currentUser;
                         var pfp = res.data.link;
-                        $('[' + appendtoc + ']').attr('src', pfp)
+                        $('[' + appendtoc + ']').css('background-image', 'url(' + pfp + ')');
 
                     },
                     error: function() {
