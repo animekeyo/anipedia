@@ -993,6 +993,22 @@
 
 
                 };
+                if (typeof snapshot.val().displayName == "undefined") {
+                    firebase.database().ref('/data/users/' + user.uid).update({
+                        displayName: 'keyo' + createTime,
+                    });
+                } else {
+
+
+                };
+                if (typeof snapshot.val().username == "undefined") {
+                    firebase.database().ref('/data/users/' + user.uid).update({
+                        username: 'keyo' + createTime,
+                    });
+                } else {
+
+
+                };
                 if (snapshot.val().displayName) {
 
                 } else {
