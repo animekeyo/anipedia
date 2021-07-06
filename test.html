@@ -400,7 +400,7 @@
                         var user = firebase.auth().currentUser;
                         var pfp = res.data.link;
                         $("document").ready(function() {
-                            $('[' + appendto + ']').css('')
+                            $('[' + appendto + ']').css('background-image', pfp)
                         });
                     },
                     error: function() {
@@ -547,7 +547,7 @@
                     var reader = new FileReader();
 
                     reader.onload = function(e) {
-                        $('[' + icon + ']').css('background-image', 'url(' + e.target.result + ')');
+                        //$('[' + icon + ']').css('background-image', 'url(' + e.target.result + ')');
                     }
 
                     reader.readAsDataURL(input.files[0]);
