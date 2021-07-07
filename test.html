@@ -428,7 +428,63 @@
             const server_icon = $('[upload-server-icon]').css('background-image').replace(/^url\(['"](.+)['"]\)/, '$1');
 
             if (server_name) {
-                swal('' + server_banner + server_name + server_icon + '')
+                firebase.auth().onAuthStateChanged(function(user) {
+                    if (user) {
+                        const currentUserID = firebase.auth().currentUser.uid;
+                        swal('' + server_banner + server_name + server_icon + '')
+                        const TD = new Date();
+                        const TD2 = TD.getTime();
+                        const TD23 = TD.getFullYear();
+                        const TD234 = TD.getMonth();
+                        const TD2345 = TD.getMilliseconds();
+                        const TD23456 = TD.getDay();
+                        const create_link = TD2 + "" + TD23 + "" + TD234 + "" + TD2345 + "" + TD23456;
+                        const Milliseconds = TD.getMilliseconds();
+                        const serverID = create_link + Milliseconds;
+                        const database = firebase.database().ref('/data/users/' + currentUserID + '/server/' + serverID);
+                        const database2 = firebase.database().ref('/data/users/' + currentUserID + '/join/' + serverID);
+                        const database3 = firebase.database().ref('/data/servers/' + serverID);
+                        database3.update({
+                            serverId: serverID,
+                            userid: currentUserID,
+                        }).then(
+                            function name(params) {
+                                console.log('Done-1')
+                            }
+                        );
+                        database.update({
+                            serverId: serverID,
+                            userid: currentUserID,
+                            serverId: serverID,
+                            serverName: server_name,
+                            serverIcon: server_icon,
+                            serverBanner: server_banner,
+                        }).then(
+                            function name(params) {
+                                console.log('Done-2')
+                            }
+                        );
+                        database.child('members').child(currentUserID).update({
+                            userid: currentUserID,
+                            member: true,
+                            mute: false,
+                        }).then(
+                            function name(params) {
+                                console.log('Done-3')
+                            }
+                        );
+
+                        database2.update({
+                            serverId: serverID,
+                            userid: currentUserID,
+                        }).then(
+                            function name(params) {
+                                console.log('Done-4')
+                            }
+                        );
+                    }
+                });
+
             }
             const server_link = $('[join-server-invite-link-input]').val();
             if (server_link) {
