@@ -154,7 +154,7 @@
                 const get = $(this).attr('get');
                 $.getJSON('https://nekos.life/api/v2/' + get + '', function(data) {
                     console.log(data.url)
-                        ///$('[set-image]').attr('src', data.url)
+                        ////$('[set-image]').attr('src', data.url)
                         ///<img set-image src="" alt="" srcset="">
                     $('[data-role="content"]').css('background-image', 'url(' + data.url + ')')
                     $('[set-image]').remove()
