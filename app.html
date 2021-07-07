@@ -878,7 +878,8 @@
             <div DISCOVER_SERVERS tippyx data-tippy-content="Discover" class="center-flex theme-DASE34 cc-DASE343">
                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none"> <g id="Group"> <circle id="Ellipse 8" cx="24" cy="24" r="24" fill="#12161B"/> <path id="Vector" d="M32 32L28.2223 28.2156L32 32ZM30.3158 23.1579C30.3158 25.0563 29.5617 26.8769 28.2193 28.2193C26.8769 29.5617 25.0563 30.3158 23.1579 30.3158C21.2595 30.3158 19.4389 29.5617 18.0965 28.2193C16.7541 26.8769 16 25.0563 16 23.1579C16 21.2595 16.7541 19.4389 18.0965 18.0965C19.4389 16.7541 21.2595 16 23.1579 16C25.0563 16 26.8769 16.7541 28.2193 18.0965C29.5617 19.4389 30.3158 21.2595 30.3158 23.1579V23.1579Z" stroke="white" stroke-width="2" stroke-linecap="round"/> </g> </svg>
             </div>
-            <div BEMO_MS show-btn btn="CSERVER" tippyx data-tippy-content="Create a Server" class="center-flex theme-DASE34 cc-DASE343 cc-DASE343g">
+            <div goto link="/portal" tippyx data-tippy-content="Create a Server" class="center-flex theme-DASE34 cc-DASE343 cc-DASE343g">
+                <!---BEMO_MS show-btn btn="CSERVER"-->
                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none"> <g id="Group"> <circle id="Ellipse 8" cx="24" cy="24" r="24" fill="#12161B"/> <path id="Vector" d="M24 24H16M24 32V24V32ZM24 24V16V24ZM24 24H32H24Z" stroke="white" stroke-width="2" stroke-linecap="round"/> </g> </svg>
             </div>
         </div>
@@ -936,6 +937,14 @@
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             /////////////////////
+            $(document).on(
+                'click',
+                '[goto]',
+                function() {
+                    const link = $(this).attr('link');
+                    window.location.href = link;
+                }
+            )
             const data = firebase.database().ref('/data/users/' + user.uid);
             data.on('value', function(snapshot) {
                 if (snapshot.exists()) {
