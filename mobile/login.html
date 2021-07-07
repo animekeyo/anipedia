@@ -52,15 +52,20 @@
             font-size: 1.2rem;
             padding: 1rem;
             background: var(--c7);
+            color: var(--c6);
             font-family: sans-serif;
             FONT-WEIGHT: 600;
-            border-radius: 5px;
-            letter-spacing: 0.5px;
+            border-radius: 10px;
+            letter-spacing: 0.2px;
         }
         
         .center-flex.theme-HOMDSFE3423 {
             margin: 1.5rem;
             gap: 1rem;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            align-content: flex-start;
         }
         
         .theme-fsd-fd {
@@ -73,12 +78,13 @@
             letter-spacing: 0.2px;
             gap: 1rem;
             display: flex;
+            /* margin: 1rem; */
             align-items: flex-start;
             align-content: flex-start;
             justify-content: flex-start;
         }
         
-        .center-flex.theme-HOMDSFE3422 svg {
+        .center-flex.theme-HOMDSFE3422 a svg {
             width: 7rem;
             height: 7rem;
         }
@@ -87,48 +93,101 @@
             display: flex;
             justify-content: space-between;
         }
+        
+        form.center-flex.LOGaDSS22x {
+            width: -webkit-fill-available;
+        }
+        
+        form.center-flex.LOGaDSS22x input {
+            height: 1rem;
+            width: -webkit-fill-available;
+            padding: 1rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            background: #21272f;
+            color: var(--c6);
+        }
+        
+        button.center-flex.button.theme-HOMDSFE342 {
+            height: 3rem;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        
+        form.center-flex.LOGaDSS22x label {
+            margin-bottom: .5rem;
+            margin-top: .5rem;
+            text-transform: uppercase;
+            font-size: .8rem;
+            color: var(--c9);
+        }
     </style>
 </head>
 
 <body>
     <div class="center-flex full-wh absolute theme-HOMDSFE3421">
         <div class="center-flex full-wh theme-HOMDSFE3422">
-            <svg class="theme-ho123DS1D4" width="48" height="48" viewBox="0 0 48 48" fill="none">
-                <circle cx="24" cy="24" r="24" fill="#12161B"></circle>
-                <path d="M37 15L29.7778 21.8421L24 15L18.2222 21.8421L11 15V32.7895H37V15ZM13.8889 41H34.1111C34.8773 41 35.6121 40.7117 36.1539 40.1984C36.6956 39.6851 37 38.989 37 38.2632V35.5263H11V38.2632C11 38.989 11.3044 39.6851 11.8461 40.1984C12.3879 40.7117 13.1227 41 13.8889 41Z" fill="white"></path>
-                <rect x="10" y="35" width="27.4" height="9" fill="#12161B"></rect>
-                </svg>
+            <a href="./">
+                <svg class="theme-ho123DS1D4" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                    <circle cx="24" cy="24" r="24" fill="#12161B"></circle>
+                    <path d="M37 15L29.7778 21.8421L24 15L18.2222 21.8421L11 15V32.7895H37V15ZM13.8889 41H34.1111C34.8773 41 35.6121 40.7117 36.1539 40.1984C36.6956 39.6851 37 38.989 37 38.2632V35.5263H11V38.2632C11 38.989 11.3044 39.6851 11.8461 40.1984C12.3879 40.7117 13.1227 41 13.8889 41Z" fill="white"></path>
+                    <rect x="10" y="35" width="27.4" height="9" fill="#12161B"></rect>
+                    </svg>
+            </a>
         </div>
         <div class="center-flex theme-HOMDSFE3423">
             <div class="center-flex theme-HOMDSFE3424">
                 <div class="theme-fsd-fd">
-                    Welcome to AnimeKeyo
+                    Welcome Back!
                 </div>
-                <div class="theme-fsd-fdg">
-                    Join us as we carve a place on the internet fellow fans to make new friendships, discuss your thoughts/favorite anime, and get your game on
-                </div>
+
             </div>
-            <div goto link="./login" class="center-flex button theme-HOMDSFE342">
-                Login
-            </div>
-            <div goto link="./register" class="center-flex button theme-HOMDSFE342">
-                Register
-            </div>
+            <form action="" class="center-flex LOGaDSS22x">
+                <label for="">Email</label>
+                <input in_email autocomplete="email" type="email" name="" id="" required="">
+                <label for="">Password</label>
+                <input in_password type="password" autocomplete="new-password" name="" id="" required="">
+                <button type="submit" class="center-flex button theme-HOMDSFE342">
+                    Login
+                </button>
+            </form>
+
         </div>
     </div>
     <script>
-        $(document).on(
-            'click',
-            '[goto]',
-            function() {
-                const link = $(this).attr('link');
-                if (link == './register') {
-                    swal('Error', 'Try it on the pc')
-                } else {
-                    window.location.href = link;
-                }
-            }
-        )
+        $(".LOGaDSS22x").on("submit", function(event) {
+            event.preventDefault()
+            console.log('workin')
+            const email = $('[in_email]').val()
+            const password = $('[in_password]').val()
+
+            firebase.auth().signInWithEmailAndPassword(email, password)
+                .then((userxs) => {
+                    // Signed in
+                    const user = firebase.auth().currentUser;
+
+                    const ref = firebase.database().ref('/data/users/' + user.uid);
+
+                    createTime = Date.now();
+                    createTime = createTime.toString();
+                    createTime = createTime.slice(0, -3);
+                    createTime = parseInt(createTime);
+                    ref.update({
+                        onlineState: true,
+                    });
+                    ref.onDisconnect().update({
+                        onlineState: false,
+                        afkTimeout: createTime,
+                    });
+                    ref.once("value", snapshot => {
+
+                    })
+                }).catch((error) => {
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+                    swal(errorMessage)
+                });
+        });
     </script>
 </body>
 
