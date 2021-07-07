@@ -480,6 +480,12 @@
                         }).then(
                             function name(params) {
                                 console.log('Done-4')
+                                swal('Done', 'Server has been created!')
+                                setTimeout(
+                                    function name(params) {
+                                        window.location.href = "/app";
+                                    }, 1000
+                                )
                             }
                         );
                     }
