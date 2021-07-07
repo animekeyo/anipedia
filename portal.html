@@ -502,7 +502,7 @@
 
                         const database = firebase.database().ref('/data/users/' + currentUserID + '/join/' + server_link);
                         if (numberRegex.test(server_link)) {
-                            // this is for only simple join link like just numbers 
+                            // this is for only simple join link lke just numbers 
 
                             database3.once('value', function(snapshot) {
                                 const serverId = (snapshot.val() && snapshot.val().serverId);
