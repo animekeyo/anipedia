@@ -50,7 +50,7 @@
         .ui-overlay-a,
         .ui-page-theme-a,
         .ui-page-theme-a .ui-panel-wrapper {
-            background: var(--r2);
+            background-color: var(--r2);
         }
         /* Swipe works with mouse as well but often causes text selection. */
         
@@ -64,7 +64,7 @@
         /* Arrow only buttons in the header. //*/
         
         #demo-page .ui-header .ui-btn {
-            background: none;
+            background-color: none;
             border: none;
             top: 9px;
         }
@@ -135,7 +135,7 @@
         .center-flex.theme-GSDgFD67 {
             width: 3rem;
             height: 3rem;
-            background: var(--r3);
+            background-color: var(--r3);
             border-radius: 100rem;
         }
         
@@ -152,12 +152,12 @@
         }
         
         .center-flex.fixed.full-wh.theme-FSDFg34S1 {
-            background: var(--r1);
+            background-color: var(--r1);
         }
         
         .center-flex.absolute.theme-FSDFg34S2 {
-            width: 5rem;
-            background: var(--r1);
+            width: 4rem;
+            background-color: var(--r1);
             height: -webkit-fill-available;
             display: flex;
             align-content: flex-start;
@@ -176,29 +176,88 @@
         }
         
         .center-flex.theme-FSDFg34S24 {
-            width: 4rem;
-            height: 4rem;
+            width: 3rem;
+            height: 3rem;
             border-radius: 100rem;
             overflow: hidden;
-            background: var(--r4);
+            background-color: var(--r4);
         }
         
         .center-flex.absolute.theme-FSDFg34S3 {
             width: -webkit-fill-available;
             height: -webkit-fill-available;
-            margin-left: 5rem;
-            background: var(--r3);
+            margin-left: 4rem;
+            background-color: var(--r3);
+        }
+        
+        .center-flex.absolute.theme-FSDFg34S34 {
+            height: 3.5rem;
+            width: -webkit-fill-available;
+            background-color: var(--r2);
+            top: unset;
+            bottom: 0;
+        }
+        
+        .center-flex.theme-FSDFg34S342 {
+            width: 2.3rem;
+            height: 2.3rem;
+            border-radius: 100rem;
+            background-color: var(--c7);
+        }
+        
+        .center-flex.absolute.theme-FSDFg34S34 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        
+        .center-flex.theme-FSDFg34S341 {
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
+            margin: 0.5rem;
+        }
+        
+        servers {
+            gap: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .center-flex.absolute.full-wh.theme-FSDFg34S3D {
+            margin-bottom: 3.5rem;
+            display: flex;
+            align-content: flex-start;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+        
+        .center-flex.theme-FSDFg34S3Dg1 {
+            padding: 0.7rem;
+            background-color: var(--r2);
+            width: -webkit-fill-available;
+            display: flex;
+            align-items: flex-start;
+            font-family: sans-serif;
+            letter-spacing: 0.4px;
+            FONT-WEIGHT: 600;
+            font-size: 1rem;
+        }
+        
+        .center-flex.full-bg.theme-FSDFg34S3Dg2 {
+            width: -webkit-fill-available;
+            background-color: white;
+            height: 8rem;
         }
     </style>
 </head>
 
 <body>
     <div data-role="page" id="demo-page" data-theme="d" data-url="demo-page">
-        <div data-role="header" data-theme="b">
-            <h1>Fav Pic</h1>
-            <a href="#left-panel" data-theme="d" data-icon="arrow-r" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">Open left panel</a>
-            <a href="#right-panel" data-theme="d" data-icon="arrow-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">Open right panel</a>
-        </div>
         <!-- /header -->
         <div class="full-bg full-wh" data-role="content">
 
@@ -218,46 +277,33 @@
             <div class="center-flex fixed full-wh theme-FSDFg34S1">
                 <div class="center-flex absolute theme-FSDFg34S2">
                     <div class="center-flex theme-FSDFg34S24g">
+                        <servers>
+
+                        </servers>
                         <div class="center-flex theme-FSDFg34S24">
 
                         </div>
-                        <div class="center-flex theme-FSDFg34S24">
 
-                        </div>
-                        <div class="center-flex theme-FSDFg34S24">
-
-                        </div>
-                        <div class="center-flex theme-FSDFg34S24">
-
-                        </div>
-                        <div class="center-flex theme-FSDFg34S24">
-
-                        </div>
-                        <div class="center-flex theme-FSDFg34S24">
-
-                        </div>
-                        <div class="center-flex theme-FSDFg34S24">
-
-                        </div>
-                        <div class="center-flex theme-FSDFg34S24">
-
-                        </div>
-                        <div class="center-flex theme-FSDFg34S24">
-
-                        </div>
-                        <div class="center-flex theme-FSDFg34S24">
-
-                        </div>
-                        <div class="center-flex theme-FSDFg34S24">
-
-                        </div>
-                        <div class="center-flex theme-FSDFg34S24">
-
-                        </div>
                     </div>
                 </div>
                 <div class="center-flex absolute theme-FSDFg34S3">
+                    <!---SERVER NAME ? OTHER DATA-->
+                    <div server-data class="center-flex absolute full-wh theme-FSDFg34S3D">
 
+                    </div>
+                    <div class="center-flex absolute theme-FSDFg34S34">
+                        <div class="center-flex  theme-FSDFg34S341">
+                            <div user-profile-image class="center-flex full-bg theme-FSDFg34S342">
+
+                            </div>
+                            <div user-display-name class="center-flex  theme-FSDFg34S343">
+
+                            </div>
+                        </div>
+                        <div class="center-flex  theme-FSDFg34S344">
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -267,6 +313,59 @@
         <!-- /panel -->
     </div>
     <script>
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                const user = firebase.auth().currentUser;
+                const ref = firebase.database().ref('/data/users/' + user.uid);
+                ref.on("value", snapshot => {
+                    const displayName = snapshot.val().displayName;
+                    const pfp = snapshot.val().profile_picture
+                    $('[user-display-name]').text(displayName)
+                    $('[user-profile-image]').css('background-image', 'url(' + pfp + ')')
+                });
+                ref.once("value", snapshot => {
+                    const join = snapshot.val().join;
+                    $.each(join, function(o, v) {
+                        const userid = v.userid;
+                        const serverId = v.serverId;
+                        $('servers').append('<div view-server userid="' + userid + '" serverId="' + serverId + '" class="center-flex full-bg theme-FSDFg34S24"></div>')
+                        const database = firebase.database().ref('/data/users/' + userid + '/server/' + serverId);
+                        database.on("value", snapshot => {
+                            const serverId = snapshot.val().serverId;
+                            const serverName = snapshot.val().serverId;
+                            const serverIcon = snapshot.val().serverIcon;
+                            $('[view-server][serverId="' + serverId + '"]').css('background-image', 'url(' + serverIcon + ')')
+                        })
+                    })
+                });
+                ////////////////////////////////////
+                $(document).on(
+                    'click',
+                    '[view-server]',
+                    function() {
+                        const serverId = $(this).attr('serverId')
+                        const userid = $(this).attr('userid')
+                        $('[view-server]').css('border-radius', '100rem')
+                        $(this).css('border-radius', '1rem')
+                        $('[server-data]').html('')
+                        const data = '<div server-name class="center-flex theme-FSDFg34S3Dg1"> </div> <div server-banner class="center-flex full-bg theme-FSDFg34S3Dg2"> </div>';
+                        $('[server-data]').prepend(data)
+                        const database = firebase.database().ref('/data/users/' + userid + '/server/' + serverId);
+                        database.on("value", snapshot => {
+                            const serverId = snapshot.val().serverId;
+                            const serverName = snapshot.val().serverName;
+                            const serverIcon = snapshot.val().serverIcon;
+                            const serverBanner = snapshot.val().serverBanner;
+                            $('[server-name]').text(serverName)
+                            $('[server-banner]').css('background-image', 'url(' + serverBanner + ')')
+                        })
+                    }
+                );
+
+            } else {
+                window.location.href = './login';
+            }
+        });
         $(document).on(
             'click',
             '[btn-re]',
