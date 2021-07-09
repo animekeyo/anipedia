@@ -156,7 +156,7 @@
         }
         
         .center-flex.absolute.theme-FSDFg34S2 {
-            width: 4rem;
+            width: 4.5rem;
             background-color: var(--r1);
             height: -webkit-fill-available;
             display: flex;
@@ -186,7 +186,7 @@
         .center-flex.absolute.theme-FSDFg34S3 {
             width: -webkit-fill-available;
             height: -webkit-fill-available;
-            margin-left: 4rem;
+            margin-left: 4.5rem;
             background-color: var(--r3);
         }
         
@@ -291,6 +291,78 @@
                     <div server-data class="center-flex absolute full-wh theme-FSDFg34S3D">
 
                     </div>
+                    <style>
+                        .absolute.center-flex.theme-mp3playermini {
+                            width: -webkit-fill-available;
+                            height: 3rem;
+                            top: unset;
+                            bottom: 3.5rem;
+                            background: var(--r3);
+                        }
+                        
+                        .center-flex.theme-mp3playermini1 {
+                            width: -webkit-fill-available;
+                            height: -webkit-fill-available;
+                            margin: 0.5rem;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: flex-start;
+                            gap: 0.6rem;
+                            align-items: center;
+                        }
+                        
+                        .center-flex.theme-mp3playermini2 {
+                            height: 100%;
+                            width: 32.21px;
+                            background-color: var(--r1);
+                            border-radius: 5px;
+                        }
+                        
+                        .center-flex.theme-mp3playermini41 {
+                            display: flex;
+                            font-size: 0.7rem;
+                            gap: 0.07rem;
+                            align-items: flex-start;
+                        }
+                        
+                        .center-flex.theme-mp3playermini412,
+                        .theme-mp3playermini411 {
+                            width: 6rem;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            display: block;
+                            text-overflow: ellipsis;
+                        }
+                        
+                        .center-flex.theme-mp3playermini4 svg {
+                            fill: var(--c6);
+                            width: 2rem;
+                            height: 2rem;
+                        }
+                    </style>
+
+                    <audio id="music-player" autoplay>
+                        <source id="audioSource" src="" type="audio/mp3">
+                    </audio>
+                    <div class="absolute center-flex theme-mp3playermini">
+                        <div class="center-flex theme-mp3playermini1">
+                            <div id="song-pic" class="center-flex full-bg theme-mp3playermini2">
+
+                            </div>
+                            <div class="center-flex theme-mp3playermini41">
+                                <div id="artist" class="center-flex theme-mp3playermini411">
+
+                                </div>
+                                <div id="song-title" class="center-flex theme-mp3playermini412">
+
+                                </div>
+                            </div>
+                            <div id="playPause" class="center-flex theme-mp3playermini4">
+                                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><rect fill="none" height="24" width="24"/></g><g><path d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M9.5,14.67V9.33c0-0.79,0.88-1.27,1.54-0.84 l4.15,2.67c0.61,0.39,0.61,1.29,0,1.68l-4.15,2.67C10.38,15.94,9.5,15.46,9.5,14.67z"/></g></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <script src="/websocket.js?clear-1123fggif"></script>
                     <div class="center-flex absolute theme-FSDFg34S34">
                         <div class="center-flex  theme-FSDFg34S341">
                             <div user-profile-image class="center-flex full-bg theme-FSDFg34S342">
