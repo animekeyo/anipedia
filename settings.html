@@ -151,7 +151,7 @@
     }
     
     .center-flex.full-wh.theme-fx-Fdsd form input {
-        width: -webkit-fill-available;
+        width: 24rem;
         height: 2.5rem;
         border-radius: 5px;
         padding: 0rem 0.8rem;
@@ -165,7 +165,7 @@
     
     .center-flex.full-wh.theme-fx-Fdsd form button {
         height: 2.5rem;
-        width: -webkit-fill-available;
+        width: 10rem;
         transition: 0.1s;
         margin-top: 1rem;
         border: unset;
@@ -298,13 +298,7 @@
 </style>
 
 <body>
-    <a style="margin: 1rem;z-index: 100;" href="/app" class=" center-flex fixed logo-s ">
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-        <circle cx="24" cy="24" r="24" fill="#12161B"></circle>
-        <path d="M37 15L29.7778 21.8421L24 15L18.2222 21.8421L11 15V32.7895H37V15ZM13.8889 41H34.1111C34.8773 41 35.6121 40.7117 36.1539 40.1984C36.6956 39.6851 37 38.989 37 38.2632V35.5263H11V38.2632C11 38.989 11.3044 39.6851 11.8461 40.1984C12.3879 40.7117 13.1227 41 13.8889 41Z" fill="white"></path>
-        <rect x="11" y="35" width="26" height="8" fill="#12161B"></rect>
-        </svg>
-    </a>
+
     <div class="center-flex full-bg full-wh fixed theme-GfSHDHASH12">
         <div class="center-flex full-wh r5 relative theme-GfSHDHASH122">
             <div style="width: 210px;" class="center-flex full-wh r5 theme-GfSHDHASH1221">
@@ -320,23 +314,23 @@
                         <form action="">
 
                             <div class="center-flex relative theme-dfXDd">
-                                <div user-avater class="avater absolute full-bg">
+                                <div main-user-avatar class="avater absolute full-bg">
 
                                 </div>
-                                <div user-banner class="user-banner absolute full-bg">
+                                <div main-user-banner class="user-banner absolute full-bg">
 
                                 </div>
                             </div>
 
                             <label for="">User Avatar</label>
-                            <input required user-avater type="file" icon="upload-avater" accept="image/*" name="" id="">
+                            <input user-avater type="file" icon="upload-avater" accept="image/*" name="" id="">
                             <label for="">User Name</label>
                             <input user-name-input type="text" required autocomplete="name">
 
                             <label for="">User Banner</label>
-                            <input required user-banner type="file" icon="upload-banner" accept="image/*" name="" id="">
-                            <label for="">User Dec</label>
-                            <input style="height: 6rem;" user-dec-input type="text" required autocomplete="name">
+                            <input user-banner type="file" icon="upload-banner" accept="image/*" name="" id="">
+                            <label for="">User Bio</label>
+                            <input style="height: 6rem;" user-bio-input type="text" required autocomplete="name">
                             <button user-update-btn>Create</button>
                         </form>
 
@@ -358,6 +352,45 @@
     </div>
     <script src="/scripts/com.js?clear1-7"></script>
     <script>
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                const data = firebase.database().ref('/data/users/' + user.uid);
+                data.on('value', function(snapshot) {
+                    if (snapshot.exists()) {
+                        if (snapshot.val().displayName) {
+                            const displayName = (snapshot.val() && snapshot.val().displayName);
+                            const profile_picture = (snapshot.val() && snapshot.val().profile_picture);
+                            const banner = (snapshot.val() && snapshot.val().banner);
+                            const bio = (snapshot.val() && snapshot.val().bio);
+                            const onlineState = (snapshot.val() && snapshot.val().onlineState);
+
+
+
+
+
+                            $('[main-user-displayname]').text(displayName)
+                            $('[main-user-bio]').text(bio)
+                            $('[user-name-input]').val(displayName)
+                            $('[user-bio-input]').val(bio)
+                            $('[main-user-avatar]').css('background-image', 'url(' + profile_picture + ')')
+
+                            if (typeof banner == "undefined") {
+                                $('[main-user-banner]').css('background-image', 'url(' + profile_picture + ')')
+                            } else if (typeof banner == "null") {
+                                $('[main-user-banner]').css('background-image', 'url(' + profile_picture + ')')
+                            } else {
+                                if (banner) {
+                                    $('[main-user-banner]').css('background-image', 'url(' + banner + ')')
+                                }
+                            }
+                        }
+                    }
+                })
+
+            } else {
+
+            }
+        })
         var images = ['1', '2', '3', '5', '8', '9', '10'];
 
         $('.theme-GfSHDHASH12').css('background-image', 'url(/images/bg' + images[Math.floor(Math.random() * images.length)] + '.jpg)');
@@ -415,8 +448,8 @@
                         console.log(appendtoc)
                         var user = firebase.auth().currentUser;
                         var pfp = res.data.link;
-                        $('[' + appendtoc + ']').css('background-image', 'url(' + pfp + ')');
-                        ///
+
+
 
                     },
                     error: function() {
@@ -438,157 +471,44 @@
 
         $('form').on("submit", function(event) {
             event.preventDefault()
-            console.log(event)
-            const server_name = $('[user-name-inputt]').val();
-            const server_banner = $('[upload-banner]').css('background-image').replace(/^url\(['"](.+)['"]\)/, '$1');
-            const server_icon = $('[user-avater]').css('background-image').replace(/^url\(['"](.+)['"]\)/, '$1');
 
-            if (server_name) {
-                firebase.auth().onAuthStateChanged(function(user) {
-                    if (user) {
-                        const currentUserID = firebase.auth().currentUser.uid;
-                        swal('' + server_banner + server_name + server_icon + '')
-                        const TD = new Date();
-                        const TD2 = TD.getTime();
-                        const TD23 = TD.getFullYear();
-                        const TD234 = TD.getMonth();
-                        const TD2345 = TD.getMilliseconds();
-                        const TD23456 = TD.getDay();
-                        const create_link = TD2 + "" + TD23 + "" + TD234 + "" + TD2345 + "" + TD23456;
-                        const Milliseconds = TD.getMilliseconds();
-                        const serverID = create_link + Milliseconds;
-                        const database = firebase.database().ref('/data/users/' + currentUserID + '/server/' + serverID);
-                        const database2 = firebase.database().ref('/data/users/' + currentUserID + '/join/' + serverID);
-                        const database3 = firebase.database().ref('/data/servers/' + serverID);
-                        database3.update({
-                            serverId: serverID,
-                            userid: currentUserID,
-                        }).then(
-                            function name(params) {
-                                console.log('Done-1')
-                            }
-                        );
+            const displayName = $('[user-name-input]').val();
+            const bio = $('[user-bio-input]').val();
+
+            firebase.auth().onAuthStateChanged(function(user) {
+                if (user) {
+                    const currentUserID = firebase.auth().currentUser.uid;
+                    const database = firebase.database().ref('/data/users/' + currentUserID);
+                    if (banner) {
                         database.update({
-                            serverId: serverID,
-                            userid: currentUserID,
-                            serverId: serverID,
-                            serverName: server_name,
-                            serverIcon: server_icon,
-                            serverBanner: server_banner,
+                            banner: banner,
                         }).then(
-                            function name(params) {
-                                console.log('Done-2')
-                            }
-                        );
-                        database.child('members').child(currentUserID).update({
-                            userid: currentUserID,
-                            member: true,
-                            mute: false,
-                        }).then(
-                            function name(params) {
-                                console.log('Done-3')
-                            }
-                        );
-
-                        database2.update({
-                            serverId: serverID,
-                            userid: currentUserID,
-                        }).then(
-                            function name(params) {
-                                console.log('Done-4')
-                                swal('Done', 'Server has been created!')
-                                setTimeout(
-                                    function name(params) {
-                                        window.location.href = "/app";
-                                    }, 1000
-                                )
+                            function() {
+                                swal('banner Saved')
                             }
                         );
                     }
-                });
-
-            }
-            const server_link = $('[join-server-invite-link-input]').val();
-            if (server_link) {
-                var numberRegex = /^[+-]?\d+(\.\d+)?([eE][+-]?\d+)?$/;
-                firebase.auth().onAuthStateChanged(function(user) {
-                    if (user) {
-                        const currentUserID = firebase.auth().currentUser.uid;
-                        const database3 = firebase.database().ref('/data/servers/' + server_link);
-
-                        const database = firebase.database().ref('/data/users/' + currentUserID + '/join/' + server_link);
-                        if (numberRegex.test(server_link)) {
-                            // this is for only simple join link lke just numbers 
-
-                            database3.once('value', function(snapshot) {
-                                const serverId = (snapshot.val() && snapshot.val().serverId);
-                                const userid = (snapshot.val() && snapshot.val().userid);
-                                if (snapshot.exists()) {
-                                    database.once('value', function(snapshot) {
-                                        if (snapshot.exists()) {
-                                            swal('Error', 'You already joined/owned this server')
-                                        } else {
-                                            const database = firebase.database().ref('/data/users/' + userid + '/server/' + serverId);
-                                            const database2 = firebase.database().ref('/data/users/' + currentUserID + '/join/' + serverId);
-
-                                            if (serverId) {
-                                                if (userid) {
-                                                    database2.once('value', function(snapshot) {
-                                                        if (snapshot.exists()) {
-
-                                                        } else {
-                                                            database.child('members').once('value', function(snapshot) {
-                                                                if (snapshot.exists()) {
-
-                                                                } else {
-                                                                    database.child('members').child(currentUserID).update({
-                                                                        userid: currentUserID,
-                                                                        member: true,
-                                                                        mute: false,
-                                                                    }).then(function() {
-                                                                        console.log('Done')
-                                                                    }, function() {
-                                                                        console.log('Error')
-                                                                    });
-
-                                                                }
-                                                            })
-                                                            database2.update({
-                                                                serverId: serverId,
-                                                                userid: userid,
-                                                            }).then(function() {
-                                                                console.log('Done')
-                                                                swal('Joined')
-                                                            }, function() {
-                                                                console.log('Error')
-                                                            });
-                                                        }
-                                                    })
-                                                }
-                                            }
-
-
-                                        }
-
-                                    })
-
-                                } else {
-                                    swal(
-                                        'Error',
-                                        'Server Dont Exist or The Link is Broken'
-                                    )
-                                }
-                            })
-                        } else {
-                            swal(
-                                    'Error ',
-                                    'Sorry only simple/number link are allowed atm'
-                                )
-                                // this is for other stuff non as link with letter abc and nummbers
+                    if (profile_picture) {
+                        database.update({
+                            profile_picture: profile_picture,
+                        }).then(
+                            function() {
+                                swal('profile_picture Saved')
+                            }
+                        );
+                    }
+                    database.update({
+                        displayName: displayName,
+                        bio: bio,
+                    }).then(
+                        function() {
+                            swal('data Saved')
                         }
-                    }
-                })
-            }
+                    );
+                }
+            });
+
+
         })
         $.each(data_ixo, function(o, v) {
             //////////BUTTONS/////////

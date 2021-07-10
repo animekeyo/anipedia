@@ -120,16 +120,11 @@
         .full-bg.full-wh.ui-content {
             margin: unset;
             padding: unset;
-            width: fit-content;
+            width: -webkit-fill-available;
             height: -webkit-fill-available;
             position: absolute;
-            display: flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
-            align-content: center;
-            justify-content: center;
-            align-items: center;
             top: 0;
+            background: var(--r0);
         }
         
         .center-flex.theme-GSDgFD67 {
@@ -260,17 +255,78 @@
     <div data-role="page" id="demo-page" data-theme="d" data-url="demo-page">
         <!-- /header -->
         <div class="full-bg full-wh" data-role="content">
+            <style>
+                .center-flex.relative.proFCDE343 {
+                    width: -webkit-fill-available;
+                    height: 15rem;
+                    background: var(--r2);
+                }
+                
+                .center-flex.absolute.proFCD1E343 {
+                    width: -webkit-fill-available;
+                    height: 9rem;
+                    background-color: var(--r3);
+                }
+                
+                .center-flex.absolute.proFCDE2343 {
+                    width: 5rem;
+                    height: 5rem;
+                    z-index: 1;
+                    background-color: var(--r5);
+                    top: unset;
+                    bottom: 3.3rem;
+                    left: 1.5rem;
+                    border-radius: 100rem;
+                    box-shadow: 0px 0px 0px 0.5rem var(--r2);
+                }
+                
+                .center-flex.absolute.proFCDEf2343 {
+                    width: -webkit-fill-available;
+                    display: flex;
+                    top: unset;
+                    align-items: flex-start;
+                    bottom: 1rem;
+                    left: 0rem;
+                    font-size: 1.25rem;
+                    margin-left: 1rem;
+                }
+            </style>
+            <div class="center-flex relative proFCDE343">
+                <div main-user-banner class="center-flex full-bg absolute proFCD1E343">
 
-            <div class="center-flex fixed theme-GSDgFD67f">
-
-                <div btn-re get="img/wallpaper" class="center-flex theme-GSDgFD67">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 6v3l4-4-4-4v3c-4.42 0-8 3.58-8 8 0 1.57.46 3.03 1.24 4.26L6.7 14.8c-.45-.83-.7-1.79-.7-2.8 0-3.31 2.69-6 6-6zm6.76 1.74L17.3 9.2c.44.84.7 1.79.7 2.8 0 3.31-2.69 6-6 6v-3l-4 4 4 4v-3c4.42 0 8-3.58 8-8 0-1.57-.46-3.03-1.24-4.26z"/></svg>
                 </div>
-                <div class="center-flex theme-GSDgFD67">
+                <div main-user-avatar class="center-flex full-bg absolute proFCDE2343">
 
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                </div>
+                <div main-user-displayname class="center-flex absolute proFCDEf2343">
+
                 </div>
             </div>
+            <script>
+                firebase.auth().onAuthStateChanged(function(user) {
+                    if (user) {
+                        const data = firebase.database().ref('/data/users/' + user.uid);
+                        data.on('value', function(snapshot) {
+                            if (snapshot.exists()) {
+                                if (snapshot.val().displayName) {
+                                    const displayName = (snapshot.val() && snapshot.val().displayName);
+                                    const profile_picture = (snapshot.val() && snapshot.val().profile_picture);
+                                    const banner = (snapshot.val() && snapshot.val().banner);
+                                    const bio = (snapshot.val() && snapshot.val().bio);
+                                    const onlineState = (snapshot.val() && snapshot.val().onlineState);
+                                    $('[main-user-displayname]').text(displayName)
+                                    $('[main-user-bio]').text(bio)
+                                    $('[main-user-avatar]').css('background-image', 'url(' + profile_picture + ')')
+                                    $('[main-user-banner]').css('background-image', 'url(' + banner + ')')
+                                }
+                            }
+                        })
+
+                    } else {
+
+                    }
+                })
+            </script>
         </div>
         <!-- /content -->
         <div data-role="panel" id="left-panel" data-display="push" data-position="left" data-theme="c">
@@ -362,8 +418,8 @@
                     </style>
 
                     <audio id="music-player" autoplay>
-    <source id="audioSource" src="" type="audio/mp3">
-</audio>
+                    <source id="audioSource" src="" type="audio/mp3">
+                </audio>
                     <div class="absolute center-flex theme-mp3playermini">
                         <div class="center-flex theme-mp3playermini1">
                             <div class="center-flex theme-conxdsSDFSDFg">
@@ -427,7 +483,8 @@
                             border-radius: 100rem;
                         }
                         
-                        .center-flex.theme-into-inno-5345 {
+                        .center-flex.theme-into-inno-5345,
+                        .theme-into-inno-53457 {
                             font-family: sans-serif;
                             letter-spacing: 0.5px;
                             FONT-WEIGHT: 600;
@@ -445,6 +502,22 @@
                         .center-flex.theme-into-inno-5346 svg {
                             fill: white;
                         }
+                        
+                        .center-flex.theme-into-inno-534578 {
+                            display: flex;
+                            align-items: flex-start;
+                            align-content: flex-start;
+                            flex-direction: column;
+                        }
+                        
+                        .center-flex.theme-into-inno-5345 {
+                            font-size: 14px;
+                        }
+                        
+                        .center-flex.theme-into-inno-53457 {
+                            font-size: 10px;
+                            margin: 1px;
+                        }
                     </style>
                     <div class="absolute center-flex theme-into-inno-5341">
                         <div class="center-flex theme-into-inno-5342">
@@ -452,8 +525,9 @@
                                 <div main-user-avatar class="center-flex full-bg theme-into-inno-5344">
 
                                 </div>
-                                <div main-user-displayname class="center-flex theme-into-inno-5345">
-
+                                <div class="center-flex theme-into-inno-534578">
+                                    <div main-user-displayname class="center-flex theme-into-inno-5345"></div>
+                                    <div main-user-bio class="center-flex theme-into-inno-53457">Hello there</div>
                                 </div>
                             </div>
                             <div class="center-flex theme-into-inno-5346">
@@ -475,6 +549,7 @@
                                             const bio = (snapshot.val() && snapshot.val().bio);
                                             const onlineState = (snapshot.val() && snapshot.val().onlineState);
                                             $('[main-user-displayname]').text(displayName)
+                                            $('[main-user-bio]').text(bio)
                                             $('[main-user-avatar]').css('background-image', 'url(' + profile_picture + ')')
                                         }
                                     }
@@ -548,21 +623,34 @@
                 window.location.href = './login';
             }
         });
-        $(document).on(
-            'click',
-            '[btn-re]',
-            function() {
-                const get = $(this).attr('get');
-                $.getJSON('https://nekos.life/api/v2/' + get + '', function(data) {
-                    console.log(data.url)
-                        ////$('[set-image]').attr('src', data.url)
-                        ///<img set-image src="" alt="" srcset="">
-                    $('[data-role="content"]').css('background-image', 'url(' + data.url + ')')
-                    $('[set-image]').remove()
-                    $('[data-role="content"]').prepend('<img set-image src="' + data.url + '">')
-                })
-            }
-        );
+        ////////////////////NEKO///////////////////////
+        // <div class="center-flex fixed theme-GSDgFD67f">
+
+        //<div btn-re get="img/wallpaper" class="center-flex theme-GSDgFD67">
+        //  <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 6v3l4-4-4-4v3c-4.42 0-8 3.58-8 8 0 1.57.46 3.03 1.24 4.26L6.7 14.8c-.45-.83-.7-1.79-.7-2.8 0-3.31 2.69-6 6-6zm6.76 1.74L17.3 9.2c.44.84.7 1.79.7 2.8 0 3.31-2.69 6-6 6v-3l-4 4 4 4v-3c4.42 0 8-3.58 8-8 0-1.57-.46-3.03-1.24-4.26z"/></svg>
+        //</div>
+        //<div class="center-flex theme-GSDgFD67">
+
+        //    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        //</div>
+        //</div>
+
+        //$(document).on(
+        //  'click',
+        // '[btn-re]',
+        // function() {
+        //     const get = $(this).attr('get');
+        //    $.getJSON('https://nekos.life/api/v2/' + get + '', function(data) {
+        //        console.log(data.url)
+        //      $('[set-image]').attr('src', data.url)
+        //         ///<img set-image src="" alt="" srcset="">
+        //    $('[data-role="content"]').css('background-image', 'url(' + data.url + ')')
+        //     $('[set-image]').remove()
+        //      $('[data-role="content"]').prepend('<img set-image src="' + data.url + '">')
+        //   })
+        //   }
+        //   );
+        ///////////////////////////////////////
         $(document).on("pageinit", "#demo-page", function() {    
             $(document).on("swipeleft swiperight", "#demo-page", function(e) {         // We check if there is no open panel on the page because otherwise
                          // a swipe to close the left panel would also open the right panel (and v.v.).
