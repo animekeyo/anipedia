@@ -62,20 +62,7 @@ class SocketConnection {
                 // Code for updating the song title
                 var hasSongTitle = data.song.title !== undefined && data.song.title !== null;
                 var song = "";
-                if (data.song.albums[0].image == null) {
-                    if (data.song.artists[0].image == null) {
 
-                        $('[id="song-pic"]').css('background-image', 'url(/images/cat.gif)')
-
-                    } else {
-                        console.log(data.song.artists[0].image)
-                        $('[id="song-pic"]').css('background-image', 'url(https://cdn.listen.moe/artists/' + data.song.artists[0].image + ')')
-                    }
-
-                } else {
-                    console.log(data.song.albums[0].image)
-                    $('[id="song-pic"]').css('background-image', 'url(https://cdn.listen.moe/covers/' + data.song.albums[0].image + ')')
-                }
                 $('[id="song-title"]').text(data.song.title)
 
                 // Code for updating the artist name 
@@ -115,6 +102,20 @@ class SocketConnection {
                     document.title = data.song.title + " | Anone, anone! ~";
                 } else {
                     document.title = "Anone, anone! ~";
+                }
+                if (data.song.albums[0].image == null) {
+                    if (data.song.artists[0].image == null) {
+
+                        $('[id="song-pic"]').css('background-image', 'url(/images/cat.gif)')
+
+                    } else {
+                        console.log(data.song.artists[0].image)
+                        $('[id="song-pic"]').css('background-image', 'url(https://cdn.listen.moe/artists/' + data.song.artists[0].image + ')')
+                    }
+
+                } else {
+                    console.log(data.song.albums[0].image)
+                    $('[id="song-pic"]').css('background-image', 'url(https://cdn.listen.moe/covers/' + data.song.albums[0].image + ')')
                 }
 
             }
