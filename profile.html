@@ -242,6 +242,7 @@
         </div>
     </div>
 </div>
+
 <script>
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
@@ -294,89 +295,157 @@
                             }
                         })()
                     }
-                    if (key == 'avatar') {
-                        (async function() {
-                            const {
-                                value: file
-                            } = await Swal.fire({
-                                title: 'Update Avatar',
-                                input: 'file',
-                                inputLabel: 'Your Avatar',
-                                inputPlaceholder: 'Enter Avatar'
-                            })
+                    if (key == 'banner') {
 
-                            if (file) {
-                                console.log(file)
-                            }
-                            $(document).on("change", 'input[type="file"]', function() {
+                        $('body').prepend('<input fsdfskalFGDFG style="display: none;" type="file" class="file">')
+                        $('[fsdfskalFGDFG]').trigger('click');
+                        $(document).on("change", 'input[type="file"]', function() {
 
-                                var $files = $(this).get(0).files;
+                            var $files = $(this).get(0).files;
 
-                                if ($files.length) {
+                            if ($files.length) {
 
-                                    // Reject big files
-                                    if ($files[0].size > $(this).data("max-size") * 1024) {
-                                        console.log("Please select a smaller file");
-                                        return false;
-                                    }
-
-                                    // Replace ctrlq with your own API key
-                                    var apiUrl = 'https://api.imgur.com/3/image';
-                                    var apiKey = '4b208caca83b4c4';
-
-                                    var formData = new FormData();
-                                    formData.append("image", $files[0]);
-
-                                    var settings = {
-                                        "async": true,
-                                        "crossDomain": true,
-                                        "url": apiUrl,
-                                        "method": "POST",
-                                        "datatype": "json",
-                                        "headers": {
-                                            "Authorization": "Client-ID " + apiKey
-                                        },
-                                        "processData": false,
-                                        "contentType": false,
-                                        "data": formData,
-                                        beforeSend: function(xhr) {
-                                            swal({
-                                                text: "Uploading",
-                                                buttons: false,
-                                                closeOnClickOutside: false,
-                                            });
-                                        },
-                                        success: function(res) {
-                                            console.log(res.data.link);
-                                            data.update({
-                                                profile_picture: res.data.link
-                                            }).then(function() {
-                                                swal('Done', 'Your Avatar as been update')
-                                            }).catch((error) => {
-                                                var errorCode = error.code;
-                                                var errorMessage = error.message;
-                                                swal(errorMessage)
-                                            });
-
-                                            ///
-
-                                        },
-                                        error: function() {
-
-                                            swal("Failed | 上传失败 | MAKO");
-                                        }
-                                    }
-                                    $.ajax(settings).done(function(response) {
-                                        console.log("Done | 成功");
-                                        swal({
-                                            title: "Done",
-                                            icon: "success",
-                                            timer: 1500,
-                                        });
-                                    });
+                                // Reject big files
+                                if ($files[0].size > $(this).data("max-size") * 1024) {
+                                    console.log("Please select a smaller file");
+                                    return false;
                                 }
-                            });
-                        })()
+
+                                // Replace ctrlq with your own API key
+                                var apiUrl = 'https://api.imgur.com/3/image';
+                                var apiKey = '4b208caca83b4c4';
+
+                                var formData = new FormData();
+                                formData.append("image", $files[0]);
+
+                                var settings = {
+                                    "async": true,
+                                    "crossDomain": true,
+                                    "url": apiUrl,
+                                    "method": "POST",
+                                    "datatype": "json",
+                                    "headers": {
+                                        "Authorization": "Client-ID " + apiKey
+                                    },
+                                    "processData": false,
+                                    "contentType": false,
+                                    "data": formData,
+                                    beforeSend: function(xhr) {
+                                        swal({
+                                            text: "Uploading",
+                                            buttons: false,
+                                            closeOnClickOutside: false,
+                                        });
+                                    },
+                                    success: function(res) {
+                                        console.log(res.data.link);
+                                        data.update({
+                                            banner: res.data.link
+                                        }).then(function() {
+                                            swal('Done', 'Your banner as been update')
+                                            $('[fsdfskalFGDFG]').remove();
+                                        }).catch((error) => {
+                                            var errorCode = error.code;
+                                            var errorMessage = error.message;
+                                            swal(errorMessage)
+                                        });
+
+                                        ///
+
+                                    },
+                                    error: function() {
+                                        $('[fsdfskalFGDFG]').remove();
+                                        swal("Failed | 上传失败 | MAKO");
+                                    }
+                                }
+                                $.ajax(settings).done(function(response) {
+                                    console.log("Done | 成功");
+                                    swal({
+                                        title: "Done",
+                                        icon: "success",
+                                        timer: 1500,
+                                    });
+                                });
+                            }
+                        });
+
+                    }
+
+                    if (key == 'avatar') {
+
+                        $('body').prepend('<input fsdfskalFGDFG style="display: none;" type="file" class="file">')
+                        $('[fsdfskalFGDFG]').trigger('click');
+                        $(document).on("change", 'input[type="file"]', function() {
+
+                            var $files = $(this).get(0).files;
+
+                            if ($files.length) {
+
+                                // Reject big files
+                                if ($files[0].size > $(this).data("max-size") * 1024) {
+                                    console.log("Please select a smaller file");
+                                    return false;
+                                }
+
+                                // Replace ctrlq with your own API key
+                                var apiUrl = 'https://api.imgur.com/3/image';
+                                var apiKey = '4b208caca83b4c4';
+
+                                var formData = new FormData();
+                                formData.append("image", $files[0]);
+
+                                var settings = {
+                                    "async": true,
+                                    "crossDomain": true,
+                                    "url": apiUrl,
+                                    "method": "POST",
+                                    "datatype": "json",
+                                    "headers": {
+                                        "Authorization": "Client-ID " + apiKey
+                                    },
+                                    "processData": false,
+                                    "contentType": false,
+                                    "data": formData,
+                                    beforeSend: function(xhr) {
+                                        swal({
+                                            text: "Uploading",
+                                            buttons: false,
+                                            closeOnClickOutside: false,
+                                        });
+                                    },
+                                    success: function(res) {
+                                        console.log(res.data.link);
+                                        data.update({
+                                            profile_picture: res.data.link
+                                        }).then(function() {
+                                            swal('Done', 'Your Avatar as been update')
+                                            $('[fsdfskalFGDFG]').remove();
+                                        }).catch((error) => {
+                                            var errorCode = error.code;
+                                            var errorMessage = error.message;
+                                            swal(errorMessage)
+                                        });
+
+                                        ///
+
+                                    },
+                                    error: function() {
+
+                                        swal("Failed | 上传失败 | MAKO");
+                                        $('[fsdfskalFGDFG]').remove();
+                                    }
+                                }
+                                $.ajax(settings).done(function(response) {
+                                    console.log("Done | 成功");
+                                    swal({
+                                        title: "Done",
+                                        icon: "success",
+                                        timer: 1500,
+                                    });
+                                });
+                            }
+                        });
+
                     }
                     if (key == 'password') {
                         (async function() {
