@@ -297,9 +297,9 @@
                     }
                     if (key == 'banner') {
 
-                        $('body').prepend('<input fsdfskalFGDFG style="display: none;" type="file" class="file">')
-                        $('[fsdfskalFGDFG]').trigger('click');
-                        $(document).on("change", 'input[type="file"]', function() {
+                        $('body').prepend('<input banner style="display: none;" type="file" class="file">')
+                        $('[banner]').trigger('click');
+                        $(document).on("change", 'input[type="file"][banner]', function() {
 
                             var $files = $(this).get(0).files;
 
@@ -343,7 +343,7 @@
                                             banner: res.data.link
                                         }).then(function() {
                                             swal('Done', 'Your banner as been update')
-                                            $('[fsdfskalFGDFG]').remove();
+                                            $('[banner]').remove();
                                         }).catch((error) => {
                                             var errorCode = error.code;
                                             var errorMessage = error.message;
@@ -354,7 +354,7 @@
 
                                     },
                                     error: function() {
-                                        $('[fsdfskalFGDFG]').remove();
+                                        $('[banner]').remove();
                                         swal("Failed | 上传失败 | MAKO");
                                     }
                                 }
@@ -373,9 +373,9 @@
 
                     if (key == 'avatar') {
 
-                        $('body').prepend('<input fsdfskalFGDFG style="display: none;" type="file" class="file">')
-                        $('[fsdfskalFGDFG]').trigger('click');
-                        $(document).on("change", 'input[type="file"]', function() {
+                        $('body').prepend('<input avatar style="display: none;" type="file" class="file">')
+                        $('[avatar]').trigger('click');
+                        $(document).on("change", 'input[type="file"][avatar]', function() {
 
                             var $files = $(this).get(0).files;
 
@@ -419,7 +419,7 @@
                                             profile_picture: res.data.link
                                         }).then(function() {
                                             swal('Done', 'Your Avatar as been update')
-                                            $('[fsdfskalFGDFG]').remove();
+                                            $('[avatar]').remove();
                                         }).catch((error) => {
                                             var errorCode = error.code;
                                             var errorMessage = error.message;
@@ -432,7 +432,7 @@
                                     error: function() {
 
                                         swal("Failed | 上传失败 | MAKO");
-                                        $('[fsdfskalFGDFG]').remove();
+                                        $('[avatar]').remove();
                                     }
                                 }
                                 $.ajax(settings).done(function(response) {
