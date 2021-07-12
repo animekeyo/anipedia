@@ -54,13 +54,13 @@
             background: var(--r1);
             width: -webkit-fill-available;
             height: -webkit-fill-available;
+            max-width: 110rem;
             display: flex;
             align-items: flex-start;
             justify-content: center;
             align-content: flex-start;
             flex-direction: row;
             gap: 2rem;
-            padding: 2rem;
             overflow: hidden;
             flex-wrap: wrap;
         }
@@ -126,8 +126,78 @@
             font-size: 0.7rem;
             border-radius: 3px;
         }
+        
+        @media only screen and (max-width:275px) {
+            .center-flex.theme-appbannerx0341 {
+                gap: 0.5rem;
+                margin: 0rem 0.5rem;
+            }
+        }
     </style>
     <div class="center-flex absolute full-wh theme-appbannerx034">
+        <style>
+            .center-flex.theme-appbannerx034101 {
+                height: 20rem;
+                width: -webkit-fill-available;
+                max-width: 108rem;
+                margin-bottom: 2rem;
+                background-color: var(--r4);
+                margin-top: 2rem;
+            }
+            
+            .center-flex.theme-appbannerx0341013 {
+                font-size: 1.4rem;
+                max-width: 28rem;
+                width: -webkit-fill-available;
+                text-align: center;
+            }
+            
+            .center-flex.theme-appbannerx0341012 {
+                gap: 1rem;
+            }
+            
+            form.center-flex.theme-appbannerx0341013d {
+                display: flex;
+                flex-direction: row;
+                width: -webkit-fill-available;
+            }
+            
+            input.center-flex.theme-appbannerx034101f3 {
+                width: -webkit-fill-available;
+                max-width: 28rem;
+                padding: 0rem 1rem;
+                padding-right: unset;
+                height: 2.5rem;
+                font-size: 1.3rem;
+                border-radius: 5px 0px 0px 5px;
+            }
+            
+            button.center-flex.theme-appbannerx03410g13 {
+                width: -webkit-fill-available;
+                max-width: 3rem;
+                padding: 0rem 0.8rem;
+                padding-left: unset;
+                height: 2.5rem;
+                font-size: 1.3rem;
+                border-radius: 0px 5px 5px 0px;
+                border: unset;
+                background: var(--c6);
+            }
+        </style>
+        <div class="center-flex theme-appbannerx034101">
+            <div class="center-flex theme-appbannerx0341012">
+                <div class="center-flex theme-appbannerx0341013">
+                    Customize your profile with thousands of the best Banners online!
+                </div>
+                <form class="center-flex theme-appbannerx0341013d" action="">
+                    <input search-banners-input placeholder="Search for a cool banner eg; Anime..." class="center-flex theme-appbannerx034101f3" type="search" name="" id="">
+                    <button class="center-flex theme-appbannerx03410g13" type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M15.5 14h-.79l-.28-.27c1.2-1.4 1.82-3.31 1.48-5.34-.47-2.78-2.79-5-5.59-5.34-4.23-.52-7.79 3.04-7.27 7.27.34 2.8 2.56 5.12 5.34 5.59 2.03.34 3.94-.28 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                    </button>
+                </form>
+
+            </div>
+        </div>
         <div class="center-flex theme-appbannerx0341">
 
 
@@ -142,7 +212,6 @@
                     const name = o.name;
                     const src = o.src;
                     const type = o.type;
-                    console.log(src);
                     if (o.type == 'gif') {
                         var datax = '<div class="center-flex absolute n1mafsdDFSGHI">GIF</div>'
                     }
@@ -161,7 +230,6 @@
                         '</div>' +
                         '</div>' +
                         '</div>';
-
                     $('.theme-appbannerx0341').append(data)
 
                 })
