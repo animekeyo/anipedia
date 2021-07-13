@@ -22,6 +22,9 @@
 <!---/////////////////////////------aos------/////////////////////////--->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<!---/////////////////////////------select2------/////////////////////////--->
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <!---/////////////////////////------tippy------/////////////////////////--->
 <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
 <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
@@ -42,10 +45,10 @@
 <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-remote-config.js"></script>
 <!---/////////////////////////------MAIN SCRIPTS------/////////////////////////--->
-<script src="/scripts/purl.js?clear1-111"></script>
-<script src="/scripts/firebase.js?clear1-111"></script>
-<script src="/scripts/tippy.js?clear1-111"></script>
-<script src="/scripts/download.js"></script>
+<script src="https://animekeyo.com/scripts/purl.js?clear1-111"></script>
+<script src="https://animekeyo.com/scripts/firebase.js?clear1-111"></script>
+<script src="https://animekeyo.com/scripts/tippy.js?clear1-111"></script>
+<script src="https://animekeyo.com/scripts/download.js"></script>
 
 <!----------------------------------------------------------------->
 
@@ -865,6 +868,14 @@
         width: -webkit-fill-available;
         height: -webkit-fill-available;
     }
+    
+    .center-flex.theme-D1SAEDFE32 {
+        height: -webkit-fill-available;
+        width: -webkit-fill-available;
+        margin-left: 240px;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
 </style>
 
 <body>
@@ -915,6 +926,16 @@
 </body>
 <script src="/scripts/com.js?clear1-1201"></script>
 <script>
+    $.ajax({
+        url: '/banners.html',
+        success: function(data) {
+            var body = data.substring(data.indexOf("<body>") + 6, data.indexOf("</body>"));
+
+
+            $('[MID_CONTEXT]').html(body)
+        }
+    });
+
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             /////////////////////
