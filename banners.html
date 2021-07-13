@@ -377,6 +377,30 @@
                                             swal('Done', 'Your banner as been uploaded')
                                             $('imgoi').remove();
                                             $('[banner]').remove()
+                                            if (type == 'gif') {
+                                                var datax = '<div class="center-flex absolute n1mafsdDFSGHI">GIF</div>'
+                                            } else if (type == 'png') {
+                                                var datax = '<div class="center-flex absolute n1mafsdDFSGHI">PNG</div>'
+                                            } else if (type == 'jpg') {
+                                                var datax = '<div class="center-flex absolute n1mafsdDFSGHI">JPG</div>'
+                                            }
+                                            const data =
+                                                '<div class="center-flex full-bg relative theme-appbannerx0342">' +
+                                                datax +
+                                                '<div style="background-image:url(' + href + ')" class="center-flex full-bg theme-appbannerx0342f">' +
+
+                                                '</div>' +
+                                                '<div class="center-flex  theme-appbannerx03420">' +
+                                                '<div class="center-flex n1mafsdDFS">' +
+                                                name +
+                                                '</div>' +
+                                                '<div class="center-flex pointer noselect n2mafsdDFS">' +
+                                                '<svg apply-banner href="' + href + '" tippy data-tippy-content="Set Profile Banner" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M7.5 5.6L10 7 8.6 4.5 10 2 7.5 3.4 5 2l1.4 2.5L5 7zm12 9.8L17 14l1.4 2.5L17 19l2.5-1.4L22 19l-1.4-2.5L22 14zM22 2l-2.5 1.4L17 2l1.4 2.5L17 7l2.5-1.4L22 7l-1.4-2.5zm-7.63 5.29c-.39-.39-1.02-.39-1.41 0L1.29 18.96c-.39.39-.39 1.02 0 1.41l2.34 2.34c.39.39 1.02.39 1.41 0L16.7 11.05c.39-.39.39-1.02 0-1.41l-2.33-2.35zm-1.03 5.49l-2.12-2.12 2.44-2.44 2.12 2.12-2.44 2.44z"/></svg>' +
+                                                '<svg download-banner href="' + href + '" tippy data-tippy-content="Download" title="Download" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><rect fill="none" height="24" width="24"/></g><g><path d="M16.59,9H15V4c0-0.55-0.45-1-1-1h-4C9.45,3,9,3.45,9,4v5H7.41c-0.89,0-1.34,1.08-0.71,1.71l4.59,4.59 c0.39,0.39,1.02,0.39,1.41,0l4.59-4.59C17.92,10.08,17.48,9,16.59,9z M5,19c0,0.55,0.45,1,1,1h12c0.55,0,1-0.45,1-1s-0.45-1-1-1H6 C5.45,18,5,18.45,5,19z"/></g></svg>' +
+                                                '</div>' +
+                                                '</div>' +
+                                                '</div>';
+                                            $('.theme-appbannerx0341').prepend(data)
                                         });
                                         console.log({
                                             "title": title,
