@@ -309,8 +309,8 @@
                                         $('imgoi').remove()
                                         const datax = '<imgoi src="' + res.data.link + '" style="display:none">';
                                         $('body').prepend(datax);
-
-                                        ///
+                                        $('[banner]').remove()
+                                            ///
 
                                     },
                                     error: function() {
@@ -376,6 +376,7 @@
                                         }).then(function() {
                                             swal('Done', 'Your banner as been uploaded')
                                             $('imgoi').remove();
+                                            $('[banner]').remove()
                                         });
                                         console.log({
                                             "title": title,
