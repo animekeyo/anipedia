@@ -319,11 +319,12 @@
                     function() {
                         const bannerId = $(this).attr('href');
                         const userid = user.uid;
-                        const data = firebase.database().ref('/data/banners/' + bannerId + '/likes/' + userid);
+                        const data = firebase.database().ref('/data/banners/' + bannerId + '/likes/ ' + userid);
                         data.once('value', function(snapshot) {
                             if (snapshot.exists()) {
                                 data.remove();
                                 console.log('remove like')
+                                $('[like-banner][href="' + bannerId + '"]').css('background', 'var(--c20)')
                             } else {
                                 data.update({
                                     like: true,
@@ -332,8 +333,11 @@
                                 }).then(function() {
                                     console.log('like done')
                                 })
+                                $('[like-banner][href="' + bannerId + '"]').css('background', 'var(--c7)')
                             }
+
                         })
+
                     }
                 )
                 databasez.orderByKey().limitToFirst(12).once('value', function(snapshotx) {
@@ -349,6 +353,8 @@
                         databasez.on('value', function(snapshotx) {
                             $('[displayNAMEx][userid="' + userid + '"][href="' + bannerId + '"]').text(snapshotx.val().displayName)
                         })
+                        const databasexz = firebase.database().ref('/data/banners/' + bannerId + '/likes/' + user.uid);
+
                         if (href.includes('.gif') == true) {
                             var datax = '<div class="center-flex absolute n1mafsdDFSGHI">GIF</div>'
                         } else if (href.includes('.png') == true) {
@@ -382,7 +388,7 @@
 
                                 '<svg view-banner href="' + href + '" tippy data-tippy-content="View Banner" width="59" height="60" viewBox="0 0 59 60" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M46.6175 9.96838H12.3564C11.0583 9.96838 9.81335 10.491 8.89546 11.4212C7.97758 12.3514 7.46191 13.613 7.46191 14.9285L7.46191 44.6894C7.46191 46.0049 7.97758 47.2665 8.89546 48.1967C9.81335 49.1269 11.0583 49.6495 12.3564 49.6495H22.1452V44.6894H12.3564V19.8887H46.6175V44.6894H36.8286V49.6495H46.6175C49.3094 49.6495 51.5119 47.4175 51.5119 44.6894V14.9285C51.5119 13.613 50.9963 12.3514 50.0784 11.4212C49.1605 10.491 47.9156 9.96838 46.6175 9.96838V9.96838ZM29.4869 24.8488L19.698 34.7691H27.0397V49.6495H31.9341V34.7691H39.2758L29.4869 24.8488Z" fill="white"/> </svg>' +
                                 '<svg share-banner href="' + href + '" tippy data-tippy-content="Share" width="60" height="59" viewBox="0 0 60 59" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M25.1319 20.0754V9.73898L8.17383 27.8277L25.1319 45.9162V35.3215C37.2449 35.3215 45.7239 39.4561 51.7804 48.5004C49.3578 35.58 42.09 22.6594 25.1319 20.0754Z" fill="white"/> </svg>' +
-                                '<svg style="background:var(--c7)" like-banner href="' + bannerId + '" tippy data-tippy-content="Like" width="59" height="59" viewBox="0 0 59 59" fill="none" xmlns="http://www.w3.org/2000/svg"> <g clip-path="url(#clip0)"> <path d="M12.7018 19.7296H2.96185C1.61773 19.7296 0.526855 20.8205 0.526855 22.1646V46.5145C0.526855 47.8587 1.61773 48.9495 2.96185 48.9495H12.7018C14.0459 48.9495 15.1368 47.8587 15.1368 46.5145V22.1646C15.1368 20.8205 14.0459 19.7296 12.7018 19.7296Z" fill="#F2F2F2"/> <path d="M55.9671 18.1688C55.5044 17.616 54.8177 17.2946 54.097 17.2946H39.487V7.55462C39.487 6.21051 38.3962 5.11963 37.052 5.11963H29.7471C28.7731 5.11963 27.8916 5.69916 27.5093 6.59524L20.0071 22.1646V45.2435L28.8412 48.7766C29.131 48.8911 29.4378 48.9495 29.7471 48.9495H49.227C50.4031 48.9495 51.4112 48.107 51.623 46.9504L56.493 20.1655C56.6221 19.4544 56.4297 18.7239 55.9671 18.1688Z" fill="#F2F2F2"/> </g> <defs> <clipPath id="clip0"> <rect width="58.4399" height="58.4399" fill="white" transform="translate(0.526855 0.251953)"/> </clipPath> </defs> </svg>' +
+                                '<svg  like-banner href="' + bannerId + '" tippy data-tippy-content="Like" width="59" height="59" viewBox="0 0 59 59" fill="none" xmlns="http://www.w3.org/2000/svg"> <g clip-path="url(#clip0)"> <path d="M12.7018 19.7296H2.96185C1.61773 19.7296 0.526855 20.8205 0.526855 22.1646V46.5145C0.526855 47.8587 1.61773 48.9495 2.96185 48.9495H12.7018C14.0459 48.9495 15.1368 47.8587 15.1368 46.5145V22.1646C15.1368 20.8205 14.0459 19.7296 12.7018 19.7296Z" fill="#F2F2F2"/> <path d="M55.9671 18.1688C55.5044 17.616 54.8177 17.2946 54.097 17.2946H39.487V7.55462C39.487 6.21051 38.3962 5.11963 37.052 5.11963H29.7471C28.7731 5.11963 27.8916 5.69916 27.5093 6.59524L20.0071 22.1646V45.2435L28.8412 48.7766C29.131 48.8911 29.4378 48.9495 29.7471 48.9495H49.227C50.4031 48.9495 51.4112 48.107 51.623 46.9504L56.493 20.1655C56.6221 19.4544 56.4297 18.7239 55.9671 18.1688Z" fill="#F2F2F2"/> </g> <defs> <clipPath id="clip0"> <rect width="58.4399" height="58.4399" fill="white" transform="translate(0.526855 0.251953)"/> </clipPath> </defs> </svg>' +
 
                                 '</div>' +
                                 '</div>' +
@@ -418,7 +424,7 @@
 
                                 '<svg view-banner href="' + href + '" tippy data-tippy-content="View Banner" width="59" height="60" viewBox="0 0 59 60" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M46.6175 9.96838H12.3564C11.0583 9.96838 9.81335 10.491 8.89546 11.4212C7.97758 12.3514 7.46191 13.613 7.46191 14.9285L7.46191 44.6894C7.46191 46.0049 7.97758 47.2665 8.89546 48.1967C9.81335 49.1269 11.0583 49.6495 12.3564 49.6495H22.1452V44.6894H12.3564V19.8887H46.6175V44.6894H36.8286V49.6495H46.6175C49.3094 49.6495 51.5119 47.4175 51.5119 44.6894V14.9285C51.5119 13.613 50.9963 12.3514 50.0784 11.4212C49.1605 10.491 47.9156 9.96838 46.6175 9.96838V9.96838ZM29.4869 24.8488L19.698 34.7691H27.0397V49.6495H31.9341V34.7691H39.2758L29.4869 24.8488Z" fill="white"/> </svg>' +
                                 '<svg share-banner href="' + href + '" tippy data-tippy-content="Share" width="60" height="59" viewBox="0 0 60 59" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M25.1319 20.0754V9.73898L8.17383 27.8277L25.1319 45.9162V35.3215C37.2449 35.3215 45.7239 39.4561 51.7804 48.5004C49.3578 35.58 42.09 22.6594 25.1319 20.0754Z" fill="white"/> </svg>' +
-                                '<svg style="background:var(--c7)" like-banner href="' + bannerId + '" tippy data-tippy-content="Like" width="59" height="59" viewBox="0 0 59 59" fill="none" xmlns="http://www.w3.org/2000/svg"> <g clip-path="url(#clip0)"> <path d="M12.7018 19.7296H2.96185C1.61773 19.7296 0.526855 20.8205 0.526855 22.1646V46.5145C0.526855 47.8587 1.61773 48.9495 2.96185 48.9495H12.7018C14.0459 48.9495 15.1368 47.8587 15.1368 46.5145V22.1646C15.1368 20.8205 14.0459 19.7296 12.7018 19.7296Z" fill="#F2F2F2"/> <path d="M55.9671 18.1688C55.5044 17.616 54.8177 17.2946 54.097 17.2946H39.487V7.55462C39.487 6.21051 38.3962 5.11963 37.052 5.11963H29.7471C28.7731 5.11963 27.8916 5.69916 27.5093 6.59524L20.0071 22.1646V45.2435L28.8412 48.7766C29.131 48.8911 29.4378 48.9495 29.7471 48.9495H49.227C50.4031 48.9495 51.4112 48.107 51.623 46.9504L56.493 20.1655C56.6221 19.4544 56.4297 18.7239 55.9671 18.1688Z" fill="#F2F2F2"/> </g> <defs> <clipPath id="clip0"> <rect width="58.4399" height="58.4399" fill="white" transform="translate(0.526855 0.251953)"/> </clipPath> </defs> </svg>' +
+                                '<svg like-banner href="' + bannerId + '" tippy data-tippy-content="Like" width="59" height="59" viewBox="0 0 59 59" fill="none" xmlns="http://www.w3.org/2000/svg"> <g clip-path="url(#clip0)"> <path d="M12.7018 19.7296H2.96185C1.61773 19.7296 0.526855 20.8205 0.526855 22.1646V46.5145C0.526855 47.8587 1.61773 48.9495 2.96185 48.9495H12.7018C14.0459 48.9495 15.1368 47.8587 15.1368 46.5145V22.1646C15.1368 20.8205 14.0459 19.7296 12.7018 19.7296Z" fill="#F2F2F2"/> <path d="M55.9671 18.1688C55.5044 17.616 54.8177 17.2946 54.097 17.2946H39.487V7.55462C39.487 6.21051 38.3962 5.11963 37.052 5.11963H29.7471C28.7731 5.11963 27.8916 5.69916 27.5093 6.59524L20.0071 22.1646V45.2435L28.8412 48.7766C29.131 48.8911 29.4378 48.9495 29.7471 48.9495H49.227C50.4031 48.9495 51.4112 48.107 51.623 46.9504L56.493 20.1655C56.6221 19.4544 56.4297 18.7239 55.9671 18.1688Z" fill="#F2F2F2"/> </g> <defs> <clipPath id="clip0"> <rect width="58.4399" height="58.4399" fill="white" transform="translate(0.526855 0.251953)"/> </clipPath> </defs> </svg>' +
 
                                 '</div>' +
                                 '</div>' +
@@ -436,6 +442,13 @@
                                 '</div>';
                             $('.theme-appbannerx0341').append(data)
                         }
+                        databasexz.once('value', function(snapshotx) {
+                            if (snapshotx.exists()) {
+                                $('[like-banner][href="' + bannerId + '"]').css('background', 'var(--c20)')
+                            } else {
+                                $('[like-banner][href="' + bannerId + '"]').css('background', 'var(--c7)')
+                            }
+                        })
 
                     })
                 });
