@@ -81,30 +81,32 @@
             background: var(--r1);
             width: -webkit-fill-available;
             height: -webkit-fill-available;
-            max-width: 53rem;
+            max-width: 62rem;
             display: flex;
             align-items: flex-start;
             justify-content: center;
             align-content: flex-start;
             flex-direction: row;
-            gap: 2rem;
-            padding: 2rem;
+            gap: 1rem;
+            padding: 1rem;
             overflow: hidden;
             flex-wrap: wrap;
         }
         
         .center-flex.full-bg.theme-appbannerx0342 {
-            width: 16.333rem;
-            height: 9rem;
+            max-width: 20rem;
+            width: -webkit-fill-available;
+            height: 10rem;
             background: var(--r3);
-            border-radius: 3px;
+            border-radius: 5px;
             overflow: hidden;
         }
         
         .center-flex.theme-appbannerx03420 {
             width: -webkit-fill-available;
             height: 3rem;
-            padding: 0rem 0.7rem;
+            padding: 0rem 0.4rem;
+            padding-left: 0.8rem;
             background: var(--r5);
             display: flex;
             flex-direction: row;
@@ -151,11 +153,11 @@
         
         .center-flex.pointer.noselect.n2mafsdDFS svg {
             fill: var(--c6);
-            width: 0.8rem;
-            height: 0.8rem;
-            padding: 0.25rem;
+            width: 1.2rem;
+            height: 1.2rem;
+            padding: 0.3rem;
             background: var(--r2);
-            border-radius: 1rem;
+            border-radius: 3px;
         }
         
         .center-flex.theme-appbannerx03420 {
@@ -183,8 +185,8 @@
         
         .center-flex.theme-appbannerx0342f[type="hentai"] {
             filter: blur(21px);
-            width: 20rem;
-            height: 12rem;
+            width: 24rem;
+            height: 13rem;
             top: -1.5rem;
             left: -1.8rem;
         }
@@ -208,63 +210,7 @@
         }
     </style>
     <div class="center-flex absolute full-wh theme-appbannerx034">
-        <style>
-            header.center-flex.theme-header-freat-code34dsfD {
-                width: -webkit-fill-available;
-                height: 3.5rem;
-                position: fixed;
-                top: 0;
-                left: 0;
-                z-index: 5;
-                /* background: var(--r2); */
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                padding: 0rem 0.8rem;
-            }
-            
-            .center-flex.theme-ZZZcode34dsfD4 {
-                letter-spacing: 0.5px;
-                padding: 0.9rem 1.2rem;
-                background: var(--r5);
-                font-size: 0.8rem;
-                border-radius: 5px;
-                text-transform: uppercase;
-            }
-            
-            space[header] {
-                margin-bottom: 4rem;
-            }
-            
-            .center-flex.theme-fsdfGDSDDDFGHJK {
-                max-width: 53rem;
-                height: -webkit-fill-available;
-                width: -webkit-fill-available;
-                display: flex;
-                background: var(--r2);
-                flex-direction: row;
-                justify-content: space-between;
-                padding: 0rem 2rem;
-            }
-        </style>
-        <header class="center-flex theme-header-freat-code34dsfD">
-            <div class="center-flex theme-fsdfGDSDDDFGHJK">
-                <div class="center-flex theme-ZZZcode34dsfD1">
 
-                </div>
-                <div class="center-flex theme-ZZZcode34dsfD2">
-                    <div class="center-flex theme-ZZZcode34dsfD3">
-
-                    </div>
-                    <div upload-banner class="center-flex theme-ZZZcode34dsfD4">
-                        Upload Banner
-                    </div>
-                </div>
-            </div>
-        </header>
-        <space header>
-
-        </space>
         <div class="center-flex theme-appbannerx0341">
 
 
@@ -272,43 +218,6 @@
         </div>
     </div>
     <script>
-        $.getJSON("json/banners.json?clear-11", function(json) {
-            $.each(json, function(i, o) {
-
-                $.each(o, function(i, o) {
-                    const name = o.name;
-                    const src = o.src;
-                    const type = o.type;
-
-                    if (src.includes('.gif') == true) {
-                        var datax = '<div class="center-flex absolute n1mafsdDFSGHI">GIF</div>'
-                    } else if (src.includes('.png') == true) {
-                        var datax = '<div class="center-flex absolute n1mafsdDFSGHI">PNG</div>'
-                    } else if (src.includes('.jpg') == true) {
-                        var datax = '<div class="center-flex absolute n1mafsdDFSGHI">JPG</div>'
-                    }
-
-                    const data =
-                        '<div class="center-flex full-bg relative theme-appbannerx0342">' +
-                        datax +
-                        '<div style="background-image:url(' + src + ')" class="center-flex full-bg theme-appbannerx0342f">' +
-
-                        '</div>' +
-                        '<div class="center-flex  theme-appbannerx03420">' +
-                        '<div class="center-flex n1mafsdDFS">' +
-                        name +
-                        '</div>' +
-                        '<div class="center-flex pointer noselect n2mafsdDFS">' +
-                        '<svg apply-banner href="' + src + '" tippy data-tippy-content="Set Profile Banner" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M7.5 5.6L10 7 8.6 4.5 10 2 7.5 3.4 5 2l1.4 2.5L5 7zm12 9.8L17 14l1.4 2.5L17 19l2.5-1.4L22 19l-1.4-2.5L22 14zM22 2l-2.5 1.4L17 2l1.4 2.5L17 7l2.5-1.4L22 7l-1.4-2.5zm-7.63 5.29c-.39-.39-1.02-.39-1.41 0L1.29 18.96c-.39.39-.39 1.02 0 1.41l2.34 2.34c.39.39 1.02.39 1.41 0L16.7 11.05c.39-.39.39-1.02 0-1.41l-2.33-2.35zm-1.03 5.49l-2.12-2.12 2.44-2.44 2.12 2.12-2.44 2.44z"/></svg>' +
-                        '<svg download-banner href="' + src + '" tippy data-tippy-content="Download" title="Download" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><rect fill="none" height="24" width="24"/></g><g><path d="M16.59,9H15V4c0-0.55-0.45-1-1-1h-4C9.45,3,9,3.45,9,4v5H7.41c-0.89,0-1.34,1.08-0.71,1.71l4.59,4.59 c0.39,0.39,1.02,0.39,1.41,0l4.59-4.59C17.92,10.08,17.48,9,16.59,9z M5,19c0,0.55,0.45,1,1,1h12c0.55,0,1-0.45,1-1s-0.45-1-1-1H6 C5.45,18,5,18.45,5,19z"/></g></svg>' +
-                        '</div>' +
-                        '</div>' +
-                        '</div>';
-                    $('.theme-appbannerx0341').append(data)
-
-                })
-            })
-        });
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
                 const user = firebase.auth().currentUser;
@@ -351,10 +260,12 @@
                                 title +
                                 '</div>' +
                                 '<div class="center-flex pointer noselect n2mafsdDFS">' +
-                                '<svg apply-banner href="' + href + '" tippy data-tippy-content="Set Profile Banner" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M7.5 5.6L10 7 8.6 4.5 10 2 7.5 3.4 5 2l1.4 2.5L5 7zm12 9.8L17 14l1.4 2.5L17 19l2.5-1.4L22 19l-1.4-2.5L22 14zM22 2l-2.5 1.4L17 2l1.4 2.5L17 7l2.5-1.4L22 7l-1.4-2.5zm-7.63 5.29c-.39-.39-1.02-.39-1.41 0L1.29 18.96c-.39.39-.39 1.02 0 1.41l2.34 2.34c.39.39 1.02.39 1.41 0L16.7 11.05c.39-.39.39-1.02 0-1.41l-2.33-2.35zm-1.03 5.49l-2.12-2.12 2.44-2.44 2.12 2.12-2.44 2.44z"/></svg>' +
 
-                                '<svg download-banner href="' + href + '" tippy data-tippy-content="Download" title="Download" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><rect fill="none" height="24" width="24"/></g><g><path d="M16.59,9H15V4c0-0.55-0.45-1-1-1h-4C9.45,3,9,3.45,9,4v5H7.41c-0.89,0-1.34,1.08-0.71,1.71l4.59,4.59 c0.39,0.39,1.02,0.39,1.41,0l4.59-4.59C17.92,10.08,17.48,9,16.59,9z M5,19c0,0.55,0.45,1,1,1h12c0.55,0,1-0.45,1-1s-0.45-1-1-1H6 C5.45,18,5,18.45,5,19z"/></g></svg>' +
-                                '<svg style="background:var(--c19)" delete-banner href="' + bannerId + '" tippy data-tippy-content="Delete" title="Delete"  xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>' +
+                                '<svg apply-banner href="' + href + '" tippy data-tippy-content="Set Profile Banner" width="60" height="59" viewBox="0 0 60 59" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M48.3079 23.8625L49.9097 22.2948C53.4002 18.8738 53.4002 13.305 49.9097 9.88178C46.4189 6.46075 40.7349 6.46075 37.2441 9.88178L35.6446 11.4517L48.3079 23.8625ZM32.4962 14.5282L13.4344 33.2154L26.0998 45.6248L45.1617 26.9375L32.4962 14.5282ZM10.799 50.8513L22.2698 48.0431L10.9681 36.9665L8.10038 48.2088C7.91128 48.9501 8.13375 49.7372 8.68549 50.2779C9.23721 50.8186 10.0403 51.0345 10.799 50.8513Z" fill="white"/> </svg> ' +
+                                '<svg download-banner href="' + href + '" tippy data-tippy-content="Download" width="59" height="61" viewBox="0 0 59 61" fill="none" xmlns="http://www.w3.org/2000/svg"> <g clip-path="url(#clip0)" filter="url(#filter0_d)"> <path d="M46.3612 8.32959H12.2712C9.58543 8.32959 7.40125 10.5474 7.40125 13.2745V47.8889C7.40125 50.616 9.58543 52.8338 12.2712 52.8338H46.3612C49.047 52.8338 51.2311 50.616 51.2311 47.8889V13.2745C51.2311 10.5474 49.047 8.32959 46.3612 8.32959ZM29.3162 43.9676L17.8547 32.3272L21.2978 28.8312L26.8812 34.503V18.2194H31.7512V34.503L37.3346 28.8337L40.7777 32.3297L29.3162 43.9676Z" fill="#F2F2F2"/> </g> <defs> <filter id="filter0_d" x="-3.90369" y="0.911682" width="66.4399" height="67.3389" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"> <feFlood flood-opacity="0" result="BackgroundImageFix"/> <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/> <feOffset dy="4"/> <feGaussianBlur stdDeviation="2"/> <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/> <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/> <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/> </filter> <clipPath id="clip0"> <rect width="58.4399" height="59.3389" fill="white" transform="translate(0.0963135 0.911682)"/> </clipPath> </defs> </svg>' +
+
+                                '<svg style="background:var(--c19)" delete-banner href="' + bannerId + '" tippy data-tippy-content="Delete" title="Delete" width="59" height="59" viewBox="0 0 59 59" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M36.7239 9.73603V4.89328H22.0899V9.73603H7.45581V14.5812H51.358V9.73603H36.7239Z" fill="white"/> <path d="M12.3386 17.004V46.075C12.3386 48.7447 14.5264 50.9202 17.2166 50.9202H41.6068C44.297 50.9202 46.4848 48.7447 46.4848 46.075V17.004H12.3386ZM26.9727 41.2322H22.0947V26.6967H26.9727V41.2322ZM36.7288 41.2322H31.8507V26.6967H36.7288V41.2322Z" fill="white"/> </svg>' +
+
                                 '</div>' +
                                 '</div>' +
                                 '</div>';
