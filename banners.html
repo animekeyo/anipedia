@@ -376,8 +376,7 @@
                     '[upload-banner]',
                     function() {
 
-                        $('body').prepend('<input banner style="display: none;" type="file" class="file">')
-                        $('[banner]').trigger('click');
+
                         $(document).on("change", 'input[type="file"][banner]', function() {
 
                             var $files = $(this).get(0).files;
@@ -418,12 +417,10 @@
                                     },
                                     success: function(res) {
                                         console.log(res.data.link);
-                                        $('imgoi').remove()
-                                        const datax = '<imgoi src="' + res.data.link + '" style="display:none">';
-                                        $('body').prepend(datax);
 
-                                        $('[banner]').remove()
-                                            ///
+                                        herfimage = res.data.link;
+                                        return herfimage;
+                                        ///
 
                                     },
                                     error: function() {
@@ -452,6 +449,7 @@
                             } = await Swal.fire({
                                 title: 'Multiple inputs',
                                 html: '<input id="titlexx" placeholder="Title of the banner" type="text" class="swal2-input" required>' +
+                                    '<input type="file" banner>' +
                                     '<select id="optionxxx" required>' +
                                     '<option value="none">None</option>' +
                                     '<option value="anime">Anime</option>' +
@@ -480,7 +478,7 @@
                                 const DFCSEXCVRFDCFF23456 = DFCSEXCVRFDCFF.getDay();
                                 const bannerId = DFCSEXCVRFDCFF2 + "" + DFCSEXCVRFDCFF23 + "" + DFCSEXCVRFDCFF234 + "" + DFCSEXCVRFDCFF2345 + "" + DFCSEXCVRFDCFF23456;
                                 const title = formValues[0].title;
-                                const href = $('imgoi').attr('src');
+                                const href = herfimage;
                                 const userid = firebase.auth().currentUser.uid;
                                 const type = formValues[0].type;
                                 const database = firebase.database().ref('/data/banners/' + bannerId);
