@@ -421,13 +421,15 @@
                                         $('imgoi').remove()
                                         const datax = '<imgoi src="' + res.data.link + '" style="display:none">';
                                         $('body').prepend(datax);
+
                                         $('[banner]').remove()
                                             ///
 
                                     },
                                     error: function() {
-                                        $('[banner]').remove();
                                         swal("Failed | 上传失败 | MAKO");
+                                        $('imgoi').remove();
+                                        $('[banner]').remove()
                                     }
                                 }
                                 $.ajax(settings).done(function(response) {
@@ -437,6 +439,9 @@
                                         icon: "success",
                                         timer: 1500,
                                     });
+                                    setTimeout(function() {
+                                        $('imgoi').remove();
+                                    }, 10000)
                                 });
                             }
                         });
