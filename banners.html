@@ -307,7 +307,8 @@
                                     success: function(res) {
                                         console.log(res.data.link);
                                         $('imgoi').remove()
-                                        $('body').prepend('<imgoi src="' + res.data.link + '" style="display:none">');
+                                        const datax = '<imgoi src="' + res.data.link + '" style="display:none">';
+                                        $('body').prepend(datax);
 
                                         ///
 
