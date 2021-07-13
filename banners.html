@@ -189,6 +189,16 @@
             left: -1.8rem;
         }
         
+        .center-flex.n1mafsdDFSFDSSS {
+            z-index: 1;
+            margin-bottom: 2.5rem;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            background: var(--r1);
+            padding: 0.4rem 0.7rem;
+            border-radius: 100rem;
+        }
+        
         @media only screen and (max-width:275px) {
             .center-flex.theme-appbannerx0341 {
                 gap: 0.5rem;
@@ -320,17 +330,22 @@
                             var datax = '<div class="center-flex absolute n1mafsdDFSGHI">JPG</div>'
                         }
                         if (type == 'hentai') {
+                            zila = '<div unspoilerx userid="' + userid + '" href="' + bannerId + '" class="center-flex noselect pointer n1mafsdDFSFDSSS">' +
+                                'Spoiler' +
+                                '</div>';
+
+                        } else {
+                            zila = ''
 
                         }
                         if (user.uid == userid) {
                             const data =
                                 '<div  userid="' + userid + '" bannerId="' + bannerId + '" class="center-flex full-bg relative theme-appbannerx0342">' +
                                 datax +
-                                '<div unspolier type="' + type + '" style="background-image:url(' + href + ')" class="center-flex full-bg theme-appbannerx0342f">' +
-                                '<div  class="center-flex n1mafsdDFSFDSSS">' +
-                                'Spolier' +
+                                '<div unspoiler userid="' + userid + '" href="' + bannerId + '" type="' + type + '" style="background-image:url(' + href + ')" class="center-flex full-bg theme-appbannerx0342f">' +
+
                                 '</div>' +
-                                '</div>' +
+                                zila +
                                 '<div class="center-flex  theme-appbannerx03420">' +
                                 '<div class="center-flex n1mafsdDFS">' +
                                 title +
@@ -348,9 +363,10 @@
                             const data =
                                 '<div userid="' + userid + '" bannerId="' + bannerId + '" class="center-flex full-bg relative theme-appbannerx0342">' +
                                 datax +
-                                '<div type="' + type + '" style="background-image:url(' + href + ')" class="center-flex full-bg theme-appbannerx0342f">' +
+                                '<div unspoiler userid="' + userid + '" href="' + bannerId + '" type="' + type + '" style="background-image:url(' + href + ')" class="center-flex full-bg theme-appbannerx0342f">' +
 
                                 '</div>' +
+                                zila +
                                 '<div class="center-flex  theme-appbannerx03420">' +
                                 '<div class="center-flex n1mafsdDFS">' +
                                 title +
@@ -390,6 +406,12 @@
                         download($(this).attr('href'));
                     }
                 )
+                $(document).on('click', '[unspoilerx]', function() {
+                    const bannerId = $(this).attr('href');
+                    const userid = $(this).attr('userid')
+                    $('[unspoiler][userid="' + userid + '"][href="' + bannerId + '"]').attr('type', 'unset')
+                    $('[unspoilerx][userid="' + userid + '"][href="' + bannerId + '"]').remove()
+                })
                 $(document).on(
                     'click',
                     '[delete-banner]',
@@ -558,12 +580,22 @@
                                             } else if (href.includes('.jpg') == true) {
                                                 var datax = '<div class="center-flex absolute n1mafsdDFSGHI">JPG</div>'
                                             }
+                                            if (type == 'hentai') {
+                                                zila = '<div unspoilerx userid="' + userid + '" href="' + bannerId + '" class="center-flex noselect pointer n1mafsdDFSFDSSS">' +
+                                                    'Spoiler' +
+                                                    '</div>';
+
+                                            } else {
+                                                zila = ''
+
+                                            }
                                             const data =
                                                 '<div  userid="' + userid + '" bannerId="' + bannerId + '" class="center-flex full-bg relative theme-appbannerx0342">' +
                                                 datax +
-                                                '<div style="background-image:url(' + href + ')" class="center-flex full-bg theme-appbannerx0342f">' +
+                                                '<div unspoiler userid="' + userid + '" href="' + bannerId + '" type="' + type + '" style="background-image:url(' + href + ')" class="center-flex full-bg theme-appbannerx0342f">' +
 
                                                 '</div>' +
+                                                zila +
                                                 '<div class="center-flex  theme-appbannerx03420">' +
                                                 '<div class="center-flex n1mafsdDFS">' +
                                                 title +
