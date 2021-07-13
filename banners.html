@@ -371,83 +371,84 @@
 
                     }
                 )
+                $(document).on("change", 'input[type="file"][banner]', function() {
+
+                    var $files = $(this).get(0).files;
+
+                    if ($files.length) {
+
+                        // Reject big files
+                        if ($files[0].size > $(this).data("max-size") * 1024) {
+                            console.log("Please select a smaller file");
+                            return false;
+                        }
+
+                        // Replace ctrlq with your own API key
+                        var apiUrl = 'https://api.imgur.com/3/image';
+                        var apiKey = '4b208caca83b4c4';
+
+                        var formData = new FormData();
+                        formData.append("image", $files[0]);
+
+                        var settings = {
+                            "async": true,
+                            "crossDomain": true,
+                            "url": apiUrl,
+                            "method": "POST",
+                            "datatype": "json",
+                            "headers": {
+                                "Authorization": "Client-ID " + apiKey
+                            },
+                            "processData": false,
+                            "contentType": false,
+                            "data": formData,
+                            beforeSend: function(xhr) {
+                                swal({
+                                    text: "Uploading",
+                                    buttons: false,
+                                    closeOnClickOutside: false,
+                                });
+                            },
+                            success: function(res) {
+                                console.log(res.data.link);
+
+                                herfimage = res.data.link;
+                                return herfimage;
+                                ////
+
+                            },
+                            error: function() {
+                                swal("Failed | 上传失败 | MAKO");
+                                $('imgoi').remove();
+                                $('[banner]').remove()
+                            }
+                        }
+                        $.ajax(settings).done(function(response) {
+                            console.log("Done | 成功");
+                            swal({
+                                text: "Done",
+                                buttons: false,
+                                closeOnClickOutside: false,
+                                timer: 1500,
+                            });
+                            setTimeout(function() {
+                                $('imgoi').remove();
+                            }, 10000)
+                        });
+                    }
+                });
                 $(document).on(
                     'click',
                     '[upload-banner]',
                     function() {
 
 
-                        $(document).on("change", 'input[type="file"][banner]', function() {
 
-                            var $files = $(this).get(0).files;
-
-                            if ($files.length) {
-
-                                // Reject big files
-                                if ($files[0].size > $(this).data("max-size") * 1024) {
-                                    console.log("Please select a smaller file");
-                                    return false;
-                                }
-
-                                // Replace ctrlq with your own API key
-                                var apiUrl = 'https://api.imgur.com/3/image';
-                                var apiKey = '4b208caca83b4c4';
-
-                                var formData = new FormData();
-                                formData.append("image", $files[0]);
-
-                                var settings = {
-                                    "async": true,
-                                    "crossDomain": true,
-                                    "url": apiUrl,
-                                    "method": "POST",
-                                    "datatype": "json",
-                                    "headers": {
-                                        "Authorization": "Client-ID " + apiKey
-                                    },
-                                    "processData": false,
-                                    "contentType": false,
-                                    "data": formData,
-                                    beforeSend: function(xhr) {
-                                        swal({
-                                            text: "Uploading",
-                                            buttons: false,
-                                            closeOnClickOutside: false,
-                                        });
-                                    },
-                                    success: function(res) {
-                                        console.log(res.data.link);
-
-                                        herfimage = res.data.link;
-                                        return herfimage;
-                                        ////
-
-                                    },
-                                    error: function() {
-                                        swal("Failed | 上传失败 | MAKO");
-                                        $('imgoi').remove();
-                                        $('[banner]').remove()
-                                    }
-                                }
-                                $.ajax(settings).done(function(response) {
-                                    console.log("Done | 成功");
-                                    swal({
-                                        text: "Done",
-                                        buttons: false,
-                                        closeOnClickOutside: false,
-                                        timer: 1500,
-                                    });
-                                    setTimeout(function() {
-                                        $('imgoi').remove();
-                                    }, 10000)
-                                });
-                            }
-                        });
                         (async function() {
                             const {
                                 value: formValues
                             } = await Swal.fire({
-                                title: 'Multiple inputs',
+                                title: 'Upload Banner',
                                 html: '<input id="titlexx" placeholder="Title of the banner" type="text" class="swal2-input" required>' +
                                     '<input type="file" banner>' +
                                     '<select id="optionxxx" required>' +
