@@ -306,10 +306,8 @@
                                     },
                                     success: function(res) {
                                         console.log(res.data.link);
-                                        $('body').prepend('<imgoi src="' + res.data.link + '" style="display:none">').then(function() {
-                                            swal('Done')
-                                            $('[banner]').remove();
-                                        })
+                                        $('imgoi').remove()
+                                        $('body').prepend('<imgoi src="' + res.data.link + '" style="display:none">');
 
                                         ///
 
