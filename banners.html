@@ -54,7 +54,7 @@
             background: var(--r1);
             width: -webkit-fill-available;
             height: -webkit-fill-available;
-            max-width: 110rem;
+            max-width: 53rem;
             display: flex;
             align-items: flex-start;
             justify-content: center;
@@ -156,10 +156,10 @@
                 top: 0;
                 left: 0;
                 z-index: 5;
-                background: var(--r2);
+                /* background: var(--r2); */
                 display: flex;
                 flex-direction: row;
-                justify-content: space-between;
+                justify-content: center;
                 padding: 0rem 0.8rem;
             }
             
@@ -175,17 +175,30 @@
             space[header] {
                 margin-bottom: 4rem;
             }
+            
+            .center-flex.theme-fsdfGDSDDDFGHJK {
+                max-width: 53rem;
+                height: -webkit-fill-available;
+                width: -webkit-fill-available;
+                display: flex;
+                background: var(--r2);
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 0rem 2rem;
+            }
         </style>
         <header class="center-flex theme-header-freat-code34dsfD">
-            <div class="center-flex theme-ZZZcode34dsfD1">
-
-            </div>
-            <div class="center-flex theme-ZZZcode34dsfD2">
-                <div class="center-flex theme-ZZZcode34dsfD3">
+            <div class="center-flex theme-fsdfGDSDDDFGHJK">
+                <div class="center-flex theme-ZZZcode34dsfD1">
 
                 </div>
-                <div upload-banner class="center-flex theme-ZZZcode34dsfD4">
-                    Upload Banner
+                <div class="center-flex theme-ZZZcode34dsfD2">
+                    <div class="center-flex theme-ZZZcode34dsfD3">
+
+                    </div>
+                    <div upload-banner class="center-flex theme-ZZZcode34dsfD4">
+                        Upload Banner
+                    </div>
                 </div>
             </div>
         </header>
@@ -206,13 +219,15 @@
                     const name = o.name;
                     const src = o.src;
                     const type = o.type;
-                    if (o.type == 'gif') {
+
+                    if (src.includes('.gif') == true) {
                         var datax = '<div class="center-flex absolute n1mafsdDFSGHI">GIF</div>'
-                    } else if (o.type == 'png') {
+                    } else if (src.includes('.png') == true) {
                         var datax = '<div class="center-flex absolute n1mafsdDFSGHI">PNG</div>'
-                    } else if (o.type == 'jpg') {
+                    } else if (src.includes('.jpg') == true) {
                         var datax = '<div class="center-flex absolute n1mafsdDFSGHI">JPG</div>'
                     }
+
                     const data =
                         '<div class="center-flex full-bg relative theme-appbannerx0342">' +
                         datax +
@@ -247,11 +262,11 @@
                         const href = snapshot.val().href;
                         const title = snapshot.val().title;
                         const type = snapshot.val().type;
-                        if (type == 'gif') {
+                        if (href.includes('.gif') == true) {
                             var datax = '<div class="center-flex absolute n1mafsdDFSGHI">GIF</div>'
-                        } else if (type == 'png') {
+                        } else if (href.includes('.png') == true) {
                             var datax = '<div class="center-flex absolute n1mafsdDFSGHI">PNG</div>'
-                        } else if (type == 'jpg') {
+                        } else if (href.includes('.jpg') == true) {
                             var datax = '<div class="center-flex absolute n1mafsdDFSGHI">JPG</div>'
                         }
                         if (user.uid == userid) {
@@ -273,7 +288,7 @@
                                 '</div>' +
                                 '</div>' +
                                 '</div>';
-                            $('.theme-appbannerx0341').append(data)
+                            $('.theme-appbannerx0341').prepend(data)
                         } else {
                             const data =
                                 '<div class="center-flex full-bg relative theme-appbannerx0342">' +
@@ -291,7 +306,7 @@
                                 '</div>' +
                                 '</div>' +
                                 '</div>';
-                            $('.theme-appbannerx0341').append(data)
+                            $('.theme-appbannerx0341').prepend(data)
                         }
 
                     })
@@ -474,11 +489,11 @@
                                             swal('Done', 'Your banner as been uploaded')
                                             $('imgoi').remove();
                                             $('[banner]').remove()
-                                            if (type == 'gif') {
+                                            if (href.includes('.gif') == true) {
                                                 var datax = '<div class="center-flex absolute n1mafsdDFSGHI">GIF</div>'
-                                            } else if (type == 'png') {
+                                            } else if (href.includes('.png') == true) {
                                                 var datax = '<div class="center-flex absolute n1mafsdDFSGHI">PNG</div>'
-                                            } else if (type == 'jpg') {
+                                            } else if (href.includes('.jpg') == true) {
                                                 var datax = '<div class="center-flex absolute n1mafsdDFSGHI">JPG</div>'
                                             }
                                             const data =
@@ -499,7 +514,7 @@
                                                 '</div>' +
                                                 '</div>' +
                                                 '</div>';
-                                            $('.theme-appbannerx0341').append(data)
+                                            $('.theme-appbannerx0341').prepend(data)
                                         });
                                         console.log({
                                             "title": title,
