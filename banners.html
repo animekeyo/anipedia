@@ -319,12 +319,17 @@
                         } else if (href.includes('.jpg') == true) {
                             var datax = '<div class="center-flex absolute n1mafsdDFSGHI">JPG</div>'
                         }
+                        if (type == 'hentai') {
+
+                        }
                         if (user.uid == userid) {
                             const data =
                                 '<div  userid="' + userid + '" bannerId="' + bannerId + '" class="center-flex full-bg relative theme-appbannerx0342">' +
                                 datax +
-                                '<div type="' + type + '" style="background-image:url(' + href + ')" class="center-flex full-bg theme-appbannerx0342f">' +
-
+                                '<div unspolier type="' + type + '" style="background-image:url(' + href + ')" class="center-flex full-bg theme-appbannerx0342f">' +
+                                '<div  class="center-flex n1mafsdDFSFDSSS">' +
+                                'Spolier' +
+                                '</div>' +
                                 '</div>' +
                                 '<div class="center-flex  theme-appbannerx03420">' +
                                 '<div class="center-flex n1mafsdDFS">' +
