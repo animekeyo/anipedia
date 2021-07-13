@@ -445,11 +445,12 @@
                                 value: formValues
                             } = await Swal.fire({
                                 title: 'Multiple inputs',
-                                html: '<input id="titlexx" type="text" class="swal2-input" required>' +
+                                html: '<input id="titlexx" placeholder="Title of the banner" type="text" class="swal2-input" required>' +
                                     '<select id="optionxxx" required>' +
-                                    '<option value="gif">GIF</option>' +
-                                    '<option value="png">PNG</option>' +
-                                    '<option value="jpg">JPG</option>' +
+                                    '<option value="none">None</option>' +
+                                    '<option value="anime">Anime</option>' +
+                                    '<option value="KDA">KD/A</option>' +
+                                    '<option value="non-anime">Non-Anime</option>' +
                                     '</select>',
                                 focusConfirm: false,
                                 preConfirm: () => {
